@@ -25,7 +25,7 @@
 }
 #cssmenu {
   width: auto;
-  border-bottom: 3px solid #47c9af;
+  border-bottom: 3px solid #353535;
   font-family: Raleway, sans-serif;
   line-height: 1;
 }
@@ -93,5 +93,5 @@
 #cssmenu > ul > li.active > a:after,
 #cssmenu > ul > li:hover > a:after,
 #cssmenu > ul > li > a:hover:after {
-  background: #47c9af;
+  background: #353535;
 }
