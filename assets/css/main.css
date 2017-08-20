@@ -2448,12 +2448,12 @@
 				}
 
 		/* Sidebar */
-
+			/* 
 			#sidebar {
 				position: absolute;
 				top: 0;
 			}
-
+			/* 
 		/* Copyright */
 
 			#copyright {
@@ -2701,11 +2701,11 @@
 				}
 
 		/* Sidebar */
-
+			/* 
 			#sidebar {
 				padding: 30px 20px 30px 20px;
 			}
-
+			*/ 
 	}
 
 /* Mobile */
@@ -2836,11 +2836,12 @@
 			}
 
 		/* Sidebar */
-
+			/*
 			#sidebar {
 				padding: 20px 12px 20px 10px;
 				box-shadow: inset -1px 0 0 0 rgba(255, 255, 255, 0.15), inset -0.1em 0 0.5em 0 rgba(0, 0, 0, 0.25);
 			}
+			*/
 
 		/* Copyright */
 
@@ -2862,9 +2863,9 @@
 	}
 
 /* Off-Canvas Sidebar */
-
+	/*	
 	@media screen and (max-width: 1000px) {
-
+	*/
 		/* Basic */
 
 			html, body {
@@ -2889,7 +2890,7 @@
 			}
 
 		/* Sidebar */
-
+			/*
 			#titleBar {
 				display: block;
 			}
@@ -2929,5 +2930,5 @@
 				-ms-transform: translateX(0);
 				transform: translateX(0);
 			}
-
+			*/
 	}
