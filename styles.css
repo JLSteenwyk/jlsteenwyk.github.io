@@ -67,7 +67,7 @@
 #cssmenu > ul > li.active > a,
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover {
-  color: #00ffffff;
+  color: #353535;
 }
 #cssmenu > ul > li > a:after {
   position: absolute;
