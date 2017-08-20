@@ -2867,13 +2867,13 @@
 	@media screen and (max-width: 1000px) {
 	*/
 		/* Basic */
-
+/*
 			html, body {
 				overflow-x: hidden;
 			}
-
+*/
 		/* Content */
-
+/*			
 			#content {
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
@@ -2888,7 +2888,7 @@
 				margin-right: 0;
 				min-height: 0 !important;
 			}
-
+		
 		/* Sidebar */
 			/*
 			#titleBar {
@@ -2930,5 +2930,6 @@
 				-ms-transform: translateX(0);
 				transform: translateX(0);
 			}
-			*/
+			
 	}
+	*/
