@@ -30,7 +30,7 @@
   line-height: 1;
 }
 #cssmenu ul {
-  background: #ffffff;
+  background: #00ffffff;
 }
 #cssmenu > ul > li {
   float: left;
@@ -67,7 +67,7 @@
 #cssmenu > ul > li.active > a,
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover {
-  color: #ffffff;
+  color: #00ffffff;
 }
 #cssmenu > ul > li > a:after {
   position: absolute;
