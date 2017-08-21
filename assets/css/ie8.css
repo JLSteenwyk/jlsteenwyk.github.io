@@ -1,64 +1,77 @@
 /*
-	Striped by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form select,
-form textarea {
-	position: relative;
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");}
+/* Basic */
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-button,
-.button {
-	position: relative;
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");}
-
-.pagination .pages a {
-	position: relative;
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");
-}
-
-.box.calendar td a, .box.calendar td span {
-	position: relative;
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");
-}
-
-.box.text-style1 .inner {
-	position: relative;
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");
-}
-
-#nav li a {
-	position: relative;
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");
-}
-
-.box.post .info {
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");
-}
-
-	.box.post .info .stats li a {
+	form input[type=text],
+	form input[type=password],
+	form select,
+	form textarea {
 		position: relative;
-		box-shadow: none !important;
 		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
 
-#logo {
-	position: relative;
-	box-shadow: none !important;
-	-ms-behavior: url("assets/js/ie/PIE.htc");
-}
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"],
+	button,
+	.button {
+		position: relative;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+/* Section/Article */
+
+	section > .last-child,
+	article > .last-child,
+	section.last-child,
+	article.last-child {
+		margin-bottom: 0;
+	}
+
+/* Box */
+
+	.box {
+		border: solid 1px #ddd;
+	}
+
+/* List */
+
+	ul.social li a {
+		position: relative;
+		top: 0 !important;
+		overflow: hidden;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+		ul.social li a:before {
+			background: none;
+		}
+
+/* Wrappers */
+
+	.wrapper {
+		border-top: solid 1px #ddd;
+	}
+
+/* Nav */
+
+	#nav a {
+		position: relative;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+/* Articles */
+
+	#top .image {
+		position: relative;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+		#top .image img {
+			position: relative;
+			-ms-behavior: url("assets/js/ie/PIE.htc");
+		}

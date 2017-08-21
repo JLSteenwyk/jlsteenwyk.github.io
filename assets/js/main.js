@@ -1,24 +1,29 @@
 /*
-	Striped by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function($) {
 
-	skel.breakpoints({
-		desktop: '(min-width: 737px)',
-		wide: '(min-width: 1201px)',
-		narrow: '(min-width: 737px) and (max-width: 1200px)',
-		narrower: '(min-width: 737px) and (max-width: 1000px)',
-		mobile: '(max-width: 736px)'
-	});
+	skel
+		.breakpoints({
+			desktop: '(min-width: 737px)',
+			tablet: '(min-width: 737px) and (max-width: 1200px)',
+			mobile: '(max-width: 736px)'
+		})
+		.viewport({
+			breakpoints: {
+				tablet: {
+					width: 1080
+				}
+			}
+		});
 
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body'),
-			$document = $(document);
+			$body = $('body');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -38,49 +43,21 @@
 				);
 			});
 
-		// Off-Canvas Sidebar.
+		// CSS polyfills (IE<9).
+			if (skel.vars.IEVersion < 9)
+				$(':last-child').addClass('last-child');
 
-			// Height hack.
-				var $sc = $('#sidebar, #content'), tid;
+		// Scrolly.
+			$window.load(function() {
 
-				$window
-					.on('resize', function() {
-						window.clearTimeout(tid);
-						tid = window.setTimeout(function() {
-							$sc.css('min-height', $document.height());
-						}, 100);
-					})
-					.on('load', function() {
-						$window.trigger('resize');
-					})
-					.trigger('resize');
+				var x = parseInt($('.wrapper').first().css('padding-top')) - 15;
 
-			// Title Bar.
-				$(
-					'<div id="titleBar">' +
-						'<a href="#sidebar" class="toggle"></a>' +
-						'<span class="title">' + $('#logo').html() + '</span>' +
-					'</div>'
-				)
-					.appendTo($body);
+				$('#nav a, .scrolly').scrolly({
+					speed: 1000,
+					offset: x
+				});
 
-			// Sidebar
-				$('#sidebar')
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						side: 'left',
-						target: $body,
-						visibleClass: 'sidebar-visible'
-					});
-
-			// Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#titleBar, #sidebar, #main')
-						.css('transition', 'none');
+			});
 
 	});
 
