@@ -47,6 +47,10 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
+	
+	.indent {
+    margin-left: 40px;
+	}
 
 /* Box Model */
 
