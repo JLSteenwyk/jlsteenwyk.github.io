@@ -1302,15 +1302,11 @@
 		.image img {
 			display: block;
 			width: 100%;
-			margin-left: 40px;
-			margin-right: 40px;
 		}
 
 		.image.fit {
 			display: block;
 			width: 100%;
-			margin-left: 40px;
-			margin-right: 40px;
 		}
 
 		.image.featured {
