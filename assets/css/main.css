@@ -16,6 +16,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		color: #000000;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -54,8 +55,8 @@
 	}
 
 	.altbadgeindent {
-    margin-left: 59px;
-    margin-right: 59px;
+    margin-left: 56px;
+    margin-right: 56px;
 	}
 
 /* Box Model */
