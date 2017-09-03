@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
 @import url("font-awesome.min.css");
 
+/* half columns */
+#firstHalfCol {
+float:left;
+width:50%;
+background:#FFFFFF;
+}
+#secondHalfCol {
+float:right;
+width:50%;
+background:#FFFFFF;
+}
+
 /*
 	Miniport by HTML5 UP
 	html5up.net | @ajlkn
