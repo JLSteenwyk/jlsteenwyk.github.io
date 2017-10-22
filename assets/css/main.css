@@ -1094,7 +1094,7 @@ background:#FFFFFF;
 		font-family: Helvetica, Arial, Sans-Serif;
 		/*font-family: 'Open Sans', sans-serif;*/
 		line-height: 1.85em;
-		color: #888;
+		color: #000000;
 		font-weight: 300;
 	}
 
@@ -1240,23 +1240,23 @@ background:#FFFFFF;
 	}
 
 	form .formerize-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form ::-webkit-input-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form :-moz-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form ::-moz-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form :-ms-input-placeholder {
-		color: #555 !important;
+		color: #000000 !important;
 	}
 
 	form ::-moz-focus-inner {
