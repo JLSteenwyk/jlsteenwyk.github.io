@@ -1128,7 +1128,7 @@ background:#FFFFFF;
 
 	b, strong {
 		font-weight: 600;
-		color: #3e3e3e;
+		color: #000000;
 	}
 
 	i, em {
@@ -1154,7 +1154,7 @@ background:#FFFFFF;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3e3e3e;
+		color: #000000;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1198,7 +1198,7 @@ background:#FFFFFF;
 /* Form */
 
 	form label {
-		color: #3e3e3e;
+		color: #000000;
 		font-weight: 700;
 		display: block;
 		margin: 0 0 0.5em 0;
