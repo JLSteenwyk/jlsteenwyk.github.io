@@ -1092,7 +1092,7 @@ background:#FFFFFF;
 
 	body, input, textarea, select {
 		font-family: Helvetica, Arial, Sans-Serif;
-		/*font-family: 'Open Sans', sans-serif;*/
+		/*: 'Open Sans', sans-serif;*/
 		line-height: 1.85em;
 		color: #888;
 		font-weight: 300;
@@ -1589,7 +1589,8 @@ background:#FFFFFF;
 
 		.icon:before {
 			display: inline-block;
-			font-family: FontAwesome;
+			font-family: Helvetica, Arial, Sans-Serif;
+			/*font-family: FontAwesome;*/
 			font-size: 1.25em;
 			text-decoration: none;
 			font-style: normal;
