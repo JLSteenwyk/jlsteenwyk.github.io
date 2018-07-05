@@ -82,12 +82,6 @@ background:#FFFFFF;
     width: 50%;
     }
 
-    .row.centered {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	}
-
 /* Box Model */
 
 	*, *:before, *:after {
