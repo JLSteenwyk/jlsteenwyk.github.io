@@ -1,168 +1,232 @@
 <!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!-- Google analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-104875636-1', 'auto');
+ga('send', 'pageview');
+</script>
 <html>
+	<style>
+		.TextWrapRight{float:right; margin: 10px;}
+	</style>
+	<style>
+		.TextWrapLeft{float:left; margin: 10px;}
+	</style>
 	<head>
 		<title>J.L. Steenwyk</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" href="images/website_flavicon_network.png">
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
-		<!-- Google analytics -->
-		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-104875636-1', 'auto');
-		ga('send', 'pageview');
-		</script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-
-	<body>
-		<!-- Nav -->
-		<nav id="nav">
-			<ul class="container">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="publications.html">Publications</a></li>
-					<li><a href="news.html">News</a></li>
-					<li><a href="arts.html">Arts</a></li>
-					<li><a href="software.html">Software</a></li>
-					<li><a href="resources.html">Resources</a></li>
-					<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</nav>
+	<body class="is-preload">
 		<article id="Top">
-		<!-- Arts -->
-		<div class="indent">
-			<br /><br />
-			<span class="image fit"><img src="images/website_logo_transbackground_extended1.png" alt="" /></span>
+			<div id="page-wrapper">
+			<!-- Header -->
+				<header id="header">
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html#content" style="color: white">About</a></li>
+							<li><a href="publications.html" style="color: white">Publications</a></li>
+							<li><a href="news.html" style="color: white">News</a></li>
+							<li>
+								<a href="arts.html" style="color: white">Arts</a>
+								<ul>
+									<li><a href="arts_visual.html" style="color: white">Visual</a></li>
+									<li><a href="arts_music.html" style="color: white">Music</a></li>
+									<li><a href="arts_poetry.html" style="color: white">Poetry</a></li>
+								</ul>
+							</li>
+							<li><a href="software.html" style="color: white">Software</a></li>
+							<li><a href="curriculum_vitae.html" style="color: white">Curriculum Vitae</a></li>
+							<li><a href="resources.html" style="color: white">Resources</a></li>
+							<li><a href="contact.html" style="color: white">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<!-- Content -->
+							<section id="content">
+								<header class="major">
+									<h2>Visual</h2>
+									<p style="color: black">
+										<a href="arts_visual.html">Visual</a>
+										&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+										<a href="arts_music.html">Music</a>
+										&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+										<a href="arts_poetry.html">Poetry</a>
+									</p>
+									<p style="color: black">
+										<a href="#AbstractArtOfAlgorithms" class="goto-pub scrolly">Abstract art of algorithms</a>
+										&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+										<a href="#Reality" class="goto-pub scrolly">Illusion of reality</a>
+										&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+										<a href="#Pptx" class="goto-pub scrolly">Minimalist drawings in pttx</a>
+										&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+										<a href="#Posters" class="goto-pub scrolly">Science-themed posters</a>
+										&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+										<a href="#Logos" class="goto-pub scrolly">Logos</a>
+										&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+										<a href="#Misc" class="goto-pub scrolly">Miscellaneous</a>
+										
+									</p>
+								</header>
+								<div class="box alt">
+									<section id="AbstractArtOfAlgorithms">
+										<h3>The abstract art of algorithms</h3>
+										<p>
+											R is a powerful computer programming language designed to facilitate statistical analyses of large data sets and visually represent them. With a different approach, the same functions can also create art. Here, I have implemented the power of algorithms to automatically generate data frames composed thousands to millions of data points and then plot them in two-dimensional space. However, due to sheer size of the data frames and the nature of the algorithm, I (and no one else for that matter) can conceive how the images will look like after being visualized. Despite having no predictability, I appreciate the results of the algorithm that span noise and poetry.
+										</p>
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-12"><span class="image fit"><img src="arts_images/the_art_of_abstract_algorithms.jpg" alt="" /></span></div>
+										</div>
+
+										<br /><br />
+										<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+									</section>
+									<hr>
+									<section id="Reality">
+										<h3>The Illusion of reality</h3>
+										<p>
+											In an unprecedented era of false facts, misinformation, and conspiracy theories, teasing apart reality from click-bait is an everyday task. To explore this further, I have taken some familiar images from the internet and stochastically removed lines of code that produce the image thus distorting them. In this way, familiar images become distinct from their origin in a style reminescent of cubism.
+										</p>
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-5"><span class="image fit"><img src="arts_images/Pyramids.jpg" alt="" />Pyramids</span></div>
+											<div class="col-4"><span class="image fit"><img src="arts_images/katy-perry.jpg" alt="" />Katy</span></div>
+											<div class="col-3"><span class="image fit"><img src="arts_images/ONNO.jpg" alt="" />Onno</span></div>
+										</div>
+										<br />
+										<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+									</section>
+									<hr>
+									<section id="Pptx">
+										<h3>Minimalist drawings in powerpoint</h3>
+										<p>
+											Prior to investing in a program to create vector images, I initially started drawing in powerpoint. The following are collections from this time.
+										</p>
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-4 col-6-xsmall"><span class="image fit"><img src="arts_images/Bonkers_Drawing.JLS.jpeg" alt="" />Bonkers, the cat</span></div>
+											<div class="col-4 col-6-xsmall"><span class="image fit"><img src="arts_images/Rowboat_man.JLS.jpeg" alt="" />Rowboat</span></div>
+											<div class="col-4 col-6-xsmall"><span class="image fit"><img src="arts_images/Coffee_cup.JLS.jpeg" alt="" />Coffee cups</span></div>
+										</div>
+										<br />
+										<p>
+											To raise awareness of critically endangered animals, I have drawn their minimalist outline with dots in the background depicting the decrease in population size. More specifically, each dot represents one year.
+										</p>
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="arts_images/Hawksbill_turtle_JLS.jpeg" alt="" />Hawksbill turtle</span></div>
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="arts_images/black_rhino_drawing.JLS.jpeg" alt="" />Black rhino</span></div>
+										</div>
+										<br /><br />
+										<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+									</section>
+									<hr>
+									<section id="Posters">
+										<h3>Science-themed posters</h3>
+										<p>
+											After seeing a twitter post (I sadly cannot find it again!) that showcased posters of scientific research labs and their area of study, I decided to make some of my own for the lab of my PhD advisor, <a href="https://as.vanderbilt.edu/rokaslab/">Antonis Rokas</a>. The Rokas lab studies factors that influence phylogenetics (left), evolutionary and functional genomics of yeasts and molds (middle), and the evolution of human pregnancy (right).
+										</p>
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-12"><span class="image fit"><img src="arts_images/Posters_all.jpg" alt="" /></span></div>
+										</div>
+										<br /><br />
+										<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+									</section>
+									<hr>
+									<section id="Logos">
+										<h3>Logos</h3>
+										<p>
+											Evolutionary Studies Initiative at Vanderbilt University logo (left). 2018 Department of Biological Sciences, Vanderbilt University, T-shirt design contest winner (right).
+										</p>
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="arts_images/evo_logo.jpg" alt="" /></span></div>
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="arts_images/Biosci_tshirt_design_2018_JLS.jpg" alt="" /></span></div>
+										</div>
+										<br /><br />
+										<p>
+											As part of my thesis work, I have developed computational tools that help researchers analyze or parse their data. The logo for an alignment trimming software (left) and a phylogenetic tree pruner (right) are shown here.
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="software_images/clipkit_logo.jpg" alt="" /></span></div>
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="software_images/treehouse_logo.png" alt="" /></span></div>
+										</div>
+										<br /><br />
+										<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+									</section>
+									<hr>
+									<section id="Misc">
+										<h3>Miscellaneous pieces</h3>
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="arts_images/Portrait_of_yeast.jpg" alt="" />A portrait of budding yeasts</span></div>
+											<div class="col-6 col-6-xsmall"><span class="image fit"><img src="arts_images/Sun_frogs.jpg" alt="" />An ode to frogs killed by chytrids</span></div>
+											<div class="col-4 col-6-xsmall"><span class="image fit"><img src="arts_images/Metamind.jpg" alt="" />Metamind</span></div>
+											<div class="col-8 col-6-xsmall"><span class="image fit"><img src="arts_images/Happy_holidays_rokas_lab_v3.jpg" alt="" />Holiday card</span></div>
+										</div>
+										<br /><br />
+										<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+									</section>
+
+									</div>
+								</div>
+							</section>
+					</div>
+				</div>
+			</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/jlsteenwyk" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" class="icon brands alt fa-google"><span class="label">Google</span></a></li>
+						<li><a href="https://www.researchgate.net/profile/Jacob_Steenwyk" class="icon brands alt fa-researchgate"><span class="label">ResearchGate</span></a></li>
+						<li><a href="https://github.com/JLSteenwyk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/jlsteenwyk/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="contact.html" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2020 Jacob L. Steenwyk</li>
+					</ul>
+				</footer>
+
 		</div>
-		<div class="indent">
-			<article id="Arts">
-				<header>
-					<br />
-					<p style="font-size: 22px">
-					<li><a href="#AbstractAlgorithmsCode">The abstract art of algorithms</a></li>
-					<li><a href="#RealityCode">Reality is not as it always as it seems</a></li>
-					<li><a href="#Pptx">Minimalist drawings in powerpoint</a></li>
-					<li><a href="#PostersCode">Rokas Lab themed posters</a></li>
-					<li><a href="#Logos">Logos</a></li>
-					<li><a href="#Miscellaneous">Miscellaneous pieces</a></li>
-					</p>
-
-					<article id="AbstractAlgorithmsCode">
-					<hr>
-					<p style="font-size: 22px"><strong>The abstract art of algorithms.</strong></p>
-					<p>R is a powerful computer programming language designed to facilitate statistical analyses of large data sets and visually represent them. With a different approach, the same functions can also create art. Here, I have implemented the amazing power of algorithms to automatically generate data frames composed of ten thousand to ten million data points and then plot them in two-dimensional space. However, due to sheer size of the data frames and the nature of the algorithm, I (and no one else for that matter) can conceive how the images will look like after being visualized; case in point, imagine keeping track of a twisting and curving line made from ten thousand to ten million points while also keeping track of the amalgam of each event. Despite having no predictability, I appreciate the results of the algorithm that span noise and poetry.<br /><br />
-					<center>
-					<img src="arts_subpages/the_art_of_abstract_algorithms.jpg" alt="arts_subpages/the_art_of_abstract_algorithms.jpg", align="middle", style="width: 55%; height: 55%"><br /><br />
-					<center><a href="#Top">Top of page</a></center>
-					</p>
-				 	</center>
-
-					<article id="RealityCode">
-					<hr>
-					<p style="font-size: 22px"><strong>Reality is not as it always as it seems.</strong></p>
-					<p>In an unprecedented era of false facts, misinformation, and conspiracy theories, teasing apart reality from click-bait is an everyday task. To explore this further, I have taken some familiar images from the internet and stochastically removed lines of code that produce the image thus distorting them. In this way, familiar images become distinct from their origin in a style reminescent of cubism.<br /><br />
-					<center>
-					The Pyramids.<br />
-					<img src="arts_subpages/Pyramids.jpg" alt="arts_subpages/Pyramids.jpg", align="middle", style="width: 50%; height: 50%"><br /><br />
-					Katy.<br />
-					<img src="arts_subpages/katy-perry.jpg" alt="arts_subpages/katy-perry.jpg", align="middle", style="width: 50%; height: 50%"><br /><br />
-					Onno.<br />
-					<img src="arts_subpages/ONNO.jpg" alt="arts_subpages/ONNO.jpg", align="middle", style="width: 40%; height: 40%"><br /><br />
-					Many thanks to Andrew Consroe (aka., <a href="https://github.com/aconz2">aconz2</a>) who wrote <a href="https://aconz2.github.io/2019/07/25/Image-Bit-Flips.html">Image Bit Flips</a> which, allows anyone to make their own distorted images. Check it out!<br /><br />
-					<center><a href="#Top">Top of page</a></center>
-					</p>
-				 	</center>
-					
-					<article id="Pptx">
-					<hr>
-					<p style="font-size: 22px"><strong>Minimalist drawings in powerpoint.</strong></p>
-					<p>Prior to investing in a program to create vector images, I initially started drawing in powerpoint. The following are collections from this time.<br />
-					<center>
-					Bonkers, the cat.<br />
-					<img src="arts_subpages/Bonkers_Drawing.JLS.jpeg" alt="arts_subpages/Bonkers_Drawing.JLS.jpeg", align="middle", style="width: 50%; height: 50%"></center><br /><br />
-					<center>
-					Rowboat man.<br />
-					<img src="arts_subpages/Rowboat_man.JLS.jpeg" alt="arts_subpages/Rowboat_man.JLS.jpeg", align="middle", style="width: 50%; height: 50%"></center><br /><br />
-					To raise awareness of critically endangered animals, I have drawn their minimalist outline with dots in the background depicting the decrease in population size. More specifically, each dot represents one year.<br />
-					<center>
-					The critically endangered: Hawksbill turtle.</center><br />
-					<center><img src="arts_subpages/Hawksbill_turtle_JLS.jpeg" alt="arts_subpages/Hawksbill_turtle_JLS.jpeg", align="middle", style="width: 50%; height: 50%"></center><br /><br />
-					<center>
-					The critically endangered: Black rhino.<br />
-					<img src="arts_subpages/black_rhino_drawing.JLS.jpeg" alt="arts_subpages/black_rhino_drawing.JLS.jpeg", align="middle", style="width: 50%; height: 50%"></center><br /><br />
-					<center>
-					Coffee cup.<br />
-					<img src="arts_subpages/Coffee_cup.JLS.jpeg" alt="arts_subpages/Coffee_cup.JLS.jpeg", align="middle", style="width: 50%; height: 50%"></center><br />
-					</p>
-					<center><a href="#Top">Top of page</a></center>
-					<br />
-					
-					</center>
-					<article id="PostersCode">
-					<hr>
-					<p style="font-size: 22px"><strong>Rokas Lab themed posters.</strong></p>
-					<p>After seeing a twitter post (I sadly cannot find it again!) that showcased posters of scientific research labs and their area of study, I decided to make some of my own for the lab of my PhD advisor, <a href="https://as.vanderbilt.edu/rokaslab/">Antonis Rokas</a>. Collectively, we study factors that influence phylogenetics (left), evolutionary and functional genomics of yeasts and molds (middle), and the evolution of human pregnancy (right).<br />
-					<center><img src="arts_subpages/Posters_all.jpg" alt="arts_subpages/Posters_all.jpg", align="middle", style="width: 100%; height: 100%"></center><br />
-					</p>
-					<center><a href="#Top">Top of page</a></center>
-					<br />
-
-					</center>
-					<article id="Logos">
-					<hr>
-					<p style="font-size: 22px"><strong>Logos</strong></p>
-					<center>
-					2018 Department of Biological Sciences, Vanderbilt University, T-shirt design contest winner.<br />
-					<img src="arts_subpages/Biosci_tshirt_design_2018_JLS.jpg" alt="arts_subpages/Biosci_tshirt_design_2018_JLS.jpg", align="middle", style="width: 50%; height: 50%"></center><br /><br />
-					<center>
-					Evolutionary Studies Initiative at Vanderbilt University logo.<br />
-					<img src="arts_subpages/evo_logo.jpg" alt="arts_subpages/evo_logo.jpg", align="middle", style="width: 35%; height: 35%"></center><br /><br />
-					<article id="Miscellaneous">
-					<hr>
-					<p style="font-size: 22px"><strong>Miscellaneous pieces</strong></p>
-					<center>
-					Sun frogs.<br />
-					<img src="arts_subpages/Sun_frogs.jpg" alt="arts_subpages/Sun_frogs.jpg", align="middle", style="width: 50%; height: 50%"></center><br /><br />
-					<center>
-					The metamind.<br />
-					<img src="arts_subpages/Metamind.jpg" alt="arts_subpages/Metamind.jpg", align="middle", style="width: 50%; height: 50%"></center><br /><br />	
-					<center>
-					Portrait of yeast.<br />
-					<img src="arts_subpages/Portrait_of_yeast.jpg" alt="arts_subpages/Portrait_of_yeast.jpg", align="middle", style="width: 50%; height: 50%"></center><br /><br />
-					<center>
-					Happy Holidays card.<br />
-					<img src="arts_subpages/Happy_holidays_rokas_lab_v3.jpg" alt="arts_subpages/Happy_holidays_rokas_lab_v3.jpg", align="middle", style="width: 50%; height: 50%"></center><br /><br />							
-					</p>
-					<center><a href="#Top">Top of page</a></center>
-					<br />
-
-				</header>	
-			</article>	
-		</div>	
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/skel-viewport.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="assets/js/main.js"></script>
-		<!-- almetric script -->
-		<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-</body>
+			<!-- Slideshow script -->
+			<script>
+				var slideIndex = 1;
+				showDivs(slideIndex);
+
+				function plusDivs(n) {
+				  showDivs(slideIndex += n);
+				}
+
+				function showDivs(n) {
+				  var i;
+				  var x = document.getElementsByClassName("mySlides");
+				  if (n > x.length) {slideIndex = 1}
+				  if (n < 1) {slideIndex = x.length}
+				  for (i = 0; i < x.length; i++) {
+				     x[i].style.display = "none";  
+				  }
+				  x[slideIndex-1].style.display = "block";  
+				}
+			</script>
+
+	</body>
 </html>
