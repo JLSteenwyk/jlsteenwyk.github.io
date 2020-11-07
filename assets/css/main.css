@@ -571,7 +571,7 @@ input, select, textarea {
 			-webkit-transform-origin: 50% 50%;
 			-ms-transform-origin: 50% 50%;
 			transform-origin: 50% 50%;
-			color: rgba(255, 255, 255, 0.15);
+			color: rgba(255, 255, 255, 0.15);*/
 			content: '\f1ce';
 			cursor: default;
 			display: block;
