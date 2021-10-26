@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-104875636-1');
+</script>
+<html>
+	<style>
+		.TextWrapRight{float:right; margin: 10px;}
+	</style>
+	<style>
+		.TextWrapLeft{float:left; margin: 10px;}
+	</style>
+	<head>
+		<title>J.L. Steenwyk</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" href="../images/website_flavicon_network.png">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<article id="Top">
+			<div id="page-wrapper">
+			<!-- Header -->
+				<header id="header">
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html#content" style="color: white">About</a></li>
+							<li><a href="../publications.html" style="color: white">Publications</a></li>
+							<li><a href="../news.html" style="color: white">News</a></li>
+							<li>
+								<a href="../arts.html" style="color: white">Arts</a>
+								<ul>
+									<li><a href="../sciart.html" style="color: white">SciArt Shop</a></li>
+									<li><a href="../arts_visual.html" style="color: white">Visual</a></li>
+									<li><a href="../arts_music.html" style="color: white">Music</a></li>
+									<li><a href="../arts_poetry.html" style="color: white">Poetry</a></li>
+								</ul>
+							</li>
+							<li><a href="../software.html" style="color: white">Software</a></li>
+							<li><a href="../curriculum_vitae.html" style="color: white">Curriculum Vitae</a></li>
+							<li><a href="../resources.html" style="color: white">Resources</a></li>
+							<li><a href="../contact.html" style="color: white">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<!-- Content -->
+							<section id="content">
+								<header class="major">
+									<h2>From proteomes to species tree: five-step phylogenomics made easy</h2>
+								</header>
+								<p style="color: black">
+									<a href="#Introduction" class="goto-pub scrolly">
+										Introduction
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;Overview of topics
+									and further reading<br />
+									<a href="#Step1" class="goto-pub scrolly">
+										Step 1: Data collection and software installation
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;1.1. Set up your working directory<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;1.2. Collect data<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;1.3. Install software<br />
+									<a href="#Step2" class="goto-pub scrolly">
+										Step 2: Identify single-copy orthologous genes
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.1. Obtain HMMs<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.2. Identify SC-OGs using orthofisher<br />
+									<a href="#Step3" class="goto-pub scrolly">
+										Step 3: Align and trim SC-OGs
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;3.1. Align SC-OGs using MAFFT<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;3.2. Trim alignments using ClipKIT<br />
+									<a href="#Step4" class="goto-pub scrolly">
+										Step 4: Create a concatenated supermatrix
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;4.1. Using the "create_concatenation_matrix" in PhyKIT<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;4.2. Examine alignment properties using "alignment_summary" in BioKIT<br />
+									<a href="#Step5" class="goto-pub scrolly">
+										Step 5: Infer the putative species tree
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;5.1. Infer the species tree using IQ-TREE<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;5.2. Root the phylogeny using "root_tree" in PhyKIT<br />
+									<a href="#Closing_remarks" class="goto-pub scrolly">
+										Closing remarks
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;Summary, caveats, and considerations<br />
+									<a href="#References" class="goto-pub scrolly">
+										References
+									</a>
+								</p>
+								<hr>
+								<section id="Introduction">
+								<h3>
+									Introduction
+								</h3>
+								<p>
+									Understanding the evolutionary history among a set of organisms is a prerequisite for understanding numerous biological
+									phenomenon such as positive selection, the evolution of genes and traits, and more. The use of genome-scale data
+									to infer the evolutionary history among a set of organisms, which is represented as a species tree, is known as phylogenomics
+									Here, we will go over a simple five step workflow to go from proteomes
+									to a (putative) species tree.
+									As is true of any analysis, assumptions will be made. More specifically, this tutorial aims
+									to be a soft introduction for how to conduct "hands-on" phylogenomic analysis. As a result, we will not reconstruct the evolutionary
+									history among hundreds of species using hundreds of loci, which is becoming more commonplace; instead, to convey key concepts and
+									introduce a "typical" workflow, we will use eight proteomes and 10 loci.
+									<br /><br />
+									As is true of any analysis, assumptions will be made.
+									An in-depth understanding of the assumptions being made during phylogenomic analysis is important, but this tutorial is
+									not intended to go into this level of specificity. Readers may refer to an non-exhaustive list of additional
+									resources for further reading to enhance their understanding of potential caveats and sources of 
+									error—<a href="https://www.nature.com/articles/s41576-020-0233-0">Kapli <i>et al.</i> (2020), Nature Reviews Genetics</a>;
+									<a href="https://www.nature.com/articles/nrg3186">Yang & Rannala (2012), Nature Reviews Genetics</a>; and
+									<a href="https://www.annualreviews.org/doi/10.1146/annurev.ecolsys.35.112202.130205">Philippe
+									<i>et al.</i> (2005), Annual Review of Ecology, Evolution, and Systematics</a>.
+									<br /><br />
+									Note, all commands are intended to be executed in a UNIX environment, a common interface for many bioinformaticians. 
+									This tutorial assumes readers have some familiarity with basic UNIX commands such as making directories, changing into
+									them, etc.
+									Commands are displayed in code blocks that have a light grey background.
+									For example,
+									<code class="codeblock" style="background:#EBEDEF">
+										this is a command you would execute!
+									</code>
+									<br /><br />
+									With that, let's conduct phylogenomic analysis using five simple steps!
+									</p>
+								<br />
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<br />
+								</section>
+								<section id="Step1">
+								<h3>Step 1: Data collection and software installation</h3>
+								<p>
+									<strong>1.1. Set up your working directory</strong><br />
+									To keep everything organized, we will first make a directory for this tutorial called phylogenomics_made_easy with the
+									<i>mkdir</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										mkdir phylogenomics_made_easy
+									</code>.
+									Thereafter, move into the directory you made with the <i>cd</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										cd phylogenomics_made_easy
+									</code>.
+									<br /><br />
+									<strong>1.2. Collect data</strong><br />
+									Next, collect the proteomes of the species whose evolutionary history you are interested in inferring. For simplicity,
+									I have precompiled a set of eight proteomes of <i>Aspergillus</i> and <i>Penicillium</i> species to use. All proteomes
+									were downloaded from the National Center for Biotechnology Information (or <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a>).
+
+									<center><strong><a href="prot.tar.gz" download="prot.tar.gz">Download proteomes</strong></a></center>
+
+									<br />
+									Move the proteomes to the current working directory with the <i>mv</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										mv path_to_file/prot.tar.gz .
+									</code>. Be sure to change <i>path_to_file</i> to the appropriate relative or
+									absolute file path of <i>prot.tar.gz</i>. Unzip the directory with the <i>tar</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										tar -zxvf prot.tar.gz
+									</code>.
+									<br /><br />
+									<strong>1.3. Install software</strong><br />
+									Lastly, we will have to download an install the necessary software for the tutorial. Most software will
+									be downloaded from <a href="https://pypi.org/">PyPi</a>. To do so, we will continue to implement best practices
+									and first create a virtual environment to store all installed software. A virtual environment is a "self-contained
+									directory tree that contains a Python installation for a particular version of Python, plus a number of additional
+									packages" (<a href="https://docs.python.org/3/tutorial/venv.html">Python docs</a>). Create a virtual
+									environment with the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										python -m venv venv
+									</code>
+									and activate it
+									<code class="codeblock" style="background:#EBEDEF">
+										source venv/bin/activate
+									</code>.
+									Next, install
+									<a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>, 
+									<a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a>,
+									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>, and
+									<a href="https://jlsteenwyk.com/PhyKIT/">BioKIT</a> using the <i>pip install</i> command.
+									<code class="codeblock" style="background:#EBEDEF">
+										pip install orthofisher clipkit phykit jlsteenwyk-biokit
+									</code>.
+									To be transparent, these are all software I have developed. They have enabled me to conduct diverse
+									phylogenomic analyses and so I want to share what I've learned and created with you. 
+									<br /><br />
+									The last pieces of software that need to be installed are <a href="http://hmmer.org/">HMMER</a>,
+									<a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a>, and
+									<a href="http://www.iqtree.org/">IQ-TREE</a>. Each of these software have their own installation
+									instructions. Please follow the link for each software and install according to the developer's recommendations.
+									Add the path of each executable to your <i>$PATH</i>. Instructions to do so can be found on numerous online
+									discussion forums such as
+									<a href="https://askubuntu.com/questions/109381/how-to-add-path-of-a-program-to-path-environment-variable">askubuntu</a>
+									and <a href="https://unix.stackexchange.com/questions/3809/how-can-i-make-a-program-executable-from-everywhere">unix stackexchange</a>.
+								</p>
+								<br />
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Step2">
+								<h3>Step 2: Identify single-copy orthologous genes</h3>
+								<p>
+									<strong>2.1. Obtain HMMs</strong><br />
+									Single-copy orthologous genes (SC-OGs) refer a set of homologous genes that originated via speciation and are present only once
+									among species of interest. These genes are typically used for phylogenomic analyses because genes that have undergone duplication
+									and deletion can have cloudy evolutionary histories.
+									<br /><br />
+									To identify SC-OGs, we will use
+									<a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
+									(<a href="https://jlsteenwyk.com/publication_pdfs/2021_Steenwyk_and_Rokas_G3.pdf">Steenwyk and Rokas, 2021</a>). 
+									<a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a> requires as input a list of HMMs and proteomes and then will use 
+									<a href="http://hmmer.org/">HMMER</a> to identify SC-OGs in each proteome. Importantly, the output of
+									<a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a> simplifies downstream processes, which is in part why we are using it.
+									Now we need HMMs. For this tutorial, we will use a subsampled set of HMMs derived from near universally SC-OGs from the kingdom
+									fungi, which are available from
+									<a href="https://academic.oup.com/nar/article/45/D1/D744/2605742">OrthoDB</a>
+									(<a href="https://academic.oup.com/nar/article/45/D1/D744/2605742">Zdobnov <i>et al.</i>, 2017</a>).
+
+									<center><strong><a href="hmms.tar.gz" download="hmms.tar.gz">Download HMMs</strong></a></center><br />
+
+									Of note, custom sets of HMMs can be used as input for orthofisher. Instructions on creating custom HMMs can be found in
+									the <a href="https://jlsteenwyk.com/orthofisher/tutorial/index.html">documentation</a> of orthofisher. Move the downloaded
+									HMMs to the current working directory with the <i>mv</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										mv path_to_file/hmms.tar.gz .
+									</code>. As above, be sure to change <i>path_to_file</i> to the appropriate relative or
+									absolute file path of <i>hmms.tar.gz</i>. Unzip the directory with the <i>tar</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										tar -zxvf hmms.tar.gz
+									</code>. We can see that there are 10 HMMs by counting how many files are in the <i>hmms</i> directory using
+									the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										ls hmms | wc -l
+									</code>.
+									<br /><br />
+									<strong>2.2. Identify SC-OGs using orthofisher</strong><br />
+									Now, we can create the input files for <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a> by listing
+									the input files and writing the output to text files using the following commands:
+									<code class="codeblock" style="background:#EBEDEF">
+										ls hmms/* > hmms_list.txt
+									</code>
+									and 
+									<code class="codeblock" style="background:#EBEDEF">
+										paste <(ls prot/*) <(ls prot/* | sed 's/prot\///g' | sed 's/_protein.faa//g') > prot_and_names_list.txt
+									</code>. The latter creates a two column file wherein the first column is the file name and path of a proteome
+									and the second column is the species name associated with the proteome. To view the contents of <i>prot_and_names_list.txt</i>,
+									use the <i>cat</i> command:
+									<pre><code class="codeblock" style="background:#EBEDEF">
+cat prot_and_names_list.txt 
+	prot/Aspergillus_fischeri_protein.faa	Aspergillus_fischeri
+	prot/Aspergillus_flavus_protein.faa	Aspergillus_flavus
+	prot/Aspergillus_nidulans_protein.faa	Aspergillus_nidulans
+	prot/Aspergillus_oryzae_protein.faa	Aspergillus_oryzae
+	prot/Penicilliopsis_zonata_protein.faa	Penicilliopsis_zonata
+	prot/Penicillium_antarcticum_protein.faa	Penicillium_antarcticum
+	prot/Penicillium_arizonense_protein.faa	Penicillium_arizonense
+	prot/Penicillium_digitatum_protein.faa	Penicillium_digitatum
+									</code></pre>
+									Next, execute <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a> using the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										orthofisher -f prot_and_names_list.txt -m hmms_list.txt
+									</code>.
+									<br /><br />
+									This will create a directory named <i>orthofisher_output</i>, which contains multiple files. Let's examine
+									the contents of the tab-delimited file, <i>short_summary.txt</i>, using the <i>cat</i> command:
+									<pre><code class="codeblock" style="background:#EBEDEF">
+cat orthofisher_output/short_summary.txt 
+	file_name	single-copy	multi-copy	absent	per_single-copy	per_multi-copy	per_absent
+	Aspergillus_fischeri_protein.faa	10	0	0	1.0	0.0	0.0
+	Aspergillus_flavus_protein.faa	10	0	0	1.0	0.0	0.0
+	Aspergillus_nidulans_protein.faa	10	0	0	1.0	0.0	0.0
+	Aspergillus_oryzae_protein.faa	10	0	0	1.0	0.0	0.0
+	Penicilliopsis_zonata_protein.faa	10	0	0	1.0	0.0	0.0
+	Penicillium_antarcticum_protein.faa	10	0	0	1.0	0.0	0.0
+	Penicillium_arizonense_protein.faa	10	0	0	1.0	0.0	0.0
+	Penicillium_digitatum_protein.faa	9	1	0	0.9	0.1	0.0
+									</code></pre>
+									As noted in the second column, the 10 sequence searches executed by <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
+									for each HMM resulted in the identification of one SC-OG with the exception of <i>Penicillium digitatum</i>, which had one near
+									universally SC-OG present in multiple copies (see column the third column). To determine which near universally SC-OG was present
+									in multiple copies, see the tab-delimited file, <i>long_summary.txt</i>, in the <i>orthofisher_output</i> directory. Thus, we can
+									conclude that these genes have sufficient taxon occupancy for use in phylogenomic inference.
+
+									Next, let's examine the <i>scog</i> output from <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>, which contains
+									individual multiple-sequence FASTA files for each near universally SC-OG.
+									<pre><code class="codeblock" style="background:#EBEDEF">
+ls orthofisher_output/scog/
+	orthofisher_output/scog/EOG092C00SU.hmm.orthofisher  orthofisher_output/scog/EOG092C07CA.hmm.orthofisher
+	orthofisher_output/scog/EOG092C00WD.hmm.orthofisher  orthofisher_output/scog/EOG092C08KH.hmm.orthofisher
+	orthofisher_output/scog/EOG092C02J3.hmm.orthofisher  orthofisher_output/scog/EOG092C097K.hmm.orthofisher
+	orthofisher_output/scog/EOG092C038B.hmm.orthofisher  orthofisher_output/scog/EOG092C0B3U.hmm.orthofisher
+	orthofisher_output/scog/EOG092C03KT.hmm.orthofisher  orthofisher_output/scog/EOG092C0BAH.hmm.orthofisher
+									</code></pre>
+									You're doing great! Some of the hardest parts of the workflow are now complete so you can definintely finish the tutorial from here!!
+									</p>
+									<br />
+									<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+									<hr>
+									<section id="Step3"></section>
+									<h3>Step 3: Align and trim SC-OGs</h3>
+									<p>
+									<strong>3.1. Align SC-OGs using MAFFT</strong>
+									<br />
+									To align sequences, we will use <a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a> with the "auto" parameter
+									by using the following command:
+									<code class="codeblock" style="background:#EBEDEF">for i in $(ls orthofisher_output/scog/*); do
+									mafft --auto $i > $i.mafft ; done</code>. This will loop through every multiple-sequence FASTA file in <i>orthofisher_output/scog/</i>,
+									align the sequences in each file, and redirect the output to the files with the same name except with the suffix ".mafft" added to them.
+									You can view the output using the <i>ls</i> command: <code class="codeblock" style="background:#EBEDEF">ls
+									orthofisher_output/scog/*mafft</code>.
+									<br /><br />
+									<strong>3.2. Trim alignments using ClipKIT</strong>
+									<br />
+									To trim sequences, we will use <a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a> with the default mode, the "smart-gap" mode,
+									by executing the following command:
+									<code class="codeblock" style="background:#EBEDEF">for i in $(ls orthofisher_output/scog/*mafft); do
+									clipkit $i -o $i.clipkit ; done</code>. Similar to the previous command, this will loop through every aligned multiple-sequence
+									FASTA file, trim sites in each alignment, and the outputted trimmed alignments will have the same name as the input files but with 
+									the ".clipkit" added as a suffix.
+								</p>
+								</section>
+								<br />
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Step4"></section>
+								<h3>Step 4: Create a concatenated supermatrix</h3>
+								<p>
+									<strong>4.1. Using the "create_concatenation_matrix" in PhyKIT</strong>
+									<br />
+									To concatenate sequences into a single supermatrix, we will use the "create_concatenation_matrix" (alias: "create_concat")
+									function from <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>. To do so, <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>
+									requires only one input file—a single-column file with the path to each trimmed alignment—which can be created using the
+									following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										ls orthofisher_output/scog/*clipkit > alignment_list.txt
+									</code>.
+									Next, execute the "create_concat" function in <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> with the following command:
+									<pre><code class="codeblock" style="background:#EBEDEF">
+phykit create_concat -a alignment_list.txt -p AspPen8_loci10
+	--------------------
+	| General features |
+	--------------------
+	Total number of taxa: 8
+	Total number of alignments: 10
+
+
+	----------------
+	| Output files |
+	----------------
+	Partition file output: AspPen8_loci10.partition
+	Concatenated fasta output: AspPen8_loci10.fa
+	Occupancy report: AspPen8_loci10.occupancy
+
+	Complete!
+									</code></pre> where the <i>-a</i> argument points to the file we just made and the <i>-p</i> argument provides the prefix
+									of the output files created by <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>. Here, I named the prefix "AspPen8_loci10"
+									because we are working with eight proteomes from <i>Aspergillus</i> and <i>Penicillium</i> species and we are using 10 loci. The
+									standard output also provides additional details such as the concatenated alignment being made from eight taxa and 10 alignments.
+									<br /><br />
+									More importantly, the names of the outputted files (i.e., AspPen8_loci10.partition, AspPen8_loci10.fa, and
+									AspPen8_loci10.occupancy) are also printed to the standard output. The partition file contains the boundaries of each gene in 
+									the concatenated alignment in <a href="https://cme.h-its.org/exelixis/resource/download/NewManual.pdf">RAxML</a> format. The 
+									concatenated FASTA output has the suffix ".fa" and the file with the ".occupancy" suffix details what taxa are present/absent
+									in each gene.
+									<br /><br />
+									<strong>4.2. Examine alignment properties using "alignment_summary" in BioKIT</strong>
+									<br />
+									Properties of multiple sequence alignments (e.g., alignment length) are commonly reported in phylogenomic studies. To summarize
+									the properties of the concatenated alignment, we will use the "alignment_summary" (alias: aln_summary) function in
+									<a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a> using the following command: <pre><code class="codeblock" style="background:#EBEDEF">
+biokit aln_summary AspPen8_loci10.fa
+
+	General Characteristics
+	=======================
+	8	Number of taxa
+	17143	Alignment length
+	3767	Parsimony informative sites
+	6619	Variable sites
+	10524	Constant sites
+
+	Character Frequencies
+	=====================
+	Y	3745
+	W	1367
+	V	7925
+	T	6936
+	S	9949
+	R	7584
+	Q	5166
+	P	6397
+	N	4784
+	M	3104
+	L	13540
+	K	8252
+	I	6531
+	H	2777
+	G	7189
+	F	4945
+	E	9243
+	D	8140
+	C	1530
+	A	10442
+	-	7598
+									</code></pre>Not all properties may be of interest to us such as character frequency (with the exception of alignment gappyness
+									represented by the "-" character). Thus, in a manuscript, one could report the alignment length and gappyness. Rather than
+									calculating all of these parameters, you can use <a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a> to calculate individual
+									parameters such as <a href="https://jlsteenwyk.com/BioKIT/usage/index.html#alignment-length">alignment length</a>. In addition to 
+									<a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a>, functions in <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> can also help 
+									<a href="https://jlsteenwyk.com/PhyKIT/tutorials/index.html#summarizing-information-content">summarize alignment (and
+									phylogenetic tree) information content</a>.
+								</p>
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Step5">
+								<h3>Step 5: Infer the putative species tree</h3>
+								<p>
+									<strong>5.1. Infer the species tree using IQ-TREE</strong>
+									<br />
+									To infer the species tree, we will use the maximum likelihood approach implemented in <a href="http://www.iqtree.org/">IQ-TREE</a>.
+									To do so, execute the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										iqtree2 -s AspPen8_loci10.fa -bb 1000 -m TEST
+									</code>
+									which will identify the best-fitting substitution model using
+									<a href="https://www.nature.com/articles/nmeth.4285">ModelFinder</a>. Bipartition support will be examined
+									using 1000 ultrafast bootstrap approximations (or 
+									<a href="https://academic.oup.com/mbe/article/35/2/518/4565479">UFBoot</a>).
+									<br /><br />
+									After exeucting this command, a number of different files will be made, which are worth reading more about
+									on the <a href="http://www.iqtree.org/">IQ-TREE</a> website. For now, we will examine the contents of
+									the file with best tree identified during tree search, <i>AspPen8_loci10.fa.treefile</i>.
+									To view the contents in a friendly format, we will use the "print_tree" function in
+									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> by executing the following command:
+									<pre><code class="codeblock" style="background:#EBEDEF">
+phykit print_tree AspPen8_loci10.fa.treefile
+    _____________________ Aspergillus_fischeri
+    |
+    |                      , Aspergillus_flavus
+    |   ___________________|
+    |__|                   | Aspergillus_oryzae
+   _|  |
+    |  |________________________________________ Aspergillus_nidulans
+    |
+    |        ____________________________________________ Penicilliopsis_zonata
+    |       |
+    |_______|                                   ___ Penicillium_antarcticum
+            |                          ________|
+            |_________________________|        |__ Penicillium_arizonense
+                                      |
+                                      |______________ Penicillium_digitatum
+									</code></pre>
+									<strong>5.2. Root the phylogeny using "root_tree" in PhyKIT</strong>
+									This phylogeny is unrooted (you can tell by the trifurcating first branch).
+									Therefore, we should root the phylogeny and then reexamine the tree. To do so,
+									we will use the "tree_root" function in
+									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>. To do so, we need to create
+									a file that lists all outgroup taxa, which in this case is just a single species, 
+									<i>Penicilliopsis_zonata</i>, by executing the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										echo "Penicilliopsis_zonata" > root.txt 
+									</code>
+									Next, root the tree with the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										phykit root_tree AspPen8_loci10.fa.treefile -r root.txt
+									</code>.
+									This will create a file titled "AspPen8_loci10.fa.treefile." Let's view the rooted
+									tree using the same command as before, but input the rooted phylogeny.
+									<pre><code class="codeblock" style="background:#EBEDEF">
+phykit print_tree AspPen8_loci10.fa.treefile.rooted 
+                                 ____________ Aspergillus_fischeri
+                                |
+                             ___|            , Aspergillus_flavus
+                            |   |   _________|
+                            |   |__|         | Aspergillus_oryzae
+                            |      |
+     _______________________|      |_____________________ Aspergillus_nidulans
+    |                       |
+    |                       |                  __ Penicillium_antarcticum
+    |                       |              ___|
+   _|                       |_____________|   |_ Penicillium_arizonense
+    |                                     |
+    |                                     |_______ Penicillium_digitatum
+    |
+    | Penicilliopsis_zonata
+									</code></pre>
+									Next, we can cross reference this phylogeny with the previously published
+									<a href="https://journals.asm.org/doi/10.1128/mbio.00925-19?permanently=true"><i>Aspergillus</i>
+									and <i>Penicillium</i> phylogeny</a>. Careful examination reveals that the two phylogenies
+									are perfectly congruent. Thus, we have successfully inferred the species tree among these 
+									eight taxa and it is congruent with previously inferred relationships - awesome!
+								</p>
+								</section>
+								<br />
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Closing_remarks">
+								<h3>Closing remarks</h3>
+								<p>
+									In this tutorial, we conducted phylogenomic analysis in five basic steps. Of note, this is one
+									workflow that is often supported by other analyses. For example, in the paper referenced earlier,
+									which inferred a species tree for the 
+									<a href="https://journals.asm.org/doi/10.1128/mbio.00925-19?permanently=true"><i>Aspergillus</i>
+									and <i>Penicillium</i> phylogeny</a>, a phylogenomic subsampling strategy was implemented to
+									identify incongruent bipartitions. Also, this is not <i>the</i> phylogenomic workflow. Numerous
+									pipelines have been presented over the years and I encourage readers to try other workflows. More
+									broadly, I encourage readers to go beyond relying solely on bootstrapping to identify support or
+									lack thereof in an inferred phylogeny. 
+									<br /><br />
+									I hope this helps with inferring your species trees. Please do not hesitate to 
+									<a href="../contact.html">contact me</a> if you have any questions or constructive comments.
+								</p>
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="References">
+								<h3>References</h3>
+								<p>
+									1. Hoang,D.T. et al. (2018)
+									<a href="https://academic.oup.com/mbe/article/35/2/518/4565479">UFBoot2: Improving the
+									Ultrafast Bootstrap Approximation.</a> Mol. Biol. Evol., 35, 518–522.<br />
+									2. Kalyaanamoorthy,S. et al. (2017)
+									<a href="https://www.nature.com/articles/nmeth.4285">ModelFinder: fast model selection
+									for accurate phylogenetic estimates</a>. Nat. Methods, 14, 587–589.<br />
+									3. Minh,B.Q. et al. (2020)
+									<a href="https://academic.oup.com/mbe/article/37/5/1530/5721363">IQ-TREE 2: New Models
+									and Efficient Methods for Phylogenetic Inference in the Genomic Era</a>.
+									Mol. Biol. Evol., 37, 1530–1534.<br />
+									4. Steenwyk,J.L. et al. (2019) 
+									<a href="https://journals.asm.org/doi/10.1128/mBio.00925-19">A Robust Phylogenomic
+									Time Tree for Biotechnologically and Medically Important Fungi in the Genera 
+									<i>Aspergillus</i> and <i>Penicillium</i></a>. MBio, 10.<br />
+									5. Steenwyk,J.L., et al. (2021)
+									<a href="https://www.biorxiv.org/content/10.1101/2021.10.02.462868v2">BioKIT: a versatile
+									toolkit for processing and analyzing diverse types of sequence data</a>. bioRxiv,
+									2021.10.02.462868.<br />
+									6. Steenwyk,J.L. et al. (2020)
+									<a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001007">ClipKIT:
+									A multiple sequence alignment trimming software for accurate phylogenomic inference</a>.
+									PLOS Biol., 18, e3001007.<br />
+									7. Steenwyk,J.L., et al. (2021)
+									<a href="https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab096/6131675?redirectedFrom=fulltext">PhyKIT:
+									a broadly applicable UNIX shell toolkit for processing and analyzing phylogenomic data</a>.
+									Bioinformatics.<br />
+									8. Steenwyk,J.L. and Rokas,A. (2021) 
+									<a href="https://academic.oup.com/g3journal/article/11/9/jkab250/6321954">orthofisher: a
+									broadly applicable tool for automated gene identification and retrieval</a>.
+									G3 Genes|Genomes|Genetics, 11.<br />
+									9. Zdobnov,E.M. et al. (2017) <a href="https://academic.oup.com/nar/article/45/D1/D744/2605742">OrthoDB
+									v9.1: cataloging evolutionary and functional annotations for animal, fungal, plant,
+									archaeal, bacterial and viral orthologs</a>. Nucleic Acids Res., 45, D744–D749.<br />
+								</p>
+								</section>
+								<br />
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+							</section>
+					</div>
+				</div>
+			</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/jlsteenwyk" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" class="icon brands alt fa-google"><span class="label">Google</span></a></li>
+						<li><a href="https://www.researchgate.net/profile/Jacob_Steenwyk" class="icon brands alt fa-researchgate"><span class="label">ResearchGate</span></a></li>
+						<li><a href="https://github.com/JLSteenwyk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/jlsteenwyk/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="../contact.html" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2020 Jacob L. Steenwyk</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
