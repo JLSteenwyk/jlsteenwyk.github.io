@@ -56,7 +56,7 @@
 						<!-- Content -->
 							<section id="content">
 								<header class="major">
-									<h2>From proteomes to species tree: five-step phylogenomics made easy</h2>
+									<h2>Five-step phylogenomics, from proteomes to species tree</h2>
 								</header>
 								<p style="color: black">
 									<a href="#Introduction" class="goto-pub scrolly">
@@ -104,24 +104,31 @@
 									Introduction
 								</h3>
 								<p>
-									Understanding the evolutionary history among a set of organisms is a prerequisite for understanding numerous biological
-									phenomenon such as positive selection, the evolution of genes and traits, and more. The use of genome-scale data
-									to infer the evolutionary history among a set of organisms, which is represented as a species tree, is known as phylogenomics
-									Here, we will go over a simple five step workflow to go from proteomes
-									to a (putative) species tree.
-									As is true of any analysis, assumptions will be made. More specifically, this tutorial aims
-									to be a soft introduction for how to conduct "hands-on" phylogenomic analysis. As a result, we will not reconstruct the evolutionary
-									history among hundreds of species using hundreds of loci, which is becoming more commonplace; instead, to convey key concepts and
-									introduce a "typical" workflow, we will use eight proteomes and 10 loci.
+									Knowledge of the evolutionary history among a set of organisms is a prerequisite for studying numerous biological
+									phenomenon such as positive selection, trait evolution, and more. The use of genome-scale data
+									to infer the evolutionary history among a set of organisms, which is often referred to as a species tree,
+									is known as phylogenomics. 
+									
 									<br /><br />
-									As is true of any analysis, assumptions will be made.
+									In this tutorial, we will go over a simple five-step workflow to go from proteomes
+									to a (putative) species tree. 
+									This tutorial is non-exhaustive and serves as 
+									a soft introduction for how to conduct "hands-on" phylogenomic analysis. For practical reasons, we will not
+									reconstruct the evolutionary
+									history among hundreds of species using hundreds of loci, which is becoming more commonplace; instead, to
+									convey key concepts and
+									introduce a "typical" workflow, we will use eight proteomes and 10 loci. 
+									<br /><br />
+									As is true of any analysis grounded in statistics, assumptions will be made. 
 									An in-depth understanding of the assumptions being made during phylogenomic analysis is important, but this tutorial is
-									not intended to go into this level of specificity. Readers may refer to an non-exhaustive list of additional
+									not intended to go into this level of depth. Readers may refer to an non-exhaustive list of additional
 									resources for further reading to enhance their understanding of potential caveats and sources of 
-									error—<a href="https://www.nature.com/articles/s41576-020-0233-0">Kapli <i>et al.</i> (2020), Nature Reviews Genetics</a>;
-									<a href="https://www.nature.com/articles/nrg3186">Yang & Rannala (2012), Nature Reviews Genetics</a>; and
+									error—<a href="https://www.nature.com/articles/s41576-020-0233-0">Kapli <i>et al.</i> (2020), Nat. Rev. Gen.</a>;
+									<a href="https://www.nature.com/articles/nrg3186">Yang & Rannala (2012), Nat. Rev. Gen.</a>; and
 									<a href="https://www.annualreviews.org/doi/10.1146/annurev.ecolsys.35.112202.130205">Philippe
-									<i>et al.</i> (2005), Annual Review of Ecology, Evolution, and Systematics</a>.
+									<i>et al.</i> (2005), Ann. Rev. of Eco., Evo., and Sys.</a>. Furthermore, species trees are
+									hypotheses and different workflows can result in incongruent
+									species tree inference.
 									<br /><br />
 									Note, all commands are intended to be executed in a UNIX environment, a common interface for many bioinformaticians. 
 									This tutorial assumes readers have some familiarity with basic UNIX commands such as making directories, changing into
@@ -143,7 +150,7 @@
 								<h3>Step 1: Data collection and software installation</h3>
 								<p>
 									<strong>1.1. Set up your working directory</strong><br />
-									To keep everything organized, we will first make a directory for this tutorial called phylogenomics_made_easy with the
+									To keep everything organized, we will first make a directory for this tutorial called <i>phylogenomics_made_easy</i> with the
 									<i>mkdir</i> command:
 									<code class="codeblock" style="background:#EBEDEF">
 										mkdir phylogenomics_made_easy
@@ -155,12 +162,15 @@
 									<br /><br />
 									<strong>1.2. Collect data</strong><br />
 									Next, collect the proteomes of the species whose evolutionary history you are interested in inferring. For simplicity,
-									I have precompiled a set of eight proteomes of <i>Aspergillus</i> and <i>Penicillium</i> species to use. All proteomes
+									I have precompiled a set of eight proteomes of <i>Aspergillus</i> and <i>Penicillium</i> species to use with one outgroup taxon,
+									<i>Penicilliopsis zonata</i>. All proteomes
 									were downloaded from the National Center for Biotechnology Information (or <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a>).
 
 									<center><strong><a href="prot.tar.gz" download="prot.tar.gz">Download proteomes</strong></a></center>
 
 									<br />
+									We will use these proteomes because their evolutionary relationships have been previously established
+									(<a href="https://jlsteenwyk.com/publication_pdfs/2019_Steenwyk_et_al_mBio.pdf">Steenwyk and Rokas, 2019</a>)
 									Move the proteomes to the current working directory with the <i>mv</i> command:
 									<code class="codeblock" style="background:#EBEDEF">
 										mv path_to_file/prot.tar.gz .
@@ -171,7 +181,7 @@
 									</code>.
 									<br /><br />
 									<strong>1.3. Install software</strong><br />
-									Lastly, we will have to download an install the necessary software for the tutorial. Most software will
+									We will have to download an install the necessary software for the tutorial. Most software will
 									be downloaded from <a href="https://pypi.org/">PyPi</a>. To do so, we will continue to implement best practices
 									and first create a virtual environment to store all installed software. A virtual environment is a "self-contained
 									directory tree that contains a Python installation for a particular version of Python, plus a number of additional
@@ -192,14 +202,14 @@
 									<code class="codeblock" style="background:#EBEDEF">
 										pip install orthofisher clipkit phykit jlsteenwyk-biokit
 									</code>.
-									To be transparent, these are all software I have developed. They have enabled me to conduct diverse
+									<i>Disclaimer: these are all software I have developed.</i> They have enabled me to conduct diverse
 									phylogenomic analyses and so I want to share what I've learned and created with you. 
 									<br /><br />
 									The last pieces of software that need to be installed are <a href="http://hmmer.org/">HMMER</a>,
 									<a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a>, and
 									<a href="http://www.iqtree.org/">IQ-TREE</a>. Each of these software have their own installation
 									instructions. Please follow the link for each software and install according to the developer's recommendations.
-									Add the path of each executable to your <i>$PATH</i>. Instructions to do so can be found on numerous online
+									Add the path of each executable to your <i>$PATH</i> variable. Instructions to do so can be found on numerous online
 									discussion forums such as
 									<a href="https://askubuntu.com/questions/109381/how-to-add-path-of-a-program-to-path-environment-variable">askubuntu</a>
 									and <a href="https://unix.stackexchange.com/questions/3809/how-can-i-make-a-program-executable-from-everywhere">unix stackexchange</a>.
@@ -213,8 +223,9 @@
 								<p>
 									<strong>2.1. Obtain HMMs</strong><br />
 									Single-copy orthologous genes (SC-OGs) refer a set of homologous genes that originated via speciation and are present only once
-									among species of interest. These genes are typically used for phylogenomic analyses because genes that have undergone duplication
-									and deletion can have cloudy evolutionary histories.
+									among species of interest. These genes are typically used for phylogenomic analyses because current wisdom suggests genes that
+									have undergone duplication
+									and deletion may have evolutionary histories that do not follow the species tree.
 									<br /><br />
 									To identify SC-OGs, we will use
 									<a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
@@ -229,8 +240,8 @@
 
 									<center><strong><a href="hmms.tar.gz" download="hmms.tar.gz">Download HMMs</strong></a></center><br />
 
-									Of note, custom sets of HMMs can be used as input for orthofisher. Instructions on creating custom HMMs can be found in
-									the <a href="https://jlsteenwyk.com/orthofisher/tutorial/index.html">documentation</a> of orthofisher. Move the downloaded
+									Of note, a custom set of HMMs can be used as input for orthofisher. Instructions on creating custom HMMs can be found in
+									the <a href="https://jlsteenwyk.com/orthofisher/tutorial/index.html">orthofisher documentation</a>. Move the downloaded
 									HMMs to the current working directory with the <i>mv</i> command:
 									<code class="codeblock" style="background:#EBEDEF">
 										mv path_to_file/hmms.tar.gz .
@@ -245,15 +256,15 @@
 									</code>.
 									<br /><br />
 									<strong>2.2. Identify SC-OGs using orthofisher</strong><br />
-									Now, we can create the input files for <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a> by listing
-									the input files and writing the output to text files using the following commands:
+									Now, we can create the input files for <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>. To do so, list
+									the input files and write the output to text files using the following commands:
 									<code class="codeblock" style="background:#EBEDEF">
 										ls hmms/* > hmms_list.txt
 									</code>
 									and 
 									<code class="codeblock" style="background:#EBEDEF">
 										paste <(ls prot/*) <(ls prot/* | sed 's/prot\///g' | sed 's/_protein.faa//g') > prot_and_names_list.txt
-									</code>. The latter creates a two column file wherein the first column is the file name and path of a proteome
+									</code>. The latter creates a two column file wherein the first column is the file name and path of the proteome
 									and the second column is the species name associated with the proteome. To view the contents of <i>prot_and_names_list.txt</i>,
 									use the <i>cat</i> command:
 									<pre><code class="codeblock" style="background:#EBEDEF">
@@ -273,7 +284,7 @@ cat prot_and_names_list.txt
 									</code>.
 									<br /><br />
 									This will create a directory named <i>orthofisher_output</i>, which contains multiple files. Let's examine
-									the contents of the tab-delimited file, <i>short_summary.txt</i>, using the <i>cat</i> command:
+									the contents of the tab-delimited file <i>short_summary.txt</i> using the <i>cat</i> command:
 									<pre><code class="codeblock" style="background:#EBEDEF">
 cat orthofisher_output/short_summary.txt 
 	file_name	single-copy	multi-copy	absent	per_single-copy	per_multi-copy	per_absent
@@ -286,12 +297,13 @@ cat orthofisher_output/short_summary.txt
 	Penicillium_arizonense_protein.faa	10	0	0	1.0	0.0	0.0
 	Penicillium_digitatum_protein.faa	9	1	0	0.9	0.1	0.0
 									</code></pre>
-									As noted in the second column, the 10 sequence searches executed by <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
+									As noted in the second column, for each of the 10 sequence searches executed by <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
 									for each HMM resulted in the identification of one SC-OG with the exception of <i>Penicillium digitatum</i>, which had one near
 									universally SC-OG present in multiple copies (see column the third column). To determine which near universally SC-OG was present
-									in multiple copies, see the tab-delimited file, <i>long_summary.txt</i>, in the <i>orthofisher_output</i> directory. Thus, we can
+									in multiple copies, see the tab-delimited file, <i>long_summary.txt</i>, in the <i>orthofisher_output</i> directory. 
+									Based on these observations, we can
 									conclude that these genes have sufficient taxon occupancy for use in phylogenomic inference.
-
+									<br /><br />
 									Next, let's examine the <i>scog</i> output from <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>, which contains
 									individual multiple-sequence FASTA files for each near universally SC-OG.
 									<pre><code class="codeblock" style="background:#EBEDEF">
@@ -302,6 +314,27 @@ ls orthofisher_output/scog/
 	orthofisher_output/scog/EOG092C038B.hmm.orthofisher  orthofisher_output/scog/EOG092C0B3U.hmm.orthofisher
 	orthofisher_output/scog/EOG092C03KT.hmm.orthofisher  orthofisher_output/scog/EOG092C0BAH.hmm.orthofisher
 									</code></pre>
+									One advantage of <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
+									is that these files are automatically made for us and formatted in a user-friendly way.
+									For example, the headers of each sequence are nicely named;
+									examination of the headers in <i>orthofisher_output/scog/EOG092C07CA.hmm.orthofisher</i> reveals that it is obvious which sequence
+									comes from which taxa.
+									<pre><code class="codeblock" style="background:#EBEDEF">
+grep ">" ../../FILES_tutorial/orthofisher_output/scog/EOG092C07CA.hmm.orthofisher
+	>Aspergillus_fischeri EAW21995.1|0.0|1156.8
+	>Aspergillus_flavus QRD94170.1|0.0|1153.6
+	>Aspergillus_nidulans EAA62991.1|0.0|1143.2
+	>Aspergillus_oryzae BAE63272.1|0.0|1153.9
+	>Penicilliopsis_zonata OJJ43347.1|0.0|1156.1
+	>Penicillium_antarcticum OQD80813.1|0.0|1145.7
+	>Penicillium_arizonense OGE54164.1|0.0|1145.2
+	>Penicillium_digitatum EKV21956.1|0.0|1137.9
+									</code></pre>
+									The first column in the header is the genus and species name, which was specified in the second column of the
+									<i>prot_and_names_list.txt</i> file; the second column has the gene identifier, e-value, and bitscore separated by a 
+									vertical bar (or pipe character "|") for the best hit
+									identified during sequence search.
+									<br /><br />
 									You're doing great! Some of the hardest parts of the workflow are now complete so you can definintely finish the tutorial from here!!
 									</p>
 									<br />
@@ -312,17 +345,18 @@ ls orthofisher_output/scog/
 									<p>
 									<strong>3.1. Align SC-OGs using MAFFT</strong>
 									<br />
-									To align sequences, we will use <a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a> with the "auto" parameter
-									by using the following command:
+									To align sequences, we will use <a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a> with the "auto" parameter 
+									(<a href="https://academic.oup.com/mbe/article/30/4/772/1073398">Katoh,K. and Standley, 2013</a>) using the following command:
 									<code class="codeblock" style="background:#EBEDEF">for i in $(ls orthofisher_output/scog/*); do
 									mafft --auto $i > $i.mafft ; done</code>. This will loop through every multiple-sequence FASTA file in <i>orthofisher_output/scog/</i>,
-									align the sequences in each file, and redirect the output to the files with the same name except with the suffix ".mafft" added to them.
-									You can view the output using the <i>ls</i> command: <code class="codeblock" style="background:#EBEDEF">ls
+									align the sequences in each file, and redirect the output to the files to the same directory and with the same name except
+									with the suffix ".mafft" added to them. You can view the output using the <i>ls</i> command: <code class="codeblock" style="background:#EBEDEF">ls
 									orthofisher_output/scog/*mafft</code>.
 									<br /><br />
 									<strong>3.2. Trim alignments using ClipKIT</strong>
 									<br />
-									To trim sequences, we will use <a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a> with the default mode, the "smart-gap" mode,
+									To trim sequences, we will use <a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a> with the default mode, the "smart-gap" mode
+									(<a href="https://jlsteenwyk.com/publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf">Steenwyk <i>et al.</i>, 2020</a>),
 									by executing the following command:
 									<code class="codeblock" style="background:#EBEDEF">for i in $(ls orthofisher_output/scog/*mafft); do
 									clipkit $i -o $i.clipkit ; done</code>. Similar to the previous command, this will loop through every aligned multiple-sequence
@@ -339,7 +373,8 @@ ls orthofisher_output/scog/
 									<strong>4.1. Using the "create_concatenation_matrix" in PhyKIT</strong>
 									<br />
 									To concatenate sequences into a single supermatrix, we will use the "create_concatenation_matrix" (alias: "create_concat")
-									function from <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>. To do so, <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>
+									function from <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> 
+									(<a href="https://jlsteenwyk.com/publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf">Steenwyk <i>et al.</i>, 2021a</a>). To do so, <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>
 									requires only one input file—a single-column file with the path to each trimmed alignment—which can be created using the
 									following command:
 									<code class="codeblock" style="background:#EBEDEF">
@@ -365,12 +400,13 @@ phykit create_concat -a alignment_list.txt -p AspPen8_loci10
 	Complete!
 									</code></pre> where the <i>-a</i> argument points to the file we just made and the <i>-p</i> argument provides the prefix
 									of the output files created by <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>. Here, I named the prefix "AspPen8_loci10"
-									because we are working with eight proteomes from <i>Aspergillus</i> and <i>Penicillium</i> species and we are using 10 loci. The
-									standard output also provides additional details such as the concatenated alignment being made from eight taxa and 10 alignments.
+									because we are working with eight proteomes from <i>Aspergillus</i> and <i>Penicillium</i> species (and one outgroup taxon) and we are using 10 loci. The
+									standard output also provides additional details such as the number of taxa and alignments that contribute to the concatenated alignment.
 									<br /><br />
-									More importantly, the names of the outputted files (i.e., AspPen8_loci10.partition, AspPen8_loci10.fa, and
-									AspPen8_loci10.occupancy) are also printed to the standard output. The partition file contains the boundaries of each gene in 
-									the concatenated alignment in <a href="https://cme.h-its.org/exelixis/resource/download/NewManual.pdf">RAxML</a> format. The 
+									The names of the outputted files (i.e., <i>AspPen8_loci10.partition</i>, <i>AspPen8_loci10.fa</i>, and
+									<i>AspPen8_loci10.occupancy</i>) are also printed to the standard output. The partition file contains the boundaries of each gene in 
+									the concatenated alignment in <a href="https://cme.h-its.org/exelixis/resource/download/NewManual.pdf">RAxML</a> format
+									(<a href="https://academic.oup.com/bioinformatics/article/30/9/1312/238053">Stamatakis, 2014</a>). The 
 									concatenated FASTA output has the suffix ".fa" and the file with the ".occupancy" suffix details what taxa are present/absent
 									in each gene.
 									<br /><br />
@@ -378,7 +414,9 @@ phykit create_concat -a alignment_list.txt -p AspPen8_loci10
 									<br />
 									Properties of multiple sequence alignments (e.g., alignment length) are commonly reported in phylogenomic studies. To summarize
 									the properties of the concatenated alignment, we will use the "alignment_summary" (alias: aln_summary) function in
-									<a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a> using the following command: <pre><code class="codeblock" style="background:#EBEDEF">
+									<a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a>
+									(<a href="https://www.biorxiv.org/content/10.1101/2021.10.02.462868v2">Steenwyk <i>et al.</i>, 2021b</a>)
+									using the following command: <pre><code class="codeblock" style="background:#EBEDEF">
 biokit aln_summary AspPen8_loci10.fa
 
 	General Characteristics
@@ -412,9 +450,9 @@ biokit aln_summary AspPen8_loci10.fa
 	C	1530
 	A	10442
 	-	7598
-									</code></pre>Not all properties may be of interest to us such as character frequency (with the exception of alignment gappyness
-									represented by the "-" character). Thus, in a manuscript, one could report the alignment length and gappyness. Rather than
-									calculating all of these parameters, you can use <a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a> to calculate individual
+									</code></pre>Not all properties calculated by the "aln_summary" function may be of interest to us such as character frequency
+									(with the exception of alignment gappyness represented by the "-" character). Rather than calculating all of these parameters,
+									you can use <a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a> to calculate individual
 									parameters such as <a href="https://jlsteenwyk.com/BioKIT/usage/index.html#alignment-length">alignment length</a>. In addition to 
 									<a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a>, functions in <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> can also help 
 									<a href="https://jlsteenwyk.com/PhyKIT/tutorials/index.html#summarizing-information-content">summarize alignment (and
@@ -428,24 +466,28 @@ biokit aln_summary AspPen8_loci10.fa
 								<p>
 									<strong>5.1. Infer the species tree using IQ-TREE</strong>
 									<br />
-									To infer the species tree, we will use the maximum likelihood approach implemented in <a href="http://www.iqtree.org/">IQ-TREE</a>.
+									To infer the species tree, we will use the maximum likelihood approach implemented in <a href="http://www.iqtree.org/">IQ-TREE</a>
+									(<a href ="https://academic.oup.com/mbe/article/37/5/1530/5721363">Minh <i>et al.</i>, 2020</a>).
 									To do so, execute the following command:
 									<code class="codeblock" style="background:#EBEDEF">
 										iqtree2 -s AspPen8_loci10.fa -bb 1000 -m TEST
 									</code>
 									which will identify the best-fitting substitution model using
-									<a href="https://www.nature.com/articles/nmeth.4285">ModelFinder</a>. Bipartition support will be examined
-									using 1000 ultrafast bootstrap approximations (or 
-									<a href="https://academic.oup.com/mbe/article/35/2/518/4565479">UFBoot</a>).
+									<a href="https://www.nature.com/articles/nmeth.4285">ModelFinder</a> 
+									(<a href="https://www.nature.com/articles/nmeth.4285">Kalyaanamoorthy <i>et al.</i>, 2017</a>).
+									Bipartition support will be examined
+									using 1000 ultrafast bootstrap approximations
+									(<a href="https://academic.oup.com/mbe/article/35/2/518/4565479">Hoang <i>et al.,</i> 2017</a>).
 									<br /><br />
-									After exeucting this command, a number of different files will be made, which are worth reading more about
+									After exeucting this command, a number of different files will be made. Readers can obtain more information about
+									the various outputted files
 									on the <a href="http://www.iqtree.org/">IQ-TREE</a> website. For now, we will examine the contents of
 									the file with best tree identified during tree search, <i>AspPen8_loci10.fa.treefile</i>.
 									To view the contents in a friendly format, we will use the "print_tree" function in
 									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> by executing the following command:
 									<pre><code class="codeblock" style="background:#EBEDEF">
 phykit print_tree AspPen8_loci10.fa.treefile
-    _____________________ Aspergillus_fischeri
+     _____________________ Aspergillus_fischeri
     |
     |                      , Aspergillus_flavus
     |   ___________________|
@@ -461,11 +503,13 @@ phykit print_tree AspPen8_loci10.fa.treefile
                                       |
                                       |______________ Penicillium_digitatum
 									</code></pre>
-									<strong>5.2. Root the phylogeny using "root_tree" in PhyKIT</strong>
+									<br />
+									<strong>5.2. Root the phylogeny using "root_tree" in PhyKIT</strong><br />
 									This phylogeny is unrooted (you can tell by the trifurcating first branch).
-									Therefore, we should root the phylogeny and then reexamine the tree. To do so,
+									An outgroup taxon, <i>Penicilliopsis zonata</i>, was included; thus, we can root
+									the phylogeny and then reexamine the rooted tree topology. To root the phylogeny,
 									we will use the "tree_root" function in
-									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>. To do so, we need to create
+									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>. First, we need to create
 									a file that lists all outgroup taxa, which in this case is just a single species, 
 									<i>Penicilliopsis_zonata</i>, by executing the following command:
 									<code class="codeblock" style="background:#EBEDEF">
@@ -475,8 +519,8 @@ phykit print_tree AspPen8_loci10.fa.treefile
 									<code class="codeblock" style="background:#EBEDEF">
 										phykit root_tree AspPen8_loci10.fa.treefile -r root.txt
 									</code>.
-									This will create a file titled "AspPen8_loci10.fa.treefile." Let's view the rooted
-									tree using the same command as before, but input the rooted phylogeny.
+									This will output a file named <i>AspPen8_loci10.fa.treefile.rooted.</i> View the rooted
+									tree using the same command as before.
 									<pre><code class="codeblock" style="background:#EBEDEF">
 phykit print_tree AspPen8_loci10.fa.treefile.rooted 
                                  ____________ Aspergillus_fischeri
@@ -499,7 +543,7 @@ phykit print_tree AspPen8_loci10.fa.treefile.rooted
 									<a href="https://journals.asm.org/doi/10.1128/mbio.00925-19?permanently=true"><i>Aspergillus</i>
 									and <i>Penicillium</i> phylogeny</a>. Careful examination reveals that the two phylogenies
 									are perfectly congruent. Thus, we have successfully inferred the species tree among these 
-									eight taxa and it is congruent with previously inferred relationships - awesome!
+									eight taxa and found that our inferred tree supports previously inferred relationships - awesome!
 								</p>
 								</section>
 								<br />
@@ -508,17 +552,16 @@ phykit print_tree AspPen8_loci10.fa.treefile.rooted
 								<section id="Closing_remarks">
 								<h3>Closing remarks</h3>
 								<p>
-									In this tutorial, we conducted phylogenomic analysis in five basic steps. Of note, this is one
-									workflow that is often supported by other analyses. For example, in the paper referenced earlier,
-									which inferred a species tree for the 
-									<a href="https://journals.asm.org/doi/10.1128/mbio.00925-19?permanently=true"><i>Aspergillus</i>
-									and <i>Penicillium</i> phylogeny</a>, a phylogenomic subsampling strategy was implemented to
-									identify incongruent bipartitions. Also, this is not <i>the</i> phylogenomic workflow. Numerous
-									pipelines have been presented over the years and I encourage readers to try other workflows. More
-									broadly, I encourage readers to go beyond relying solely on bootstrapping to identify support or
-									lack thereof in an inferred phylogeny. 
+									In this tutorial, we conducted phylogenomic analysis in five basic steps. The
+									workflow executed here can be, and often is, supported by other analyses.
+									For example, in the paper referenced earlier—in which a 
+									<a href="https://journals.asm.org/doi/10.1128/mbio.00925-19?permanently=true">species tree for 
+									<i>Aspergillus</i> and <i>Penicillium</i> species</a> was inferred—a phylogenomic subsampling strategy was implemented to
+									identify incongruent bipartitions. Also, this tutorial should not be thought of as <i>the</i> phylogenomic workflow.
+									Numerous workflows have been presented over the years and I encourage readers to find what works best for their
+									research question.
 									<br /><br />
-									I hope this helps with inferring your species trees. Please do not hesitate to 
+									Congratulations on inferring your species tree! Please do not hesitate to 
 									<a href="../contact.html">contact me</a> if you have any questions or constructive comments.
 								</p>
 								</section>
@@ -533,31 +576,44 @@ phykit print_tree AspPen8_loci10.fa.treefile.rooted
 									2. Kalyaanamoorthy,S. et al. (2017)
 									<a href="https://www.nature.com/articles/nmeth.4285">ModelFinder: fast model selection
 									for accurate phylogenetic estimates</a>. Nat. Methods, 14, 587–589.<br />
-									3. Minh,B.Q. et al. (2020)
+									3. Kapli,P. et al. (2020)
+									<a href="https://www.nature.com/articles/s41576-020-0233-0">Phylogenetic tree building
+									in the genomic age</a>. Nat. Rev. Genet.<br />
+									4. Minh,B.Q. et al. (2020)
 									<a href="https://academic.oup.com/mbe/article/37/5/1530/5721363">IQ-TREE 2: New Models
 									and Efficient Methods for Phylogenetic Inference in the Genomic Era</a>.
 									Mol. Biol. Evol., 37, 1530–1534.<br />
-									4. Steenwyk,J.L. et al. (2019) 
+									5. Philippe,H. et al. (2005)
+									<a href="https://www.annualreviews.org/doi/10.1146/annurev.ecolsys.35.112202.130205">Phylogenomics</a>.
+									Annu. Rev. Ecol. Evol. Syst., 36, 541–562.<br />
+									6. Stamatakis,A. (2014)
+									<a href="https://academic.oup.com/bioinformatics/article/30/9/1312/238053">RAxML version
+									8: a tool for phylogenetic analysis and post-analysis of large phylogenies</a>.
+									Bioinformatics, 30, 1312–1313.<br />
+									7. Steenwyk,J.L. et al. (2019) 
 									<a href="https://journals.asm.org/doi/10.1128/mBio.00925-19">A Robust Phylogenomic
 									Time Tree for Biotechnologically and Medically Important Fungi in the Genera 
 									<i>Aspergillus</i> and <i>Penicillium</i></a>. MBio, 10.<br />
-									5. Steenwyk,J.L., et al. (2021)
+									8. Steenwyk,J.L., et al. (2021)
 									<a href="https://www.biorxiv.org/content/10.1101/2021.10.02.462868v2">BioKIT: a versatile
 									toolkit for processing and analyzing diverse types of sequence data</a>. bioRxiv,
 									2021.10.02.462868.<br />
-									6. Steenwyk,J.L. et al. (2020)
+									9. Steenwyk,J.L. et al. (2020)
 									<a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001007">ClipKIT:
 									A multiple sequence alignment trimming software for accurate phylogenomic inference</a>.
 									PLOS Biol., 18, e3001007.<br />
-									7. Steenwyk,J.L., et al. (2021)
+									10. Steenwyk,J.L., et al. (2021)
 									<a href="https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab096/6131675?redirectedFrom=fulltext">PhyKIT:
 									a broadly applicable UNIX shell toolkit for processing and analyzing phylogenomic data</a>.
 									Bioinformatics.<br />
-									8. Steenwyk,J.L. and Rokas,A. (2021) 
+									11. Steenwyk,J.L. and Rokas,A. (2021) 
 									<a href="https://academic.oup.com/g3journal/article/11/9/jkab250/6321954">orthofisher: a
 									broadly applicable tool for automated gene identification and retrieval</a>.
 									G3 Genes|Genomes|Genetics, 11.<br />
-									9. Zdobnov,E.M. et al. (2017) <a href="https://academic.oup.com/nar/article/45/D1/D744/2605742">OrthoDB
+									12. Yang,Z. and Rannala,B. (2012)
+									<a href="https://www.nature.com/articles/nrg3186">Molecular phylogenetics: principles and practice.</a>
+									Nat. Rev. Genet., 13, 303–314.<br />
+									13. Zdobnov,E.M. et al. (2017) <a href="https://academic.oup.com/nar/article/45/D1/D744/2605742">OrthoDB
 									v9.1: cataloging evolutionary and functional annotations for animal, fungal, plant,
 									archaeal, bacterial and viral orthologs</a>. Nucleic Acids Res., 45, D744–D749.<br />
 								</p>
