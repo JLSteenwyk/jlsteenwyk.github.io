@@ -117,11 +117,13 @@
 									reconstruct the evolutionary
 									history among hundreds of species using hundreds of loci, which is becoming more commonplace; instead, to
 									convey key concepts and
-									introduce a "typical" workflow, we will use eight proteomes and 10 loci. 
+									introduce a "typical" workflow, we will use eight proteomes and 10 loci. This workflow is based on
+									previously published work
+									(<a href="https://jlsteenwyk.com/publication_pdfs/2019_Steenwyk_et_al_mBio.pdf">Steenwyk and Rokas, 2019</a>).
 									<br /><br />
 									As is true of any analysis grounded in statistics, assumptions will be made. 
-									An in-depth understanding of the assumptions being made during phylogenomic analysis is important, but this tutorial is
-									not intended to go into this level of depth. Readers may refer to an non-exhaustive list of additional
+									An in-depth understanding of the assumptions being made during phylogenomic analysis is important, but that is beyond
+									the scope of this tutorial. Readers may refer to an non-exhaustive list of additional
 									resources for further reading to enhance their understanding of potential caveats and sources of 
 									error—<a href="https://www.nature.com/articles/s41576-020-0233-0">Kapli <i>et al.</i> (2020), Nat. Rev. Gen.</a>;
 									<a href="https://www.nature.com/articles/nrg3186">Yang & Rannala (2012), Nat. Rev. Gen.</a>; and
@@ -130,7 +132,7 @@
 									hypotheses an should be treated as such. It is possible, and in some cases expected, that different workflows
 									will result in different species tree inferences.
 									<br /><br />
-									Note, all commands are intended to be executed in a UNIX environment, a common interface for many bioinformaticians. 
+									Note, all commands are intended to be executed in the UNIX environment, a common system for many bioinformaticians. 
 									This tutorial assumes readers have some familiarity with basic UNIX commands such as making directories, changing into
 									them, etc.
 									Commands are displayed in code blocks that have a light grey background.
@@ -170,7 +172,7 @@
 
 									<br />
 									We will use these proteomes because their evolutionary relationships have been previously established
-									(<a href="https://jlsteenwyk.com/publication_pdfs/2019_Steenwyk_et_al_mBio.pdf">Steenwyk and Rokas, 2019</a>)
+									(<a href="https://jlsteenwyk.com/publication_pdfs/2019_Steenwyk_et_al_mBio.pdf">Steenwyk and Rokas, 2019</a>).
 									Move the proteomes to the current working directory with the <i>mv</i> command:
 									<code class="codeblock" style="background:#EBEDEF">
 										mv path_to_file/prot.tar.gz .
@@ -181,7 +183,7 @@
 									</code>.
 									<br /><br />
 									<strong>1.3. Install software</strong><br />
-									We will have to download an install the necessary software for the tutorial. Most software will
+									We will have to download and install the necessary software for the tutorial. Most software will
 									be downloaded from <a href="https://pypi.org/">PyPi</a>. To do so, we will continue to implement best practices
 									and first create a virtual environment to store all installed software. A virtual environment is a "self-contained
 									directory tree that contains a Python installation for a particular version of Python, plus a number of additional
@@ -198,7 +200,7 @@
 									<a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>, 
 									<a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a>,
 									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>, and
-									<a href="https://jlsteenwyk.com/PhyKIT/">BioKIT</a> using the <i>pip install</i> command.
+									<a href="https://jlsteenwyk.com/PhyKIT/">BioKIT</a> using the <i>pip install</i> command:
 									<code class="codeblock" style="background:#EBEDEF">
 										pip install orthofisher clipkit phykit jlsteenwyk-biokit
 									</code>.
@@ -224,8 +226,7 @@
 									<strong>2.1. Obtain HMMs</strong><br />
 									Single-copy orthologous genes (SC-OGs) refer a set of homologous genes that originated via speciation and are present only once
 									among species of interest. These genes are typically used for phylogenomic analyses because current wisdom suggests genes that
-									have undergone duplication
-									and deletion may have evolutionary histories that do not follow the species tree.
+									have undergone duplication and deletion are likely to have evolutionary histories that do not follow the species tree.
 									<br /><br />
 									To identify SC-OGs, we will use
 									<a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
@@ -298,11 +299,11 @@ cat orthofisher_output/short_summary.txt
 	Penicillium_digitatum_protein.faa	9	1	0	0.9	0.1	0.0
 									</code></pre>
 									As noted in the second column, for each of the 10 sequence searches executed by <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
-									for each HMM resulted in the identification of one SC-OG with the exception of <i>Penicillium digitatum</i>, which had one near
+									resulted in the identification of one SC-OG with the exception of <i>Penicillium digitatum</i>, which had one near
 									universally SC-OG present in multiple copies (see column the third column). To determine which near universally SC-OG was present
 									in multiple copies, see the tab-delimited file, <i>long_summary.txt</i>, in the <i>orthofisher_output</i> directory. 
 									Based on these observations, we can
-									conclude that these genes have sufficient taxon occupancy for use in phylogenomic inference.
+									conclude that these genes have sufficient taxon occupancy for use in species tree inference.
 									<br /><br />
 									Next, let's examine the <i>scog</i> output from <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>, which contains
 									individual multiple-sequence FASTA files for each near universally SC-OG.
@@ -315,10 +316,10 @@ ls orthofisher_output/scog/
 	orthofisher_output/scog/EOG092C03KT.hmm.orthofisher  orthofisher_output/scog/EOG092C0BAH.hmm.orthofisher
 									</code></pre>
 									One advantage of <a href="https://jlsteenwyk.com/orthofisher/">orthofisher</a>
-									is that these files are automatically made for us and formatted in a user-friendly way.
+									is that these files are automatically made and formatted in a user-friendly way.
 									For example, the headers of each sequence are nicely named;
 									examination of the headers in <i>orthofisher_output/scog/EOG092C07CA.hmm.orthofisher</i> reveals that it is obvious which sequence
-									comes from which taxa.
+									comes from which taxon.
 									<pre><code class="codeblock" style="background:#EBEDEF">
 grep ">" ../../FILES_tutorial/orthofisher_output/scog/EOG092C07CA.hmm.orthofisher
 	>Aspergillus_fischeri EAW21995.1|0.0|1156.8
@@ -331,11 +332,11 @@ grep ">" ../../FILES_tutorial/orthofisher_output/scog/EOG092C07CA.hmm.orthofishe
 	>Penicillium_digitatum EKV21956.1|0.0|1137.9
 									</code></pre>
 									The first column in the header is the genus and species name, which was specified in the second column of the
-									<i>prot_and_names_list.txt</i> file; the second column has the gene identifier, e-value, and bitscore separated by a 
+									<i>prot_and_names_list.txt</i> file and the second column has the gene identifier, e-value, and bitscore separated by a 
 									vertical bar (or pipe character "|") for the best hit
 									identified during sequence search.
 									<br /><br />
-									You're doing great! Some of the hardest parts of the workflow are now complete so you can definintely finish the tutorial from here!!
+									You're doing great! Some of the hardest parts of the workflow are now complete so you can definintely finish the tutorial from here!
 									</p>
 									<br />
 									<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
