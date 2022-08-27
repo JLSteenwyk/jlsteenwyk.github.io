@@ -1,0 +1,442 @@
+<!DOCTYPE HTML>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-104875636-1');
+</script>
+<html>
+	<style>
+		.TextWrapRight{float:right; margin: 10px;}
+	</style>
+	<style>
+		.TextWrapLeft{float:left; margin: 10px;}
+	</style>
+	<head>
+		<title>J.L. Steenwyk</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" href="../images/website_flavicon_network.png">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<meta name="keywords" content="steenwyk, bioinformatics, science, biology, evolution,
+		evolutionary biology, genomics, transcriptomics, phylogenetics, phylogenomics, microbiology,
+		fungi, microbes, art, journals, nature, cell, genetics, filamentous fungi, budding yeast,
+		population biology, population genomics, software development, software, biodiversity, cells,
+		genetic network, gene function, functional genomics, computational biology, 
+		tutorials, science education, science-art, sciart, jacob steenwyk, steenwyck, steenwick">
+		<meta name="description" content="">
+		<article id="Top">
+			<div id="page-wrapper">
+			<!-- Header -->
+				<header id="header">
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html#content" style="color: white">About</a></li>
+							<li><a href="../publications.html" style="color: white">Publications</a></li>
+							<li><a href="../news.html" style="color: white">News</a></li>
+							<li>
+								<a href="../arts.html" style="color: white">Arts</a>
+								<ul>
+									<li><a href="../sciart.html" style="color: white">SciArt Shop</a></li>
+									<li><a href="../arts_visual.html" style="color: white">Visual</a></li>
+									<li><a href="../arts_music.html" style="color: white">Music</a></li>
+									<li><a href="../arts_poetry.html" style="color: white">Poetry</a></li>
+								</ul>
+							</li>
+							<li><a href="../software.html" style="color: white">Software</a></li>
+							<li><a href="../curriculum_vitae.html" style="color: white">Curriculum Vitae</a></li>
+							<li><a href="../evo_goodreads/index.html" alt="index.html" style="color: white">Evo GoodReads</a></li>
+							<li><a href="../resources.html" style="color: white">Resources</a></li>
+							<li><a href="../contact.html" style="color: white">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<!-- Content -->
+							<section id="content">
+								<header class="major">
+									<h2>Inferring a phylogeny, from sequences to a tree</h2>
+								</header>
+								<p style="color: black">
+									<a href="#Introduction" class="goto-pub scrolly">
+										Introduction
+									</a><br />
+									<a href="#Step1" class="goto-pub scrolly">
+										Step 1: Data collection and software installation
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;1.1. Set up your working directory<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;1.2. Collect data<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;1.3. Install software<br />
+									<a href="#Step2" class="goto-pub scrolly">
+										Step 2: Align and trim the sequences
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.1. Infer a multiple sequence alignment<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.2. Trim the multiple sequence alignment<br />
+									<a href="#Step3" class="goto-pub scrolly">
+										Step 3: Reconstruct the evolutionary history of the sequences
+									</a><br />
+									<a href="#Step4" class="goto-pub scrolly">
+										Step 4: Automate steps 1-3 without writing any code!
+									</a><br />
+									<a href="#Closing_remarks" class="goto-pub scrolly">
+										Closing remarks
+									</a><br />
+									<a href="#References" class="goto-pub scrolly">
+										References
+									</a>
+								</p>
+								<hr>
+								<section id="Introduction">
+								<h3>
+									Introduction
+								</h3>
+								<p>
+									Phylogenetics facilitates diverse downstream analyses . 
+									
+									<br /><br />
+									Phylogenetics aims to infer the evolutionary relationships among biological features. Among other applications,
+									phylogenetics can facilitate organismal classification, orthology inference, and forensics.
+									<br /><br />
+									Here, we will go over a ‘typical’ workflow from a collection of sequences to a phylogenetic tree using a maximum
+									likelihood framework. This tutorial does not aim to be exhaustive, but will go into greater detail for certain
+									steps in the workflow.
+									<br /><br />
+									As noted in another tutorial I’ve written, titled <i><a 
+										ref="https://jlsteenwyk.com/tutorials/phylogenomics_made_easy.html">Five-step phylogenomics, from proteomes
+										to species tree</a></i>, this tutorial is grounded in statistics and will therefore make several assumptions.
+										Careful consideration of caveats and sources of error are worthwhile but beyond the scope of the tutorial.
+										Also, phylogenies represent hypotheses, not absolute ground truths. Differences in experimental design
+										(e.g., software choice) may impact inferences.
+									<br /><br />
+									With that, let’s make a tree!
+									</p>
+								<br />
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<br />
+								</section>
+								<section id="Step1">
+								<h3>Step 1: Data collection and software installation</h3>
+								<p>
+									<strong>1.1. Set up your working directory</strong><br />
+									To keep everything organized, we will first make a directory for this tutorial called <i>seqs_to_tree</i> with the
+									<i>mkdir</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										mkdir seqs_to_tree
+									</code>.
+									Thereafter, move into the directory you made with the <i>cd</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										cd seqs_to_tree
+									</code>.
+									<br /><br />
+									<strong>1.2. Collect data</strong><br />
+									Next, identify the sequenecs you are interested in constructing a phylogenetic tree for. These could be a
+									predicted orthologous group of genes, loci identified from sequence similarity searches, or products from
+									polymerase chain reactions. For ease of use, I have precompiled some sequneces of the gene
+									<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001161434.1?report=genbank&log$=protalign&blast_rank=1&RID=GM7YFA9M013">
+										<i>Prestin</i></a>,
+									a cochlear motor protein, from Humans and close relatives.   
+
+									<center><strong><a href="prestin.fa" download="prestin.fa">Download sequences</strong></a></center>
+
+									<br />
+									Move the downloaded sequences to the current working directory with the <i>mv</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										mv path_to_file/prestin.fa .
+									</code>. Be sure to change <i>path_to_file</i> to the appropriate relative or
+									absolute file path of <i>prestin.fa</i>.
+									<br /><br />
+									<strong>1.3. Install software</strong><br />
+									Downloading and installing software is left out of most tutorials, but it is an essential step. Accordingly,
+									we will go over it. Some software we will use can be downloaded from <a href="https://pypi.org/">PyPi</a>.
+									To do so, we will continue to implement best practices and first create a virtual environment to store all
+									installed software. A virtual environment is a "self-contained
+									directory tree that contains a Python installation for a particular version of Python, plus a number of additional
+									packages" (<a href="https://docs.python.org/3/tutorial/venv.html">Python docs</a>). Create a virtual
+									environment with the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										python -m venv venv
+									</code>
+									and activate it
+									<code class="codeblock" style="background:#EBEDEF">
+										source venv/bin/activate
+									</code>.
+									Next, install
+									<a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a>,
+									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>, and
+									<a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a> using the <i>pip install</i> command:
+									<code class="codeblock" style="background:#EBEDEF">
+										pip install clipkit jlsteenwyk-biokit
+									</code>.
+									<i>Disclaimer: these are all software I have developed.</i> I developed these software
+									and distribute them freely to empower and enable bioinformaticians of varying experience.
+									I hope you find them helpful :D 
+									<br /><br />
+									The last pieces of software that need to be installed are
+									<a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a> and
+									<a href="http://www.iqtree.org/">IQ-TREE</a>. Each of these software have their own installation
+									instructions, which are better than what I could provide. Please follow the link for each software
+									and install them according to the developer's recommendations.
+									Add the path of each executable to your <i>$PATH</i> variable. Instructions to do so can be found on numerous online
+									discussion forums such as
+									<a href="https://askubuntu.com/questions/109381/how-to-add-path-of-a-program-to-path-environment-variable">askubuntu</a>
+									and <a href="https://unix.stackexchange.com/questions/3809/how-can-i-make-a-program-executable-from-everywhere">unix stackexchange</a>.
+								</p>
+								<br />
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Step2">
+								<h3>Step 2: Align and trim the sequences</h3>
+								<p>
+									<strong>2.1. Infer a multiple sequence alignment</strong><br />
+									Algorithms that infer multiple sequence alignments attempt to identify site-wise homology among loci.
+									Sites that are homologous are represented as columns in the multiple sequence alignment.
+									<br /><br />
+									First, let's inspect the contents of <i>prestin.fa</i>. For example, we could examine the FASTA headers
+									of each sequence represented in the FASTA file. To do so, use the <i>grep</i> command: 
+									<pre><code class="codeblock" style="background:#EBEDEF">grep ">" prestin.fa
+
+>Bat [Pteropus vampyrus]
+>Bat [Rousettus aegyptiacus]
+>Bat [Pteropus alecto]
+>Bat [Desmodus rotundus]
+>Bat [Molossus molossus]
+>Whale [Balaenoptera acutorostrata scammoni]
+>Dolphin [Tursiops truncatus]
+>Dolphin [Lagenorhynchus obliquidens]
+>Human [Homo sapiens]
+>Orangutan [Pongo abelii]
+>Gorilla [Gorilla gorilla gorilla]
+>Squirrel [Neosciurus carolinensis]
+>Dog [Canis lupus familiaris]
+>Dingo [Canis lupus dingo]</code></pre>
+									The <i>grep</i> command (depending on how it is used) looks for patterns in a file. Here,
+									we are looking for lines with the ">" character, a defining feature of FASTA headers. To count
+									the number of sequences in the FASTA file, add the "-c" argument to the <i>grep</i> command.
+									<code class="codeblock" style="background:#EBEDEF">
+										grep ">" prestin.fa -c
+									</code>. There are 14 sequences.
+
+									<br />
+
+									To align the sequences, use <a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a> with the "auto" parameter 
+									(<a href="https://academic.oup.com/mbe/article/30/4/772/1073398">Katoh,K. and Standley, 2013</a>) by executing the following command:
+									<code class="codeblock" style="background:#EBEDEF">mafft --auto prestin.fa > prestin.fa.mafft</code>. Take a look at the contents of the
+									file using the <i>head</i> command. Gap characters (represented as dashes "-") have been added to the file. Gaps may reflect sites that have
+									undergone histories of insertions and deletions.
+
+									<br /><br />
+
+									<strong>2.2. Trim the multiple sequence alignment</strong><br />
+									To trim sequences, we will use <a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a> with the default "smart-gap" mode, which dynamically infers 
+									a gap threshold for trimming; in other words, the gap-rich sites, which are poor in phylogenetic information,
+									will be removed from the alignment (<a href="https://jlsteenwyk.com/publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf">Steenwyk <i>et al.</i>, 2020</a>).
+									Trim the alignment using the following command:
+									<code class="codeblock" style="background:#EBEDEF">clipkit prestin.fa.mafft</code>. Lots of information will be printed to the screen and an output file 
+									with the suffix ".clipkit" will have been generated.
+
+									<br />
+
+									Examine the features of the multiple sequence alignment using <a href="https://jlsteenwyk.com/BioKIT/">BioKIT</a>; specifically, the
+									<i>aln_summary</i> function.
+									<pre><code class="codeblock" style="background:#EBEDEF">biokit aln_summary prestin.fa.mafft.clipkit 
+
+General Characteristics
+=======================
+14	Number of taxa
+712	Alignment length
+64	Parsimony informative sites
+64	Variable sites
+648	Constant sites
+
+Character Frequencies
+=====================
+Y	391
+W	32
+V	944
+T	591
+S	603
+R	289
+Q	321
+P	530
+N	370
+M	226
+L	1072
+K	501
+I	724
+H	149
+G	761
+F	544
+E	518
+D	409
+C	126
+A	840
+-	27</code></pre>As the name implies, this function summarizes the contents of multiple sequence alignments.
+								</p>
+								</section>
+								<br />
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Step3"></section>
+								<h3>Step 3: Reconstruct the evolutionary history of the sequences</h3>
+								<p>
+									<strong>3.1. Infer the phylogenetic tree using IQ-TREE</strong>
+									<br />
+									To infer the evolutionary history of the sequences, we will use the maximum likelihood approach implemented
+									in <a href="http://www.iqtree.org/">IQ-TREE</a>
+									(<a href ="https://academic.oup.com/mbe/article/37/5/1530/5721363">Minh <i>et al.</i>, 2020</a>).
+									To do so, execute the following command:
+									<code class="codeblock" style="background:#EBEDEF">
+										iqtree2 -s prestin.fa.mafft.clipkit -m TEST -bb 5000
+									</code>.
+									Under the hood, the best fitting substitution model is automatically selected using
+									<a href="https://www.nature.com/articles/nmeth.4285">ModelFinder</a> 
+									(<a href="https://www.nature.com/articles/nmeth.4285">Kalyaanamoorthy <i>et al.</i>, 2017</a>).
+									Using the "-bb" argument, 5,000 ultrafast bootstrap approximations will be used to evaluate bipartition support
+									(<a href="https://academic.oup.com/mbe/article/35/2/518/4565479">Hoang <i>et al.,</i> 2017</a>).
+									<br /><br />
+									<a href="http://www.iqtree.org/">IQ-TREE</a> generates many useful files, however, we are most
+									interested in the best tree identified during tree search, which is <i>prestin.fa.mafft.clipkit.treefile</i>.
+									To obtain a quick view of the inferred phylogeny, we will use the "print_tree" function in
+									<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> by executing the following command:
+									<pre><code class="codeblock" style="background:#EBEDEF">phykit print_tree prestin.fa.mafft.clipkit.treefile
+
+ , Bat__Pteropus_vampyrus_
+ |
+ |____ Bat__Rousettus_aegyptiacus_
+ |
+ , Bat__Pteropus_alecto_
+_|
+ |               __________ Bat__Desmodus_rotundus_
+ |          ____|
+ |         |    |_________ Bat__Molossus_molossus_
+ |         |
+ |         |                      , Human__Homo_sapiens_
+ |        _|                      |
+ |       | |              ________| Gorilla__Gorilla_gorilla
+ |       | |             |        |
+ |       | |         ____|        | Orangutan__Pongo_abelii_
+ |       | |        |    |
+ |       | |________|    |_______ Squirrel__Neosciurus_carolinensis_
+ |_______|          | 
+	 |          |       , Dog__Canis_lupus
+	 |          |_______|
+	 |                  | Dingo__Canis_lupus
+	 |
+	 |            _________ Whale__Balaenoptera_acutorostrata
+	 |___________|
+		     |                 , Dolphin__Tursiops_truncatus_
+		     |_________________|
+				       | Dolphin__Lagenorhynchus_obliquidens_
+									</code></pre>
+									<br />
+								</p>
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Step4"></section>
+								<h3>Step 4: Automate steps 1-3 without writing any code!</h3>
+								<p>
+									I recognize that the command line is not for everyone. To this end, I developed a workflow
+									on the <a href="https://latch.bio/">Latch</a> console and published it to the following dedicated link:
+									<a href="https://console.latch.bio/explore/62302/info">https://console.latch.bio/explore/62302/info</a>.
+									(As of August 2022, I do a few hours of consulting work with Latch a month. I note this to be transparent about any potential
+									conflict of interest.) Users can make accounts for free on the Latch platform <a href="https://latch.bio/">Latch</a> and the
+									workflow can also be run for free. When you open the web link, you 
+									will see something like the following:
+									<img src="wf.seq_to_tree.seq_to_tree _ Latch.jpg">
+
+									Simply fill in the required boxes (shown in red), modify optional arguments such as the alignment
+									and trimming strategies as you see fit, and launch the workflow! The workflow will automatically conduct
+									steps 1 through 3 of this tutorial and save all intermediate and output files.
+									<br />
+								</p>
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="Closing_remarks">
+								<h3>Closing remarks</h3>
+								<p>
+									This tutorial covered how to infer a phylogenetic tree (and a little more!) in three steps.
+									The resulting phylogenetic tree can be used for diverse downstream analyses, facilitate hypothesis
+									generation, or be used as an endpoint in an analytical workflow.
+									<br /><br />
+									Congratulations on inferring a phylogenetic tree! Please do not hesitate to 
+									<a href="../contact.html">contact me</a> if you have any questions or constructive comments.
+								</p>
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+								<hr>
+								<section id="References">
+								<h3>References</h3>
+								<p>
+									1. Hoang,D.T. et al. (2018)
+									<a href="https://academic.oup.com/mbe/article/35/2/518/4565479">UFBoot2: Improving the
+									Ultrafast Bootstrap Approximation.</a> Mol. Biol. Evol., 35, 518–522.<br />
+									2. Kalyaanamoorthy,S. et al. (2017)
+									<a href="https://www.nature.com/articles/nmeth.4285">ModelFinder: fast model selection
+									for accurate phylogenetic estimates</a>. Nat. Methods, 14, 587–589.<br />
+									3. Minh,B.Q. et al. (2020)
+									<a href="https://academic.oup.com/mbe/article/37/5/1530/5721363">IQ-TREE 2: New Models
+									and Efficient Methods for Phylogenetic Inference in the Genomic Era</a>.
+									Mol. Biol. Evol., 37, 1530–1534.<br />
+									4. Steenwyk,J.L., et al. (2021)
+									<a href="../publication_pdfs/2022_Steenwyk_etal_Genetics.pdf">BioKIT: a versatile
+									toolkit for processing and analyzing diverse types of sequence data</a>. Genetics,
+									10.1093/genetics/iyac079.<br />
+									5. Steenwyk,J.L. et al. (2020)
+									<a href="../publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf">ClipKIT:
+									A multiple sequence alignment trimming software for accurate phylogenomic inference</a>.
+									PLOS Biol., 18, e3001007.<br />
+									6. Steenwyk,J.L., et al. (2021)
+									<a href="../publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf">PhyKIT:
+									a broadly applicable UNIX shell toolkit for processing and analyzing phylogenomic data</a>.
+									Bioinformatics.<br />
+								</p>
+								</section>
+								<br />
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+							</section>
+					</div>
+				</div>
+			</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/jlsteenwyk" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" class="icon brands alt fa-google"><span class="label">Google</span></a></li>
+						<li><a href="https://www.researchgate.net/profile/Jacob_Steenwyk" class="icon brands alt fa-researchgate"><span class="label">ResearchGate</span></a></li>
+						<li><a href="https://github.com/JLSteenwyk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/jlsteenwyk/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="../contact.html" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2020 Jacob L. Steenwyk</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
