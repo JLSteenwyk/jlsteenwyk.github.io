@@ -77,36 +77,36 @@
 									</a><br />
 									&nbsp;&nbsp;&nbsp;&nbsp;1.1. Set up your working directory<br />
 									&nbsp;&nbsp;&nbsp;&nbsp;1.2. Collect data<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;1.3. Prepare dataset<br />
-									<a href="#Section2" class="goto-pub scrolly">
+									&nbsp;&nbsp;&nbsp;&nbsp;1.3. Examine dataset<br />
+									<!-- <a href="#Section2" class="goto-pub scrolly">
 										Section 2: Generate alignments and single-gene phylogenies
 									</a><br />
 									&nbsp;&nbsp;&nbsp;&nbsp;2.1. Align orthologous genes<br />
 									&nbsp;&nbsp;&nbsp;&nbsp;2.2. Trim multiple sequence alignments<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;2.3. Infer single-gene phylogenies<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.3. Infer single-gene phylogenies<br /> -->
+									<a href="#Section2" class="goto-pub scrolly">
+										Section 2: Phylogenomic subsampling across genes
+									</a><br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.1. Summarize information content across genes<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.2. Visualize information content from genes<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;2.3. Conduct sensitivity analysis<br />
 									<a href="#Section3" class="goto-pub scrolly">
-										Section 3: Phylogenomic subsampling across genes
+										Section 3: Phylogenomic subsampling across taxa
 									</a><br />
-									&nbsp;&nbsp;&nbsp;&nbsp;3.1. Summarize information content across genes<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;3.2. Visualize information content from genes<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;3.3. Conduct sensitivity analysis<br />
-									<a href="#Section4" class="goto-pub scrolly">
-										Section 4: Phylogenomic subsampling across taxa
-									</a><br />
-									&nbsp;&nbsp;&nbsp;&nbsp;4.1. Summarize information content across taxa<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;4.2. Create subsampled data matrices and infer phylogenies<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;4.2. Determine the impact of subsampling taxa on species tree inference<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;3.1. Summarize information content across taxa<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;3.2. Create subsampled data matrices and infer phylogenies<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;3.3. Determine the impact of subsampling taxa on species tree inference<br />
 									<a href="#Section5" class="goto-pub scrolly">
-										Section 5: Phylogenomic subsampling across sites
+										Section 4: Phylogenomic subsampling across sites
 									</a><br />
-									&nbsp;&nbsp;&nbsp;&nbsp;5.1. Summarize information content across sites<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;5.2. Infer phylogenies from subsampled data<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;5.3. Compare subsampled inferred trees to the species tree<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;4.1. Summarize information content across sites<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;4.2. Infer phylogenies from subsampled data<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;4.3. Compare subsampled inferred trees to the species tree<br />
 									<a href="#Closing_remarks" class="goto-pub scrolly">
 										Closing remarks
 									</a><br />
 									&nbsp;&nbsp;&nbsp;&nbsp;Summary and additional reading<br />
-									<a href="#References" class="goto-pub scrolly">
+									<a href="#References" classs="goto-pub scrolly">
 										References
 									</a>
 								</p>
@@ -122,11 +122,12 @@
 									Sensitivity analysis plays a crucial role in phylogenomics, serving as a valuable method for assessing the robustness of
 									evolutionary relationships.
 									This approach is particularly important for:
-									<li><i>Detecting phylogenomic instability:</i><br />By systematically varying input parameters and data subsets, sensitivity analysis
-										can reveal branches or clades that are susceptible to changes in the underlying data or analytical methods.</li><br />
+									<li><i>Detecting phylogenomic instability:</i><br />By systematically varying input parameters and data subsets,
+										sensitivity analysis can reveal branches or clades that are susceptible to changes in the underlying data or
+										analytical methods.</li><br />
 									<li><i>Identifying incongruence:</i><br />
-										It helps researchers pinpoint areas of the phylogeny where different genes or genomic regions
-										provide conflicting evolutionary signals.</li><br />
+										It helps researchers pinpoint areas of the phylogeny where different genes, taxa or sites that
+										have conflicting evolutionary signals.</li><br />
 									<li>and <i>Guiding further investigation:</i><br />
 										Unstable branches highlighted by sensitivity analysis often warrant deeper examination,
 										as they may indicate interesting biological phenomena (e.g., incomplete lineage sorting and
@@ -237,24 +238,13 @@ cd sensitivity_analysis
 									were obtained from <a href="www.ensembl.org/biomart">Ensembl BioMart</a>; yeast alignments were obtained from the
 									<a href="http://ygob.ucd.ie/browser/versions.html">Yeast Gene Order Browser</a>.
 
-									<center><strong><a href="data_mammals.tar.gz" download="data_mammals.tar.gz">Mammalian dataset</strong></a></center>
-									<center><strong><a href="data_yeast.tar.gz" download="data_yeast.tar.gz">Yeast dataset</strong></a></center>
+									<center><strong><a href="ub_sensitivity_files/data_mammals.tar.gz" download="data_mammals.tar.gz">Mammalian dataset</strong></a></center>
+									<center><strong><a href="ub_sensitivity_files/data_yeast.tar.gz" download="data_yeast.tar.gz">Yeast dataset</strong></a></center>
 
 									<br />
-									2) Move the directories to the current working directory with the <i>mv</i> command.
-									Be sure to change <i>path_to_file</i> to the appropriate relative or
-									absolute file path of <i>data_mammals.tar.gz</i> or <i>data_yeast.tar.gz</i>.
-									<details>
-										<summary>
-											Solution 
-										</summary>
-										<pre><code class="codeblock" style="background:#EBEDEF">
-mv path_to_file/data_mammals.tar.gz . ;
-mv path_to_file/data_yeast.tar.gz .
-										</code></pre>
-									</details>
-									<br />
-									3) Unzip the directories with the <i>tar</i> command.
+									2) Unzip the directories with the <i>tar</i> command. <br />
+									Note, before doing so, double check that the downloaded files are in the correct directory. They should be in your current working
+									directory <i>sensitivity_analysis</i>. If they are not, use the <i>mv</i> command to move them into your current directory.
 									<br />
 									<details>
 										<summary>
@@ -268,7 +258,7 @@ tar -zxvf data_yeast.tar.gz
 									<br />
 
 									<br /><br />
-									<strong>1.3. Prepare dataset</strong><br />
+									<strong>1.3. Examine dataset</strong><br />
 									1) Look at the contents of each directory and determine what information is in each file/subdirectory.
 									<br />
 									<details>
@@ -277,12 +267,12 @@ tar -zxvf data_yeast.tar.gz
 										</summary>
 										<pre><code class="codeblock" style="background:#EBEDEF">
 ls data_mammals
-FILES_unaligned    Mammals_2002_eMRC.tree    index_mammals.txt
+FILES_trees		FILES_trimmed		Mammals_2002_eMRC.tree
 <br />
 # EXPLANATION:
-# FILES_unaigned: the unaligned sequences
-# Mammals_2002_eMRC.tree: species tree for mammals
-# index_mammals.txt: naming scheme of taxa in the alignment
+# FILES_trees: single-locus phylogenies that have been already been inferred to save time 
+# FILES_trimmed: trimmed multiple sequence alignments. Sequences were aligned using MAFFT and trimmed using ClipKIT with default parameters.
+# Mammals_2002_eMRC.tree: Species tree inferred using several thousand loci. Only a subset of loci are used in this tutorial for the sake of time.
 										</code></pre>
 										<br />
 										The same set of files and naming convention are observed in the <i>data_yeast</i> directory.
@@ -307,119 +297,14 @@ For getting the names of the tips in the phylogeny, use the <a href="https://jls
 											Solution 
 										</summary>
 										<pre><code class="codeblock" style="background:#EBEDEF">
-paste <(pk_labels data_mammals/Mammals_2002_eMRC.tree | sort) <(grep ">" data_mammals/FILES_unaligned/24_ENSG00000000005.fasta | sed 's/>//g' | sort)
+paste <(pk_labels data_mammals/Mammals_2002_eMRC.tree | sort) <(grep ">" data_mammals/FILES_trimmed/24_ENSG00000000005.fasta.mafft.clipkit | sed 's/>//g' | sort)
 
 # EXPLANATION:
-# No, the FASTA entry names do not match the tree name.
+# Yes, the FASTA entry names match the tree name.
+# It is helpful to set up files this way because everything downstream is easier.
 # The same set of files and naming convention are observed in the <i>data_yeast</i> directory.
 </code></pre>
 									</details>
-									<br /><br />
-									3) It is very common that the names of the alignments may be formatted in a way that isn't as useful for informative
-									for the phylogenomic workflow. Since this is based on researcher preferences, the exact naming schema may differ
-									between people. However, having to rename entries in a FASTA file is a common task. Thus, we will go over how to
-									do so.
-									<br /><br />
-									To rename FASTA entries, use the <a href="https://jlsteenwyk.com/PhyKIT/usage/index.html#rename-fasta-entries"><i>rename_fasta</i></a>
-									function in PhyKIT. Look at the help message of the PhyKIT function <a href="https://jlsteenwyk.com/PhyKIT/usage/index.html#rename-fasta-entries"><i>rename_fasta</i></a>.
-									<details>
-										<summary>
-											Solution 
-										</summary>
-										<pre><code class="codeblock" style="background:#EBEDEF">
-pk_rename_fasta -h
-										</code></pre>
-									</details>
-									<br /><br />
-									4) The <a href="https://jlsteenwyk.com/PhyKIT/usage/index.html#rename-fasta-entries"><i>rename_fasta</i></a> function takes as input a FASTA file (1st argument)
-									and an map of identifiers (idmap, which is specified with the <i>-i/--idmap</i> argument). The idmap is formatted as having the first column as the current FASTA entries and the second column is the desired names
-									of the new FASTA entries. I have created the idmap ahead of time. Examine the idmap, which is file <i>index_mammals.txt</i> or <i>index_yeast.txt</i>.
-									<details>
-										<summary>
-											Solution 
-										</summary>
-										<pre><code class="codeblock" style="background:#EBEDEF">
-cat data_mammals/index_mammals.txt
-
-Hsap	Homo_sapiens
-Mmur	Microcebus_murinus
-Tbel	Tupaia_belangeri
-Mmus	Mus_musculus
-Ocun	Oryctolagus_cuniculus
-Amel	Ailuropoda_melanoleuca
-Cfam	Canis_familiaris
-Fcat	Felis_catus
-Ecab	Equus_caballus
-Ttru	Tursiops_truncatus
-Sscr	Sus_scrofa
-Vpac	Vicugna_pacos
-Pvam	Pteropus_vampyrus
-Mluc	Myotis_lucifugus
-Sara	Sorex_araneus
-Eeur	Erinaceus_europaeus
-Dnov	Dasypus_novemcinctus
-Chof	Choloepus_hoffmanni
-Pcap	Procavia_capensis
-Lafr	Loxodonta_africana
-Etel	Echinops_telfairi
-Meug	Macropus_eugenii
-Shar	Sarcophilus_harrisii
-Mdom	Monodelphis_domestica
-
-cat data_yeast/index_yeast.txt 
-
-Kpha	Kluyveromyces_phaffii
-Kpol	Kluyveromyces_polysporus
-Kbla	Kluyveromyces_blattae
-Kafr	Kluyveromyces_africanus
-Snag	Saccharomyces_naganishii
-Scas	Saccharomyces_castellii
-Sdai	Saccharomyces_dairenensis
-Cgla	Candida_glabrata
-Suva	Saccharomyces_uvarum
-Skud	Saccharomyces_kudriavzevii
-Smik	Saccharomyces_mikatae
-Scer	Saccharomyces_cerevisiae
-
-
-# EXPLANATION:
-Again, the first column is the current FASTA headers and the second column is the new name that the FASTA headers will be given.
-</code></pre>
-									</details>
-									<br />
-									5) Change all of the FASTA entries to match the naming scheme in the phylogenetic tree. Write these new files to a directory
-									titled <i>data_mammals/FILES_renamed</i> or <i>data_yeast/FILES_renamed</i>.
-									<details>
-										<summary>
-											Hint 
-										</summary>
-										<pre><code class="codeblock" style="background:#EBEDEF">
-Write two for loops. Each loop will either go through each FASTA file in data_mammals/FILES_unaligned or data_yeast/FILES_unaligned.
-Use the <a href="https://jlsteenwyk.com/PhyKIT/usage/index.html#rename-fasta-entries"><i>pk_rename_fasta</i></a> function to rename each alignment.
-An example for how to use the pk_rename_fasta file function is as follows:
-
-pk_rename_fasta data_mammals/FILES_unaligned/$i -i data_mammals/index_mammals.txt -o data_mammals/FILES_renamed/$i
-
-# EXPLANATION:
-# The first argument is the FASTA file, the second argument is the idmap, the third argument is the output file, which will be
-# directed to data_mammals/FILES_renamed in this example.
-										</code></pre>
-										<br /><br />
-									</details>
-									<details>
-										<summary>
-											Solution 
-										</summary>
-										<pre><code class="codeblock" style="background:#EBEDEF">
-mkdir -p data_mammals/FILES_renamed
-mkdir -p data_yeast/FILES_renamed
-
-for i in $(ls data_mammals/FILES_unaligned/) ; do echo $i ; pk_rename_fasta data_mammals/FILES_unaligned/$i -i data_mammals/index_mammals.txt -o data_mammals/FILES_renamed/$i ; done
-for i in $(ls data_yeast/FILES_unaligned/) ; do echo $i ; pk_rename_fasta data_yeast/FILES_unaligned/$i -i data_yeast/index_yeast.txt -o data_yeast/FILES_renamed/$i ; done
-										</code></pre>
-										<br /><br />
-									</details>
-
 								</p>
 								<br />
 								</section>
@@ -512,7 +397,7 @@ mkdir data_mammals/FILES_trees
 mkdir data_yeast/FILES_trees
 
 for i in $(ls data_mammals/FILES_trimmed/); do iqtree2 -s data_mammals/FILES_trimmed/$i -bb 1000 -m TEST -pre data_mammals/FILES_trees/$i ; done
-for i in $(ls data_yeast/FILES_trimmed/); do iqtree2 -s data_yeast/FILES_trimmed/$i -bb 1000 -m TEST -pre data_yeast/FILES_trees/$i ; done.
+for i in $(ls data_yeast/FILES_trimmed/); do iqtree2 -s data_yeast/FILES_trimmed/$i -bb 1000 -m TEST -pre data_yeast/FILES_trees/$i ; done
 										</code></pre>
 										<br /><br />
 									</details>
@@ -546,12 +431,12 @@ For more information, refer to IQTREE documentation <a href="http://www.iqtree.o
 								</section>
 								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
 								<hr>
-								<section id="Section3">
-									<h3>Section 3: Phylogenomic subsampling across genes</h3>
+								<section id="Section2">
+									<h3>Section 2: Phylogenomic subsampling across genes</h3>
 									The objective of this step is to calculate diverse measures of information content of the phylogenomic data matrices.
 									<br /><br />
 									<p>
-									<strong>3.1. Summarize information content across genes</strong><br />
+									<strong>2.1. Summarize information content across genes</strong><br />
 									1) There are numerous metrics that capture the information content of multiple sequence alignments and phylogenetic trees. Here, we will calculate
 									seven of the many metrics. Specifically, we will calculate:
 									<li><a href="https://jlsteenwyk.com/PhyKIT/usage/index.html#alignment-length">Alignment length:</a>
@@ -593,7 +478,7 @@ throughout the remainder of the tutorial.
 											Solution: nested for loop 
 										</summary>
 										<pre><code class="codeblock" style="background:#EBEDEF">
-for dataset in $(echo "mammals yeast");
+for dataset in mammals yeast;
   do 
   for i in $(ls data_${dataset}/FILES_trimmed/);
   do
@@ -664,13 +549,13 @@ for i in $(ls data_yeast/FILES_trimmed/);
 	sat=$(pk_sat -a data_yeast/FILES_trimmed/${aln} -t data_yeast/FILES_trees/${tre} | awk '{print $2}')
 	tor=$(pk_tor -a data_yeast/FILES_trimmed/${aln} -t data_yeast/FILES_trees/${tre} | awk '{print $1}')
 
-	echo -e "mammals\t${id}\taln_len\t$aln_len"
-	echo -e "mammals\t${id}\trcv\t$rcv"
-	echo -e "mammals\t${id}\tabs\t$abs"
-	echo -e "mammals\t${id}\tlbs\t$lbs"
-	echo -e "mammals\t${id}\ttreeness\t$tness"
-	echo -e "mammals\t${id}\tsaturation\t$sat"
-	echo -e "mammals\t${id}\ttreeness_over_rcv\t$tor"
+	echo -e "yeast\t${id}\taln_len\t$aln_len"
+	echo -e "yeast\t${id}\trcv\t$rcv"
+	echo -e "yeast\t${id}\tabs\t$abs"
+	echo -e "yeast\t${id}\tlbs\t$lbs"
+	echo -e "yeast\t${id}\ttreeness\t$tness"
+	echo -e "yeast\t${id}\tsaturation\t$sat"
+	echo -e "yeast\t${id}\ttreeness_over_rcv\t$tor"
   done
 done |tee info_content_genes.txt
 										</code></pre>
@@ -709,7 +594,7 @@ Because the average RCV value is lower in the mammal dataset, the mammalian data
 									</details>
 									<br /><br />
 									4) Determine which dataset — the yeast or mammal dataset — is subject to higher amounts of saturation.
-									What is the interpretation for the dataset with a lower RCV score?
+									What is the interpretation for the dataset with a lower saturation score?
 									<details>
 										<summary>
 											Hint 
@@ -814,7 +699,7 @@ For the yeast dataset,
 										<br /><br />
 									</details>
 									<br /><br />
-									<strong>3.2. Visualize information content from genes</strong><br />
+									<strong>2.2. Visualize information content from genes</strong><br />
 									The objective here is to learn how to make (near) publication-ready figures that summarize the distributions of the
 									information content in both data matrices. Moreover, 
 									<br /><br />
@@ -855,7 +740,7 @@ ggplot(dat, aes(dataset, value, fill=dataset)) +
 										<br /><br />
 									</details>
 									<br /><br />
-									<strong>3.3. Conduct sensitivity analysis</strong><br />
+									<strong>2.3. Conduct sensitivity analysis</strong><br />
 									1) Next, we will conduct sensitivity analysis for each dataset separately. The objective is to determine if any branches in the organismal history
 									is unstable. Each metric accounts for different potential sources of error. For example, incongruence detected among genes with the best long branch scores
 									suggests the organismal history may be subject to long branch attraction artifacts.
@@ -1029,7 +914,7 @@ Similarly, so as the successive branches in the ancestor of <i>Felis catus</i> a
 Instability at these branches has been observed in other studies - e.g., <a href="https://www.science.org/doi/10.1126/science.1067179">Murphy et al., Science (2001)</a>.
 										</code></pre>
 										<br /><br />
-									<center><img src="mammalian_phylogeny_suptree.png" alt="mammalian_phylogeny_suptree.png"></center>
+									<center><img src="ub_sensitivity_files/mammalian_phylogeny_suptree.png" alt="mammalian_phylogeny_suptree.png"></center>
 									</details>
 									<br /><br />
 									7) What are some reasons that could drive incongruence at these bipartitions?
@@ -1074,9 +959,9 @@ If you had another source of phylogenomic error in mind, share it with someone s
 								</section>
 								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
 								<hr>
-								<section id="Section4">
-									<h3>Section 4: Phylogenomic subsampling across taxa</h3>
-									<strong>4.1. Summarize information content across taxa</strong><br />
+								<section id="Section3">
+									<h3>Section 3: Phylogenomic subsampling across taxa</h3>
+									<strong>3.1. Summarize information content across taxa</strong><br />
 									The objective of this section is to identify taxa that may potentially contribute to error during species tree inference.
 									<br /><br />
 									1) Other metrics capture information content in a taxon-specific manner. This can be useful for diagnosing is any specific taxa may be problematic.
@@ -1247,10 +1132,10 @@ Species mentioned herein may contribute to error due to long branch attraction a
 										<br /><br />
 									</details>
 									<br /><br />
-									<strong>4.2. Create subsampled data matrices and infer phylogenies</strong><br />
-									Conduct phylogenomic subsampling analysis by removed the three taxa that have the worst 
-									long branch score or RCVT scores. Like the previous section, determine reinfer the species
-									using a concatenation matrix that excludes that particular taxon.<br /><br />
+									<strong>3.2. Create subsampled data matrices and infer phylogenies</strong><br />
+									Conduct phylogenomic subsampling analysis by removing the three taxa that have the worst long
+									branch score or RCVT scores. Like the previous section, reinfer the species tree using a
+									concatenation matrix that excludes that particular taxon.<br /><br />
 									Reinfer the species tree using IQTREE with the same models as in the previous section and with
 									the <i>-fast</i> parameter.
 									<details>
@@ -1313,7 +1198,7 @@ done
 										<br /><br />
 									</details>									
 									<br /><br />
-									<strong>4.3. Determine the impact of subsampling taxa on species tree inference</strong><br />
+									<strong>3.3. Determine the impact of subsampling taxa on species tree inference</strong><br />
 									1) Using the <i>rf_dist</i> function in PhyKIT, determine if removing taxa had any impact on phylogenetic stability.
 									<details>
 										<summary>
@@ -1376,16 +1261,16 @@ Thus, it is likely the similar drivers of incongruence are at play.
 Lastly, it is important to underscore that the yeast phylogeny remains stable using this analysis. Therefore, researchers can
 conclude that the yeast phylogeny is stable.
 										</code></pre>
-										<center><img src="mammalian_phylogeny_pruned_suptree.png" alt="mammalian_phylogeny_pruned_suptree.png"></center>
+										<center><img src="ub_sensitivity_files/mammalian_phylogeny_pruned_suptree.png" alt="mammalian_phylogeny_pruned_suptree.png"></center>
 										<br /><br />
 									</details>
 								</section>
 								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
 								<hr>
 								<br />
-								<section id="Section5">
-									<h3>Section 5: Phylogenomic subsampling across sites</h3>
-									<strong>5.1. Summarize information content across sites</strong><br />
+								<section id="Section4">
+									<h3>Section 4: Phylogenomic subsampling across sites</h3>
+									<strong>4.1. Summarize information content across sites</strong><br />
 									The objective of this section is to determine if phylogenomic inference is sensitive to specific sites.
 									<br /><br />
 									1) Numerous methods identify sites that may be sources of phylogenomic error.
@@ -1494,7 +1379,7 @@ done
 										<br /><br />
 									</details>
 									<br /><br />
-									<strong>5.2. Infer phylogenies from subsampled data</strong><br />
+									<strong>4.2. Infer phylogenies from subsampled data</strong><br />
 									Infer species trees from each trimmed dataset using IQTREE. As before, use the GTR+F+G4 model for the mammalian dataset 
 									and use the LG+F+G4 model for the yeast dataset. Similarly, use the <i>-fast</i> argument in IQTREE.
 									<details>
@@ -1520,7 +1405,7 @@ done
 										<br /><br />
 									</details>
 									<br /><br />
-									<strong>5.3. Compare subsampled inferred trees to the species tree</strong><br />
+									<strong>4.3. Compare subsampled inferred trees to the species tree</strong><br />
 									1) Measure the Robinson-Foulds distance between each inferred phylogeny and the species tree.
 									<details>
 										<summary>
@@ -1667,10 +1552,10 @@ This bipartition is at the ancestor of <i>Tupaia belangeri</i> and <i>Musc muscu
 										As a reminder, there are two classes for types of errors in phylogenomic studies:
 										<li>Biological factors: evolutionary processes that can contribute to variation in the evolutionary history of loci, which may differ from the species tree</li>
 										<li>Analytical factors: errors introduced during or shortcomings of analytical approaches</li>
-										Additionally, this tutorial should not be thought of as <i>the phylogenomic subsampling workflow</i>, but one of many.
+										Additionally, this tutorial should not be thought of as <i>the</i> phylogenomic subsampling workflow, but one of many.
 										Other researchers have developed compelling tools that can facilitate conducting diverse types of sensitivity / phylogenomic subsampling analysis.
 										<br /><br />
-										<strong>Additional reading</strong><br />
+										<strong>Additional reading.</strong><br />
 										Ultimately, phylogenomic subsampling and sensitivity anlaysis is part of a large canon of work that aims to identify
 										phylogenomically informative loci to help reconstruct the Tree of Life. Here is additional reading that follows a similar theme.
 										<li>Koch. <a href="https://academic.oup.com/mbe/article/38/9/4025/6275248">Phylogenomic subsampling and the search for phylogenetically reliable loci.</a> <i>Molecular Biology and Evolution.</i> DOI: 10.1093/molbev/msab151</li>
