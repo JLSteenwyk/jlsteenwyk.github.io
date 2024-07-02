@@ -172,7 +172,7 @@
 									<pre><code class="codeblock" style="background:#EBEDEF">
 this is a command you would execute!
 									</code></pre>
-									<br /><br />
+									<br />
 									This tutorial also extensively uses PhyKIT, a multi-tool for phylogenomics that I engineered
 									<a href="https://jlsteenwyk.com/publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf">(Steenwyk <i>et al.</i> 2021, <i>Bioinformatics</i>)</a>.
 									PhyKIT is <i>a</i> tool for phylogenomics, not <i>the</i> tool for phylogenomics. So, while this tutorial frequently will use PhyKIT, many other
@@ -196,6 +196,14 @@ This is a hint!
 This is a solution!
 										</code></pre>
 									</details>
+									<br /><br />
+									Lastly, I also want to acknowledge a source of phylogenomic error that we may encounter during this tutorial.
+									Specifically, reproducibility in phylogenomics. It seems hard to believe but even using the same seed during
+									tree search does not guarantee inferring the same phylogeny. In fact, this is observed among around 9-18%
+									of single-locus phylogenetic trees <a href="https://www.nature.com/articles/s41467-020-20005-6">(Shen <i>et al.</i> 2020, <i>Nature Communications</i>)</a>.
+									This can be due to several reasons, some of which involve how hardware interacts with software and are 
+									beyond the scope of the present tutorial. However, if you notice slight differences between your results
+									and the results presented here, there is a non-zero possibility that it is driven by irreproducibility.
 									<br /><br />
 									With that, let's do some phylogenomic sensitivity analysis!
 								</p>
@@ -1145,6 +1153,7 @@ The R package ggplot2 can be very helpful for plotting. The facet_wrap() functio
 # load R packages
 library(ggplot2)
 library(ggpubfigs)
+library(cowplot)
 
 # read in the data
 dat<-read.table("info_content_taxa.txt")
