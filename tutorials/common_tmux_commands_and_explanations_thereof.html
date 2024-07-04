@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-104875636-1');
+</script>
+<html>
+	<style>
+		.TextWrapRight{float:right; margin: 10px;}
+	</style>
+	<style>
+		.TextWrapLeft{float:left; margin: 10px;}
+	</style>
+	<head>
+		<title>J.L. Steenwyk</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" href="../images/website_flavicon_network.png">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<meta name="keywords" content="steenwyk, bioinformatics, science, biology, evolution,
+		evolutionary biology, genomics, transcriptomics, phylogenetics, phylogenomics, microbiology,
+		fungi, microbes, art, journals, nature, cell, genetics, filamentous fungi, budding yeast,
+		population biology, population genomics, software development, software, biodiversity, cells,
+		genetic network, gene function, functional genomics, computational biology, 
+		tutorials, science education, science-art, sciart, jacob steenwyk, steenwyck, steenwick">
+		<meta name="description" content="">
+		<article id="Top">
+			<div id="page-wrapper">
+			<!-- Header -->
+				<header id="header">
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html#content" style="color: white">About</a></li>
+							<li><a href="../index.html#content" style="color: white">Blog</a></li>
+							<li><a href="../publications.html" style="color: white">Publications</a></li>
+							<li><a href="../news.html" style="color: white">News</a></li>
+							<li>
+								<a href="../arts.html" style="color: white">Arts</a>
+								<ul>
+									<li><a href="../sciart.html" style="color: white">SciArt Shop</a></li>
+									<li><a href="../arts_visual.html" style="color: white">Visual</a></li>
+									<li><a href="../arts_music.html" style="color: white">Music</a></li>
+									<li><a href="../arts_poetry.html" style="color: white">Poetry</a></li>
+								</ul>
+							</li>
+							<li><a href="../software.html" style="color: white">Software</a></li>
+							<li><a href="../curriculum_vitae.html" style="color: white">Curriculum Vitae</a></li>
+							<!-- <li><a href="../evo_goodreads/index.html" alt="index.html" style="color: white">Evo GoodReads</a></li> -->
+							<li>
+								<a href="genomely.html" style="color: white">Genomely
+								<ul>
+									<li><a href="../genomely.html" style="color: white">What is Genomely?</a></li>
+									<li><a href="https://genomelybio.com" style="color: white">Home</a></li>
+									<li><a href="https://genomely.substack.com" style="color: white">Blog</a></li>
+									<li><a href="https://clipkit.genomelybio.com/#/" style="color: white">ClipKIT browser</a></li>
+								</ul>
+							</li>
+							<li><a href="../resources.html" style="color: white">Resources</a></li>
+							<li><a href="../contact.html" style="color: white">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<!-- Content -->
+							<section id="content">
+								<header class="major">
+									<h2>Common `tmux` commands and explanations thereof</h2>
+								</header>
+								<p style="color: black">
+									<ul>
+										<li><a href="#Introduction" class="goto-pub scrolly">
+											Introduction
+										</a></li>
+										<li><a href="#Step1" class="goto-pub scrolly">
+											Step 1: Start a New `tmux` Session
+										</a></li>
+										<li><a href="#Step2" class="goto-pub scrolly">
+											Step 2: Run The Process
+										</a></li>
+										<li><a href="#Step3" class="goto-pub scrolly">
+											Step 3: Detach from the `tmux` Session
+										</a></li>
+										<li><a href="#Step4" class="goto-pub scrolly">
+											Step 4: List Active `tmux` Sessions (Optional)
+										</a></li>
+										<li><a href="#Step5" class="goto-pub scrolly">
+											Step 5: Reattach to the `tmux` Session
+										</a></li>
+										<li><a href="#Step6" class="goto-pub scrolly">
+											Step 6: Exit the `tmux` Session
+										</a></li>
+										<li><a href="#Summary" class="goto-pub scrolly">
+											Summary of commands
+										</a></li>
+									</ul>
+								</p>
+								<hr>
+								<section id="Introduction">
+									<p style="color: black">
+										<h3>Introduction</h3>
+										This tutorial reviews a common `tmux` workflow. The objective is to learn how to catalyze 
+										a process in a `tmux` session, exit the session, and return to the running process.<br />
+										<br />
+										<hr>
+									</p>
+								</section>
+								<section id="Step1">
+									<p>
+										<h3>Step 1: Start a New `tmux` Session</h3>
+										1) Open your terminal.<br />
+										2) Start a new tmux session by typing:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+tmux new-session -s mysession
+										</code></pre>
+										Replace <code class="codeblock" style="background:#EBEDEF">mysession</code> with your preferred session name.
+										<br />
+										<hr>
+									</p>
+								</section>
+
+								<section id="Step2">
+									<p>
+										<h3>Step 2: Run The Process</h3>
+										Once inside the tmux session, run your desired process. For example, execute a Python script:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+python myscript.py
+										</code></pre>
+										Replace <code class="codeblock" style="background:#EBEDEF">python myscript.py</code> with any command you want to run.
+										<br />
+										<hr>
+									</p>
+								</section>
+
+								<section id="Step3">
+									<p>
+										<h3>Step 3: Detach from the `tmux` Session</h3>
+										To detach from the tmux session without stopping the process, press:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+Ctrl + b
+										</code></pre>
+										then release and press:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+d
+										</code></pre>
+										This will bring you back to the regular terminal while the process continues to run inside the tmux session.
+										<br />
+										<hr>
+									</p>
+								</section>
+
+								<section id="Step4">
+									<p>
+										<h3>Step 4: List Active `tmux` Sessions (Optional)</h3>
+										To see a list of active tmux sessions, type:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+tmux ls
+										</code></pre>
+										This will show you all active sessions along with their names.
+										<br />
+										<hr>
+									</p>
+								</section>
+
+								<section id="Step5">
+									<p>
+										<h3>Step 5: Reattach to the `tmux` Session</h3>
+										To reattach to the previous session created, type:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+tmux attach-session -t mysession
+										</code></pre>
+										Replace mysession with the name of your session.
+										<br />
+										<hr>
+									</p>
+								</section>
+
+								<section id="Step6">
+									<p>
+										<h3>Step 6: Exit the `tmux` Session</h3>
+										1) To exit and kill the tmux session (this will stop any running processes within that session), type:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+exit
+										</code></pre>
+										This will close the `tmux` session and return you to the regular terminal.
+										<br /><br />
+										2) Alternatively, you can kill the session from outside by typing:
+										<pre><code class="codeblock" style="background:#EBEDEF">
+tmux kill-session -t mysession
+										</code></pre>
+										<hr>
+									</p>
+								</section>
+
+								<section id="Summary">
+									<p>
+										<h3>Summary of commands</h3>
+										1) Start a new session:<br />
+										<code class="codeblock" style="background:#EBEDEF">tmux new-session -s mysession</code>
+										<br /><br />
+										2) Run a process:<br />
+										<code class="codeblock" style="background:#EBEDEF">python myscript.py</code>
+										<br /><br />
+										3) Detach from the session:<br />
+										<code class="codeblock" style="background:#EBEDEF">Ctrl + b, then d</code>
+										<br /><br />
+										4) List active sessions:<br />
+										<code class="codeblock" style="background:#EBEDEF">tmux ls</code>
+										<br /><br />
+										5) Reattach to the session:<br />
+										<code class="codeblock" style="background:#EBEDEF">tmux attach-session -t mysession</code>
+										<br /><br />
+										6) Exit the session:<br />
+										<code class="codeblock" style="background:#EBEDEF">exit</code>
+										<br /><br />
+										7) Kill the session:<br />
+										<code class="codeblock" style="background:#EBEDEF">tmux kill-session -t mysession</code>
+										<br /><br />
+									</p>
+								</section>
+								<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
+							</section>
+					</div>
+				</div>
+			</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/jlsteenwyk" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" class="icon brands alt fa-google"><span class="label">Google</span></a></li>
+						<li><a href="https://www.researchgate.net/profile/Jacob_Steenwyk" class="icon brands alt fa-researchgate"><span class="label">ResearchGate</span></a></li>
+						<li><a href="https://github.com/JLSteenwyk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/jlsteenwyk/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="../contact.html" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2020 Jacob L. Steenwyk</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
