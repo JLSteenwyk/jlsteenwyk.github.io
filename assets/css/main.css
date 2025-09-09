@@ -476,17 +476,17 @@ input, select, textarea {
 
 /* Content Layout Improvements */
 .container {
-	max-width: 1200px;
+	max-width: 90%;
 	margin: 0 auto;
 	padding: 0 2rem;
 }
 
 #content .container {
-	background: white;
-	border-radius: 12px;
-	box-shadow: var(--shadow-large);
-	padding: 4rem;
-	margin: 2rem auto;
+	background: transparent;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 3rem;
+	margin: 3rem auto;
 }
 
 .major h2 {
@@ -519,10 +519,34 @@ input, select, textarea {
 	border-radius: 8px;
 	box-shadow: var(--shadow-medium);
 	transition: transform 0.3s ease;
+	max-width: 400px;
+	max-height: 350px;
+	width: auto;
+	height: auto;
 }
 
 .TextWrapRight:hover, .TextWrapLeft:hover {
 	transform: scale(1.02);
+}
+
+/* Research Interests Section Spacing */
+#ResearchInterests {
+	margin-top: 4rem;
+}
+
+#ResearchInterests h3 {
+	margin-top: 3rem;
+	margin-bottom: 1.5rem;
+}
+
+#ResearchInterests p {
+	margin-bottom: 2.5rem;
+	line-height: 1.6;
+}
+
+.genome-evolution-image {
+	max-width: 500px !important;
+	max-height: 400px !important;
 }
 
 /* Publications Links */
@@ -633,7 +657,7 @@ hr {
 	#content .container {
 		padding: 2rem;
 		margin: 1rem;
-		border-radius: 8px;
+		border-radius: 0;
 	}
 	
 	.hero-name {
@@ -820,7 +844,7 @@ hr {
 /* Timeline Layout */
 .publications-timeline {
 	position: relative;
-	max-width: 1000px;
+	max-width: 90%;
 	margin: 0 auto;
 	padding: 2rem 0;
 }
@@ -1581,8 +1605,8 @@ hr {
 
 	.container {
 		margin: 0 auto;
-		max-width: calc(100% - 4em);
-		width: 70em;
+		max-width: calc(100% - 3em);
+		width: 90%;
 	}
 
 		.container.xsmall {
