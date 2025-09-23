@@ -7,7 +7,91 @@
 (function($) {
 
 	var	$window = $(window),
-		$body = $('body');
+		$body = $('body'),
+		themeStorageKey = 'jlsteenwyk-theme',
+		glassClass = 'glassmorphism-theme',
+		themeToggleControls = [],
+		currentTheme = 'glassmorphism';
+
+	var setCurrentYear = function() {
+		var year = new Date().getFullYear();
+		$('.current-year').text(year);
+	};
+
+	var readStoredTheme = function() {
+		try {
+			var stored = window.localStorage.getItem(themeStorageKey);
+			if (stored === 'glassmorphism')
+				return 'glassmorphism';
+			if (stored === 'modern' || stored === 'default')
+				return 'modern';
+			return 'glassmorphism';
+		} catch (err) {
+			return 'glassmorphism';
+		}
+	};
+
+	var persistTheme = function(theme) {
+		try {
+			window.localStorage.setItem(themeStorageKey, theme);
+		} catch (err) {
+			// localStorage might be unavailable; fail silently.
+		}
+	};
+
+	var applyTheme = function(theme) {
+		if (theme === 'glassmorphism')
+			$body.addClass(glassClass);
+		else
+			$body.removeClass(glassClass);
+	};
+
+	var syncControls = function(value, origin) {
+		for (var i = 0; i < themeToggleControls.length; i++) {
+			var $control = themeToggleControls[i];
+			if (origin && $control[0] === origin[0])
+				continue;
+			if ($control.val() !== value)
+				$control.val(value);
+		}
+	};
+
+	var createThemeSelect = function(id) {
+		var $select = $('<select></select>')
+			.attr('id', id)
+			.addClass('site-theme-select')
+			.append('<option value="glassmorphism">Glassmorphism</option>')
+			.append('<option value="modern">Modern</option>')
+			.val(currentTheme);
+
+		themeToggleControls.push($select);
+
+		$select.on('change', function() {
+			var value = $(this).val();
+			currentTheme = value === 'glassmorphism' ? 'glassmorphism' : 'modern';
+			applyTheme(currentTheme);
+			persistTheme(currentTheme);
+			syncControls(currentTheme, $select);
+		});
+
+		return $select;
+	};
+
+	var buildThemeToggle = function() {
+		var $footer = $('#footer');
+		if ($footer.length === 0 || $footer.find('.theme-toggle-footer').length > 0)
+			return;
+
+		var $container = $('<div class="theme-toggle-footer"></div>');
+		var $label = $('<label class="visually-hidden" for="site-theme-toggle-footer">Site theme</label>');
+		var $select = createThemeSelect('site-theme-toggle-footer');
+		$container.append($label).append($select);
+		$footer.append($container);
+	};
+
+	currentTheme = readStoredTheme();
+	applyTheme(currentTheme);
+	setCurrentYear();
 
 	// Breakpoints.
 		breakpoints({
@@ -70,6 +154,8 @@
 					target: $body,
 					visibleClass: 'navPanel-visible'
 				});
+
+		buildThemeToggle();
 
 	// Parallax.
 	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).

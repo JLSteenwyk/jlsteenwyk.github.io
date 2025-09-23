@@ -1,0 +1,1072 @@
+@import url("fontawesome-all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Bebas+Neue&family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=DM+Serif+Display:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,400&family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,100;1,9..144,400;1,9..144,700&display=swap');
+
+/* Just My Type - Typography as Art Theme */
+
+/* Custom Properties */
+:root {
+    /* Color Palette - Minimalist to let typography shine */
+    --type-black: #0a0a0a;
+    --type-charcoal: #1a1a1a;
+    --type-gray: #3a3a3a;
+    --type-light-gray: #e8e8e8;
+    --type-off-white: #fafaf8;
+    --type-pure-white: #ffffff;
+    --type-accent-red: #d32f2f;
+    --type-accent-blue: #1e3a8a;
+    --type-accent-gold: #f59e0b;
+    --type-accent-green: #059669;
+
+    /* Typography scales */
+    --type-scale-tiny: clamp(0.75rem, 1.5vw, 0.875rem);
+    --type-scale-small: clamp(0.875rem, 2vw, 1rem);
+    --type-scale-base: clamp(1rem, 2.5vw, 1.125rem);
+    --type-scale-medium: clamp(1.25rem, 3vw, 1.5rem);
+    --type-scale-large: clamp(2rem, 4vw, 3rem);
+    --type-scale-huge: clamp(3rem, 7vw, 5rem);
+    --type-scale-massive: clamp(4rem, 10vw, 8rem);
+    --type-scale-gigantic: clamp(6rem, 15vw, 12rem);
+
+    /* Letter spacing */
+    --letter-spacing-tight: -0.05em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.1em;
+    --letter-spacing-wider: 0.2em;
+    --letter-spacing-widest: 0.3em;
+}
+
+/* Reset and Base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', -apple-system, sans-serif;
+    font-size: var(--type-scale-base);
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--type-black);
+    background: var(--type-off-white);
+    margin: 0;
+    padding: 0;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography - The Star of the Show */
+h1 {
+    font-family: 'Abril Fatface', 'Playfair Display', serif;
+    font-size: var(--type-scale-gigantic);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: var(--letter-spacing-tight);
+    margin: 0.2em 0;
+    color: var(--type-black);
+    text-transform: uppercase;
+    position: relative;
+    mix-blend-mode: multiply;
+}
+
+/* Decorative first letter */
+h1::first-letter {
+    font-size: 1.3em;
+    color: var(--type-accent-red);
+    font-weight: 900;
+    float: left;
+    margin-right: 0.05em;
+    line-height: 0.8;
+}
+
+h2 {
+    font-family: 'Bebas Neue', 'DM Serif Display', serif;
+    font-size: var(--type-scale-huge);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-wide);
+    margin: 0.4em 0;
+    color: var(--type-charcoal);
+    position: relative;
+    overflow: visible;
+}
+
+/* Decorative underline with text */
+h2::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    font-size: 0.15em;
+    letter-spacing: var(--letter-spacing-widest);
+    color: var(--type-accent-blue);
+    opacity: 0.3;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: rotate(-2deg);
+}
+
+h3 {
+    font-family: 'Bodoni Moda', 'Playfair Display', serif;
+    font-size: var(--type-scale-large);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.1;
+    letter-spacing: var(--letter-spacing-normal);
+    margin: 0.5em 0;
+    color: var(--type-gray);
+    text-shadow: 2px 2px 0 var(--type-light-gray);
+}
+
+h4 {
+    font-family: 'Fraunces', serif;
+    font-size: var(--type-scale-medium);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: var(--letter-spacing-wide);
+    margin: 0.6em 0;
+    color: var(--type-black);
+    font-variation-settings: "opsz" 144, "wonk" 1;
+}
+
+h5 {
+    font-family: 'Space Mono', monospace;
+    font-size: var(--type-scale-base);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+    margin: 0.7em 0;
+    color: var(--type-accent-gold);
+    border-bottom: 3px solid currentColor;
+    display: inline-block;
+}
+
+h6 {
+    font-family: 'Raleway', sans-serif;
+    font-size: var(--type-scale-small);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-widest);
+    margin: 0.8em 0;
+    color: var(--type-gray);
+}
+
+p {
+    margin: 1em 0;
+    font-weight: 400;
+    hanging-punctuation: first last;
+}
+
+/* Drop caps for first paragraph */
+p:first-of-type::first-letter {
+    font-family: 'Abril Fatface', serif;
+    font-size: 4em;
+    float: left;
+    line-height: 0.8;
+    margin: 0.1em 0.1em 0 0;
+    color: var(--type-accent-red);
+    font-weight: 400;
+}
+
+/* Main Layout */
+#page-wrapper {
+    position: relative;
+    background: var(--type-off-white);
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Header - Typography Playground */
+#header {
+    background: var(--type-pure-white);
+    border-bottom: 1px solid var(--type-black);
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Decorative background text */
+#header::before {
+    content: 'TYPOGRAPHY DESIGN EXPRESSION ART LETTERS FONTS TYPE';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    color: var(--type-light-gray);
+    opacity: 0.1;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    animation: scrollText 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scrollText {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Navigation */
+#nav {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 5px;
+}
+
+#nav > ul > li {
+    margin: 0;
+    position: relative;
+}
+
+/* Navigation Links - Each with different font */
+#nav > ul > li:nth-child(1) a { font-family: 'Playfair Display', serif; }
+#nav > ul > li:nth-child(2) a { font-family: 'Bebas Neue', sans-serif; }
+#nav > ul > li:nth-child(3) a { font-family: 'Abril Fatface', serif; }
+#nav > ul > li:nth-child(4) a { font-family: 'Bodoni Moda', serif; }
+#nav > ul > li:nth-child(5) a { font-family: 'DM Serif Display', serif; }
+#nav > ul > li:nth-child(6) a { font-family: 'Fraunces', serif; }
+#nav > ul > li:nth-child(7) a { font-family: 'Space Mono', monospace; }
+
+/* Button/Link Styles */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.nav-link,
+#nav a {
+    font-size: var(--type-scale-medium);
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: var(--letter-spacing-normal);
+    background: transparent;
+    color: var(--type-black) !important;
+    padding: 10px 20px;
+    text-decoration: none !important;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    overflow: hidden;
+}
+
+/* Animated underline */
+.button::before,
+button::before,
+.nav-link::before,
+#nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--type-accent-red);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover,
+button:hover,
+.nav-link:hover,
+#nav a:hover {
+    color: var(--type-accent-red) !important;
+    transform: translateY(-2px);
+    font-weight: 700;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.button:hover::before,
+button:hover::before,
+.nav-link:hover::before,
+#nav a:hover::before {
+    width: 100%;
+}
+
+/* Hide original dropdowns */
+#nav ul ul {
+    display: none !important;
+}
+
+/* Dropdown menus */
+.dropotron {
+    background: var(--type-pure-white);
+    border: 2px solid var(--type-black);
+    padding: 20px !important;
+    position: absolute;
+    z-index: 1000;
+    min-width: 250px;
+    box-shadow: 10px 10px 0 var(--type-black);
+}
+
+.dropotron li {
+    margin: 10px 0 !important;
+    padding: 0 !important;
+}
+
+.dropotron a {
+    padding: 10px 15px !important;
+    border: none !important;
+    display: block !important;
+    width: 100%;
+    background: transparent !important;
+    color: var(--type-black) !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: var(--type-scale-small) !important;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.dropotron a:hover {
+    background: var(--type-black) !important;
+    color: var(--type-pure-white) !important;
+    padding-left: 25px !important;
+    font-weight: 700;
+}
+
+/* Banner/Hero - Typography as Hero */
+#banner {
+    background: var(--type-pure-white);
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--type-black);
+}
+
+/* Giant decorative letter background */
+#banner::before {
+    content: 'JLS';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    font-family: 'Abril Fatface', serif;
+    font-size: 40vw;
+    color: var(--type-light-gray);
+    opacity: 0.05;
+    line-height: 0.8;
+    pointer-events: none;
+    transform: rotate(-15deg);
+}
+
+#banner .content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#banner .hero-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#banner .hero-image img {
+    width: 180px;
+    height: 180px;
+    border: 5px solid var(--type-black);
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2);
+    transition: all 0.5s ease;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+#banner .hero-image img:hover {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.05) rotate(-5deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+#banner .hero-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: var(--type-scale-massive);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: 0.9;
+    margin: 0;
+    color: var(--type-black);
+    position: relative;
+}
+
+/* Split color effect */
+#banner .hero-name::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    color: var(--type-accent-red);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#banner .hero-tagline {
+    font-family: 'Bodoni Moda', serif;
+    font-size: var(--type-scale-medium);
+    font-style: italic;
+    color: var(--type-gray);
+    margin: 0;
+    letter-spacing: var(--letter-spacing-wider);
+    text-transform: lowercase;
+    min-height: 40px;
+}
+
+#banner .hero-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+#banner .hero-social a {
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+#banner .hero-social a:hover {
+    transform: translateY(-5px) rotate(-5deg);
+    filter: grayscale(0%);
+}
+
+#banner .goto-next {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 40px;
+    background: var(--type-black);
+    color: var(--type-pure-white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: var(--type-scale-medium);
+    letter-spacing: var(--letter-spacing-wider);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#banner .goto-next:hover {
+    background: var(--type-accent-red);
+    transform: scale(1.05);
+    letter-spacing: var(--letter-spacing-widest);
+}
+
+/* Content Sections */
+#content,
+#main,
+.wrapper {
+    background: var(--type-pure-white);
+    padding: 60px 40px;
+    position: relative;
+    margin: 0;
+}
+
+/* Decorative section numbers */
+section {
+    margin-bottom: 4em;
+    position: relative;
+    counter-increment: section;
+}
+
+section::before {
+    content: counter(section, decimal-leading-zero);
+    position: absolute;
+    left: -60px;
+    top: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: var(--type-scale-huge);
+    color: var(--type-light-gray);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Forms with Typography Focus */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+    font-family: 'Space Mono', monospace;
+    font-size: var(--type-scale-base);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--type-black);
+    color: var(--type-black);
+    padding: 10px 0;
+    width: 100%;
+    transition: all 0.3s ease;
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-bottom-color: var(--type-accent-red);
+    font-weight: 700;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Placeholder styling */
+::placeholder {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    opacity: 0.5;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Tables with Typography */
+table {
+    width: 100%;
+    margin: 2em 0;
+    border-collapse: collapse;
+    font-family: 'Space Mono', monospace;
+}
+
+th {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: var(--type-scale-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+    background: var(--type-black);
+    color: var(--type-pure-white);
+    padding: 20px;
+    text-align: left;
+}
+
+td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--type-light-gray);
+    font-size: var(--type-scale-small);
+}
+
+tr:hover td {
+    background: var(--type-off-white);
+    font-weight: 700;
+}
+
+/* Links */
+a {
+    color: var(--type-black);
+    text-decoration: none;
+    position: relative;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--type-accent-red);
+    font-weight: 700;
+}
+
+/* Inline links with fancy underline */
+p a,
+li a {
+    background: linear-gradient(to right, var(--type-accent-gold), var(--type-accent-gold));
+    background-size: 100% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
+
+p a:hover,
+li a:hover {
+    background-size: 100% 100%;
+    color: var(--type-pure-white);
+    padding: 2px 4px;
+    margin: 0 -4px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text wrap images */
+img.TextWrapLeft,
+img.TextWrapRight {
+    max-width: 400px !important;
+    max-height: 400px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    border: 3px solid var(--type-black);
+    filter: grayscale(100%) contrast(1.1);
+    transition: all 0.3s ease;
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
+
+img.TextWrapLeft {
+    float: left;
+    margin: 20px 30px 20px 0;
+    transform: rotate(-2deg);
+}
+
+img.TextWrapRight {
+    float: right;
+    margin: 20px 0 20px 30px;
+    transform: rotate(2deg);
+}
+
+img.TextWrapLeft:hover,
+img.TextWrapRight:hover {
+    filter: grayscale(0%) contrast(1);
+    transform: rotate(0deg) scale(1.02);
+}
+
+.image img {
+    border: 5px solid var(--type-black);
+    transition: all 0.3s ease;
+}
+
+.image img:hover {
+    box-shadow: 15px 15px 0 var(--type-accent-red);
+    transform: translate(-5px, -5px);
+}
+
+/* Lists with Custom Typography */
+ul, ol {
+    margin: 1em 0 1em 2em;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.5em;
+}
+
+ul li::before {
+    content: '§';
+    position: absolute;
+    left: 0;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.5em;
+    color: var(--type-accent-red);
+    font-weight: 700;
+}
+
+ol {
+    list-style: none;
+    counter-reset: item;
+}
+
+ol li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 3em;
+}
+
+ol li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    font-family: 'Abril Fatface', serif;
+    font-size: 2em;
+    color: var(--type-accent-blue);
+    font-weight: 400;
+    line-height: 0.8;
+    top: 0.1em;
+}
+
+/* Navigation lists reset */
+#nav ul,
+.dropotron ul {
+    list-style: none;
+    margin: 0;
+}
+
+#nav ul li::before,
+.dropotron ul li::before {
+    display: none;
+}
+
+/* Code blocks */
+pre, code {
+    font-family: 'Space Mono', monospace;
+    background: var(--type-off-white);
+    padding: 20px;
+    border-left: 5px solid var(--type-accent-green);
+    font-size: var(--type-scale-small);
+    letter-spacing: var(--letter-spacing-normal);
+    line-height: 1.8;
+}
+
+code {
+    padding: 2px 8px;
+    background: var(--type-light-gray);
+    border-left: none;
+    display: inline-block;
+}
+
+/* Blockquotes - Typography as Art */
+blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: var(--type-scale-large);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--type-accent-blue);
+    border: none;
+    padding: 40px;
+    margin: 2em 0;
+    position: relative;
+    text-align: center;
+    letter-spacing: var(--letter-spacing-normal);
+    line-height: 1.3;
+}
+
+blockquote::before,
+blockquote::after {
+    font-family: 'Abril Fatface', serif;
+    font-size: 8em;
+    position: absolute;
+    opacity: 0.1;
+    font-style: normal;
+}
+
+blockquote::before {
+    content: '"';
+    top: -40px;
+    left: 20px;
+}
+
+blockquote::after {
+    content: '"';
+    bottom: -80px;
+    right: 20px;
+}
+
+/* Footer */
+#footer,
+footer {
+    background: var(--type-black);
+    color: var(--type-pure-white);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Footer decorative text */
+#footer::before {
+    content: '© TYPOGRAPHY © DESIGN © ART ©';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15vw;
+    color: var(--type-charcoal);
+    opacity: 0.5;
+    white-space: nowrap;
+    text-align: center;
+    pointer-events: none;
+}
+
+#footer .copyright {
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: var(--letter-spacing-wider);
+    text-transform: uppercase;
+    font-size: var(--type-scale-small);
+    position: relative;
+    z-index: 1;
+}
+
+#footer .copyright li {
+    display: inline;
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+}
+
+#footer .copyright li::before {
+    display: none;
+}
+
+/* Hide mobile nav panel */
+#navPanel,
+#titleBar {
+    display: none !important;
+}
+
+/* Theme Switcher */
+.theme-switcher-container {
+    margin-left: auto !important;
+    padding: 0 15px;
+}
+
+.theme-select {
+    font-family: 'Space Mono', monospace;
+    font-size: var(--type-scale-small);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    background: transparent;
+    border: 2px solid var(--type-black);
+    padding: 8px 15px;
+    cursor: pointer;
+    color: var(--type-black);
+    transition: all 0.3s ease;
+}
+
+.theme-select:hover,
+.theme-select:focus {
+    background: var(--type-black);
+    color: var(--type-pure-white);
+    outline: none;
+}
+
+.theme-select option {
+    background: var(--type-pure-white);
+    color: var(--type-black);
+    font-weight: 400;
+}
+
+/* Spotlight sections */
+.spotlight {
+    background: var(--type-off-white);
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight .content {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.spotlight .image {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Features grid */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.features article {
+    background: var(--type-pure-white);
+    border: 3px solid var(--type-black);
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.features article:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 10px 0 var(--type-accent-red);
+}
+
+.features article h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: none;
+    color: var(--type-accent-blue);
+}
+
+/* Icons */
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon.major {
+    font-size: 3em;
+    color: var(--type-accent-red);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Social badges compatibility */
+.hero-social img {
+    border: 2px solid var(--type-black) !important;
+    padding: 5px;
+    background: var(--type-pure-white);
+}
+
+/* Text selection */
+::selection {
+    background: var(--type-accent-gold);
+    color: var(--type-pure-white);
+}
+
+::-moz-selection {
+    background: var(--type-accent-gold);
+    color: var(--type-pure-white);
+}
+
+/* Typewriter effect */
+.typewriter {
+    display: inline-block;
+    min-height: 1.5em;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+/* Grid layouts */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px;
+}
+
+.col-4,
+.col-6,
+.col-8,
+.col-12 {
+    padding: 20px;
+}
+
+.col-4 { flex: 0 0 33.333%; }
+.col-6 { flex: 0 0 50%; }
+.col-8 { flex: 0 0 66.666%; }
+.col-12 { flex: 0 0 100%; }
+
+/* Responsive Design */
+@media screen and (max-width: 980px) {
+    :root {
+        --type-scale-gigantic: clamp(3rem, 12vw, 6rem);
+        --type-scale-massive: clamp(2.5rem, 10vw, 5rem);
+    }
+
+    #nav > ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #nav > ul > li {
+        width: 100%;
+    }
+
+    .theme-switcher-container {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+
+    section::before {
+        left: -40px;
+    }
+
+    .col-4,
+    .col-6,
+    .col-8 {
+        flex: 0 0 100%;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #banner .hero-name {
+        font-size: var(--type-scale-huge);
+    }
+
+    #banner .hero-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    #banner,
+    #content,
+    #main,
+    .wrapper {
+        padding: 30px 20px;
+    }
+
+    img.TextWrapLeft,
+    img.TextWrapRight {
+        float: none !important;
+        display: block !important;
+        margin: 20px auto !important;
+        max-width: 300px !important;
+        max-height: 300px !important;
+    }
+
+    section::before {
+        display: none;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Special Typography Effects */
+.text-outline {
+    -webkit-text-stroke: 2px var(--type-black);
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--type-accent-red), var(--type-accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-shadow-3d {
+    text-shadow:
+        1px 1px 0 var(--type-accent-red),
+        2px 2px 0 var(--type-accent-blue),
+        3px 3px 0 var(--type-accent-gold),
+        4px 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Animated text on scroll */
+@keyframes typeReveal {
+    from {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+.reveal-text {
+    animation: typeReveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
