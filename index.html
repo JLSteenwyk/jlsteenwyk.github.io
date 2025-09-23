@@ -9,12 +9,6 @@
   gtag('config', 'UA-104875636-1');
 </script>
 <html>
-	<style>
-		.TextWrapRight{float:right; margin: 10px;}
-	</style>
-	<style>
-		.TextWrapLeft{float:left; margin: 10px;}
-	</style>
 	<head>
 		<title>J.L. Steenwyk</title>
 		<meta charset="utf-8" />
@@ -28,6 +22,7 @@
 			<div id="page-wrapper">
 			<!-- Header -->
 				<header id="header">
+					<h1 id="logo"><a href="index.html">Jacob L. Steenwyk</a></h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html#content" class="nav-link">About</a></li>
@@ -80,14 +75,9 @@
 					<div class="hero-inner">
 						<div class="hero-portrait">
 							<div class="portrait-frame">
-								<center>
-									<br/><br/>
-									<img src="images/Jacob_Steenwyk.jpg" alt="Portrait of Jacob L. Steenwyk" />
-									<br/><br/><br/>
-									<h2 class="hero-name">Jacob L. Steenwyk, Ph.D.</h2>
-									<br/><br/>
-								</center>
+								<img src="images/Jacob_Steenwyk.jpg" alt="Portrait of Jacob L. Steenwyk" />
 							</div>
+							<h2 class="hero-name">Jacob L. Steenwyk, Ph.D.</h2>
 							<!-- <ul class="hero-highlights">
 								<li>Nature Reviews Genetics, Science Advances, PLOS Biology</li>
 								<li>Gilliam Fellow alumni championing inclusive research</li>
@@ -98,13 +88,11 @@
 							
 							<h3 class="hero-tagline typewriter" id="typewriter-text"></h3>
 							<p class="hero-lead">Comparative genomics + computational tool development to investigate microbial pathogenesis, animal origins, and evolutionary informatics at scale.</p>
-							<p>
-								<div class="hero-cta">
-									<a class="cta-button primary" href="publications.html">View Publications</a>
-									<a class="cta-button tertiary" href="software.html">Explore Software</a>
-									<!-- <a class="cta-button tertiary" href="https://genomely.substack.com/" target="_blank" rel="noopener">Read Genomely</a> -->
-								</div>
-							</p>
+							<div class="hero-cta">
+								<a class="cta-button primary" href="publications.html">View Publications</a>
+								<a class="cta-button tertiary" href="software.html">Explore Software</a>
+								<!-- <a class="cta-button tertiary" href="https://genomely.substack.com/" target="_blank" rel="noopener">Read Genomely</a> -->
+							</div>
 							<!-- <ul class="hero-stats">
 								<li>
 									<span class="stat-value">Genomes & Evolution</span>
@@ -116,11 +104,9 @@
 								</li>
 							</ul> -->
 							<div class="hero-social">
-								<center>
-									<a href="https://bsky.app/profile/jlsteenwyk.bsky.social" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff" alt="Bluesky"></a>
-									<a href="https://github.com/JLSteenwyk" target="_blank" rel="noopener noreferrer"><img alt="GitHub followers" src="https://img.shields.io/github/followers/JLSteenwyk?style=social"></a>
-									<a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Google%20Scholar-blue" alt="Google Scholar"></a>
-								</center>
+								<a href="https://bsky.app/profile/jlsteenwyk.bsky.social" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff" alt="Bluesky"></a>
+								<a href="https://github.com/JLSteenwyk" target="_blank" rel="noopener noreferrer"><img alt="GitHub followers" src="https://img.shields.io/github/followers/JLSteenwyk?style=social"></a>
+								<a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Google%20Scholar-blue" alt="Google Scholar"></a>
 							</div>
 						</div>
 						</div>
@@ -164,12 +150,13 @@
 									Science belongs to everyone. I'm passionate about promoting diversity, equity, and inclusion in STEM through community engagement and accessible science 
 									communication. One way I do this is through <a href="https://genomely.substack.com/">Genomely: where genomics and evolution converge</a>—a newsletter 
 									that makes cutting-edge genomics research accessible to everyone. Join thousands of subscribers exploring the fascinating world of genomes and evolution!
-									<br />
-									<center>
-										<iframe src="https://genomely.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-									</center>
-
 								</p>
+								<div class="newsletter-signup">
+									<div class="responsive-embed">
+										<iframe src="https://genomely.substack.com/embed" title="Subscribe to the Genomely newsletter" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+									</div>
+								</div>
+
 
 								<hr>
 
@@ -247,7 +234,7 @@
 
 									<h3>Development of Computational Tools</h3>
 									<p>
-										<img class="TextWrapLeft" src="about_images/clipkit_performance.jpg" alt="about_images/about_images/clipkit_performance.jpg", style="width: 35%; height: 35%">
+										<img class="TextWrapLeft" src="about_images/clipkit_performance.jpg" alt="about_images/about_images/clipkit_performance.jpg">
 											Modern biology is computational biology. Recognizing that researchers need powerful, accessible tools to unlock biological insights, I develop 
 											software that transforms how scientists analyze evolutionary data. My flagship tool, <a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a>, 
 											revolutionizes alignment trimming by intelligently retaining phylogenetically informative sites while removing noise. In rigorous testing across 

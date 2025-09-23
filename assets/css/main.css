@@ -152,7 +152,8 @@ input, select, textarea {
 	font-size: 3.2em !important;
 	font-weight: 700 !important;
 	text-shadow: 0 12px 30px rgba(4, 12, 24, 0.45);
-	margin-bottom: 0.4em !important;
+	margin: 1.25rem 0 0.4em !important;
+	text-align: center;
 }
 
 .hero-tagline {
@@ -253,7 +254,7 @@ input, select, textarea {
 
 
 .hero-portrait {
-	text-align: left;
+	text-align: center;
 	display: flex;
 	flex-direction: column;
 	gap: 1.6rem;
@@ -282,8 +283,8 @@ input, select, textarea {
 }
 
 .portrait-frame img {
-	width: 260px;
-	height: 260px;
+	width: min(260px, 100%);
+	height: auto;
 	border-radius: 32px;
 	object-fit: cover;
 	box-shadow: 0 20px 45px rgba(8, 11, 30, 0.45);
@@ -317,12 +318,16 @@ input, select, textarea {
 
 .hero-social {
 	margin-top: 1.5rem;
-	text-align: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.6rem;
 }
 
 .hero-social a {
-	display: inline-block;
-	margin: 0 0.35rem;
+	display: inline-flex;
+	margin: 0;
 	transition: transform 0.3s ease;
 }
 
@@ -337,6 +342,46 @@ input, select, textarea {
 
 .hero-social a:hover img {
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.newsletter-signup {
+	margin: 2.5rem auto;
+	width: 100%;
+	max-width: 520px;
+	display: flex;
+	justify-content: center;
+}
+
+.responsive-embed {
+	position: relative;
+	width: 100%;
+	padding-top: 31.25%;
+}
+
+.responsive-embed iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+img.TextWrapLeft,
+img.TextWrapRight {
+	width: 40%;
+	max-width: 360px;
+	height: auto !important;
+}
+
+img.TextWrapLeft {
+	float: left;
+	margin: 0 1.5rem 1.5rem 0;
+}
+
+img.TextWrapRight {
+	float: right;
+	margin: 0 0 1.5rem 1.5rem;
 }
 
 /* Call-to-Action Buttons */
@@ -436,9 +481,7 @@ input, select, textarea {
 	}
 
 	.hero-portrait {
-		flex-direction: row;
-		align-items: flex-start;
-		justify-content: space-between;
+		gap: 1.4rem;
 	}
 
 	.hero-highlights {
@@ -473,6 +516,10 @@ input, select, textarea {
 		justify-content: center;
 	}
 
+	#banner {
+		background-attachment: scroll;
+	}
+
 	.hero-stats {
 		grid-template-columns: 1fr;
 	}
@@ -492,8 +539,7 @@ input, select, textarea {
 	}
 
 	.portrait-frame img {
-		width: 220px;
-		height: 220px;
+		max-width: 200px;
 	}
 
 	.hero-highlights li {
@@ -505,7 +551,16 @@ input, select, textarea {
 	}
 
 	.hero-social {
-		text-align: center;
+		justify-content: center;
+	}
+
+	img.TextWrapLeft,
+	img.TextWrapRight {
+		float: none !important;
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		margin: 1.25rem auto;
 	}
 
 	.hero-aurora {
@@ -1106,6 +1161,14 @@ hr {
 	
 	#ResearchInterests h3 {
 		font-size: 1.4em;
+	}
+
+	.hero-name {
+		font-size: 2em !important;
+	}
+
+	.hero-lead {
+		font-size: 0.95em;
 	}
 }
 
@@ -4829,6 +4892,20 @@ strong, b {
 			top: 0;
 		}
 
+		#header #logo a {
+			display: inline-block;
+			color: #f8fafc;
+			font-weight: 600;
+			letter-spacing: 0.02em;
+			text-decoration: none;
+			transition: color var(--transition-fast);
+		}
+
+		#header #logo a:hover,
+		#header #logo a:focus {
+			color: var(--primary-teal-light);
+		}
+
 		#header nav {
 			position: absolute;
 			right: 1em;
@@ -5541,6 +5618,23 @@ strong, b {
 			#banner .content {
 				padding: 3em 1.5625em 5.25em 1.5625em;
 			}
+
+		#banner .hero-inner {
+			padding: 2rem 1.25rem;
+			gap: 2rem;
+		}
+
+		.hero-text {
+			padding: 1.6rem;
+		}
+
+		.hero-name {
+			font-size: 1.75em !important;
+		}
+
+		.cta-button {
+			width: 100%;
+		}
 
 		/* Footer */
 
