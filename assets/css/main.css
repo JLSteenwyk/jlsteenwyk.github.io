@@ -147,13 +147,13 @@ input, select, textarea {
 }
 
 /* Hero Section */
-.hero-name {
-	color: #f8fafc !important;
-	font-size: 3.2em !important;
-	font-weight: 700 !important;
-	text-shadow: 0 12px 30px rgba(4, 12, 24, 0.45);
-	margin: 1.25rem 0 0.4em !important;
-	text-align: center;
+
+.hero-heading {
+	color: var(--text-primary);
+	font-size: 2.1em;
+	font-weight: 700;
+	line-height: 1.3;
+	margin-bottom: 1.2rem;
 }
 
 .hero-tagline {
@@ -651,6 +651,10 @@ body.glassmorphism-theme #banner .hero-text {
 	box-shadow: 0 35px 70px rgba(7, 11, 30, 0.55);
 }
 
+body.glassmorphism-theme .hero-heading {
+	color: #f8fafc;
+}
+
 body.glassmorphism-theme .hero-stats li,
 body.glassmorphism-theme .hero-highlights li,
 body.glassmorphism-theme .portrait-frame {
@@ -963,12 +967,14 @@ body.glassmorphism-theme #aesthetic-description {
 	margin: 3rem auto;
 }
 
+.major h1,
 .major h2 {
 	position: relative;
 	padding-bottom: 1rem;
 	margin-bottom: 2rem;
 }
 
+.major h1::after,
 .major h2::after {
 	content: '';
 	position: absolute;
@@ -1134,7 +1140,7 @@ hr {
 		border-radius: 0;
 	}
 	
-	.hero-name {
+	.hero-heading {
 		font-size: 2.2em !important;
 	}
 	
@@ -1154,6 +1160,7 @@ hr {
 		margin: 0.5rem;
 	}
 	
+	.major h1::after,
 	.major h2::after {
 		width: 40px;
 		height: 3px;
@@ -1163,7 +1170,7 @@ hr {
 		font-size: 1.4em;
 	}
 
-	.hero-name {
+	.hero-heading {
 		font-size: 2em !important;
 	}
 
@@ -4883,7 +4890,7 @@ strong, b {
 		transition: all 0.3s ease;
 	}
 
-		#header h1 {
+		#header #logo {
 			height: inherit;
 			left: 1.25em;
 			line-height: inherit;
@@ -5628,7 +5635,7 @@ strong, b {
 			padding: 1.6rem;
 		}
 
-		.hero-name {
+		.hero-heading {
 			font-size: 1.75em !important;
 		}
 
