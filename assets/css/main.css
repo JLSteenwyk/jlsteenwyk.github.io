@@ -1,5 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
 
 /*
 	Landed by HTML5 UP
@@ -797,6 +798,394 @@ body.glassmorphism-theme #aesthetic-description {
 	color: rgba(226, 232, 240, 0.9);
 }
 
+/* earlyOS Theme */
+body.earlyos-theme {
+	background: linear-gradient(180deg, #9caab7 0%, #aab5c1 100%);
+	color: #111111;
+	font-family: "VT323", "Courier New", monospace;
+	letter-spacing: 0.01em;
+	position: relative;
+	cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='22'%3E%3Cpath d='M1 1v17l4-4 3 7 3-1-3-7h6z' fill='white' stroke='black' stroke-width='1.2'/%3E%3C/svg%3E"), auto;
+	image-rendering: pixelated;
+}
+
+body.earlyos-theme::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background:
+		repeating-linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.08) 0,
+		rgba(255, 255, 255, 0.08) 1px,
+		rgba(0, 0, 0, 0.07) 2px,
+		rgba(0, 0, 0, 0.07) 3px
+		),
+		repeating-linear-gradient(
+		90deg,
+		rgba(20, 42, 66, 0.15) 0,
+		rgba(20, 42, 66, 0.15) 1px,
+		transparent 2px,
+		transparent 4px
+		);
+	opacity: 0.42;
+	z-index: 0;
+	animation: earlyos-scanline 9s linear infinite;
+}
+
+body.earlyos-theme::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(circle at 50% 50%, transparent 62%, rgba(0, 0, 0, 0.22) 100%),
+		repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 2px, transparent 4px);
+	z-index: 0;
+}
+
+body.earlyos-theme #page-wrapper,
+body.earlyos-theme #header,
+body.earlyos-theme #main,
+body.earlyos-theme #footer,
+body.earlyos-theme #banner,
+body.earlyos-theme .wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+body.earlyos-theme h1,
+body.earlyos-theme h2,
+body.earlyos-theme h3,
+body.earlyos-theme h4,
+body.earlyos-theme h5,
+body.earlyos-theme h6 {
+	color: #010101;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: clamp(0.75rem, 1.2vw, 1rem);
+	letter-spacing: 0.03em;
+	line-height: 1.6;
+	text-transform: uppercase;
+}
+
+body.earlyos-theme p,
+body.earlyos-theme li,
+body.earlyos-theme label,
+body.earlyos-theme span,
+body.earlyos-theme td,
+body.earlyos-theme th {
+	color: #111111;
+	font-size: clamp(1.05rem, 1.9vw, 1.55rem);
+	line-height: 1.35;
+}
+
+body.earlyos-theme a {
+	color: #0019c1 !important;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+
+body.earlyos-theme a:hover,
+body.earlyos-theme a:focus {
+	color: #ffffff !important;
+	background: #0019c1;
+}
+
+body.earlyos-theme #header {
+	background: linear-gradient(180deg, #f0f0f0 0%, #cccccc 100%);
+	border-top: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	border-right: 2px solid #4f4f4f;
+	border-bottom: 2px solid #4f4f4f;
+	box-shadow: 0 2px 0 #8a8a8a, 0 6px 0 rgba(35, 35, 35, 0.2);
+}
+
+body.earlyos-theme #header .nav-link {
+	color: #000000 !important;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: 0.66rem;
+	letter-spacing: 0.06em;
+}
+
+body.earlyos-theme #header .nav-link:hover {
+	color: #ffffff !important;
+	background: #0019c1;
+	transform: none;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+body.earlyos-theme #banner {
+	background:
+		linear-gradient(180deg, rgba(213, 221, 230, 0.96) 0%, rgba(187, 199, 212, 0.95) 100%);
+	border: 2px solid #3e3e3e;
+	box-shadow: 6px 6px 0 #6f6f6f, 12px 12px 0 rgba(30, 30, 30, 0.22);
+	padding-top: 4.3rem;
+}
+
+body.earlyos-theme #banner::before {
+	content: "earlyOS :: home.exe";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2.1rem;
+	background:
+		linear-gradient(90deg, #00115f 0%, #0032ad 42%, #2d80ff 100%);
+	color: #ffffff;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: 0.58rem;
+	letter-spacing: 0.06em;
+	line-height: 2.1rem;
+	padding: 0 0.85rem;
+	text-transform: uppercase;
+}
+
+body.earlyos-theme #banner::after {
+	content: "[_][ ][X]";
+	position: absolute;
+	right: 0.9rem;
+	top: 0;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	color: #dfe9ff;
+	font-size: 0.7rem;
+	letter-spacing: 0.3em;
+	font-family: "Press Start 2P", "VT323", monospace;
+}
+
+body.earlyos-theme .hero-aurora {
+	display: none;
+}
+
+body.earlyos-theme #banner .hero-inner {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(226, 233, 242, 0.2) 100%);
+	border: 2px solid #5f5f5f;
+	box-shadow: inset 0 0 0 2px #dde2e8;
+}
+
+body.earlyos-theme #banner .hero-text,
+body.earlyos-theme .portrait-frame,
+body.earlyos-theme .hero-stats li,
+body.earlyos-theme .hero-highlights li,
+body.earlyos-theme .feature-highlight,
+body.earlyos-theme #main.wrapper.style1 > .container,
+body.earlyos-theme #main.wrapper.style1 #content {
+	background: #efefef;
+	border-top: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	border-right: 2px solid #6c6c6c;
+	border-bottom: 2px solid #6c6c6c;
+	border-radius: 0;
+	box-shadow: inset 1px 1px 0 #e9e9e9, 4px 4px 0 rgba(80, 80, 80, 0.45), 7px 7px 0 rgba(40, 40, 40, 0.18);
+}
+
+body.earlyos-theme #banner .hero-text {
+	position: relative;
+	padding-top: 3.1rem;
+}
+
+body.earlyos-theme #banner .hero-text::before {
+	content: "C:\\RESEARCH\\PROFILE.TXT";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2.1rem;
+	background: linear-gradient(90deg, #0035b1 0%, #4d90ff 100%);
+	color: #f8fcff;
+	line-height: 2.1rem;
+	padding: 0 0.7rem;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: 0.5rem;
+	letter-spacing: 0.05em;
+	border-bottom: 2px solid #44607d;
+}
+
+body.earlyos-theme .portrait-frame {
+	position: relative;
+	padding-top: 2.35rem;
+}
+
+body.earlyos-theme .portrait-frame::before {
+	content: "[DIR] bio.bmp";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1.75rem;
+	background: linear-gradient(90deg, #e9e9e9 0%, #cfcfcf 100%);
+	border-bottom: 2px solid #808080;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: 0.48rem;
+	line-height: 1.75rem;
+	color: #111111;
+	text-align: left;
+	padding: 0 0.55rem;
+}
+
+body.earlyos-theme .hero-tagline {
+	color: #00145f !important;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: clamp(0.66rem, 1vw, 0.82rem) !important;
+	line-height: 1.8;
+	white-space: normal;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+body.earlyos-theme .hero-lead {
+	color: #101010;
+	font-size: clamp(1.2rem, 2vw, 1.7rem);
+	line-height: 1.3;
+}
+
+body.earlyos-theme .hero-social img {
+	filter: grayscale(20%) contrast(108%) saturate(85%);
+	border: 2px solid #2b2b2b;
+	box-shadow: 2px 2px 0 #d9d9d9, 4px 4px 0 rgba(45, 45, 45, 0.3);
+	background: #ececec;
+}
+
+body.earlyos-theme .cta-button,
+body.earlyos-theme .site-theme-select,
+body.earlyos-theme input[type="submit"],
+body.earlyos-theme input[type="button"] {
+	background: #e6e6e6;
+	color: #000000 !important;
+	border-top: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	border-right: 2px solid #4f4f4f;
+	border-bottom: 2px solid #4f4f4f;
+	border-radius: 0;
+	box-shadow: none;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: 0.58rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+body.earlyos-theme .cta-button:hover,
+body.earlyos-theme .site-theme-select:hover,
+body.earlyos-theme .site-theme-select:focus {
+	background: linear-gradient(180deg, #e4f0ff 0%, #c8dbff 100%);
+	color: #001473 !important;
+}
+
+body.earlyos-theme .cta-button:active {
+	border-top: 2px solid #4f4f4f;
+	border-left: 2px solid #4f4f4f;
+	border-right: 2px solid #ffffff;
+	border-bottom: 2px solid #ffffff;
+	transform: translate(1px, 1px);
+}
+
+body.earlyos-theme .theme-toggle-footer {
+	opacity: 1;
+	background: #d8d8d8;
+	padding: 0.4rem 0.5rem;
+	border-top: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	border-right: 2px solid #5f5f5f;
+	border-bottom: 2px solid #5f5f5f;
+	box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.26);
+}
+
+body.earlyos-theme .site-theme-select option {
+	color: #000000;
+}
+
+body.earlyos-theme #footer .icons a {
+	background: #f0f0f0;
+	border-top: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	border-right: 2px solid #6d6d6d;
+	border-bottom: 2px solid #6d6d6d;
+	border-radius: 0;
+}
+
+body.earlyos-theme .dropotron {
+	background: #ececec;
+	border: 2px solid #535353;
+	border-radius: 0;
+}
+
+body.earlyos-theme .dropotron li a {
+	color: #000000 !important;
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: 0.55rem;
+}
+
+body.earlyos-theme .dropotron li:hover > a,
+body.earlyos-theme .dropotron li a:hover {
+	background: #0019c1;
+	color: #ffffff !important;
+}
+
+body.earlyos-theme #titleBar,
+body.earlyos-theme #navPanel {
+	background: #d8d8d8;
+	border-top: 2px solid #ffffff;
+	border-left: 2px solid #ffffff;
+	border-right: 2px solid #5f5f5f;
+	border-bottom: 2px solid #5f5f5f;
+}
+
+body.earlyos-theme #navPanel .link {
+	font-family: "Press Start 2P", "VT323", monospace;
+	font-size: 0.55rem;
+	color: #020202 !important;
+}
+
+body.earlyos-theme #navPanel .link:hover {
+	background: #0030a8;
+	color: #ffffff !important;
+}
+
+@keyframes earlyos-scanline {
+	0% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(10px);
+	}
+}
+
+@media screen and (max-width: 980px) {
+	body.earlyos-theme #banner {
+		padding-top: 3.6rem;
+		box-shadow: 4px 4px 0 #6f6f6f;
+	}
+
+	body.earlyos-theme #banner::before {
+		height: 1.75rem;
+		line-height: 1.75rem;
+		font-size: 0.48rem;
+	}
+
+	body.earlyos-theme #banner::after {
+		height: 1.75rem;
+		line-height: 1.75rem;
+		font-size: 0.55rem;
+		right: 0.5rem;
+	}
+
+	body.earlyos-theme #banner .hero-text::before {
+		font-size: 0.45rem;
+	}
+
+	body.earlyos-theme .portrait-frame::before {
+		font-size: 0.44rem;
+	}
+
+	body.earlyos-theme .cta-button,
+	body.earlyos-theme .site-theme-select {
+		font-size: 0.52rem;
+	}
+}
+
 .feature-highlight h3 {
 	color: var(--primary-navy);
 	font-size: 1.4em;
@@ -1083,11 +1472,6 @@ iframe[src*="substack"] {
 	border-radius: 8px !important;
 	box-shadow: var(--shadow-medium) !important;
 	margin: 2rem 0 !important;
-}
-
-/* Smooth Page Transitions */
-* {
-	transition: opacity 0.1s ease-in-out;
 }
 
 /* Focus Indicators for Accessibility */
@@ -5661,3 +6045,195 @@ strong, b {
 					}
 
 	}
+
+/* Readability Audit Fixes */
+:root {
+	--readable-layout-max: 1120px;
+	--readable-prose-max: 72ch;
+	--readable-prose-max-earlyos: 68ch;
+}
+
+body.page-home {
+	--readable-layout-max: 1080px;
+	--readable-prose-max: 68ch;
+	--readable-prose-max-earlyos: 64ch;
+}
+
+body.page-publications {
+	--readable-layout-max: 1220px;
+	--readable-prose-max: 80ch;
+	--readable-prose-max-earlyos: 76ch;
+}
+
+body.page-news {
+	--readable-layout-max: 1100px;
+	--readable-prose-max: 70ch;
+	--readable-prose-max-earlyos: 66ch;
+}
+
+body.page-software {
+	--readable-layout-max: 1160px;
+	--readable-prose-max: 74ch;
+	--readable-prose-max-earlyos: 70ch;
+}
+
+body.page-cv {
+	--readable-layout-max: 1100px;
+	--readable-prose-max: 66ch;
+	--readable-prose-max-earlyos: 62ch;
+}
+
+body.page-resources {
+	--readable-layout-max: 1140px;
+	--readable-prose-max: 72ch;
+	--readable-prose-max-earlyos: 68ch;
+}
+
+body.page-contact {
+	--readable-layout-max: 980px;
+	--readable-prose-max: 62ch;
+	--readable-prose-max-earlyos: 58ch;
+}
+
+#main.wrapper.style1 > .container {
+	max-width: var(--readable-layout-max);
+	width: min(92vw, var(--readable-layout-max));
+}
+
+#main.wrapper.style1 #content {
+	max-inline-size: 78ch;
+	margin-inline: auto;
+}
+
+body.page-software #main.wrapper.style1 #content {
+	max-inline-size: none;
+}
+
+body.page-software #main.wrapper.style1 #content > section {
+	max-inline-size: 980px;
+	margin-inline: auto;
+}
+
+body.page-software.earlyos-theme #main.wrapper.style1 #content,
+body.page-software.earlyos-theme #main.wrapper.style1 #content > section {
+	max-inline-size: 980px;
+}
+
+body.page-publications #main.wrapper.style1 #content,
+body.page-news #main.wrapper.style1 #content,
+body.page-cv #main.wrapper.style1 #content,
+body.page-resources #main.wrapper.style1 #content,
+body.page-contact #main.wrapper.style1 #content {
+	max-inline-size: none;
+}
+
+body.page-publications #main.wrapper.style1 #content > section {
+	max-inline-size: 1020px;
+	margin-inline: auto;
+}
+
+body.page-news #main.wrapper.style1 #content > section,
+body.page-cv #main.wrapper.style1 #content > section,
+body.page-resources #main.wrapper.style1 #content > section {
+	max-inline-size: 920px;
+	margin-inline: auto;
+}
+
+body.page-contact #main.wrapper.style1 #content > section {
+	max-inline-size: 760px;
+	margin-inline: auto;
+}
+
+body.page-publications.earlyos-theme #main.wrapper.style1 #content,
+body.page-publications.earlyos-theme #main.wrapper.style1 #content > section {
+	max-inline-size: 1020px;
+}
+
+body.page-news.earlyos-theme #main.wrapper.style1 #content,
+body.page-news.earlyos-theme #main.wrapper.style1 #content > section,
+body.page-cv.earlyos-theme #main.wrapper.style1 #content,
+body.page-cv.earlyos-theme #main.wrapper.style1 #content > section,
+body.page-resources.earlyos-theme #main.wrapper.style1 #content,
+body.page-resources.earlyos-theme #main.wrapper.style1 #content > section {
+	max-inline-size: 920px;
+}
+
+body.page-contact.earlyos-theme #main.wrapper.style1 #content,
+body.page-contact.earlyos-theme #main.wrapper.style1 #content > section {
+	max-inline-size: 760px;
+}
+
+body.page-publications #main.wrapper.style1 > .container > header.major,
+body.page-news #main.wrapper.style1 > .container > header.major,
+body.page-software #main.wrapper.style1 > .container > header.major,
+body.page-cv #main.wrapper.style1 > .container > header.major,
+body.page-resources #main.wrapper.style1 > .container > header.major,
+body.page-contact #main.wrapper.style1 > .container > header.major,
+body.page-publications #main.wrapper.style1 #content > header.major,
+body.page-news #main.wrapper.style1 #content > header.major,
+body.page-software #main.wrapper.style1 #content > header.major,
+body.page-cv #main.wrapper.style1 #content > header.major,
+body.page-resources #main.wrapper.style1 #content > header.major,
+body.page-contact #main.wrapper.style1 #content > header.major {
+	padding-top: 1.35rem;
+}
+
+#main.wrapper.style1 #Preprints,
+#main.wrapper.style1 #PeerReviewed {
+	max-inline-size: 74ch;
+}
+
+#main.wrapper.style1 > .container > p,
+#main.wrapper.style1 > .container > section p,
+#main.wrapper.style1 > .container > section li,
+#main.wrapper.style1 > .container > .row > div > section p,
+#main.wrapper.style1 > .container > .row > div > section li {
+	max-inline-size: var(--readable-prose-max);
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.68;
+}
+
+body.earlyos-theme #main.wrapper.style1 #content,
+body.earlyos-theme #main.wrapper.style1 #Preprints,
+body.earlyos-theme #main.wrapper.style1 #PeerReviewed,
+body.earlyos-theme #main.wrapper.style1 > .container > p,
+body.earlyos-theme #main.wrapper.style1 > .container > section p,
+body.earlyos-theme #main.wrapper.style1 > .container > section li,
+body.earlyos-theme #main.wrapper.style1 > .container > .row > div > section p,
+body.earlyos-theme #main.wrapper.style1 > .container > .row > div > section li {
+	max-inline-size: var(--readable-prose-max-earlyos);
+	line-height: 1.58;
+}
+
+@media screen and (max-width: 980px) {
+	#main.wrapper.style1 > .container {
+		width: min(95vw, var(--readable-layout-max));
+	}
+
+	#main.wrapper.style1 #content,
+	#main.wrapper.style1 #Preprints,
+	#main.wrapper.style1 #PeerReviewed,
+	#main.wrapper.style1 > .container > p,
+	#main.wrapper.style1 > .container > section p,
+	#main.wrapper.style1 > .container > section li,
+	#main.wrapper.style1 > .container > .row > div > section p,
+	#main.wrapper.style1 > .container > .row > div > section li {
+		max-inline-size: 100%;
+	}
+
+	body.page-publications #main.wrapper.style1 > .container > header.major,
+	body.page-news #main.wrapper.style1 > .container > header.major,
+	body.page-software #main.wrapper.style1 > .container > header.major,
+	body.page-cv #main.wrapper.style1 > .container > header.major,
+	body.page-resources #main.wrapper.style1 > .container > header.major,
+	body.page-contact #main.wrapper.style1 > .container > header.major,
+	body.page-publications #main.wrapper.style1 #content > header.major,
+	body.page-news #main.wrapper.style1 #content > header.major,
+	body.page-software #main.wrapper.style1 #content > header.major,
+	body.page-cv #main.wrapper.style1 #content > header.major,
+	body.page-resources #main.wrapper.style1 #content > header.major,
+	body.page-contact #main.wrapper.style1 #content > header.major {
+		padding-top: 0.85rem;
+	}
+}

@@ -10,6 +10,7 @@
 		$body = $('body'),
 		themeStorageKey = 'jlsteenwyk-theme',
 		glassClass = 'glassmorphism-theme',
+		earlyOsClass = 'earlyos-theme',
 		themeToggleControls = [],
 		currentTheme = 'glassmorphism';
 
@@ -23,6 +24,8 @@
 			var stored = window.localStorage.getItem(themeStorageKey);
 			if (stored === 'glassmorphism')
 				return 'glassmorphism';
+			if (stored === 'earlyos')
+				return 'earlyos';
 			if (stored === 'modern' || stored === 'default')
 				return 'modern';
 			return 'glassmorphism';
@@ -44,6 +47,11 @@
 			$body.addClass(glassClass);
 		else
 			$body.removeClass(glassClass);
+
+		if (theme === 'earlyos')
+			$body.addClass(earlyOsClass);
+		else
+			$body.removeClass(earlyOsClass);
 	};
 
 	var syncControls = function(value, origin) {
@@ -62,13 +70,17 @@
 			.addClass('site-theme-select')
 			.append('<option value="glassmorphism">Glassmorphism</option>')
 			.append('<option value="modern">Modern</option>')
+			.append('<option value="earlyos">earlyOS</option>')
 			.val(currentTheme);
 
 		themeToggleControls.push($select);
 
 		$select.on('change', function() {
 			var value = $(this).val();
-			currentTheme = value === 'glassmorphism' ? 'glassmorphism' : 'modern';
+			if (value === 'glassmorphism' || value === 'earlyos')
+				currentTheme = value;
+			else
+				currentTheme = 'modern';
 			applyTheme(currentTheme);
 			persistTheme(currentTheme);
 			syncControls(currentTheme, $select);
