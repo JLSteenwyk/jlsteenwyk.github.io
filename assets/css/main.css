@@ -2835,6 +2835,82 @@ hr {
 	transform: translateY(-3px);
 }
 
+/* Software Grid Layout */
+.software-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.software-grid .software-card {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+.software-card-logo {
+	display: block;
+	max-width: 200px;
+	max-height: 100px;
+	margin: 0 auto 1rem;
+	object-fit: contain;
+	float: none !important;
+}
+
+.software-card h3 {
+	text-align: center;
+	margin-bottom: 0.75rem;
+}
+
+.software-card-desc {
+	flex: 1;
+	font-size: 0.9em;
+	line-height: 1.6;
+	margin-bottom: 1rem;
+}
+
+.software-card-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.software-card-buttons .cta-button {
+	font-size: 0.8em;
+	padding: 0.5em 1em;
+}
+
+.software-card-badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	justify-content: center;
+	margin-top: auto;
+}
+
+.software-card-badges a {
+	display: inline-block;
+}
+
+.software-card-badges img {
+	height: 20px;
+}
+
+@media screen and (max-width: 980px) {
+	.software-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.software-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
 /* Research Area Icons */
 .research-icon {
 	width: 48px;
@@ -7710,34 +7786,34 @@ body.biophilic-theme.page-news #content p strong {
 
 /* ── Software Page — Card Treatment ── */
 
-body.biophilic-theme.page-software #content > section {
+body.biophilic-theme.page-software .software-card {
 	background: rgba(255,255,255,0.55);
 	border: 1px solid rgba(74,103,65,0.08);
 	border-radius: 20px;
-	padding: 2.5rem 2.2rem !important;
-	margin: 0 0 1rem 0 !important;
+	padding: 1.5rem !important;
+	margin: 0 !important;
 	box-shadow: 0 4px 20px rgba(44,48,41,0.04);
 	transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-body.biophilic-theme.page-software #content > section:hover {
+body.biophilic-theme.page-software .software-card:hover {
 	box-shadow: 0 12px 40px rgba(44,48,41,0.08);
 	transform: translateY(-2px);
 }
 
 /* Software section headings */
-body.biophilic-theme.page-software #content > section h3 {
-	font-size: 1.5em;
+body.biophilic-theme.page-software .software-card h3 {
+	font-size: 1.3em;
 	margin-bottom: 1rem;
 	border-left: none;
 	padding-left: 0;
 }
 
-body.biophilic-theme.page-software #content > section h3::before {
+body.biophilic-theme.page-software .software-card h3::before {
 	display: none;
 }
 
-/* Clean up hr between software sections */
+/* Clean up hr between software grids */
 body.biophilic-theme.page-software #content > hr {
 	opacity: 0;
 	height: 0 !important;
@@ -7745,7 +7821,7 @@ body.biophilic-theme.page-software #content > hr {
 }
 
 /* Badge container centering */
-body.biophilic-theme.page-software #content > section center img {
+body.biophilic-theme.page-software .software-card-badges img {
 	border-radius: 6px;
 	border: none;
 }
