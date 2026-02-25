@@ -102,6 +102,11 @@
 
 			<!-- Banner -->
 				<section id="banner">
+					<div class="biophilic-orbs" aria-hidden="true">
+						<span></span><span></span><span></span><span></span>
+						<span></span><span></span><span></span><span></span>
+						<span></span><span></span><span></span><span></span>
+					</div>
 					<div class="hero-aurora" aria-hidden="true">
 						<span class="aurora ribbon-one"></span>
 						<span class="aurora ribbon-two"></span>
@@ -376,6 +381,22 @@
 					
 					// Start the animation
 					setTimeout(typeWriter, 1000);
+
+					// Biophilic scroll-reveal for research sections
+					var revealEls = document.querySelectorAll('#ResearchInterests h3, #ResearchInterests > p, #ResearchInterests p');
+					if (revealEls.length && 'IntersectionObserver' in window) {
+						var revealObserver = new IntersectionObserver(function(entries) {
+							entries.forEach(function(entry) {
+								if (entry.isIntersecting) {
+									entry.target.classList.add('revealed');
+									revealObserver.unobserve(entry.target);
+								}
+							});
+						}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+						revealEls.forEach(function(el) { revealObserver.observe(el); });
+					} else {
+						revealEls.forEach(function(el) { el.classList.add('revealed'); });
+					}
 				});
 			</script>
 

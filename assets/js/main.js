@@ -11,8 +11,9 @@
 		themeStorageKey = 'jlsteenwyk-theme',
 		glassClass = 'glassmorphism-theme',
 		earlyOsClass = 'earlyos-theme',
+		biophilicClass = 'biophilic-theme',
 		themeToggleControls = [],
-		currentTheme = 'glassmorphism';
+		currentTheme = 'biophilic';
 
 	var setCurrentYear = function() {
 		var year = new Date().getFullYear();
@@ -26,11 +27,13 @@
 				return 'glassmorphism';
 			if (stored === 'earlyos')
 				return 'earlyos';
+			if (stored === 'biophilic')
+				return 'biophilic';
 			if (stored === 'modern' || stored === 'default')
 				return 'modern';
-			return 'glassmorphism';
+			return 'biophilic';
 		} catch (err) {
-			return 'glassmorphism';
+			return 'biophilic';
 		}
 	};
 
@@ -52,6 +55,11 @@
 			$body.addClass(earlyOsClass);
 		else
 			$body.removeClass(earlyOsClass);
+
+		if (theme === 'biophilic')
+			$body.addClass(biophilicClass);
+		else
+			$body.removeClass(biophilicClass);
 	};
 
 	var syncControls = function(value, origin) {
@@ -71,13 +79,14 @@
 			.append('<option value="glassmorphism">Glassmorphism</option>')
 			.append('<option value="modern">Modern</option>')
 			.append('<option value="earlyos">earlyOS</option>')
+			.append('<option value="biophilic">Biophilic</option>')
 			.val(currentTheme);
 
 		themeToggleControls.push($select);
 
 		$select.on('change', function() {
 			var value = $(this).val();
-			if (value === 'glassmorphism' || value === 'earlyos')
+			if (value === 'glassmorphism' || value === 'earlyos' || value === 'biophilic')
 				currentTheme = value;
 			else
 				currentTheme = 'modern';

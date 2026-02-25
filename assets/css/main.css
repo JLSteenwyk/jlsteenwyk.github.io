@@ -1,6 +1,7 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap");
 
 /*
 	Landed by HTML5 UP
@@ -1185,6 +1186,1206 @@ body.earlyos-theme #navPanel .link:hover {
 		font-size: 0.52rem;
 	}
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Biophilic Theme — Nature-Tech Hybrid / Calm Editorial
+   ═══════════════════════════════════════════════════════════════════════ */
+
+body.biophilic-theme {
+	background: #f6f4f0;
+	color: #2c3029;
+	font-family: 'Source Sans 3', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* Subtle grain/texture overlay */
+body.biophilic-theme::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	opacity: 0.028;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-repeat: repeat;
+	background-size: 256px 256px;
+}
+
+/* Faint organic atmosphere */
+body.biophilic-theme::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	opacity: 0.04;
+	background-image:
+		radial-gradient(ellipse 700px 500px at 15% 25%, rgba(74,103,65,0.14) 0%, transparent 65%),
+		radial-gradient(ellipse 600px 400px at 85% 75%, rgba(58,107,128,0.11) 0%, transparent 65%),
+		radial-gradient(ellipse 400px 300px at 50% 50%, rgba(148,138,80,0.06) 0%, transparent 60%);
+}
+
+/* Ensure content sits above overlays */
+body.biophilic-theme #page-wrapper,
+body.biophilic-theme #header,
+body.biophilic-theme #main,
+body.biophilic-theme #footer,
+body.biophilic-theme #banner,
+body.biophilic-theme .wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+/* Typography */
+body.biophilic-theme h1,
+body.biophilic-theme h2,
+body.biophilic-theme h3,
+body.biophilic-theme h4,
+body.biophilic-theme h5,
+body.biophilic-theme h6 {
+	color: #1e2b1a;
+	font-family: 'Libre Baskerville', 'Georgia', 'Times New Roman', serif;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	line-height: 1.3;
+}
+
+body.biophilic-theme h2 {
+	font-size: 2.2em;
+}
+
+body.biophilic-theme h3 {
+	font-size: 1.6em;
+	font-weight: 600;
+}
+
+body.biophilic-theme p,
+body.biophilic-theme li,
+body.biophilic-theme label,
+body.biophilic-theme span,
+body.biophilic-theme td,
+body.biophilic-theme th {
+	color: #3a3d37;
+	font-size: 1.05em;
+	line-height: 1.75;
+}
+
+body.biophilic-theme strong,
+body.biophilic-theme b {
+	color: #1e2b1a;
+	font-weight: 700;
+}
+
+body.biophilic-theme .wrapper.style1 strong,
+body.biophilic-theme .wrapper.style1 b {
+	background: none;
+	box-shadow: none;
+}
+
+/* Links */
+body.biophilic-theme a {
+	color: #3a6b80 !important;
+	text-decoration: underline;
+	text-decoration-color: rgba(58,107,128,0.35);
+	text-underline-offset: 2px;
+	border-bottom: none !important;
+	transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+body.biophilic-theme a:hover,
+body.biophilic-theme a:focus {
+	color: #4a6741 !important;
+	text-decoration-color: rgba(74,103,65,0.5);
+	border-bottom: none !important;
+}
+
+/* Focus rings */
+body.biophilic-theme a:focus,
+body.biophilic-theme .nav-link:focus,
+body.biophilic-theme button:focus,
+body.biophilic-theme input:focus,
+body.biophilic-theme select:focus,
+body.biophilic-theme textarea:focus {
+	outline: 2px solid #4a6741;
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* Header / Navigation */
+body.biophilic-theme #header {
+	background: #f6f4f0;
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+	border-bottom: 1px solid rgba(74,103,65,0.1);
+	box-shadow: 0 1px 8px rgba(44,48,41,0.06);
+}
+
+body.biophilic-theme #header .nav-link {
+	color: #2c3029 !important;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-weight: 600;
+	font-size: 0.88rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	border-bottom: none;
+	position: relative;
+	transition: color 0.25s ease;
+}
+
+body.biophilic-theme #header .nav-link::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: linear-gradient(90deg, #4a6741, #3a6b80);
+	border-radius: 1px;
+	transform: translateX(-50%);
+	transition: width 0.3s ease;
+}
+
+body.biophilic-theme #header .nav-link:hover {
+	color: #4a6741 !important;
+}
+
+body.biophilic-theme #header .nav-link:hover::after {
+	width: 80%;
+}
+
+/* Dropdowns */
+body.biophilic-theme .dropotron {
+	background: #f6f4f0;
+	border: 1px solid rgba(74,103,65,0.15);
+	border-radius: 12px;
+	box-shadow: 0 12px 32px rgba(44,48,41,0.12);
+}
+
+body.biophilic-theme .dropotron li a {
+	color: #2c3029 !important;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-size: 0.9rem;
+	border-bottom: none;
+	padding: 10px 18px;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.biophilic-theme .dropotron li:hover > a,
+body.biophilic-theme .dropotron li a:hover {
+	background: rgba(74,103,65,0.08);
+	color: #4a6741 !important;
+}
+
+/* Banner / Hero */
+body.biophilic-theme #banner {
+	background:
+		radial-gradient(ellipse 900px 650px at 12% 35%, rgba(74,103,65,0.13) 0%, transparent 60%),
+		radial-gradient(ellipse 700px 550px at 88% 25%, rgba(58,107,128,0.09) 0%, transparent 55%),
+		radial-gradient(ellipse 500px 400px at 55% 95%, rgba(158,142,84,0.07) 0%, transparent 55%),
+		linear-gradient(165deg,
+			#f6f4ef 0%,
+			#e6edda 18%,
+			#d4e1c7 36%,
+			#c3d6ba 54%,
+			#b4ccb8 72%,
+			#a7c4b2 100%);
+	border: none;
+	box-shadow: inset 0 -1px 0 rgba(74,103,65,0.08);
+	height: auto;
+	min-height: 0;
+	padding: 7rem 0 5rem;
+	position: relative;
+}
+
+body.biophilic-theme #banner::before,
+body.biophilic-theme #banner::after {
+	content: none;
+}
+
+body.biophilic-theme .hero-aurora {
+	display: none;
+}
+
+body.biophilic-theme #banner .hero-inner {
+	background: transparent;
+}
+
+body.biophilic-theme #banner .hero-text {
+	background: rgba(255,255,255,0.76);
+	border: 1px solid rgba(74,103,65,0.12);
+	border-radius: 26px;
+	box-shadow:
+		0 24px 64px rgba(44,48,41,0.09),
+		0 2px 4px rgba(74,103,65,0.05),
+		inset 0 1px 0 rgba(255,255,255,0.8);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+body.biophilic-theme .portrait-frame {
+	background: #ffffff;
+	border: 1px solid rgba(74,103,65,0.14);
+	border-radius: 28px;
+	box-shadow:
+		0 20px 50px rgba(44,48,41,0.12),
+		0 4px 12px rgba(74,103,65,0.06);
+	position: relative;
+	transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+}
+
+body.biophilic-theme .portrait-frame:hover {
+	transform: translateY(-4px) scale(1.01);
+	box-shadow:
+		0 28px 64px rgba(44,48,41,0.14),
+		0 6px 16px rgba(74,103,65,0.08);
+}
+
+body.biophilic-theme .portrait-frame img {
+	border-radius: 22px;
+}
+
+body.biophilic-theme .hero-heading {
+	color: #1e2b1a;
+}
+
+body.biophilic-theme .hero-tagline {
+	color: #3a5a32 !important;
+	font-family: 'Libre Baskerville', Georgia, serif !important;
+	font-size: 1.45em !important;
+	font-weight: 600 !important;
+	font-style: italic;
+	letter-spacing: -0.01em;
+}
+
+/* Typewriter blinking cursor */
+body.biophilic-theme .typewriter::after {
+	content: "\2502";
+	color: #4a6741;
+	font-weight: 300;
+	font-style: normal;
+	margin-left: 2px;
+	animation: biophilic-blink 1s step-end infinite;
+}
+
+@keyframes biophilic-blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+body.biophilic-theme .hero-lead {
+	color: #3a3d37;
+	font-size: 1.05em;
+	line-height: 1.85;
+	max-width: 68ch;
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-weight: 400;
+}
+
+body.biophilic-theme .hero-social img {
+	border-radius: 6px;
+	border: 1px solid rgba(74,103,65,0.12);
+	box-shadow: 0 2px 8px rgba(44,48,41,0.08);
+}
+
+body.biophilic-theme .hero-stats li,
+body.biophilic-theme .hero-highlights li {
+	background: rgba(255,255,255,0.8);
+	border-color: rgba(74,103,65,0.12);
+	border-radius: 14px;
+}
+
+/* CTA Buttons */
+body.biophilic-theme .cta-button {
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	border-radius: 20px;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+body.biophilic-theme .cta-button.primary {
+	background: linear-gradient(135deg, #4a6741 0%, #3d7a56 100%);
+	color: #ffffff !important;
+	border-color: rgba(74,103,65,0.35);
+	box-shadow: 0 8px 24px rgba(74,103,65,0.25);
+}
+
+body.biophilic-theme .cta-button.primary:hover {
+	background: linear-gradient(135deg, #3d5a36 0%, #326a48 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 32px rgba(74,103,65,0.32);
+}
+
+body.biophilic-theme .cta-button.secondary {
+	background: linear-gradient(135deg, #3a6b80 0%, #2e5f72 100%);
+	color: #ffffff !important;
+	border-color: rgba(58,107,128,0.35);
+	box-shadow: 0 8px 24px rgba(58,107,128,0.22);
+}
+
+body.biophilic-theme .cta-button.secondary:hover {
+	background: linear-gradient(135deg, #2e5f72 0%, #265264 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 32px rgba(58,107,128,0.3);
+}
+
+body.biophilic-theme .cta-button.tertiary {
+	background: linear-gradient(135deg, #6b7c5e 0%, #5a6d4e 100%);
+	color: #ffffff !important;
+	border-color: rgba(107,124,94,0.35);
+	box-shadow: 0 8px 24px rgba(107,124,94,0.22);
+}
+
+body.biophilic-theme .cta-button.tertiary:hover {
+	background: linear-gradient(135deg, #5a6d4e 0%, #4d5f42 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 32px rgba(107,124,94,0.3);
+}
+
+body.biophilic-theme .cta-button.quaternary {
+	background: #f6f4f0;
+	color: #2c3029 !important;
+	border: 1px solid rgba(74,103,65,0.3);
+	box-shadow: 0 4px 16px rgba(44,48,41,0.08);
+}
+
+body.biophilic-theme .cta-button.quaternary:hover {
+	background: #efeee9;
+	border-color: rgba(74,103,65,0.45);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(44,48,41,0.12);
+}
+
+/* Content wrapper / main area — transparent for organic flow */
+body.biophilic-theme .wrapper {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+}
+
+body.biophilic-theme .wrapper.style1 h3 {
+	color: #1e2b1a !important;
+	font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+/* Section heading underlines — leaf-vein gradient, centered */
+body.biophilic-theme .major h1::after,
+body.biophilic-theme .major h2::after {
+	background: linear-gradient(90deg, transparent, #4a6741, rgba(74,103,65,0.3), transparent) !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	width: 200px !important;
+	height: 3px !important;
+}
+
+/* Remove the base template blue bar on header.major */
+body.biophilic-theme header.major:after {
+	display: none !important;
+}
+
+/* Research section headings */
+body.biophilic-theme #ResearchInterests h3 {
+	color: #1e2b1a;
+	border-left-color: #4a6741;
+	font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+/* Publication link pills */
+body.biophilic-theme #ResearchInterests center a {
+	background: rgba(74,103,65,0.05);
+	border-color: rgba(74,103,65,0.4);
+	color: #4a6741 !important;
+	border-bottom: 1px solid rgba(74,103,65,0.4);
+	border-radius: 22px;
+	padding: 0.45em 1.1em;
+	font-size: 0.88em;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	transition: all 0.3s cubic-bezier(0.23,1,0.32,1);
+	text-decoration: none;
+}
+
+body.biophilic-theme #ResearchInterests center a:hover {
+	background: #4a6741;
+	color: #ffffff !important;
+	border-bottom-color: #4a6741;
+	border-color: #4a6741;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(74,103,65,0.22);
+	text-decoration: none;
+}
+
+/* Text wrap images — soft natural framing */
+body.biophilic-theme .TextWrapRight,
+body.biophilic-theme .TextWrapLeft {
+	border-radius: 16px;
+	box-shadow:
+		0 8px 28px rgba(44,48,41,0.1),
+		0 2px 6px rgba(74,103,65,0.04);
+	border: 1px solid rgba(74,103,65,0.1);
+	transition: transform 0.4s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s ease;
+}
+
+body.biophilic-theme .TextWrapRight:hover,
+body.biophilic-theme .TextWrapLeft:hover {
+	transform: scale(1.02) translateY(-3px);
+	box-shadow:
+		0 16px 44px rgba(44,48,41,0.14),
+		0 4px 10px rgba(74,103,65,0.06);
+}
+
+/* HR — organic gradient */
+body.biophilic-theme hr {
+	border: 0 !important;
+	border-bottom: none !important;
+	height: 2px !important;
+	background: linear-gradient(90deg, transparent 5%, rgba(74,103,65,0.35) 30%, rgba(58,107,128,0.25) 60%, transparent 95%) !important;
+	margin: 3.5rem 0;
+	position: relative;
+}
+
+body.biophilic-theme hr::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 8px;
+	height: 8px;
+	background: #4a6741;
+	border-radius: 50%;
+	box-shadow: 0 0 0 4px #f6f4f0, 0 0 0 6px rgba(74,103,65,0.2);
+}
+
+/* Feature highlights */
+body.biophilic-theme .feature-highlight {
+	background: #ffffff;
+	border-top-color: #4a6741;
+	box-shadow: 0 4px 20px rgba(44,48,41,0.06);
+	border-radius: 16px;
+}
+
+body.biophilic-theme .feature-highlight:hover {
+	box-shadow: 0 12px 36px rgba(44,48,41,0.1);
+	transform: translateY(-6px);
+}
+
+body.biophilic-theme .feature-highlight h3 {
+	color: #1e2b1a;
+}
+
+body.biophilic-theme .feature-highlight .icon.major {
+	color: #4a6741;
+}
+
+/* Form inputs */
+body.biophilic-theme input[type="text"],
+body.biophilic-theme input[type="email"],
+body.biophilic-theme textarea,
+body.biophilic-theme select {
+	background: #ffffff;
+	border: 1px solid rgba(74,103,65,0.2);
+	border-radius: 10px;
+	color: #2c3029;
+	padding: 12px 16px;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.biophilic-theme input[type="text"]:focus,
+body.biophilic-theme input[type="email"]:focus,
+body.biophilic-theme textarea:focus {
+	border-color: #4a6741;
+	box-shadow: 0 0 0 3px rgba(74,103,65,0.12);
+	outline: none;
+}
+
+/* Tables */
+body.biophilic-theme table {
+	background: #ffffff;
+	border: 1px solid rgba(74,103,65,0.1);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+body.biophilic-theme th {
+	background: rgba(74,103,65,0.06);
+	color: #1e2b1a;
+	font-weight: 600;
+	padding: 14px 16px;
+	border-bottom: 1px solid rgba(74,103,65,0.12);
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	letter-spacing: 0.06em;
+}
+
+body.biophilic-theme td {
+	padding: 12px 16px;
+	border-bottom: 1px solid rgba(74,103,65,0.06);
+}
+
+body.biophilic-theme tr:hover {
+	background: rgba(74,103,65,0.03);
+}
+
+/* Images */
+body.biophilic-theme img {
+	border-radius: 12px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.biophilic-theme img:hover {
+	transform: scale(1.01);
+}
+
+/* Code blocks */
+body.biophilic-theme pre,
+body.biophilic-theme code {
+	background: #2c3029;
+	color: #d8e4cf;
+	border: 1px solid rgba(74,103,65,0.15);
+	border-radius: 10px;
+	font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+body.biophilic-theme pre code {
+	background: transparent;
+	border: none;
+}
+
+/* Blockquotes */
+body.biophilic-theme blockquote {
+	background: rgba(74,103,65,0.04);
+	border-left: 4px solid #4a6741;
+	border-radius: 0 12px 12px 0;
+	padding: 1.2em 1.5em;
+	margin: 1.5em 0;
+	font-style: italic;
+	color: #3a3d37;
+}
+
+/* Buttons (generic) */
+body.biophilic-theme .button,
+body.biophilic-theme input[type="submit"],
+body.biophilic-theme input[type="button"] {
+	background: linear-gradient(135deg, #4a6741 0%, #3d7a56 100%);
+	color: #ffffff !important;
+	border: none;
+	border-radius: 20px;
+	padding: 0.7rem 2rem;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	box-shadow: 0 6px 20px rgba(74,103,65,0.2);
+	transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+body.biophilic-theme .button:hover,
+body.biophilic-theme input[type="submit"]:hover,
+body.biophilic-theme input[type="button"]:hover {
+	background: linear-gradient(135deg, #3d5a36 0%, #326a48 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 28px rgba(74,103,65,0.28);
+}
+
+/* Footer */
+body.biophilic-theme #footer {
+	background:
+		radial-gradient(ellipse 600px 300px at 20% 50%, rgba(74,103,65,0.04) 0%, transparent 60%),
+		radial-gradient(ellipse 500px 250px at 80% 50%, rgba(58,107,128,0.03) 0%, transparent 60%),
+		#efeee9;
+	border-top: 1px solid rgba(74,103,65,0.08);
+}
+
+body.biophilic-theme #footer .icons a {
+	background: #ffffff;
+	border: 1px solid rgba(74,103,65,0.12);
+	border-radius: 50%;
+	color: #4a6741 !important;
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	margin: 0 4px;
+	box-shadow: 0 2px 8px rgba(44,48,41,0.06);
+	transition: all 0.25s ease;
+	border-bottom: none;
+}
+
+body.biophilic-theme #footer .icons a:before {
+	color: #4a6741 !important;
+}
+
+body.biophilic-theme #footer .icons a:hover {
+	background: #4a6741;
+	color: #ffffff !important;
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(74,103,65,0.2);
+}
+
+body.biophilic-theme #footer .icons a:hover:before {
+	color: #ffffff !important;
+}
+
+body.biophilic-theme #footer .copyright {
+	color: #6b7264;
+}
+
+/* Theme toggle */
+body.biophilic-theme .theme-toggle-footer {
+	opacity: 0.5;
+}
+
+body.biophilic-theme .theme-toggle-footer:hover,
+body.biophilic-theme .theme-toggle-footer:focus-within {
+	opacity: 0.95;
+}
+
+body.biophilic-theme .site-theme-select {
+	background: #ffffff;
+	border: 1px solid rgba(74,103,65,0.2);
+	border-radius: 18px;
+	color: #2c3029;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+}
+
+body.biophilic-theme .site-theme-select option {
+	color: #2c3029;
+}
+
+body.biophilic-theme .site-theme-select:hover,
+body.biophilic-theme .site-theme-select:focus {
+	border-color: #4a6741;
+	box-shadow: 0 0 0 2px rgba(74,103,65,0.1);
+}
+
+/* Publication cards & items */
+body.biophilic-theme .publication-item {
+	background: #ffffff;
+	border-left-color: #4a6741;
+	border-radius: 14px;
+	box-shadow: 0 4px 16px rgba(44,48,41,0.06);
+}
+
+body.biophilic-theme .publication-item:hover {
+	box-shadow: 0 12px 32px rgba(44,48,41,0.1);
+	transform: translateY(-4px);
+}
+
+body.biophilic-theme .publication-item::before {
+	background: #4a6741;
+	box-shadow: 0 0 0 4px #f6f4f0, 0 0 0 6px #4a6741;
+}
+
+body.biophilic-theme .publication-title {
+	color: #1e2b1a;
+	font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+body.biophilic-theme .publication-journal {
+	color: #3a6b80;
+}
+
+body.biophilic-theme .pub-link {
+	background: #4a6741;
+	border-radius: 16px;
+}
+
+body.biophilic-theme .pub-link:hover {
+	background: #3d5a36;
+}
+
+body.biophilic-theme .year-badge {
+	background: linear-gradient(135deg, #1e2b1a 0%, #4a6741 100%);
+}
+
+body.biophilic-theme .metric-badge {
+	background: rgba(74,103,65,0.08);
+	color: #4a6741;
+}
+
+body.biophilic-theme .publications-header {
+	background: linear-gradient(135deg, #1e2b1a 0%, #3a6b80 100%);
+}
+
+body.biophilic-theme .publications-timeline::before {
+	background: linear-gradient(to bottom, #4a6741, #3a6b80);
+}
+
+body.biophilic-theme .filter-button {
+	border-color: #4a6741;
+	color: #4a6741;
+}
+
+body.biophilic-theme .filter-button:hover,
+body.biophilic-theme .filter-button.active {
+	background: #4a6741;
+	color: #ffffff;
+}
+
+/* Software cards */
+body.biophilic-theme .software-card {
+	background: rgba(255,255,255,0.7);
+	border-color: rgba(74,103,65,0.15);
+	border-radius: 16px;
+}
+
+body.biophilic-theme .software-card:hover {
+	border-color: #4a6741;
+	box-shadow: 0 12px 32px rgba(44,48,41,0.08);
+}
+
+/* Scrollbar */
+body.biophilic-theme ::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+body.biophilic-theme ::-webkit-scrollbar-track {
+	background: #efeee9;
+}
+
+body.biophilic-theme ::-webkit-scrollbar-thumb {
+	background: rgba(74,103,65,0.25);
+	border-radius: 5px;
+	border: 2px solid #efeee9;
+}
+
+body.biophilic-theme ::-webkit-scrollbar-thumb:hover {
+	background: rgba(74,103,65,0.4);
+}
+
+/* Spotlight sections */
+body.biophilic-theme .spotlight {
+	background: rgba(255,255,255,0.4);
+	border-top: 1px solid rgba(74,103,65,0.06);
+	border-bottom: 1px solid rgba(74,103,65,0.06);
+}
+
+/* Mobile nav panel + title bar */
+body.biophilic-theme #titleBar {
+	background: rgba(246,244,240,0.95);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-bottom: 1px solid rgba(74,103,65,0.1);
+}
+
+body.biophilic-theme #navPanel {
+	background: #f6f4f0;
+	border-right: 1px solid rgba(74,103,65,0.1);
+}
+
+body.biophilic-theme #navPanel .link {
+	color: #2c3029 !important;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	border-bottom: 1px solid rgba(74,103,65,0.06);
+}
+
+body.biophilic-theme #navPanel .link:hover {
+	background: rgba(74,103,65,0.06);
+	color: #4a6741 !important;
+}
+
+/* Scroll-reveal animation */
+@keyframes biophilic-fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+body.biophilic-theme .feature-highlight,
+body.biophilic-theme .publication-item {
+	animation: biophilic-fadeUp 0.6s ease-out both;
+}
+
+/* Biotech highlight override */
+body.biophilic-theme .biotech-highlight {
+	background: linear-gradient(120deg, rgba(74,103,65,0.06) 0%, rgba(58,107,128,0.06) 100%);
+	border-left-color: #4a6741;
+}
+
+/* Update items */
+body.biophilic-theme .update-item {
+	background: #ffffff;
+	border-left-color: #4a6741;
+	border-radius: 14px;
+}
+
+body.biophilic-theme .update-item:hover {
+	border-left-color: #3a6b80;
+}
+
+body.biophilic-theme .update-date {
+	color: #4a6741;
+	background: rgba(74,103,65,0.06);
+	border-color: rgba(74,103,65,0.12);
+}
+
+body.biophilic-theme .update-link {
+	color: #3a6b80 !important;
+	border-bottom: none;
+}
+
+body.biophilic-theme .update-link:hover {
+	color: #4a6741 !important;
+}
+
+/* Hide orbs in non-biophilic themes */
+.biophilic-orbs {
+	display: none;
+}
+
+body.biophilic-theme .biophilic-orbs {
+	display: block;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	body.biophilic-theme .feature-highlight,
+	body.biophilic-theme .publication-item {
+		animation: none;
+	}
+
+	body.biophilic-theme .biophilic-orbs span {
+		animation: none !important;
+	}
+
+	body.biophilic-theme #banner .hero-portrait,
+	body.biophilic-theme #banner .hero-text,
+	body.biophilic-theme .hero-tagline,
+	body.biophilic-theme .hero-cta,
+	body.biophilic-theme .hero-social {
+		animation: none;
+		opacity: 1;
+	}
+
+	body.biophilic-theme #ResearchInterests h3,
+	body.biophilic-theme #ResearchInterests p {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* Responsive */
+@media screen and (max-width: 980px) {
+	body.biophilic-theme #banner {
+		box-shadow: 0 12px 36px rgba(44,48,41,0.06);
+		padding: 6rem 0 4rem;
+	}
+
+	body.biophilic-theme h2 {
+		font-size: 1.8em;
+	}
+
+	body.biophilic-theme h3 {
+		font-size: 1.35em;
+	}
+
+	body.biophilic-theme .biophilic-orbs span:nth-child(4),
+	body.biophilic-theme .biophilic-orbs span:nth-child(7),
+	body.biophilic-theme .biophilic-orbs span:nth-child(11) {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body.biophilic-theme .biophilic-orbs span {
+		transform: scale(0.7) !important;
+	}
+
+	body.biophilic-theme .portrait-frame h3 {
+		font-size: 0.95em;
+	}
+
+	body.biophilic-theme .major h2 {
+		font-size: 1.9em;
+	}
+}
+
+/* Floating Organic Particles (biophilic hero background) */
+body.biophilic-theme .biophilic-orbs {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 1;
+}
+
+body.biophilic-theme .biophilic-orbs span {
+	position: absolute;
+	display: block;
+	border-radius: 50%;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(1) {
+	width: 90px;
+	height: 90px;
+	left: 8%;
+	top: 18%;
+	background: radial-gradient(circle at 35% 35%, rgba(74,103,65,0.08), transparent 70%);
+	animation: bio-wander-a 28s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(2) {
+	width: 160px;
+	height: 160px;
+	right: 12%;
+	top: 8%;
+	background: radial-gradient(circle at 40% 30%, rgba(58,107,128,0.06), transparent 70%);
+	animation: bio-wander-b 34s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(3) {
+	width: 55px;
+	height: 55px;
+	left: 25%;
+	top: 65%;
+	background: radial-gradient(circle at 30% 30%, rgba(148,138,80,0.07), transparent 70%);
+	animation: bio-wander-c 22s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(4) {
+	width: 200px;
+	height: 200px;
+	right: 5%;
+	bottom: 10%;
+	background: radial-gradient(circle at 45% 40%, rgba(74,103,65,0.04), transparent 70%);
+	animation: bio-wander-a 40s ease-in-out infinite reverse;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(5) {
+	width: 40px;
+	height: 40px;
+	left: 45%;
+	top: 25%;
+	background: radial-gradient(circle at 35% 35%, rgba(74,103,65,0.09), transparent 70%);
+	animation: bio-wander-b 18s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(6) {
+	width: 70px;
+	height: 70px;
+	left: 70%;
+	top: 55%;
+	background: radial-gradient(circle at 40% 30%, rgba(58,107,128,0.07), transparent 70%);
+	animation: bio-wander-c 26s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(7) {
+	width: 130px;
+	height: 130px;
+	left: 3%;
+	bottom: 20%;
+	background: radial-gradient(circle at 50% 40%, rgba(74,103,65,0.05), transparent 70%);
+	animation: bio-wander-a 32s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(8) {
+	width: 30px;
+	height: 30px;
+	left: 55%;
+	top: 12%;
+	background: radial-gradient(circle at 35% 35%, rgba(148,138,80,0.1), transparent 70%);
+	animation: bio-wander-b 20s ease-in-out infinite reverse;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(9) {
+	width: 85px;
+	height: 85px;
+	right: 30%;
+	bottom: 30%;
+	background: radial-gradient(circle at 40% 35%, rgba(58,107,128,0.06), transparent 70%);
+	animation: bio-wander-c 36s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(10) {
+	width: 50px;
+	height: 50px;
+	left: 35%;
+	top: 80%;
+	background: radial-gradient(circle at 35% 30%, rgba(74,103,65,0.08), transparent 70%);
+	animation: bio-wander-a 24s ease-in-out infinite reverse;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(11) {
+	width: 220px;
+	height: 220px;
+	left: -3%;
+	top: -5%;
+	background: radial-gradient(circle at 55% 55%, rgba(74,103,65,0.03), transparent 70%);
+	animation: bio-wander-b 44s ease-in-out infinite;
+}
+
+body.biophilic-theme .biophilic-orbs span:nth-child(12) {
+	width: 35px;
+	height: 35px;
+	right: 25%;
+	top: 40%;
+	background: radial-gradient(circle at 35% 35%, rgba(148,138,80,0.08), transparent 70%);
+	animation: bio-wander-c 16s ease-in-out infinite reverse;
+}
+
+@keyframes bio-wander-a {
+	0%, 100% { transform: translate(0, 0) scale(1); }
+	25% { transform: translate(30px, -45px) scale(1.08); }
+	50% { transform: translate(-20px, 25px) scale(0.94); }
+	75% { transform: translate(15px, -15px) scale(1.04); }
+}
+
+@keyframes bio-wander-b {
+	0%, 100% { transform: translate(0, 0) scale(1); }
+	25% { transform: translate(-35px, 20px) scale(1.06); }
+	50% { transform: translate(25px, -30px) scale(0.96); }
+	75% { transform: translate(-10px, 35px) scale(1.03); }
+}
+
+@keyframes bio-wander-c {
+	0%, 100% { transform: translate(0, 0) scale(1); }
+	25% { transform: translate(20px, 35px) scale(1.1); }
+	50% { transform: translate(-30px, -20px) scale(0.92); }
+	75% { transform: translate(25px, -10px) scale(1.05); }
+}
+
+/* Hero entrance animation */
+body.biophilic-theme #banner .hero-portrait {
+	animation: biophilic-fadeUp 0.8s cubic-bezier(0.23,1,0.32,1) both;
+	animation-delay: 0.1s;
+}
+
+body.biophilic-theme #banner .hero-text {
+	animation: biophilic-fadeUp 0.8s cubic-bezier(0.23,1,0.32,1) both;
+	animation-delay: 0.3s;
+}
+
+body.biophilic-theme .hero-tagline {
+	animation: biophilic-fadeUp 0.6s cubic-bezier(0.23,1,0.32,1) both;
+	animation-delay: 0.5s;
+}
+
+body.biophilic-theme .hero-cta {
+	animation: biophilic-fadeUp 0.6s cubic-bezier(0.23,1,0.32,1) both;
+	animation-delay: 0.7s;
+}
+
+body.biophilic-theme .hero-social {
+	animation: biophilic-fadeUp 0.6s cubic-bezier(0.23,1,0.32,1) both;
+	animation-delay: 0.9s;
+}
+
+/* Research section staggered reveal */
+body.biophilic-theme #ResearchInterests h3 {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.23,1,0.32,1);
+}
+
+body.biophilic-theme #ResearchInterests p {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease 0.15s, transform 0.6s cubic-bezier(0.23,1,0.32,1) 0.15s;
+}
+
+body.biophilic-theme #ResearchInterests h3.revealed,
+body.biophilic-theme #ResearchInterests p.revealed {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Enhanced CTA button hover glow */
+body.biophilic-theme .cta-button.primary:hover {
+	box-shadow:
+		0 14px 36px rgba(74,103,65,0.3),
+		0 0 0 1px rgba(74,103,65,0.1);
+}
+
+body.biophilic-theme .cta-button.tertiary:hover {
+	box-shadow:
+		0 14px 36px rgba(107,124,94,0.28),
+		0 0 0 1px rgba(107,124,94,0.1);
+}
+
+/* Portrait frame name styling */
+body.biophilic-theme .portrait-frame h3 {
+	font-family: 'Libre Baskerville', Georgia, serif;
+	font-size: 1.1em;
+	color: #1e2b1a;
+	letter-spacing: 0;
+	margin: 0;
+	font-weight: 400;
+}
+
+/* Biophilic scroll-down arrow */
+body.biophilic-theme .goto-next {
+	z-index: 3;
+}
+
+body.biophilic-theme .goto-next:before {
+	background-image: none;
+	content: "";
+	width: 14px;
+	height: 14px;
+	border-right: 2.5px solid #4a6741;
+	border-bottom: 2.5px solid #4a6741;
+	transform: rotate(45deg);
+	margin: -10px 0 0 -7px;
+	opacity: 0.6;
+	transition: opacity 0.3s ease;
+}
+
+body.biophilic-theme .goto-next:hover:before {
+	opacity: 1;
+}
+
+/* Organic divider between hero and content */
+body.biophilic-theme #banner + article #content,
+body.biophilic-theme #content {
+	position: relative;
+}
+
+/* Research section heading enhancement */
+body.biophilic-theme #ResearchInterests h3 {
+	padding-left: 1.2rem;
+	border-left: 3px solid #4a6741;
+	margin-top: 3.5rem;
+	position: relative;
+}
+
+body.biophilic-theme #ResearchInterests h3::before {
+	content: "";
+	position: absolute;
+	left: -6px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 9px;
+	height: 9px;
+	background: #4a6741;
+	border-radius: 50%;
+}
+
+/* Enhanced about section heading */
+body.biophilic-theme .major h2 {
+	font-size: 2.4em;
+	background: linear-gradient(135deg, #1e2b1a 0%, #3a5a32 60%, #3a6b80 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   End Biophilic Theme
+   ═══════════════════════════════════════════════════════════════════════ */
 
 .feature-highlight h3 {
 	color: var(--primary-navy);
@@ -6236,4 +7437,466 @@ body.earlyos-theme #main.wrapper.style1 > .container > .row > div > section li {
 	body.page-contact #main.wrapper.style1 #content > header.major {
 		padding-top: 0.85rem;
 	}
+}
+
+/* Biophilic late overrides — must come after all base rules */
+body.biophilic-theme hr {
+	border: 0 !important;
+	border-bottom: none !important;
+	height: 2px !important;
+	background: linear-gradient(90deg, transparent, rgba(74,103,65,0.4), rgba(74,103,65,0.15), transparent) !important;
+}
+
+body.biophilic-theme .major h1::after,
+body.biophilic-theme .major h2::after {
+	background: linear-gradient(90deg, transparent, #4a6741, rgba(74,103,65,0.3), transparent) !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	width: 200px !important;
+	height: 3px !important;
+}
+
+body.biophilic-theme #banner {
+	height: calc(100vh - 44px) !important;
+	min-height: 600px !important;
+	padding: 0 !important;
+	background:
+		linear-gradient(160deg,
+			rgba(246,244,240,0.98) 0%,
+			rgba(224,234,218,0.96) 35%,
+			rgba(205,224,215,0.94) 60%,
+			rgba(193,218,225,0.92) 100%) !important;
+	background-attachment: scroll !important;
+	border: none !important;
+	box-shadow: none !important;
+	overflow: hidden !important;
+}
+
+/* Animated topographic contour lines */
+body.biophilic-theme #banner .hero-aurora {
+	display: block !important;
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	opacity: 1;
+	overflow: hidden;
+}
+
+body.biophilic-theme #banner .hero-aurora .aurora {
+	position: absolute;
+	border-radius: 50%;
+	border: 1px solid rgba(74,103,65,0.07);
+	filter: none;
+	opacity: 1;
+	background: none;
+}
+
+body.biophilic-theme #banner .hero-aurora .ribbon-one {
+	width: 600px;
+	height: 600px;
+	top: -15%;
+	right: -8%;
+	border-width: 1px;
+	box-shadow:
+		0 0 0 40px rgba(74,103,65,0.04),
+		0 0 0 80px rgba(74,103,65,0.03),
+		0 0 0 120px rgba(74,103,65,0.02),
+		0 0 0 160px rgba(74,103,65,0.015),
+		0 0 0 200px rgba(74,103,65,0.01);
+	animation: biophilic-drift 25s ease-in-out infinite alternate;
+}
+
+body.biophilic-theme #banner .hero-aurora .ribbon-two {
+	width: 500px;
+	height: 500px;
+	bottom: -20%;
+	left: -10%;
+	box-shadow:
+		0 0 0 35px rgba(58,107,128,0.04),
+		0 0 0 70px rgba(58,107,128,0.03),
+		0 0 0 105px rgba(58,107,128,0.02),
+		0 0 0 140px rgba(58,107,128,0.015),
+		0 0 0 175px rgba(58,107,128,0.01);
+	animation: biophilic-drift 30s ease-in-out infinite alternate-reverse;
+}
+
+body.biophilic-theme #banner .hero-aurora .ribbon-three {
+	width: 350px;
+	height: 350px;
+	top: 40%;
+	left: 55%;
+	box-shadow:
+		0 0 0 30px rgba(74,103,65,0.03),
+		0 0 0 60px rgba(74,103,65,0.02),
+		0 0 0 90px rgba(74,103,65,0.015),
+		0 0 0 120px rgba(74,103,65,0.01);
+	animation: biophilic-drift 20s ease-in-out 5s infinite alternate;
+}
+
+@keyframes biophilic-drift {
+	0% { transform: translate(0, 0) scale(1); }
+	100% { transform: translate(20px, -15px) scale(1.04); }
+}
+
+/* Faint leaf-vein SVG pattern overlay on banner */
+body.biophilic-theme #banner::before {
+	content: "" !important;
+	position: absolute !important;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	opacity: 0.025;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath d='M100 0 C100 100 100 100 200 100' stroke='%234a6741' fill='none' stroke-width='0.5'/%3E%3Cpath d='M0 100 C100 100 100 100 100 200' stroke='%234a6741' fill='none' stroke-width='0.5'/%3E%3Cpath d='M40 0 C60 60 80 80 200 60' stroke='%233a6b80' fill='none' stroke-width='0.3'/%3E%3Cpath d='M0 140 C60 120 140 140 200 180' stroke='%233a6b80' fill='none' stroke-width='0.3'/%3E%3C/svg%3E");
+	background-size: 200px 200px;
+}
+
+body.biophilic-theme #banner::after {
+	content: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.biophilic-theme #banner .hero-aurora .ribbon-one,
+	body.biophilic-theme #banner .hero-aurora .ribbon-two,
+	body.biophilic-theme #banner .hero-aurora .ribbon-three {
+		animation: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body.biophilic-theme #banner {
+		min-height: 100vh !important;
+		height: auto !important;
+		padding: 5rem 0 3rem !important;
+	}
+	body.biophilic-theme #banner .hero-aurora .ribbon-one {
+		width: 300px;
+		height: 300px;
+	}
+	body.biophilic-theme #banner .hero-aurora .ribbon-two {
+		width: 250px;
+		height: 250px;
+	}
+	body.biophilic-theme #banner .hero-aurora .ribbon-three {
+		display: none;
+	}
+}
+
+/* CV page spacing fixes */
+body.biophilic-theme #CVHighlights {
+	line-height: 1.6;
+	font-size: 0.95em;
+	padding: 0 !important;
+}
+
+body.biophilic-theme #CVHighlights h3 {
+	margin: 1.5rem 0 0.3rem;
+	font-size: 1.3em;
+	padding-bottom: 0.2rem;
+	border-bottom: 1px solid rgba(74,103,65,0.1);
+	padding-left: 0;
+}
+
+body.biophilic-theme #CVHighlights p {
+	margin-bottom: 0.5em;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+	text-align: left;
+}
+
+body.biophilic-theme #content section {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Biophilic Theme — Extended Enhancements
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Smooth scrolling */
+body.biophilic-theme {
+	scroll-behavior: smooth;
+}
+
+/* ── Scroll-Down Arrow Bounce ── */
+@keyframes biophilic-bounce {
+	0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
+	40% { transform: translateY(8px) rotate(45deg); }
+	60% { transform: translateY(4px) rotate(45deg); }
+}
+
+body.biophilic-theme .goto-next:before {
+	animation: biophilic-bounce 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.biophilic-theme .goto-next:before {
+		animation: none;
+	}
+}
+
+/* ── Organic Wave Divider Between Hero & Content ── */
+body.biophilic-theme.page-home #content::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 60px;
+	margin-top: -30px;
+	position: relative;
+	z-index: 2;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,20 C240,55 480,0 720,30 C960,60 1200,10 1440,25 L1440,60 L0,60 Z' fill='%23f6f4f0'/%3E%3C/svg%3E") no-repeat bottom center;
+	background-size: 100% 60px;
+}
+
+/* ── News Page Styling ── */
+
+/* Year headings as styled badges */
+body.biophilic-theme.page-news #content h3 {
+	display: inline-block;
+	background: linear-gradient(135deg, #1e2b1a 0%, #4a6741 100%);
+	color: #ffffff !important;
+	padding: 0.3em 1.1em;
+	border-radius: 24px;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-size: 1em;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 1.6rem 0 0.3rem !important;
+	border-left: none;
+	box-shadow: 0 4px 16px rgba(74,103,65,0.15);
+}
+
+body.biophilic-theme.page-news #content h3:first-of-type {
+	margin-top: 0 !important;
+}
+
+body.biophilic-theme.page-news #content h3::before {
+	display: none;
+}
+
+/* News item paragraphs — tighten spacing */
+body.biophilic-theme.page-news #content p {
+	line-height: 1.9;
+	padding: 0;
+	margin: 0.2rem 0 0.4rem !important;
+}
+
+/* Hide the bare <br> spacers between year groups */
+body.biophilic-theme.page-news #content > br {
+	display: none;
+}
+
+/* Individual news links — subtle hover highlight */
+body.biophilic-theme.page-news #content p a {
+	text-decoration: none;
+	color: #3a6b80 !important;
+	padding: 0.15em 0.3em;
+	border-radius: 4px;
+	transition: background 0.25s ease, color 0.25s ease;
+}
+
+body.biophilic-theme.page-news #content p a:hover {
+	background: rgba(74,103,65,0.08);
+	color: #4a6741 !important;
+}
+
+/* News outlet names (bold text) — styled as subtle source tags */
+body.biophilic-theme.page-news #content p strong {
+	color: #4a6741;
+	font-weight: 700;
+	font-size: 0.88em;
+	letter-spacing: 0.02em;
+}
+
+/* ── Software Page — Card Treatment ── */
+
+body.biophilic-theme.page-software #content > section {
+	background: rgba(255,255,255,0.55);
+	border: 1px solid rgba(74,103,65,0.08);
+	border-radius: 20px;
+	padding: 2.5rem 2.2rem !important;
+	margin: 0 0 1rem 0 !important;
+	box-shadow: 0 4px 20px rgba(44,48,41,0.04);
+	transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+body.biophilic-theme.page-software #content > section:hover {
+	box-shadow: 0 12px 40px rgba(44,48,41,0.08);
+	transform: translateY(-2px);
+}
+
+/* Software section headings */
+body.biophilic-theme.page-software #content > section h3 {
+	font-size: 1.5em;
+	margin-bottom: 1rem;
+	border-left: none;
+	padding-left: 0;
+}
+
+body.biophilic-theme.page-software #content > section h3::before {
+	display: none;
+}
+
+/* Clean up hr between software sections */
+body.biophilic-theme.page-software #content > hr {
+	opacity: 0;
+	height: 0 !important;
+	margin: 0.5rem 0 !important;
+}
+
+/* Badge container centering */
+body.biophilic-theme.page-software #content > section center img {
+	border-radius: 6px;
+	border: none;
+}
+
+/* The "Software development led by other teams" heading */
+body.biophilic-theme.page-software #content > center > h2 {
+	margin: 3rem 0 1.5rem;
+	font-size: 1.6em;
+	color: #3a6b80;
+}
+
+/* ── Contact Page Enhancements ── */
+
+body.biophilic-theme.page-contact #content {
+	text-align: center;
+}
+
+body.biophilic-theme.page-contact #content center {
+	font-size: 1.1em;
+	line-height: 2;
+}
+
+body.biophilic-theme.page-contact #content iframe {
+	border-radius: 16px !important;
+	border: 1px solid rgba(74,103,65,0.12) !important;
+	box-shadow: 0 8px 30px rgba(44,48,41,0.08);
+	max-width: 100%;
+}
+
+body.biophilic-theme.page-contact #content a[href*="calendly"] {
+	display: inline-block;
+	background: linear-gradient(135deg, #4a6741 0%, #3d7a56 100%);
+	color: #ffffff !important;
+	padding: 0.75em 2em;
+	border-radius: 24px;
+	font-weight: 600;
+	text-decoration: none;
+	box-shadow: 0 8px 24px rgba(74,103,65,0.2);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	margin: 0.5rem 0;
+}
+
+body.biophilic-theme.page-contact #content a[href*="calendly"]:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 32px rgba(74,103,65,0.3);
+}
+
+/* ── About Section — Better Breathing Room ── */
+
+body.biophilic-theme.page-home #content > #page-wrapper > .wrapper > .container > p,
+body.biophilic-theme #main.wrapper .container > p {
+	font-size: 1.08em;
+	line-height: 1.9;
+	max-width: 72ch;
+}
+
+/* ── "Top of Page" & "Back to Top" Links ── */
+
+body.biophilic-theme .goto-pub,
+body.biophilic-theme a.goto-pub {
+	display: inline-block;
+	background: rgba(74,103,65,0.06);
+	color: #4a6741 !important;
+	padding: 0.6em 1.8em;
+	border-radius: 24px;
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-weight: 600;
+	font-size: 0.9em;
+	text-decoration: none;
+	border: 1px solid rgba(74,103,65,0.15);
+	transition: all 0.3s ease;
+	margin-top: 2rem;
+}
+
+body.biophilic-theme .goto-pub:hover,
+body.biophilic-theme a.goto-pub:hover {
+	background: #4a6741;
+	color: #ffffff !important;
+	border-color: #4a6741;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(74,103,65,0.2);
+}
+
+/* ── Page Header Spacing for Inner Pages ── */
+
+body.biophilic-theme .major h2 {
+	margin-bottom: 0.5rem;
+}
+
+/* ── Research Section Better Spacing ── */
+
+body.biophilic-theme #ResearchInterests {
+	margin-top: 2rem;
+}
+
+body.biophilic-theme #ResearchInterests > h2 {
+	margin-bottom: 1.5rem;
+}
+
+body.biophilic-theme #ResearchInterests p {
+	margin-bottom: 1.5rem;
+	clear: both;
+}
+
+/* ── Publication Representative Links — Better Mobile Wrap ── */
+
+body.biophilic-theme #ResearchInterests center {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	margin: 1.5rem 0 0.5rem;
+}
+
+body.biophilic-theme #ResearchInterests center br {
+	display: none;
+}
+
+/* ── Subtle Section Entrance for Inner Pages ── */
+
+@keyframes biophilic-sectionFade {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+body.biophilic-theme #main.wrapper .container > section,
+body.biophilic-theme #main.wrapper .container > header.major {
+	animation: biophilic-sectionFade 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.biophilic-theme #main.wrapper .container > section,
+	body.biophilic-theme #main.wrapper .container > header.major {
+		animation: none;
+	}
+}
+
+/* ── Better Selection Color ── */
+
+body.biophilic-theme ::selection {
+	background: rgba(74,103,65,0.18);
+	color: #1e2b1a;
+}
+
+body.biophilic-theme ::-moz-selection {
+	background: rgba(74,103,65,0.18);
+	color: #1e2b1a;
 }
