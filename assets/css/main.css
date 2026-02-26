@@ -167,9 +167,29 @@ input, select, textarea {
 }
 
 .typewriter {
-	overflow: hidden;
-	white-space: nowrap;
 	min-height: 1.8em;
+	display: inline-block;
+}
+
+/* Morphing text transition */
+.morph-text {
+	display: inline-block;
+	transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
+	opacity: 1;
+	filter: blur(0px);
+	transform: translateY(0);
+}
+
+.morph-text.morph-out {
+	opacity: 0;
+	filter: blur(8px);
+	transform: translateY(-6px);
+}
+
+.morph-text.morph-in {
+	opacity: 0;
+	filter: blur(8px);
+	transform: translateY(6px);
 }
 
 @keyframes heroGradientDrift {
@@ -191,10 +211,35 @@ input, select, textarea {
 	width: 100%;
 	max-width: 1100px;
 	padding: 3rem 2.5rem;
-	display: grid;
-	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.1fr);
-	gap: 3rem;
+	display: flex;
+	justify-content: center;
 	align-items: center;
+}
+
+/* Unified single-card hero layout */
+#banner .hero-inner--unified .portrait-frame {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 2.5rem 1.8rem;
+	gap: 0.8rem;
+}
+
+#banner .hero-inner--unified .portrait-frame img {
+	margin-bottom: 0.4rem;
+}
+
+#banner .hero-inner--unified .hero-tagline {
+	margin-top: 0.2rem;
+	width: 100%;
+	text-align: center;
+	display: block;
+}
+
+#banner .hero-inner--unified h3 {
+	text-align: center;
+	width: 100%;
 }
 
 
@@ -469,87 +514,25 @@ img.TextWrapRight {
 /* Mobile Hero Adjustments */
 @media screen and (max-width: 1100px) {
 	#banner .hero-inner {
-		grid-template-columns: 1fr;
-		gap: 2.8rem;
 		padding: 2.8rem 2.2rem;
-	}
-
-	.hero-text {
-		padding: 2.2rem;
-	}
-
-	.hero-cta {
-		justify-content: flex-start;
-	}
-
-	.hero-portrait {
-		gap: 1.4rem;
-	}
-
-	.hero-highlights {
-		max-width: 320px;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	.typewriter {
-		animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
 		min-height: 1.6em;
 	}
-	
+
 	#banner .hero-inner {
-		grid-template-columns: 1fr;
-		gap: 2.5rem;
 		padding: 2.5rem 1.8rem;
-	}
-
-	.hero-cta {
-		flex-direction: column;
-		align-items: center;
-		gap: 0.6rem;
-		margin-top: 1.2rem;
-	}
-
-	.hero-text {
-		padding: 2rem;
-	}
-
-	.hero-cta {
-		justify-content: center;
 	}
 
 	#banner {
 		background-attachment: scroll;
 	}
 
-	.hero-stats {
-		grid-template-columns: 1fr;
-	}
-	
-	.cta-button {
-		width: 240px;
-		justify-content: center;
-		padding: 0.8rem 1.5rem;
-		font-size: 0.85em;
-	}
-
-	.hero-portrait {
-		gap: 1.1rem;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
 	.portrait-frame img {
 		max-width: 200px;
-	}
-
-	.hero-highlights li {
-		font-size: 0.85em;
-	}
-
-	.hero-highlights {
-		max-width: none;
 	}
 
 	.hero-social {
@@ -1411,18 +1394,6 @@ body.biophilic-theme #banner .hero-inner {
 	background: transparent;
 }
 
-body.biophilic-theme #banner .hero-text {
-	background: rgba(255,255,255,0.76);
-	border: 1px solid rgba(74,103,65,0.12);
-	border-radius: 26px;
-	box-shadow:
-		0 24px 64px rgba(44,48,41,0.09),
-		0 2px 4px rgba(74,103,65,0.05),
-		inset 0 1px 0 rgba(255,255,255,0.8);
-	backdrop-filter: blur(18px);
-	-webkit-backdrop-filter: blur(18px);
-}
-
 body.biophilic-theme .portrait-frame {
 	background: #ffffff;
 	border: 1px solid rgba(74,103,65,0.14);
@@ -1458,42 +1429,11 @@ body.biophilic-theme .hero-tagline {
 	letter-spacing: -0.01em;
 }
 
-/* Typewriter blinking cursor */
-body.biophilic-theme .typewriter::after {
-	content: "\2502";
-	color: #4a6741;
-	font-weight: 300;
-	font-style: normal;
-	margin-left: 2px;
-	animation: biophilic-blink 1s step-end infinite;
+/* Morphing text inherits tagline styling */
+body.biophilic-theme .morph-text {
+	display: inline-block;
 }
 
-@keyframes biophilic-blink {
-	0%, 100% { opacity: 1; }
-	50% { opacity: 0; }
-}
-
-body.biophilic-theme .hero-lead {
-	color: #3a3d37;
-	font-size: 1.05em;
-	line-height: 1.85;
-	max-width: 68ch;
-	font-family: 'Libre Baskerville', Georgia, serif;
-	font-weight: 400;
-}
-
-body.biophilic-theme .hero-social img {
-	border-radius: 6px;
-	border: 1px solid rgba(74,103,65,0.12);
-	box-shadow: 0 2px 8px rgba(44,48,41,0.08);
-}
-
-body.biophilic-theme .hero-stats li,
-body.biophilic-theme .hero-highlights li {
-	background: rgba(255,255,255,0.8);
-	border-color: rgba(74,103,65,0.12);
-	border-radius: 14px;
-}
 
 /* CTA Buttons */
 body.biophilic-theme .cta-button {
@@ -2061,13 +2001,11 @@ body.biophilic-theme .biophilic-orbs {
 		animation: none !important;
 	}
 
-	body.biophilic-theme #banner .hero-portrait,
-	body.biophilic-theme #banner .hero-text,
-	body.biophilic-theme .hero-tagline,
-	body.biophilic-theme .hero-cta,
-	body.biophilic-theme .hero-social {
+	body.biophilic-theme #banner .portrait-frame,
+	body.biophilic-theme .hero-tagline {
 		animation: none;
 		opacity: 1;
+		clip-path: none;
 	}
 
 	body.biophilic-theme #ResearchInterests h3,
@@ -2075,6 +2013,17 @@ body.biophilic-theme .biophilic-orbs {
 		opacity: 1;
 		transform: none;
 		transition: none;
+	}
+
+	body.biophilic-theme #ResearchInterests .TextWrapRight,
+	body.biophilic-theme #ResearchInterests .TextWrapLeft {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	body.biophilic-theme .morph-text {
+		transition: none !important;
 	}
 }
 
@@ -2127,6 +2076,7 @@ body.biophilic-theme .biophilic-orbs span {
 	position: absolute;
 	display: block;
 	border-radius: 50%;
+	transition: translate 0.6s cubic-bezier(0.23,1,0.32,1);
 }
 
 body.biophilic-theme .biophilic-orbs span:nth-child(1) {
@@ -2258,30 +2208,28 @@ body.biophilic-theme .biophilic-orbs span:nth-child(12) {
 	75% { transform: translate(25px, -10px) scale(1.05); }
 }
 
-/* Hero entrance animation */
-body.biophilic-theme #banner .hero-portrait {
-	animation: biophilic-fadeUp 0.8s cubic-bezier(0.23,1,0.32,1) both;
-	animation-delay: 0.1s;
+/* Hero entrance animation — portrait uses clip-path reveal */
+@keyframes portraitReveal {
+	from {
+		clip-path: circle(0% at 50% 45%);
+		opacity: 0;
+		transform: scale(1.06);
+	}
+	to {
+		clip-path: circle(78% at 50% 45%);
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
-body.biophilic-theme #banner .hero-text {
-	animation: biophilic-fadeUp 0.8s cubic-bezier(0.23,1,0.32,1) both;
-	animation-delay: 0.3s;
+body.biophilic-theme #banner .portrait-frame {
+	animation: portraitReveal 1s cubic-bezier(0.23,1,0.32,1) both;
+	animation-delay: 0.1s;
 }
 
 body.biophilic-theme .hero-tagline {
 	animation: biophilic-fadeUp 0.6s cubic-bezier(0.23,1,0.32,1) both;
-	animation-delay: 0.5s;
-}
-
-body.biophilic-theme .hero-cta {
-	animation: biophilic-fadeUp 0.6s cubic-bezier(0.23,1,0.32,1) both;
-	animation-delay: 0.7s;
-}
-
-body.biophilic-theme .hero-social {
-	animation: biophilic-fadeUp 0.6s cubic-bezier(0.23,1,0.32,1) both;
-	animation-delay: 0.9s;
+	animation-delay: 0.8s;
 }
 
 /* Research section staggered reveal */
@@ -2301,6 +2249,25 @@ body.biophilic-theme #ResearchInterests h3.revealed,
 body.biophilic-theme #ResearchInterests p.revealed {
 	opacity: 1;
 	transform: translateY(0);
+}
+
+/* Research image directional slide-in */
+body.biophilic-theme #ResearchInterests .TextWrapRight {
+	opacity: 0;
+	transform: translateX(40px) scale(0.97);
+	transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23,1,0.32,1);
+}
+
+body.biophilic-theme #ResearchInterests .TextWrapLeft {
+	opacity: 0;
+	transform: translateX(-40px) scale(0.97);
+	transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23,1,0.32,1);
+}
+
+body.biophilic-theme #ResearchInterests .TextWrapRight.revealed,
+body.biophilic-theme #ResearchInterests .TextWrapLeft.revealed {
+	opacity: 1;
+	transform: translateX(0) scale(1);
 }
 
 /* Enhanced CTA button hover glow */
@@ -2761,6 +2728,17 @@ hr {
 
 	.hero-lead {
 		font-size: 0.95em;
+	}
+
+	/* On mobile, images stack centered — use fade-up instead of directional slide */
+	body.biophilic-theme #ResearchInterests .TextWrapRight,
+	body.biophilic-theme #ResearchInterests .TextWrapLeft {
+		transform: translateY(20px) scale(0.97);
+	}
+
+	body.biophilic-theme #ResearchInterests .TextWrapRight.revealed,
+	body.biophilic-theme #ResearchInterests .TextWrapLeft.revealed {
+		transform: translateY(0) scale(1);
 	}
 }
 
@@ -7975,4 +7953,174 @@ body.biophilic-theme ::selection {
 body.biophilic-theme ::-moz-selection {
 	background: rgba(74,103,65,0.18);
 	color: #1e2b1a;
+}
+
+/* ── Active Navigation Indicator ── */
+
+.nav-active {
+	opacity: 1 !important;
+}
+
+body.biophilic-theme .nav-active {
+	color: #b8d4a8 !important;
+	position: relative;
+}
+
+body.biophilic-theme .nav-active::after {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	height: 2px;
+	background: #4a6741;
+	border-radius: 1px;
+}
+
+/* ── News Page — Timeline Card Layout ── */
+
+body.biophilic-theme.page-news .news-timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 2rem;
+}
+
+body.biophilic-theme.page-news .news-item {
+	background: rgba(255,255,255,0.55);
+	border: 1px solid rgba(74,103,65,0.08);
+	border-left: 3px solid #4a6741;
+	border-radius: 12px;
+	padding: 1rem 1.25rem;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.biophilic-theme.page-news .news-item:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(44,48,41,0.08);
+}
+
+body.biophilic-theme.page-news .news-link {
+	display: block;
+	font-family: 'Libre Baskerville', 'Georgia', serif;
+	font-size: 0.95em;
+	line-height: 1.5;
+	color: #2c4a25 !important;
+	text-decoration: none;
+	margin-bottom: 0.5rem;
+	transition: color 0.2s ease;
+}
+
+body.biophilic-theme.page-news .news-link:hover {
+	color: #4a6741 !important;
+	text-decoration: underline;
+}
+
+body.biophilic-theme.page-news .news-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+body.biophilic-theme.page-news .news-date {
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-size: 0.8em;
+	color: #6b7c66;
+}
+
+body.biophilic-theme.page-news .news-source {
+	font-family: 'Source Sans 3', 'Inter', sans-serif;
+	font-size: 0.75em;
+	background: rgba(74,103,65,0.08);
+	color: #3d5a36;
+	padding: 0.15em 0.6em;
+	border-radius: 10px;
+	font-weight: 500;
+}
+
+body.biophilic-theme.page-news h3 {
+	margin: 1.5rem 0 0.75rem;
+}
+
+/* Scroll-reveal animation for news items */
+body.biophilic-theme.page-news .news-item {
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.25s ease;
+}
+
+body.biophilic-theme.page-news .news-item.news-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.biophilic-theme.page-news .news-item {
+		opacity: 1;
+		transform: none;
+		transition: box-shadow 0.25s ease;
+	}
+}
+
+/* ── Publications Page — Card Layout ── */
+
+body.biophilic-theme .pub-card {
+	background: rgba(255,255,255,0.55);
+	border: 1px solid rgba(74,103,65,0.08);
+	border-left: 3px solid #4a6741;
+	border-radius: 12px;
+	padding: 1rem 1.25rem;
+	margin-bottom: 0.75rem;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	line-height: 1.6;
+}
+
+body.biophilic-theme .pub-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(44,48,41,0.08);
+}
+
+body.biophilic-theme .pub-card a {
+	color: #1e2b1a !important;
+	text-decoration: underline;
+	text-decoration-color: rgba(74,103,65,0.3);
+	text-underline-offset: 2px;
+	transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+body.biophilic-theme .pub-card a:hover {
+	color: #4a6741 !important;
+	text-decoration-color: #4a6741;
+}
+
+/* Scroll-reveal for pub cards */
+body.biophilic-theme .pub-card {
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.25s ease;
+}
+
+body.biophilic-theme .pub-card.pub-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.biophilic-theme .pub-card {
+		opacity: 1;
+		transform: none;
+		transition: box-shadow 0.25s ease;
+	}
+}
+
+/* ── Mobile Overrides ── */
+
+@media screen and (max-width: 736px) {
+	body.biophilic-theme.page-news .news-item,
+	body.biophilic-theme .pub-card {
+		border-radius: 8px;
+		padding: 0.85rem 1rem;
+	}
 }

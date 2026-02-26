@@ -112,45 +112,13 @@
 						<span class="aurora ribbon-two"></span>
 						<span class="aurora ribbon-three"></span>
 					</div>
-					<div class="hero-inner">
-						<div class="hero-portrait">
-							<div class="portrait-frame">
-								<br />
-								<img src="images/17225603.jpeg" alt="Portrait of Jacob L. Steenwyk" />
-								<br /><br />
-								<h3>Jacob L. Steenwyk, Ph.D.</h3>
-							</div>
-							<!-- <ul class="hero-highlights">
-								<li>Nature Reviews Genetics, Science Advances, PLOS Biology</li>
-								<li>Gilliam Fellow alumni championing inclusive research</li>
-								<li>Newsletter connecting thousands to genomics breakthroughs</li>
-							</ul> -->
-						</div>
-						<div class="hero-text">
+					<div class="hero-inner hero-inner--unified">
+						<div class="portrait-frame">
+							<img src="images/17225603.jpeg" alt="Portrait of Jacob L. Steenwyk" />
+							<h3>Jacob L. Steenwyk, Ph.D.</h3>
 							<h2 class="hero-tagline typewriter" id="typewriter-text"></h2>
-							<p class="hero-lead">Comparative genomics + computational tool development to investigate microbial pathogenesis, animal origins, and evolutionary informatics at scale.</p>
-							<div class="hero-cta">
-								<a class="cta-button primary" href="publications.html">View Publications</a>
-								<a class="cta-button tertiary" href="software.html">Explore Software</a>
-								<!-- <a class="cta-button tertiary" href="https://genomely.substack.com/" target="_blank" rel="noopener">Read Genomely</a> -->
-							</div>
-							<!-- <ul class="hero-stats">
-								<li>
-									<span class="stat-value">Genomes & Evolution</span>
-									<span class="stat-label">Comparative insights across fungi and animals</span>
-								</li>
-								<li>
-									<span class="stat-value">Open Science Tools</span>
-									<span class="stat-label">ClipKIT, PhyKIT, and community resources</span>
-								</li>
-							</ul> -->
-							<div class="hero-social">
-								<a href="https://bsky.app/profile/jlsteenwyk.bsky.social" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff" alt="Bluesky"></a>
-								<a href="https://github.com/JLSteenwyk" target="_blank" rel="noopener noreferrer"><img alt="GitHub followers" src="https://img.shields.io/github/followers/JLSteenwyk?style=social"></a>
-								<a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Google%20Scholar-blue" alt="Google Scholar"></a>
-							</div>
 						</div>
-						</div>
+					</div>
 						<a href="#content" class="goto-next scrolly">Next</a>
 					</section>
 			</article>
@@ -332,58 +300,69 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<!-- Typewriter Animation Script -->
+			<!-- Morphing Text & Scroll Animations -->
 			<script>
 				document.addEventListener('DOMContentLoaded', function() {
-					const phrases = [
+					/* -- Morphing Text Effect -- */
+					var phrases = [
 						"Evolutionary Bioinformatics",
 						"Computational Genomics",
 						"AI/ML for Biology",
-						"Phylogenomics & the Tree of Life", 
-						"Software Engineering",
+						"Phylogenomics & the Tree of Life",
+						"Software Engineering"
 					];
-					
-					const typewriterElement = document.getElementById('typewriter-text');
-					let currentPhraseIndex = 0;
-					let currentCharIndex = 0;
-					let isTyping = true;
-					
-					function typeWriter() {
-						const currentPhrase = phrases[currentPhraseIndex];
-						
-						if (isTyping) {
-							// Typing
-							if (currentCharIndex < currentPhrase.length) {
-								typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
-								currentCharIndex++;
-								setTimeout(typeWriter, 80);
-							} else {
-								// Pause after finishing typing
-								setTimeout(() => {
-									isTyping = false;
-									typeWriter();
-								}, 2000);
-							}
-						} else {
-							// Erasing
-							if (currentCharIndex > 0) {
-								typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
-								currentCharIndex--;
-								setTimeout(typeWriter, 50);
-							} else {
-								// Move to next phrase
-								currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-								isTyping = true;
-								setTimeout(typeWriter, 500);
-							}
+
+					var container = document.getElementById('typewriter-text');
+					var currentIndex = 0;
+
+					var morphSpan = document.createElement('span');
+					morphSpan.className = 'morph-text';
+					morphSpan.textContent = phrases[0];
+					container.appendChild(morphSpan);
+
+					function morphToNext() {
+						morphSpan.classList.add('morph-out');
+						setTimeout(function() {
+							currentIndex = (currentIndex + 1) % phrases.length;
+							morphSpan.textContent = phrases[currentIndex];
+							morphSpan.classList.remove('morph-out');
+							morphSpan.classList.add('morph-in');
+							morphSpan.offsetHeight;
+							morphSpan.classList.remove('morph-in');
+						}, 520);
+					}
+
+					setTimeout(function() {
+						setInterval(morphToNext, 3200);
+					}, 2500);
+
+					/* -- Cursor-Reactive Parallax on Orbs -- */
+					var banner = document.getElementById('banner');
+					if (banner) {
+						var orbs = banner.querySelectorAll('.biophilic-orbs span');
+						if (orbs.length) {
+							banner.addEventListener('mousemove', function(e) {
+								var rect = banner.getBoundingClientRect();
+								var cx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+								var cy = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+								for (var i = 0; i < orbs.length; i++) {
+									var depth = 0.25 + (i % 4) * 0.25;
+									orbs[i].style.translate = (cx * 14 * depth) + 'px ' + (cy * 10 * depth) + 'px';
+								}
+							});
+							banner.addEventListener('mouseleave', function() {
+								for (var i = 0; i < orbs.length; i++) {
+									orbs[i].style.translate = '0px 0px';
+								}
+							});
 						}
 					}
-					
-					// Start the animation
-					setTimeout(typeWriter, 1000);
 
-					// Biophilic scroll-reveal for research sections
-					var revealEls = document.querySelectorAll('#ResearchInterests h3, #ResearchInterests > p, #ResearchInterests p');
+					/* -- Scroll-Reveal for Research Sections & Images -- */
+					var revealEls = document.querySelectorAll(
+						'#ResearchInterests h3, #ResearchInterests > p, #ResearchInterests p, ' +
+						'#ResearchInterests .TextWrapRight, #ResearchInterests .TextWrapLeft'
+					);
 					if (revealEls.length && 'IntersectionObserver' in window) {
 						var revealObserver = new IntersectionObserver(function(entries) {
 							entries.forEach(function(entry) {

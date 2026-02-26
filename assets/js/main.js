@@ -178,6 +178,13 @@
 
 		buildThemeToggle();
 
+	// Active nav link indicator.
+		var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+		$('#nav .nav-link').each(function() {
+			var href = $(this).attr('href').replace('#content', '');
+			if (href === currentPage) $(this).addClass('nav-active');
+		});
+
 	// Parallax.
 	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
 		if (browser.name == 'ie'
