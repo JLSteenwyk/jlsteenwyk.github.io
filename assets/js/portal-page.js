@@ -59,9 +59,43 @@
 				var html = '';
 				html += '<a href="' + backHref + '" class="portal-back-link">&larr; Back</a>';
 				html += '<header class="major"><h2>' + escapeHtml(page.title) + '</h2></header>';
-				html += '<div class="portal-page-content">' + page.content + '</div>';
 
-				container.innerHTML = html;
+				// Detect if content is a full HTML document or a fragment
+				var isFullDoc = /<html[\s>]/i.test(page.content) || /<!doctype/i.test(page.content);
+
+				if (isFullDoc) {
+					// Render in an iframe for complete style isolation
+					html += '<iframe id="page-iframe" class="portal-page-iframe" sandbox="allow-same-origin" title="' + escapeHtml(page.title) + '"></iframe>';
+					container.innerHTML = html;
+
+					var iframe = document.getElementById('page-iframe');
+					var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+					iframeDoc.open();
+					iframeDoc.write(page.content);
+					iframeDoc.close();
+
+					// Auto-resize iframe to fit content
+					function resizeIframe() {
+						try {
+							var body = iframeDoc.body;
+							var docEl = iframeDoc.documentElement;
+							var height = Math.max(
+								body.scrollHeight, body.offsetHeight,
+								docEl.scrollHeight, docEl.offsetHeight
+							);
+							iframe.style.height = height + 'px';
+						} catch (e) {}
+					}
+
+					iframe.onload = resizeIframe;
+					// Also resize after a short delay for images/fonts to load
+					setTimeout(resizeIframe, 500);
+					setTimeout(resizeIframe, 2000);
+				} else {
+					// Simple HTML fragment — render inline
+					html += '<div class="portal-page-content">' + page.content + '</div>';
+					container.innerHTML = html;
+				}
 			})
 			.catch(function () {
 				showError('Error loading page. Please try again.');

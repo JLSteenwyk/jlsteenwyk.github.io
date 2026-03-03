@@ -9,6 +9,7 @@
 	var quill = null;
 	var editingPageId = null;   // null = creating, string = editing
 	var clientsCache = [];      // [{id, ...data}]
+	var uploadedHtml = null;    // raw HTML from file upload
 
 	/* ── Auth gate ─────────────────────────────────────────── */
 
@@ -30,6 +31,7 @@
 
 		initTabs();
 		initQuill();
+		initHtmlUpload();
 		initClientForm();
 		initUserForm();
 		initPageForm();
@@ -111,6 +113,34 @@
 				alert('Image upload failed: ' + err.message);
 			});
 		};
+	}
+
+	/* ── HTML File Upload ──────────────────────────────────── */
+
+	function initHtmlUpload() {
+		var fileInput = document.getElementById('html-file-upload');
+		var fileNameEl = document.getElementById('html-file-name');
+
+		fileInput.addEventListener('change', function () {
+			var file = fileInput.files[0];
+			if (!file) {
+				uploadedHtml = null;
+				fileNameEl.textContent = '';
+				return;
+			}
+
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				// Store the full file content — the page viewer will detect
+				// full HTML docs and render them in an iframe for style isolation
+				uploadedHtml = e.target.result.trim();
+
+				fileNameEl.textContent = file.name + ' loaded';
+				// Clear the Quill editor since we're using the file
+				quill.root.innerHTML = '';
+			};
+			reader.readAsText(file);
+		});
 	}
 
 	/* ══════════════════════════════════════════════════════════
@@ -309,7 +339,8 @@
 		var clientId = document.getElementById('page-client-select').value;
 		var title = document.getElementById('page-title').value.trim();
 		var sortOrder = parseInt(document.getElementById('page-sort').value, 10) || 0;
-		var content = quill.root.innerHTML;
+		// Prefer uploaded HTML file; fall back to Quill editor content
+		var content = uploadedHtml || quill.root.innerHTML;
 		var msgEl = document.getElementById('page-msg');
 		msgEl.innerHTML = '';
 
@@ -399,9 +430,12 @@
 
 	function resetPageForm() {
 		editingPageId = null;
+		uploadedHtml = null;
 		document.getElementById('page-form-title').textContent = 'Create Page';
 		document.getElementById('page-title').value = '';
 		document.getElementById('page-sort').value = '0';
+		document.getElementById('html-file-upload').value = '';
+		document.getElementById('html-file-name').textContent = '';
 		quill.root.innerHTML = '';
 		document.getElementById('cancel-edit-btn').classList.add('portal-hidden');
 		document.getElementById('save-page-btn').textContent = 'Save Page';

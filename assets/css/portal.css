@@ -206,6 +206,16 @@
 	color: #4a6741;
 }
 
+/* ── Page Iframe ────────────────────────────────────────────── */
+
+.portal-page-iframe {
+	width: 100%;
+	min-height: 400px;
+	border: 1px solid rgba(74, 103, 65, 0.1);
+	border-radius: 12px;
+	background: #fff;
+}
+
 /* ── Admin Tabs ─────────────────────────────────────────────── */
 
 .portal-tabs {
