@@ -50,8 +50,14 @@
 
 				var html = '<ul class="portal-cards">';
 				pages.forEach(function (p) {
+					var dateStr = '';
+					if (p.data.createdAt) {
+						var d = p.data.createdAt.toDate();
+						dateStr = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+					}
 					html += '<li class="portal-card">';
 					html += '<h3>' + escapeHtml(p.data.title) + '</h3>';
+					if (dateStr) html += '<p>' + dateStr + '</p>';
 					html += '<a href="page.html?id=' + p.id + '">View Page &rarr;</a>';
 					html += '</li>';
 				});
