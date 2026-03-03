@@ -138,6 +138,18 @@
 				fileNameEl.textContent = file.name + ' loaded';
 				// Clear the Quill editor since we're using the file
 				quill.root.innerHTML = '';
+
+				// Auto-fill the page title from the HTML <title> tag if present
+				var titleInput = document.getElementById('page-title');
+				if (!titleInput.value.trim()) {
+					var titleMatch = uploadedHtml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+					if (titleMatch) {
+						titleInput.value = titleMatch[1].trim();
+					} else {
+						// Fall back to filename without extension
+						titleInput.value = file.name.replace(/\.(html?|htm)$/i, '');
+					}
+				}
 			};
 			reader.readAsText(file);
 		});

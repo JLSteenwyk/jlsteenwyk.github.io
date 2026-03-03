@@ -37,13 +37,15 @@
 					return;
 				}
 
-				// Sort client-side to avoid needing a composite index
+				// Sort reverse-chronologically (newest first)
 				var pages = [];
 				snap.forEach(function (doc) {
 					pages.push({ id: doc.id, data: doc.data() });
 				});
 				pages.sort(function (a, b) {
-					return (a.data.sortOrder || 0) - (b.data.sortOrder || 0);
+					var aTime = a.data.createdAt ? a.data.createdAt.toMillis() : 0;
+					var bTime = b.data.createdAt ? b.data.createdAt.toMillis() : 0;
+					return bTime - aTime;
 				});
 
 				var html = '<ul class="portal-cards">';
