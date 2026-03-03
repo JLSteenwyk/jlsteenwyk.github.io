@@ -30,7 +30,6 @@
 
 		db.collection('pages')
 			.where('clientId', '==', clientId)
-			.orderBy('sortOrder')
 			.get()
 			.then(function (snap) {
 				if (snap.empty) {
@@ -38,12 +37,20 @@
 					return;
 				}
 
-				var html = '<ul class="portal-cards">';
+				// Sort client-side to avoid needing a composite index
+				var pages = [];
 				snap.forEach(function (doc) {
-					var page = doc.data();
+					pages.push({ id: doc.id, data: doc.data() });
+				});
+				pages.sort(function (a, b) {
+					return (a.data.sortOrder || 0) - (b.data.sortOrder || 0);
+				});
+
+				var html = '<ul class="portal-cards">';
+				pages.forEach(function (p) {
 					html += '<li class="portal-card">';
-					html += '<h3>' + escapeHtml(page.title) + '</h3>';
-					html += '<a href="page.html?id=' + doc.id + '">View Page &rarr;</a>';
+					html += '<h3>' + escapeHtml(p.data.title) + '</h3>';
+					html += '<a href="page.html?id=' + p.id + '">View Page &rarr;</a>';
 					html += '</li>';
 				});
 				html += '</ul>';
