@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Admin | Client Portal</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="robots" content="noindex, nofollow" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/portal.css" />
+		<link rel="icon" href="../images/website_flavicon_network.png">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<!-- Quill -->
+		<link href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css" rel="stylesheet" />
+	</head>
+	<body class="is-preload page-portal">
+		<article id="Top">
+			<div id="page-wrapper">
+			<!-- Header -->
+				<header id="header">
+					<nav id="nav">
+						<ul>
+							<li><a href="../index.html#content" class="nav-link">About</a></li>
+							<li><a href="../publications.html" class="nav-link">Publications</a></li>
+							<li><a href="../news.html" class="nav-link">News</a></li>
+							<li><a href="../software.html" class="nav-link">Software</a></li>
+							<li><a href="../curriculum_vitae.html" class="nav-link">CV</a></li>
+							<li><a href="../resources.html" class="nav-link">Resources</a></li>
+							<li><a href="../contact.html" class="nav-link">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<section id="content">
+							<header class="major">
+								<h2>Admin Panel</h2>
+							</header>
+
+							<div class="portal-topbar">
+								<span class="portal-topbar-user" id="user-greeting"></span>
+								<button class="portal-btn portal-btn-secondary portal-btn-small" id="logout-btn">Sign Out</button>
+							</div>
+
+							<!-- Tabs -->
+							<div class="portal-tabs">
+								<button class="portal-tab active" data-tab="clients">Clients</button>
+								<button class="portal-tab" data-tab="users">Users</button>
+								<button class="portal-tab" data-tab="pages">Pages</button>
+							</div>
+
+							<!-- ─── Clients Tab ─── -->
+							<div class="portal-tab-panel active" id="tab-clients">
+								<h3>Create Client</h3>
+								<div class="portal-form-row">
+									<div class="portal-field">
+										<label for="client-name">Client Name</label>
+										<input type="text" id="client-name" placeholder="Acme Corp" />
+									</div>
+									<div class="portal-field" style="flex:0 0 auto;">
+										<label>&nbsp;</label>
+										<button class="portal-btn portal-btn-primary portal-btn-small" id="create-client-btn">Create</button>
+									</div>
+								</div>
+								<div id="client-msg"></div>
+
+								<h3>Existing Clients</h3>
+								<div id="clients-list">
+									<p class="portal-loading">Loading&hellip;</p>
+								</div>
+							</div>
+
+							<!-- ─── Users Tab ─── -->
+							<div class="portal-tab-panel" id="tab-users">
+								<h3>Create User</h3>
+								<div class="portal-form-row">
+									<div class="portal-field">
+										<label for="user-email">Email</label>
+										<input type="email" id="user-email" placeholder="user@example.com" />
+									</div>
+									<div class="portal-field">
+										<label for="user-password">Password</label>
+										<input type="text" id="user-password" placeholder="min 6 chars" />
+									</div>
+									<div class="portal-field">
+										<label for="user-display-name">Display Name</label>
+										<input type="text" id="user-display-name" placeholder="Jane Smith" />
+									</div>
+									<div class="portal-field">
+										<label for="user-client-select">Client</label>
+										<select id="user-client-select">
+											<option value="">-- Select client --</option>
+										</select>
+									</div>
+									<div class="portal-field" style="flex:0 0 auto;">
+										<label>&nbsp;</label>
+										<button class="portal-btn portal-btn-primary portal-btn-small" id="create-user-btn">Create</button>
+									</div>
+								</div>
+								<div id="user-msg"></div>
+
+								<h3>Existing Users</h3>
+								<div id="users-list">
+									<p class="portal-loading">Loading&hellip;</p>
+								</div>
+							</div>
+
+							<!-- ─── Pages Tab ─── -->
+							<div class="portal-tab-panel" id="tab-pages">
+								<h3 id="page-form-title">Create Page</h3>
+								<div class="portal-form-row">
+									<div class="portal-field">
+										<label for="page-client-select">Client</label>
+										<select id="page-client-select">
+											<option value="">-- Select client --</option>
+										</select>
+									</div>
+									<div class="portal-field">
+										<label for="page-title">Page Title</label>
+										<input type="text" id="page-title" placeholder="Project Update" />
+									</div>
+									<div class="portal-field">
+										<label for="page-sort">Sort Order</label>
+										<input type="number" id="page-sort" value="0" min="0" />
+									</div>
+								</div>
+
+								<div class="portal-editor-wrap">
+									<div id="quill-editor"></div>
+								</div>
+
+								<div style="margin: 1em 0; display: flex; gap: 0.5em; flex-wrap: wrap;">
+									<button class="portal-btn portal-btn-primary portal-btn-small" id="save-page-btn">Save Page</button>
+									<button class="portal-btn portal-btn-secondary portal-btn-small portal-hidden" id="cancel-edit-btn">Cancel Edit</button>
+								</div>
+								<div id="page-msg"></div>
+
+								<h3>Existing Pages</h3>
+								<div id="pages-list">
+									<p class="portal-loading">Loading&hellip;</p>
+								</div>
+							</div>
+
+						</section>
+					</div>
+				</div>
+			</article>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/jlsteenwyk" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" class="icon brands alt fa-google"><span class="label">Google</span></a></li>
+						<li><a href="https://www.researchgate.net/profile/Jacob_Steenwyk" class="icon brands alt fa-researchgate"><span class="label">ResearchGate</span></a></li>
+						<li><a href="https://github.com/JLSteenwyk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/jlsteenwyk/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="../contact.html" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; <span class="current-year"></span> Jacob L. Steenwyk</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+			<!-- Firebase -->
+			<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+			<script src="../assets/js/firebase-config.js"></script>
+			<script src="../assets/js/portal-auth.js"></script>
+
+			<!-- Quill -->
+			<script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script>
+
+			<script src="../assets/js/portal-admin.js"></script>
+	</body>
+</html>

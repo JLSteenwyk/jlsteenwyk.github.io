@@ -1,0 +1,383 @@
+/* ============================================================
+   Portal Styles
+   ============================================================ */
+
+/* ── Login Form ─────────────────────────────────────────────── */
+
+.portal-login-box {
+	max-width: 400px;
+	margin: 2em auto;
+	padding: 2.5em 2em;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(8px);
+	box-shadow: 0 8px 32px rgba(44, 48, 41, 0.08);
+}
+
+.portal-login-box h3 {
+	text-align: center;
+	margin-bottom: 1.5em;
+}
+
+.portal-field {
+	margin-bottom: 1.2em;
+}
+
+.portal-field label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 0.4em;
+	font-size: 0.95em;
+}
+
+.portal-field input {
+	width: 100%;
+	padding: 0.75em 1em;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	font-size: 1em;
+	box-sizing: border-box;
+	transition: border-color 0.2s ease;
+}
+
+.portal-field input:focus {
+	outline: none;
+	border-color: #4a6741;
+	box-shadow: 0 0 0 3px rgba(74, 103, 65, 0.15);
+}
+
+.portal-btn {
+	display: inline-block;
+	padding: 0.75em 2em;
+	border: none;
+	border-radius: 20px;
+	font-size: 1em;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portal-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(74, 103, 65, 0.25);
+}
+
+.portal-btn-primary {
+	background: linear-gradient(135deg, #4a6741, #3d7a56);
+	color: #fff;
+	width: 100%;
+}
+
+.portal-btn-secondary {
+	background: #3a6b80;
+	color: #fff;
+}
+
+.portal-btn-danger {
+	background: #c53030;
+	color: #fff;
+}
+
+.portal-btn-danger:hover {
+	box-shadow: 0 8px 24px rgba(197, 48, 48, 0.25);
+}
+
+.portal-btn-small {
+	padding: 0.45em 1.2em;
+	font-size: 0.85em;
+}
+
+.portal-error {
+	color: #c53030;
+	text-align: center;
+	margin-top: 1em;
+	font-size: 0.9em;
+	min-height: 1.4em;
+}
+
+/* ── Top Bar (logged-in header) ─────────────────────────────── */
+
+.portal-topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75em;
+	margin-bottom: 2em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid rgba(74, 103, 65, 0.15);
+}
+
+.portal-topbar-user {
+	font-size: 0.95em;
+	color: #4a5568;
+}
+
+/* ── Cards Grid ─────────────────────────────────────────────── */
+
+.portal-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1.5em;
+	list-style: none;
+	padding: 0;
+	margin: 1.5em 0;
+}
+
+.portal-card {
+	background: rgba(255, 255, 255, 0.75);
+	backdrop-filter: blur(6px);
+	border: 1px solid rgba(74, 103, 65, 0.1);
+	border-radius: 16px;
+	padding: 1.5em;
+	box-shadow: 0 4px 16px rgba(44, 48, 41, 0.06);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portal-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 36px rgba(44, 48, 41, 0.14);
+}
+
+.portal-card h3 {
+	margin-bottom: 0.5em;
+}
+
+.portal-card p {
+	color: #4a5568;
+	font-size: 0.9em;
+	margin-bottom: 1em;
+}
+
+.portal-card a {
+	color: #3a6b80;
+	font-weight: 600;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.portal-card a:hover {
+	color: #4a6741;
+	border-bottom-color: #4a6741;
+}
+
+/* ── Page Content Viewer ────────────────────────────────────── */
+
+.portal-page-content {
+	line-height: 1.75;
+	font-size: 1.05em;
+}
+
+.portal-page-content img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 12px;
+	margin: 1em 0;
+}
+
+.portal-page-content h1,
+.portal-page-content h2,
+.portal-page-content h3 {
+	margin-top: 1.2em;
+	margin-bottom: 0.5em;
+}
+
+.portal-page-content ul,
+.portal-page-content ol {
+	margin-left: 1.5em;
+	margin-bottom: 1em;
+	list-style: revert;
+}
+
+.portal-page-content p {
+	margin-bottom: 1em;
+}
+
+.portal-back-link {
+	display: inline-block;
+	margin-bottom: 1.5em;
+	color: #3a6b80;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.portal-back-link:hover {
+	color: #4a6741;
+}
+
+/* ── Admin Tabs ─────────────────────────────────────────────── */
+
+.portal-tabs {
+	display: flex;
+	gap: 0;
+	margin-bottom: 2em;
+	border-bottom: 2px solid rgba(74, 103, 65, 0.15);
+}
+
+.portal-tab {
+	padding: 0.75em 1.5em;
+	background: none;
+	border: none;
+	font-size: 1em;
+	font-weight: 600;
+	cursor: pointer;
+	color: #6b7264;
+	border-bottom: 3px solid transparent;
+	margin-bottom: -2px;
+	transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.portal-tab:hover {
+	color: #2c3029;
+}
+
+.portal-tab.active {
+	color: #4a6741;
+	border-bottom-color: #4a6741;
+}
+
+.portal-tab-panel {
+	display: none;
+}
+
+.portal-tab-panel.active {
+	display: block;
+}
+
+/* ── Admin Forms ────────────────────────────────────────────── */
+
+.portal-form-row {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	margin-bottom: 1.5em;
+}
+
+.portal-form-row .portal-field {
+	flex: 1;
+	min-width: 180px;
+	margin-bottom: 0;
+}
+
+.portal-form-inline {
+	display: flex;
+	gap: 0.5em;
+	align-items: flex-end;
+}
+
+/* ── Admin Tables ───────────────────────────────────────────── */
+
+.portal-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1em 0;
+	font-size: 0.95em;
+}
+
+.portal-table th,
+.portal-table td {
+	padding: 0.75em 1em;
+	text-align: left;
+	border-bottom: 1px solid rgba(74, 103, 65, 0.1);
+}
+
+.portal-table th {
+	font-weight: 700;
+	color: #2c3029;
+	background: rgba(74, 103, 65, 0.05);
+}
+
+.portal-table tr:hover td {
+	background: rgba(74, 103, 65, 0.03);
+}
+
+/* ── Quill Editor ───────────────────────────────────────────── */
+
+.portal-editor-wrap {
+	margin: 1.5em 0;
+	border: 1px solid rgba(74, 103, 65, 0.15);
+	border-radius: 12px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.portal-editor-wrap .ql-toolbar {
+	border: none;
+	border-bottom: 1px solid rgba(74, 103, 65, 0.12);
+}
+
+.portal-editor-wrap .ql-container {
+	border: none;
+	min-height: 300px;
+	font-size: 1em;
+}
+
+/* ── Utility ────────────────────────────────────────────────── */
+
+.portal-loading {
+	text-align: center;
+	padding: 3em;
+	color: #6b7264;
+}
+
+.portal-empty {
+	text-align: center;
+	padding: 2em;
+	color: #6b7264;
+	font-style: italic;
+}
+
+.portal-msg {
+	padding: 0.75em 1em;
+	border-radius: 10px;
+	margin-bottom: 1em;
+	font-size: 0.9em;
+}
+
+.portal-msg-success {
+	background: rgba(74, 103, 65, 0.1);
+	color: #2f6b3a;
+}
+
+.portal-msg-error {
+	background: rgba(197, 48, 48, 0.1);
+	color: #c53030;
+}
+
+.portal-hidden {
+	display: none !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 736px) {
+	.portal-login-box {
+		margin: 1em;
+		padding: 1.5em 1.2em;
+	}
+
+	.portal-tabs {
+		overflow-x: auto;
+	}
+
+	.portal-tab {
+		padding: 0.6em 1em;
+		font-size: 0.9em;
+		white-space: nowrap;
+	}
+
+	.portal-form-row {
+		flex-direction: column;
+	}
+
+	.portal-table {
+		font-size: 0.8em;
+	}
+
+	.portal-table th,
+	.portal-table td {
+		padding: 0.5em;
+	}
+}
