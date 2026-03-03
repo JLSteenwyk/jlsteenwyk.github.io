@@ -331,6 +331,31 @@
 	background: rgba(74, 103, 65, 0.03);
 }
 
+.portal-table-wrap {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	margin: 1em 0;
+}
+
+.portal-table-row-link {
+	cursor: pointer;
+	transition: background 0.15s ease;
+}
+
+.portal-table-row-link:hover td {
+	background: rgba(74, 103, 65, 0.07);
+}
+
+.portal-table-row-link td a {
+	color: #3a6b80;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.portal-table-row-link td a:hover {
+	color: #4a6741;
+}
+
 /* ── Quill Editor ───────────────────────────────────────────── */
 
 .portal-editor-wrap {

@@ -48,25 +48,29 @@
 					return bTime - aTime;
 				});
 
-				var html = '<ul class="portal-cards">';
+				var html = '<div class="portal-table-wrap"><table class="portal-table">';
+				html += '<thead><tr><th>Title</th><th>Created</th><th>Updated</th></tr></thead><tbody>';
 				pages.forEach(function (p) {
-					var dateStr = '';
-					if (p.data.createdAt) {
-						var d = p.data.createdAt.toDate();
-						dateStr = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-					}
-					html += '<li class="portal-card">';
-					html += '<h3>' + escapeHtml(p.data.title) + '</h3>';
-					if (dateStr) html += '<p>' + dateStr + '</p>';
-					html += '<a href="page.html?id=' + p.id + '">View Page &rarr;</a>';
-					html += '</li>';
+					var created = formatDate(p.data.createdAt);
+					var updated = formatDate(p.data.updatedAt);
+					html += '<tr class="portal-table-row-link" onclick="window.location.href=\'page.html?id=' + p.id + '\'">';
+					html += '<td><a href="page.html?id=' + p.id + '">' + escapeHtml(p.data.title) + '</a></td>';
+					html += '<td>' + created + '</td>';
+					html += '<td>' + updated + '</td>';
+					html += '</tr>';
 				});
-				html += '</ul>';
+				html += '</tbody></table></div>';
 				container.innerHTML = html;
 			})
 			.catch(function (err) {
 				container.innerHTML = '<p class="portal-error">Error loading pages. Please try again.</p>';
 			});
+	}
+
+	function formatDate(timestamp) {
+		if (!timestamp) return '—';
+		var d = timestamp.toDate();
+		return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 	}
 
 	function escapeHtml(str) {
