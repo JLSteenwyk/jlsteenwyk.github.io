@@ -53,6 +53,9 @@
 				// Update document title
 				document.title = page.title + ' | Client Portal';
 
+				// Make the page viewer full-width
+				document.body.classList.add('page-portal-fullwidth');
+
 				// Determine back link
 				var backHref = userDoc.role === 'admin' ? 'admin.html' : 'dashboard.html';
 
