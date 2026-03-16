@@ -1916,6 +1916,10 @@ body.biophilic-theme #titleBar {
 	border-bottom: 1px solid rgba(74,103,65,0.1);
 }
 
+body.biophilic-theme #titleBar .toggle:before {
+	background: #4a6741;
+}
+
 body.biophilic-theme #navPanel {
 	background: #f6f4f0;
 	border-right: 1px solid rgba(74,103,65,0.1);
