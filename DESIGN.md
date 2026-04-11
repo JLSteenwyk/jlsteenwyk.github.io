@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Biophilic** theme is a "Nature-Tech Hybrid" aesthetic that pairs modern tech clarity with calming natural cues. It joins the existing Glassmorphism, Modern, and earlyOS themes via the footer theme selector.
+The **Biophilic** theme is a "Nature-Tech Hybrid" aesthetic that pairs modern tech clarity with calming natural cues.
 
 ---
 
