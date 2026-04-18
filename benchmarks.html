@@ -76,8 +76,6 @@
 											<th scope="col">System</th>
 											<th scope="col">Score</th>
 											<th scope="col">Accuracy</th>
-											<th scope="col">Replicates</th>
-											<th scope="col">Cost/Q (USD)</th>
 										</tr>
 									</thead>
 									<tbody id="benchmark-table-body"></tbody>
@@ -170,14 +168,11 @@
 
 			function renderTable(rows) {
 				if (!rows.length) {
-					tbodyEl.innerHTML = '<tr><td colspan="8" class="benchmark-empty">No entries yet.</td></tr>';
+					tbodyEl.innerHTML = '<tr><td colspan="6" class="benchmark-empty">No entries yet.</td></tr>';
 					return;
 				}
 				var html = '';
 				rows.forEach(function (row, i) {
-					var cost = (row.cost_per_q_usd === null || row.cost_per_q_usd === undefined)
-						? '&mdash;'
-						: '$' + Number(row.cost_per_q_usd).toFixed(4);
 					html +=
 						'<tr>' +
 							'<td>' + (i + 1) + '</td>' +
@@ -186,8 +181,6 @@
 							'<td>' + escapeHtml(row.system) + '</td>' +
 							'<td>' + Number(row.score) + ' / ' + Number(row.total) + '</td>' +
 							'<td>' + (Number(row.accuracy) || 0).toFixed(1) + '%</td>' +
-							'<td>' + Number(row.replicates) + '</td>' +
-							'<td>' + cost + '</td>' +
 						'</tr>';
 				});
 				tbodyEl.innerHTML = html;
