@@ -1,0 +1,42 @@
+{
+  "benchmark": "HLE-Gold",
+  "total_questions": 149,
+  "composition": {
+    "biology_medicine": 107,
+    "chemistry": 42,
+    "mcq": 92,
+    "open_ended": 57
+  },
+  "leaderboard": [
+    {
+      "name": "Direct GPT-5.4",
+      "model": "gpt-5.4",
+      "system": "direct",
+      "score": 32,
+      "total": 149,
+      "accuracy": 21.5,
+      "replicates": 1,
+      "cost_per_q_usd": null
+    },
+    {
+      "name": "Direct Claude Opus 4.6",
+      "model": "claude-opus-4-6",
+      "system": "direct",
+      "score": 48,
+      "total": 149,
+      "accuracy": 32.2,
+      "replicates": 1,
+      "cost_per_q_usd": null
+    },
+    {
+      "name": "Direct Claude Opus 4.7",
+      "model": "claude-opus-4-7",
+      "system": "direct",
+      "score": 43,
+      "total": 149,
+      "accuracy": 28.9,
+      "replicates": 1,
+      "cost_per_q_usd": null
+    }
+  ]
+}
