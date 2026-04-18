@@ -18,7 +18,7 @@
 		<meta name="twitter:title" content="Benchmarks | Jacob L. Steenwyk" />
 		<meta name="twitter:description" content="Leaderboards tracking frontier model performance on benchmarks relevant to biology, chemistry, and scientific reasoning." />
 		<meta name="twitter:image" content="https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css?v=2" />
 		<link rel="icon" href="images/website_flavicon_network.png">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
@@ -67,6 +67,7 @@
 							<div class="benchmark-frontier" id="benchmark-frontier" aria-label="Frontier performance chart"></div>
 
 							<div class="benchmark-table-wrap">
+								<div class="benchmark-table-scroll">
 								<table class="benchmark-table" id="benchmark-table">
 									<thead>
 										<tr>
@@ -80,6 +81,7 @@
 									</thead>
 									<tbody id="benchmark-table-body"></tbody>
 								</table>
+								</div>
 							</div>
 						</section>
 					</div>
@@ -130,16 +132,22 @@
 
 			function renderSummary(data) {
 				var c = data.composition || {};
+				var total = Number(data.total_questions || 0);
+				function stat(label, value, accent) {
+					return '<li>' +
+						'<span class="stat-label">' + escapeHtml(label) + '</span>' +
+						'<span class="stat-value">' + Number(value || 0) + '</span>' +
+						'<span class="stat-accent ' + accent + '"></span>' +
+					'</li>';
+				}
 				summaryEl.innerHTML =
 					'<h3 id="hle-gold-title">' + escapeHtml(data.benchmark || 'Benchmark') + '</h3>' +
-					'<p class="benchmark-meta">' +
-						'<strong>' + Number(data.total_questions || 0) + '</strong> questions' +
-					'</p>' +
+					'<p class="benchmark-meta">' + total + ' questions &middot; Composition</p>' +
 					'<ul class="benchmark-composition">' +
-						'<li><span class="pill pill-bio">Biology / Medicine</span> ' + Number(c.biology_medicine || 0) + '</li>' +
-						'<li><span class="pill pill-chem">Chemistry</span> ' + Number(c.chemistry || 0) + '</li>' +
-						'<li><span class="pill pill-mcq">Multiple choice</span> ' + Number(c.mcq || 0) + '</li>' +
-						'<li><span class="pill pill-open">Open-ended</span> ' + Number(c.open_ended || 0) + '</li>' +
+						stat('Biology / Medicine', c.biology_medicine, 'accent-bio') +
+						stat('Chemistry', c.chemistry, 'accent-chem') +
+						stat('Multiple choice', c.mcq, 'accent-mcq') +
+						stat('Open-ended', c.open_ended, 'accent-open') +
 					'</ul>';
 			}
 
@@ -148,21 +156,35 @@
 					frontierEl.innerHTML = '<p class="benchmark-empty">No entries yet.</p>';
 					return;
 				}
-				var html = '<h4 class="frontier-title">Frontier performance</h4><ol class="frontier-list">';
+				var html =
+					'<h4 class="frontier-title">Frontier performance</h4>' +
+					'<div class="frontier-axis">' +
+						'<span class="frontier-axis-spacer"></span>' +
+						'<span class="frontier-axis-scale">' +
+							'<span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>' +
+						'</span>' +
+					'</div>' +
+					'<ul class="frontier-list">';
 				rows.forEach(function (row, i) {
 					var pct = Math.max(0, Math.min(100, Number(row.accuracy) || 0));
 					var cls = 'frontier-bar' + (i === 0 ? ' frontier-bar--top' : '');
+					var valueClass = pct < 14 ? 'frontier-value frontier-value--outside' : 'frontier-value';
 					html +=
 						'<li class="' + cls + '" role="img" aria-label="' +
 							escapeHtml(row.name) + ': ' + pct.toFixed(1) + '% accuracy">' +
-							'<span class="frontier-label">' + escapeHtml(row.name) + '</span>' +
-							'<span class="frontier-track">' +
-								'<span class="frontier-fill" style="width:' + pct + '%;"></span>' +
+							'<span class="frontier-label">' +
+								'<span class="frontier-rank" aria-hidden="true">' + (i + 1) + '</span>' +
+								escapeHtml(row.name) +
 							'</span>' +
-							'<span class="frontier-value">' + pct.toFixed(1) + '%</span>' +
+							'<span class="frontier-track">' +
+								'<span class="frontier-fill" style="width:' + pct + '%;">' +
+									(pct >= 14 ? '<span class="' + valueClass + '">' + pct.toFixed(1) + '%</span>' : '') +
+								'</span>' +
+								(pct < 14 ? '<span class="' + valueClass + '" style="left:' + pct + '%;">' + pct.toFixed(1) + '%</span>' : '') +
+							'</span>' +
 						'</li>';
 				});
-				html += '</ol>';
+				html += '</ul>';
 				frontierEl.innerHTML = html;
 			}
 
