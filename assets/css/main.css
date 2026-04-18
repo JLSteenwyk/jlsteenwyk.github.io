@@ -7641,10 +7641,21 @@ body.page-benchmarks .benchmark-composition .stat-accent {
 	margin-top: 0.25em;
 }
 
-body.page-benchmarks .stat-accent.accent-bio  { background: #4a6741; }
-body.page-benchmarks .stat-accent.accent-chem { background: #3a6b80; }
-body.page-benchmarks .stat-accent.accent-mcq  { background: #6b7c5e; }
-body.page-benchmarks .stat-accent.accent-open { background: #3d7a56; }
+body.page-benchmarks .stat-accent.accent-bio   { background: #4a6741; }
+body.page-benchmarks .stat-accent.accent-chem  { background: #3a6b80; }
+body.page-benchmarks .stat-accent.accent-mcq   { background: #6b7c5e; }
+body.page-benchmarks .stat-accent.accent-open  { background: #3d7a56; }
+body.page-benchmarks .stat-accent.accent-total { background: linear-gradient(90deg, #3d7a56 0%, #3a6b80 100%); width: 48px; }
+
+body.page-benchmarks .benchmark-composition li.stat-total {
+	background: linear-gradient(135deg, rgba(61, 122, 86, 0.08) 0%, rgba(58, 107, 128, 0.08) 100%);
+	border-color: rgba(74, 103, 65, 0.2);
+}
+
+body.page-benchmarks .benchmark-composition li.stat-total .stat-value {
+	color: #1e2b1a;
+	font-size: 1.75em;
+}
 
 /* Frontier chart */
 
