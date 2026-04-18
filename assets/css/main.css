@@ -7543,3 +7543,191 @@ body.biophilic-theme .pub-card.pub-visible {
 		padding: 0.85rem 1rem;
 	}
 }
+/* ========================================
+   Benchmarks page
+   ======================================== */
+
+.benchmarks-intro {
+	max-width: 72ch;
+	margin: 0 auto 2em auto;
+	text-align: center;
+}
+
+.benchmark-block {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.benchmark-summary {
+	background: rgba(255, 255, 255, 0.55);
+	border: 1px solid rgba(74, 103, 65, 0.08);
+	border-radius: 20px;
+	padding: 1.5em 1.75em;
+	margin-bottom: 2em;
+	box-shadow: 0 8px 32px rgba(44, 48, 41, 0.06);
+}
+
+.benchmark-summary h3 {
+	margin-top: 0;
+	margin-bottom: 0.4em;
+}
+
+.benchmark-meta {
+	margin: 0 0 0.75em 0;
+	font-size: 1.05em;
+}
+
+.benchmark-composition {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em 0.75em;
+}
+
+.benchmark-composition li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	font-size: 0.95em;
+}
+
+.benchmark-composition .pill {
+	display: inline-block;
+	padding: 0.15em 0.75em;
+	border-radius: 999px;
+	font-size: 0.8em;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: #fff;
+}
+
+.pill-bio  { background: #4a6741; }
+.pill-chem { background: #3a6b80; }
+.pill-mcq  { background: #6b7c5e; }
+.pill-open { background: #3d7a56; }
+
+/* Frontier chart */
+
+.benchmark-frontier {
+	margin-bottom: 2em;
+}
+
+.frontier-title {
+	margin: 0 0 0.75em 0;
+}
+
+.frontier-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.frontier-bar {
+	display: grid;
+	grid-template-columns: minmax(10em, 18em) 1fr 4em;
+	align-items: center;
+	gap: 0.75em;
+	padding: 0.5em 0.75em;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.45);
+	border: 1px solid rgba(74, 103, 65, 0.06);
+}
+
+.frontier-bar--top {
+	box-shadow: 0 4px 16px rgba(74, 103, 65, 0.18);
+	border-color: rgba(74, 103, 65, 0.25);
+}
+
+.frontier-label {
+	font-weight: 600;
+	color: #2c3029;
+}
+
+.frontier-track {
+	display: block;
+	width: 100%;
+	height: 14px;
+	border-radius: 999px;
+	background: rgba(74, 103, 65, 0.08);
+	overflow: hidden;
+}
+
+.frontier-fill {
+	display: block;
+	height: 100%;
+	background: linear-gradient(90deg, #4a6741 0%, #3a6b80 100%);
+	border-radius: 999px;
+}
+
+.frontier-bar--top .frontier-fill {
+	background: linear-gradient(90deg, #3d7a56 0%, #4a6741 50%, #3a6b80 100%);
+}
+
+.frontier-value {
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+	font-weight: 600;
+	color: #3a3d37;
+}
+
+/* Leaderboard table */
+
+.benchmark-table-wrap {
+	overflow-x: auto;
+}
+
+.benchmark-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.95em;
+}
+
+.benchmark-table thead th {
+	text-align: left;
+	padding: 0.6em 0.75em;
+	border-bottom: 2px solid rgba(74, 103, 65, 0.25);
+	color: #1e2b1a;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.benchmark-table tbody td {
+	padding: 0.55em 0.75em;
+	border-bottom: 1px solid rgba(74, 103, 65, 0.08);
+	vertical-align: middle;
+}
+
+.benchmark-table tbody tr:hover {
+	background: rgba(74, 103, 65, 0.04);
+}
+
+.benchmark-table code {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 0.9em;
+	background: rgba(74, 103, 65, 0.06);
+	padding: 0.1em 0.4em;
+	border-radius: 4px;
+}
+
+.benchmark-empty,
+.benchmark-error {
+	color: #6b7264;
+	font-style: italic;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+	.frontier-bar {
+		grid-template-columns: 1fr;
+		gap: 0.25em;
+	}
+	.frontier-value {
+		text-align: left;
+	}
+}
