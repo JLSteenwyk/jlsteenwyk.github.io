@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Benchmarks | Jacob L. Steenwyk</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Benchmark leaderboards tracking frontier model performance on evaluations relevant to biology, chemistry, and scientific reasoning." />
+		<meta name="author" content="Jacob L. Steenwyk" />
+		<link rel="canonical" href="https://jlsteenwyk.com/benchmarks.html" />
+		<meta property="og:site_name" content="Jacob L. Steenwyk" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Benchmarks | Jacob L. Steenwyk" />
+		<meta property="og:description" content="Benchmark leaderboards tracking frontier model performance on evaluations relevant to biology, chemistry, and scientific reasoning." />
+		<meta property="og:url" content="https://jlsteenwyk.com/benchmarks.html" />
+		<meta property="og:image" content="https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg" />
+		<meta property="og:image:alt" content="Portrait of evolutionary biologist Jacob L. Steenwyk" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Benchmarks | Jacob L. Steenwyk" />
+		<meta name="twitter:description" content="Leaderboards tracking frontier model performance on benchmarks relevant to biology, chemistry, and scientific reasoning." />
+		<meta name="twitter:image" content="https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/website_flavicon_network.png">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-104875636-1');
+		</script>
+	</head>
+	<body class="is-preload page-benchmarks">
+		<article id="Top">
+			<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html#content" class="nav-link">About</a></li>
+							<li><a href="publications.html" class="nav-link">Publications</a></li>
+							<li><a href="news.html" class="nav-link">News</a></li>
+							<li><a href="software.html" class="nav-link">Software</a></li>
+							<li><a href="benchmarks.html" class="nav-link">Benchmarks</a></li>
+							<li><a href="curriculum_vitae.html" class="nav-link">CV</a></li>
+							<li><a href="resources.html" class="nav-link">Resources</a></li>
+							<li><a href="contact.html" class="nav-link">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Benchmarks</h2>
+						</header>
+						<p class="benchmarks-intro">
+							Leaderboards tracking frontier model performance on evaluations relevant to biology, chemistry, and scientific reasoning.
+						</p>
+
+						<section class="benchmark-block" id="hle-gold" aria-labelledby="hle-gold-title">
+							<div class="benchmark-summary" id="benchmark-summary">
+								<h3 id="hle-gold-title">Loading…</h3>
+							</div>
+
+							<div class="benchmark-frontier" id="benchmark-frontier" aria-label="Frontier performance chart"></div>
+
+							<div class="benchmark-table-wrap">
+								<table class="benchmark-table" id="benchmark-table">
+									<thead>
+										<tr>
+											<th scope="col">Rank</th>
+											<th scope="col">Name</th>
+											<th scope="col">Model</th>
+											<th scope="col">System</th>
+											<th scope="col">Score</th>
+											<th scope="col">Accuracy</th>
+											<th scope="col">Replicates</th>
+											<th scope="col">Cost/Q (USD)</th>
+										</tr>
+									</thead>
+									<tbody id="benchmark-table-body"></tbody>
+								</table>
+							</div>
+						</section>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/jlsteenwyk" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" class="icon brands alt fa-google"><span class="label">Google</span></a></li>
+						<li><a href="https://www.researchgate.net/profile/Jacob_Steenwyk" class="icon brands alt fa-researchgate"><span class="label">ResearchGate</span></a></li>
+						<li><a href="https://github.com/JLSteenwyk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/jlsteenwyk/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="contact.html" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; <span class="current-year"></span> Jacob L. Steenwyk</li>
+					</ul>
+				</footer>
+			</article>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		<!-- Benchmarks page renderer -->
+		<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var summaryEl = document.getElementById('benchmark-summary');
+			var frontierEl = document.getElementById('benchmark-frontier');
+			var tbodyEl = document.getElementById('benchmark-table-body');
+
+			function escapeHtml(s) {
+				return String(s)
+					.replace(/&/g, '&amp;')
+					.replace(/</g, '&lt;')
+					.replace(/>/g, '&gt;')
+					.replace(/"/g, '&quot;')
+					.replace(/'/g, '&#39;');
+			}
+
+			function renderSummary(data) {
+				var c = data.composition || {};
+				summaryEl.innerHTML =
+					'<h3 id="hle-gold-title">' + escapeHtml(data.benchmark || 'Benchmark') + '</h3>' +
+					'<p class="benchmark-meta">' +
+						'<strong>' + Number(data.total_questions || 0) + '</strong> questions' +
+					'</p>' +
+					'<ul class="benchmark-composition">' +
+						'<li><span class="pill pill-bio">Biology / Medicine</span> ' + Number(c.biology_medicine || 0) + '</li>' +
+						'<li><span class="pill pill-chem">Chemistry</span> ' + Number(c.chemistry || 0) + '</li>' +
+						'<li><span class="pill pill-mcq">Multiple choice</span> ' + Number(c.mcq || 0) + '</li>' +
+						'<li><span class="pill pill-open">Open-ended</span> ' + Number(c.open_ended || 0) + '</li>' +
+					'</ul>';
+			}
+
+			function renderFrontier(rows) {
+				if (!rows.length) {
+					frontierEl.innerHTML = '<p class="benchmark-empty">No entries yet.</p>';
+					return;
+				}
+				var html = '<h4 class="frontier-title">Frontier performance</h4><ol class="frontier-list">';
+				rows.forEach(function (row, i) {
+					var pct = Math.max(0, Math.min(100, Number(row.accuracy) || 0));
+					var cls = 'frontier-bar' + (i === 0 ? ' frontier-bar--top' : '');
+					html +=
+						'<li class="' + cls + '" role="img" aria-label="' +
+							escapeHtml(row.name) + ': ' + pct.toFixed(1) + '% accuracy">' +
+							'<span class="frontier-label">' + escapeHtml(row.name) + '</span>' +
+							'<span class="frontier-track">' +
+								'<span class="frontier-fill" style="width:' + pct + '%;"></span>' +
+							'</span>' +
+							'<span class="frontier-value">' + pct.toFixed(1) + '%</span>' +
+						'</li>';
+				});
+				html += '</ol>';
+				frontierEl.innerHTML = html;
+			}
+
+			function renderTable(rows) {
+				if (!rows.length) {
+					tbodyEl.innerHTML = '<tr><td colspan="8" class="benchmark-empty">No entries yet.</td></tr>';
+					return;
+				}
+				var html = '';
+				rows.forEach(function (row, i) {
+					var cost = (row.cost_per_q_usd === null || row.cost_per_q_usd === undefined)
+						? '&mdash;'
+						: '$' + Number(row.cost_per_q_usd).toFixed(4);
+					html +=
+						'<tr>' +
+							'<td>' + (i + 1) + '</td>' +
+							'<td>' + escapeHtml(row.name) + '</td>' +
+							'<td><code>' + escapeHtml(row.model) + '</code></td>' +
+							'<td>' + escapeHtml(row.system) + '</td>' +
+							'<td>' + Number(row.score) + ' / ' + Number(row.total) + '</td>' +
+							'<td>' + (Number(row.accuracy) || 0).toFixed(1) + '%</td>' +
+							'<td>' + Number(row.replicates) + '</td>' +
+							'<td>' + cost + '</td>' +
+						'</tr>';
+				});
+				tbodyEl.innerHTML = html;
+			}
+
+			function renderError() {
+				summaryEl.innerHTML = '<h3>HLE-Gold</h3><p class="benchmark-error">Leaderboard data unavailable.</p>';
+				frontierEl.innerHTML = '';
+				tbodyEl.innerHTML = '';
+			}
+
+			fetch('benchmarks/hle_gold.json', { cache: 'no-store' })
+				.then(function (res) {
+					if (!res.ok) { throw new Error('HTTP ' + res.status); }
+					return res.json();
+				})
+				.then(function (data) {
+					var rows = (data.leaderboard || []).slice().sort(function (a, b) {
+						return (Number(b.accuracy) || 0) - (Number(a.accuracy) || 0);
+					});
+					renderSummary(data);
+					renderFrontier(rows);
+					renderTable(rows);
+				})
+				.catch(function () {
+					renderError();
+				});
+
+			var y = document.querySelector('.current-year');
+			if (y) { y.textContent = new Date().getFullYear(); }
+		});
+		</script>
+	</body>
+</html>
