@@ -18,7 +18,7 @@
 		<meta name="twitter:title" content="Benchmarks | Jacob L. Steenwyk" />
 		<meta name="twitter:description" content="Leaderboards tracking frontier model performance on benchmarks relevant to biology, chemistry, and scientific reasoning." />
 		<meta name="twitter:image" content="https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg" />
-		<link rel="stylesheet" href="assets/css/main.css?v=4" />
+		<link rel="stylesheet" href="assets/css/main.css?v=5" />
 		<link rel="icon" href="images/website_flavicon_network.png">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
@@ -160,36 +160,121 @@
 					frontierEl.innerHTML = '<p class="benchmark-empty">No entries yet.</p>';
 					return;
 				}
-				var html =
-					'<h4 class="frontier-title">Frontier performance</h4>' +
-					'<div class="frontier-axis">' +
-						'<span class="frontier-axis-spacer"></span>' +
-						'<span class="frontier-axis-scale">' +
-							'<span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>' +
-						'</span>' +
-					'</div>' +
-					'<ul class="frontier-list">';
+
+				var W = 960;
+				var leftPad = 200;
+				var rightPad = 70;
+				var topPad = 40;
+				var rowH = 44;
+				var barH = 26;
+				var innerW = W - leftPad - rightPad;
+				var H = topPad + rows.length * rowH + 20;
+
+				var ticks = [0, 25, 50, 75, 100];
+				var parts = [];
+
+				parts.push(
+					'<svg class="frontier-svg" viewBox="0 0 ' + W + ' ' + H + '" ' +
+					'preserveAspectRatio="xMidYMid meet" role="img" ' +
+					'aria-label="Frontier performance bar chart">'
+				);
+
+				parts.push(
+					'<defs>' +
+						'<linearGradient id="frontierGradient" x1="0" y1="0" x2="1" y2="0">' +
+							'<stop offset="0%" stop-color="#4a6741"/>' +
+							'<stop offset="100%" stop-color="#3a6b80"/>' +
+						'</linearGradient>' +
+						'<linearGradient id="frontierGradientTop" x1="0" y1="0" x2="1" y2="0">' +
+							'<stop offset="0%" stop-color="#3d7a56"/>' +
+							'<stop offset="50%" stop-color="#4a6741"/>' +
+							'<stop offset="100%" stop-color="#3a6b80"/>' +
+						'</linearGradient>' +
+					'</defs>'
+				);
+
+				ticks.forEach(function (t) {
+					var x = leftPad + (t / 100) * innerW;
+					parts.push(
+						'<line x1="' + x + '" y1="' + (topPad - 6) + '" x2="' + x + '" y2="' + (H - 10) + '" ' +
+						'stroke="rgba(74,103,65,0.12)" stroke-width="1" ' +
+						(t === 0 || t === 100 ? '' : 'stroke-dasharray="3 4"') + ' />'
+					);
+					parts.push(
+						'<text x="' + x + '" y="' + (topPad - 14) + '" ' +
+						'text-anchor="middle" font-size="11" fill="#6b7264" ' +
+						'font-family="Source Sans 3, sans-serif" letter-spacing="0.04em">' +
+						t + '%</text>'
+					);
+				});
+
+				parts.push(
+					'<line x1="' + leftPad + '" y1="' + (topPad - 4) + '" x2="' + (W - rightPad) + '" y2="' + (topPad - 4) + '" ' +
+					'stroke="rgba(74,103,65,0.25)" stroke-width="1" />'
+				);
+
 				rows.forEach(function (row, i) {
 					var pct = Math.max(0, Math.min(100, Number(row.accuracy) || 0));
-					var cls = 'frontier-bar' + (i === 0 ? ' frontier-bar--top' : '');
-					var valueClass = pct < 14 ? 'frontier-value frontier-value--outside' : 'frontier-value';
-					html +=
-						'<li class="' + cls + '" role="img" aria-label="' +
-							escapeHtml(row.name) + ': ' + pct.toFixed(1) + '% accuracy">' +
-							'<span class="frontier-label">' +
-								'<span class="frontier-rank" aria-hidden="true">' + (i + 1) + '</span>' +
-								escapeHtml(row.name) +
-							'</span>' +
-							'<span class="frontier-track">' +
-								'<span class="frontier-fill" style="width:' + pct + '%;">' +
-									(pct >= 14 ? '<span class="' + valueClass + '">' + pct.toFixed(1) + '%</span>' : '') +
-								'</span>' +
-								(pct < 14 ? '<span class="' + valueClass + '" style="left:' + pct + '%;">' + pct.toFixed(1) + '%</span>' : '') +
-							'</span>' +
-						'</li>';
+					var cy = topPad + i * rowH + rowH / 2;
+					var barY = cy - barH / 2;
+					var barW = Math.max(2, (pct / 100) * innerW);
+					var fillUrl = (i === 0) ? 'url(#frontierGradientTop)' : 'url(#frontierGradient)';
+					var valueX = leftPad + barW + 8;
+					var valueAnchor = 'start';
+					var valueFill = '#1e2b1a';
+
+					// Rank badge
+					var badgeCx = 24;
+					parts.push(
+						'<circle cx="' + badgeCx + '" cy="' + cy + '" r="12" ' +
+						'fill="' + (i === 0 ? '#3d7a56' : 'rgba(74,103,65,0.1)') + '" />'
+					);
+					parts.push(
+						'<text x="' + badgeCx + '" y="' + (cy + 4) + '" ' +
+						'text-anchor="middle" font-size="12" font-weight="700" ' +
+						'fill="' + (i === 0 ? '#ffffff' : '#4a6741') + '" ' +
+						'font-family="Source Sans 3, sans-serif">' + (i + 1) + '</text>'
+					);
+
+					// Model label
+					parts.push(
+						'<text x="48" y="' + (cy + 5) + '" ' +
+						'font-size="14" font-weight="600" fill="#2c3029" ' +
+						'font-family="Source Sans 3, sans-serif">' +
+						escapeHtml(row.name) + '</text>'
+					);
+
+					// Track background
+					parts.push(
+						'<rect x="' + leftPad + '" y="' + barY + '" ' +
+						'width="' + innerW + '" height="' + barH + '" rx="' + (barH / 2) + '" ' +
+						'fill="rgba(74,103,65,0.08)" />'
+					);
+
+					// Bar fill
+					parts.push(
+						'<rect x="' + leftPad + '" y="' + barY + '" ' +
+						'width="' + barW + '" height="' + barH + '" rx="' + (barH / 2) + '" ' +
+						'fill="' + fillUrl + '"' +
+						(i === 0 ? ' filter="drop-shadow(0 2px 4px rgba(61,122,86,0.35))"' : '') +
+						' />'
+					);
+
+					// Value label
+					parts.push(
+						'<text x="' + valueX + '" y="' + (cy + 5) + '" ' +
+						'text-anchor="' + valueAnchor + '" font-size="13" font-weight="700" ' +
+						'fill="' + valueFill + '" font-variant-numeric="tabular-nums" ' +
+						'font-family="Source Sans 3, sans-serif">' +
+						pct.toFixed(1) + '%</text>'
+					);
 				});
-				html += '</ul>';
-				frontierEl.innerHTML = html;
+
+				parts.push('</svg>');
+
+				frontierEl.innerHTML =
+					'<h4 class="frontier-title">Frontier performance</h4>' +
+					'<div class="frontier-svg-wrap">' + parts.join('') + '</div>';
 			}
 
 			function renderTable(rows) {
