@@ -9,6 +9,24 @@
   },
   "leaderboard": [
     {
+      "name": "XXYYZZ",
+      "model": "XXYYZZ",
+      "system": "XXYYZZ",
+      "raw_score": 79,
+      "raw_accuracy": 53.0,
+      "adjusted_score": 79,
+      "adjusted_accuracy": 53.0,
+      "false_positives_definite": null,
+      "false_positives_arguable": null,
+      "false_negatives": null,
+      "errors": null,
+      "empty_answers": null,
+      "cost_total_usd": null,
+      "cost_per_q_usd": null,
+      "runtime_seconds": null,
+      "replicates": 1
+    },
+    {
       "name": "GPT-5.4-pro",
       "model": "gpt-5.4-pro",
       "system": "direct",
