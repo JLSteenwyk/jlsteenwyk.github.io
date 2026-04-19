@@ -99,6 +99,25 @@
       "runtime_seconds": null,
       "replicates": 1,
       "notes": "not audited (predates current audit pipeline)"
+    },
+    {
+      "name": "Mistral Large 2512",
+      "model": "mistral-large-2512",
+      "system": "direct",
+      "raw_score": 15,
+      "raw_accuracy": 10.1,
+      "adjusted_score": 16,
+      "adjusted_accuracy": 10.7,
+      "false_positives_definite": 0,
+      "false_positives_arguable": 1,
+      "false_negatives": 1,
+      "errors": 3,
+      "empty_answers": 0,
+      "cost_total_usd": 0.66,
+      "cost_per_q_usd": 0.004,
+      "runtime_seconds": 371,
+      "replicates": 1,
+      "notes": "All 3 errors were API timeouts. Exact-match was only 0.7% — Mistral writes prose-style answers; LLM grader extracts letters but they are genuinely wrong (not a parsing artifact)."
     }
   ]
 }
