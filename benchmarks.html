@@ -18,7 +18,7 @@
 		<meta name="twitter:title" content="Benchmarks | Jacob L. Steenwyk" />
 		<meta name="twitter:description" content="Leaderboards tracking frontier model performance on benchmarks relevant to biology, chemistry, and scientific reasoning." />
 		<meta name="twitter:image" content="https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg" />
-		<link rel="stylesheet" href="assets/css/main.css?v=5" />
+		<link rel="stylesheet" href="assets/css/main.css?v=6" />
 		<link rel="icon" href="images/website_flavicon_network.png">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
@@ -303,14 +303,27 @@
 				tbodyEl.innerHTML = '';
 			}
 
+			function pick(row, primary, fallback) {
+				return (row[primary] !== null && row[primary] !== undefined)
+					? row[primary]
+					: row[fallback];
+			}
+
 			fetch('benchmarks/hle_gold.json', { cache: 'no-store' })
 				.then(function (res) {
 					if (!res.ok) { throw new Error('HTTP ' + res.status); }
 					return res.json();
 				})
 				.then(function (data) {
-					var rows = (data.leaderboard || []).slice().sort(function (a, b) {
-						return (Number(b.accuracy) || 0) - (Number(a.accuracy) || 0);
+					var total = Number(data.total_questions || 0);
+					var rows = (data.leaderboard || []).slice().map(function (r) {
+						return Object.assign({}, r, {
+							accuracy: Number(pick(r, 'adjusted_accuracy', 'raw_accuracy')) || 0,
+							score: Number(pick(r, 'adjusted_score', 'raw_score')) || 0,
+							total: total
+						});
+					}).sort(function (a, b) {
+						return b.accuracy - a.accuracy;
 					});
 					renderSummary(data);
 					renderFrontier(rows);
