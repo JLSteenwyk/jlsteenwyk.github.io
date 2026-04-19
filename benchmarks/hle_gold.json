@@ -136,6 +136,25 @@
       "runtime_seconds": 371,
       "replicates": 1,
       "notes": "All 3 errors were API timeouts. Exact-match was only 0.7% — Mistral writes prose-style answers; LLM grader extracts letters but they are genuinely wrong (not a parsing artifact)."
+    },
+    {
+      "name": "Grok 4.20 Reasoning",
+      "model": "grok-4.20-beta-0309-reasoning",
+      "system": "direct",
+      "raw_score": 56,
+      "raw_accuracy": 37.6,
+      "adjusted_score": 57,
+      "adjusted_accuracy": 38.3,
+      "false_positives_definite": 0,
+      "false_positives_arguable": 0,
+      "false_negatives": 1,
+      "errors": 2,
+      "empty_answers": 0,
+      "cost_total_usd": 1.34,
+      "cost_per_q_usd": 0.009,
+      "runtime_seconds": 1555,
+      "replicates": 1,
+      "notes": "Both errors were 403 (xAI content filter refusals on 2 questions). Cleanest audit — zero FPs."
     }
   ]
 }
