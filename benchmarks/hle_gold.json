@@ -155,6 +155,25 @@
       "runtime_seconds": 1555,
       "replicates": 1,
       "notes": "Both errors were 403 (xAI content filter refusals on 2 questions). Cleanest audit — zero FPs."
+    },
+    {
+      "name": "Kimi K2.5",
+      "model": "kimi-k2.5",
+      "system": "direct",
+      "raw_score": 27,
+      "raw_accuracy": 18.1,
+      "adjusted_score": 27,
+      "adjusted_accuracy": 18.1,
+      "false_positives_definite": 0,
+      "false_positives_arguable": 1,
+      "false_negatives": 0,
+      "errors": 5,
+      "empty_answers": 16,
+      "cost_total_usd": 6.28,
+      "cost_per_q_usd": 0.042,
+      "runtime_seconds": 10734,
+      "replicates": 1,
+      "notes": "Kimi exhausted 32k token budget on 16 questions, producing empty answers — score is depressed by ~16pp from this. A 64k-token rerun could be more representative."
     }
   ]
 }
