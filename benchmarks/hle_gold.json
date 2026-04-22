@@ -176,7 +176,7 @@
       "notes": "Kimi exhausted 32k token budget on 16 questions, producing empty answers — score is depressed by ~16pp from this. A 64k-token rerun could be more representative."
     },
     {
-      "name": "Direct Gemini 2.5 Flash",
+      "name": "Gemini 2.5 Flash",
       "model": "gemini-2.5-flash",
       "system": "direct",
       "raw_score": 19,
@@ -193,6 +193,25 @@
       "runtime_seconds": 972,
       "replicates": 1,
       "notes": "Cheapest model in the leaderboard. Older Gemini generation than 3.1 Pro — score is genuinely low, not a parsing issue."
+    },
+    {
+      "name": "Gemini 2.5 Pro",
+      "model": "gemini-2.5-pro",
+      "system": "direct",
+      "raw_score": 39,
+      "raw_accuracy": 26.2,
+      "adjusted_score": 40,
+      "adjusted_accuracy": 26.8,
+      "false_positives_definite": 0,
+      "false_positives_arguable": 1,
+      "false_negatives": 1,
+      "errors": 5,
+      "empty_answers": 0,
+      "cost_total_usd": 1.51,
+      "cost_per_q_usd": 0.0101,
+      "runtime_seconds": 1421,
+      "replicates": 1,
+      "notes": "Older Gemini generation than 3.1 Pro — large capability gap (3.1 Pro: 49.7% raw vs 2.5 Pro here)."
     }
   ]
 }
