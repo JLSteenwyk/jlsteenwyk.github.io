@@ -212,6 +212,24 @@
       "runtime_seconds": 1421,
       "replicates": 1,
       "notes": "Older Gemini generation than 3.1 Pro — large capability gap (3.1 Pro: 49.7% raw vs 2.5 Pro here)."
+    },
+    {
+      "name": "GPT-5.5",
+      "model": "gpt-5.5",
+      "system": "direct",
+      "raw_score": 52,
+      "raw_accuracy": 34.9,
+      "adjusted_score": null,
+      "adjusted_accuracy": null,
+      "false_positives_definite": null,
+      "false_positives_arguable": null,
+      "false_negatives": null,
+      "errors": null,
+      "empty_answers": null,
+      "cost_total_usd": null,
+      "cost_per_q_usd": null,
+      "runtime_seconds": null,
+      "replicates": 1
     }
   ]
 }
