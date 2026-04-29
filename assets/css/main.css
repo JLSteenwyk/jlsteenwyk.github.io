@@ -7782,3 +7782,31 @@ body.page-benchmarks .benchmark-error {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+/* ===========================================
+   SPARKIT homepage promotion card
+   =========================================== */
+
+.sparkit-card {
+	display: block;
+	position: relative;
+	max-width: 100%;
+	margin: 2.5rem 0 3rem 0;
+	padding: 2.25rem 2.5rem;
+	background: linear-gradient(135deg, #f8fafc 0%, #ecfeff 100%);
+	border-left: 4px solid #0891b2;
+	border-radius: 14px;
+	box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.06);
+	overflow: hidden;
+}
+
+.sparkit-card::before {
+	content: "";
+	position: absolute;
+	top: -40px;
+	right: -40px;
+	width: 180px;
+	height: 180px;
+	background: radial-gradient(circle, rgba(8, 145, 178, 0.12) 0%, rgba(8, 145, 178, 0) 70%);
+	pointer-events: none;
+}
