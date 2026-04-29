@@ -7934,3 +7934,14 @@ body.page-benchmarks .benchmark-error {
 		text-align: center;
 	}
 }
+
+body.biophilic-theme .sparkit-card {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 700ms ease, transform 700ms ease;
+}
+
+body.biophilic-theme .sparkit-card.revealed {
+	opacity: 1;
+	transform: translateY(0);
+}

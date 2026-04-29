@@ -373,7 +373,8 @@
 					/* -- Scroll-Reveal for Research Sections & Images -- */
 					var revealEls = document.querySelectorAll(
 						'#ResearchInterests h3, #ResearchInterests > p, #ResearchInterests p, ' +
-						'#ResearchInterests .TextWrapRight, #ResearchInterests .TextWrapLeft'
+						'#ResearchInterests .TextWrapRight, #ResearchInterests .TextWrapLeft, ' +
+						'.sparkit-card'
 					);
 					if (revealEls.length && 'IntersectionObserver' in window) {
 						var revealObserver = new IntersectionObserver(function(entries) {
