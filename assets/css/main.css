@@ -7787,7 +7787,7 @@ body.page-benchmarks .benchmark-error {
    SPARKIT homepage promotion card
    ======================================== */
 
-.sparkit-card {
+body.biophilic-theme .sparkit-card {
 	display: block;
 	position: relative;
 	max-width: 100%;
@@ -7800,7 +7800,7 @@ body.page-benchmarks .benchmark-error {
 	overflow: hidden;
 }
 
-.sparkit-card::before {
+body.biophilic-theme .sparkit-card::before {
 	content: "";
 	position: absolute;
 	top: -40px;
@@ -7811,7 +7811,7 @@ body.page-benchmarks .benchmark-error {
 	pointer-events: none;
 }
 
-.sparkit-eyebrow {
+body.biophilic-theme .sparkit-eyebrow {
 	font-size: 0.72rem;
 	font-weight: 700;
 	letter-spacing: 0.16em;
@@ -7820,7 +7820,7 @@ body.page-benchmarks .benchmark-error {
 	margin: 0 0 0.65rem 0;
 }
 
-.sparkit-wordmark {
+body.biophilic-theme .sparkit-wordmark {
 	font-size: 1.85rem;
 	font-weight: 800;
 	letter-spacing: 0.04em;
@@ -7829,7 +7829,7 @@ body.page-benchmarks .benchmark-error {
 	line-height: 1;
 }
 
-.sparkit-headline {
+body.biophilic-theme .sparkit-headline {
 	font-size: 1.4rem;
 	font-weight: 600;
 	color: #0f172a;
@@ -7837,7 +7837,7 @@ body.page-benchmarks .benchmark-error {
 	line-height: 1.35;
 }
 
-.sparkit-positioning {
+body.biophilic-theme .sparkit-positioning {
 	font-size: 1rem;
 	font-weight: 400;
 	color: #334155;
@@ -7846,7 +7846,7 @@ body.page-benchmarks .benchmark-error {
 	max-width: 60ch;
 }
 
-.sparkit-actions {
+body.biophilic-theme .sparkit-actions {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -7854,7 +7854,7 @@ body.page-benchmarks .benchmark-error {
 	margin-top: 0.5rem;
 }
 
-.sparkit-cta {
+body.biophilic-theme .sparkit-cta {
 	display: inline-block;
 	padding: 0.85rem 1.6rem;
 	background: var(--primary-teal);
@@ -7868,19 +7868,19 @@ body.page-benchmarks .benchmark-error {
 	border-bottom: none !important;
 }
 
-.sparkit-cta:hover {
+body.biophilic-theme .sparkit-cta:hover {
 	background: #0e7490;
 	transform: translateY(-1px);
 	box-shadow: 0 4px 14px rgba(8, 145, 178, 0.35);
 	color: #ffffff !important;
 }
 
-.sparkit-cta:focus-visible {
+body.biophilic-theme .sparkit-cta:focus-visible {
 	outline: 3px solid var(--primary-teal);
 	outline-offset: 3px;
 }
 
-.sparkit-secondary {
+body.biophilic-theme .sparkit-secondary {
 	font-size: 0.95rem;
 	color: #475569 !important;
 	text-decoration: underline;
@@ -7888,49 +7888,49 @@ body.page-benchmarks .benchmark-error {
 	transition: color 180ms ease;
 }
 
-.sparkit-secondary:hover {
+body.biophilic-theme .sparkit-secondary:hover {
 	color: var(--primary-teal) !important;
 }
 
-.sparkit-secondary:focus-visible {
+body.biophilic-theme .sparkit-secondary:focus-visible {
 	outline: 2px solid var(--primary-teal);
 	outline-offset: 2px;
 	border-radius: 2px;
 }
 
 @media (max-width: 640px) {
-	.sparkit-card {
+	body.biophilic-theme .sparkit-card {
 		padding: 1.75rem 1.5rem;
 		margin: 2rem 0 2.25rem 0;
 	}
 
-	.sparkit-card::before {
+	body.biophilic-theme .sparkit-card::before {
 		width: 120px;
 		height: 120px;
 		top: -30px;
 		right: -30px;
 	}
 
-	.sparkit-wordmark {
+	body.biophilic-theme .sparkit-wordmark {
 		font-size: 1.55rem;
 	}
 
-	.sparkit-headline {
+	body.biophilic-theme .sparkit-headline {
 		font-size: 1.2rem;
 	}
 
-	.sparkit-actions {
+	body.biophilic-theme .sparkit-actions {
 		flex-direction: column;
 		align-items: stretch;
 		gap: 0.85rem;
 	}
 
-	.sparkit-cta {
+	body.biophilic-theme .sparkit-cta {
 		text-align: center;
 		width: 100%;
 	}
 
-	.sparkit-secondary {
+	body.biophilic-theme .sparkit-secondary {
 		text-align: center;
 	}
 }
