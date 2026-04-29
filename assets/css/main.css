@@ -7897,3 +7897,40 @@ body.page-benchmarks .benchmark-error {
 	outline-offset: 2px;
 	border-radius: 2px;
 }
+
+@media (max-width: 640px) {
+	.sparkit-card {
+		padding: 1.75rem 1.5rem;
+		margin: 2rem 0 2.25rem 0;
+	}
+
+	.sparkit-card::before {
+		width: 120px;
+		height: 120px;
+		top: -30px;
+		right: -30px;
+	}
+
+	.sparkit-wordmark {
+		font-size: 1.55rem;
+	}
+
+	.sparkit-headline {
+		font-size: 1.2rem;
+	}
+
+	.sparkit-actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.85rem;
+	}
+
+	.sparkit-cta {
+		text-align: center;
+		width: 100%;
+	}
+
+	.sparkit-secondary {
+		text-align: center;
+	}
+}
