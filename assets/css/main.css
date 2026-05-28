@@ -6852,8 +6852,8 @@ body.page-contact #main.wrapper.style1 #content > header.major {
 	padding-top: 1.35rem;
 }
 
-#main.wrapper.style1 #Preprints,
-#main.wrapper.style1 #PeerReviewed {
+#main.wrapper.style1 #Submitted,
+#main.wrapper.style1 #Published {
 	max-inline-size: 74ch;
 }
 
@@ -6869,8 +6869,8 @@ body.page-contact #main.wrapper.style1 #content > header.major {
 }
 
 body.earlyos-theme #main.wrapper.style1 #content,
-body.earlyos-theme #main.wrapper.style1 #Preprints,
-body.earlyos-theme #main.wrapper.style1 #PeerReviewed,
+body.earlyos-theme #main.wrapper.style1 #Submitted,
+body.earlyos-theme #main.wrapper.style1 #Published,
 body.earlyos-theme #main.wrapper.style1 > .container > p,
 body.earlyos-theme #main.wrapper.style1 > .container > section p,
 body.earlyos-theme #main.wrapper.style1 > .container > section li,
@@ -6886,8 +6886,8 @@ body.earlyos-theme #main.wrapper.style1 > .container > .row > div > section li {
 	}
 
 	#main.wrapper.style1 #content,
-	#main.wrapper.style1 #Preprints,
-	#main.wrapper.style1 #PeerReviewed,
+	#main.wrapper.style1 #Submitted,
+	#main.wrapper.style1 #Published,
 	#main.wrapper.style1 > .container > p,
 	#main.wrapper.style1 > .container > section p,
 	#main.wrapper.style1 > .container > section li,
