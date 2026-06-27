@@ -14,7 +14,7 @@
 		$('.current-year').text(year);
 	};
 
-	$body.addClass('biophilic-theme');
+	$body.addClass('sparkit-theme');
 	setCurrentYear();
 
 	// Breakpoints.

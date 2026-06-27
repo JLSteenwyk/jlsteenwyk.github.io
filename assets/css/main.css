@@ -7739,3 +7739,1054 @@ body.biophilic-theme .sparkit-card.revealed {
 	opacity: 1;
 	transform: translateY(0);
 }
+
+/* ============================================================
+   SPARKIT THEME — light, editorial, scientific
+   ------------------------------------------------------------
+   A parallel theme to biophilic-theme, faithfully evoking
+   sparkit.science: near-white canvas, near-black Geist
+   headlines, an orange (#e87a09) brand accent with blue
+   (#0067b7) monospace eyebrow labels, black buttons, white
+   hairline cards, and a sparse orange ASCII accent.
+   Activated by body.sparkit-theme (set in assets/js/main.js).
+   Rollback: restore 'biophilic-theme' on that one line.
+   ============================================================ */
+
+body.sparkit-theme {
+	/* Surfaces */
+	--sk-bg:        #fbfbf9;  /* page — warm near-white */
+	--sk-bg-2:      #f5f5f2;
+	--sk-surface:   #ffffff;  /* cards / panels */
+	--sk-surface-2: #f6f5f2;  /* footer / secondary */
+	/* Lines */
+	--sk-line:      #e7e4dd;  /* hairline border */
+	--sk-line-2:    #dad6cd;  /* stronger border */
+	/* Accents */
+	--sk-orange:    #e87a09;
+	--sk-orange-dk: #b75000;
+	--sk-orange-soft: rgba(232, 122, 9, 0.14);
+	--sk-blue:      #0067b7;
+	--sk-blue-dk:   #024e88;
+	/* Text */
+	--sk-ink:       #181818;  /* headlines, near-black */
+	--sk-text:      #2a2a2a;  /* body copy */
+	--sk-text-2:    #585652;  /* secondary */
+	--sk-text-3:    #8a8782;  /* captions / muted */
+	/* Buttons */
+	--sk-btn:       #131313;  /* near-black solid button */
+	--sk-btn-h:     #2d2d2d;
+	/* Type families (faces loaded via Google Fonts in each head) */
+	--sk-sans:    'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--sk-display: 'Geist', ui-sans-serif, system-ui, sans-serif;
+	--sk-mono:    'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+	background-color: var(--sk-bg);
+	color: var(--sk-text);
+	font-family: var(--sk-sans);
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* Very faint engineering grid, fading downward */
+body.sparkit-theme::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		linear-gradient(rgba(24, 24, 24, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(24, 24, 24, 0.035) 1px, transparent 1px);
+	background-size: 56px 56px;
+	-webkit-mask-image: radial-gradient(ellipse 120% 80% at 50% 0%, #000 15%, transparent 80%);
+	        mask-image: radial-gradient(ellipse 120% 80% at 50% 0%, #000 15%, transparent 80%);
+}
+
+/* Soft warm/cool atmosphere wash */
+body.sparkit-theme::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		radial-gradient(900px 600px at 82% -6%, rgba(232, 122, 9, 0.07) 0%, transparent 58%),
+		radial-gradient(720px 520px at 8% 4%, rgba(0, 103, 183, 0.045) 0%, transparent 55%);
+}
+
+/* Keep content above the fixed texture layers */
+body.sparkit-theme #page-wrapper,
+body.sparkit-theme #header,
+body.sparkit-theme #main,
+body.sparkit-theme #footer,
+body.sparkit-theme #banner,
+body.sparkit-theme .wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+/* Base text */
+body.sparkit-theme p,
+body.sparkit-theme li,
+body.sparkit-theme label,
+body.sparkit-theme span,
+body.sparkit-theme td,
+body.sparkit-theme th {
+	color: var(--sk-text);
+	font-size: 1.02em;
+	line-height: 1.7;
+}
+
+body.sparkit-theme strong,
+body.sparkit-theme b {
+	color: var(--sk-ink);
+	font-weight: 600;
+}
+
+body.sparkit-theme .wrapper.style1 strong,
+body.sparkit-theme .wrapper.style1 b {
+	background: none;
+	box-shadow: none;
+}
+
+/* Links — blue with a quiet underline */
+body.sparkit-theme a {
+	color: var(--sk-blue) !important;
+	text-decoration: underline;
+	text-decoration-color: rgba(0, 103, 183, 0.3);
+	text-underline-offset: 3px;
+	border-bottom: none !important;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+body.sparkit-theme a:hover,
+body.sparkit-theme a:focus {
+	color: var(--sk-blue-dk) !important;
+	text-decoration-color: var(--sk-blue);
+	border-bottom: none !important;
+}
+
+/* Focus rings */
+body.sparkit-theme a:focus,
+body.sparkit-theme .nav-link:focus,
+body.sparkit-theme button:focus,
+body.sparkit-theme input:focus,
+body.sparkit-theme select:focus,
+body.sparkit-theme textarea:focus {
+	outline: 2px solid var(--sk-blue);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* Selection + scrollbar */
+body.sparkit-theme ::selection {
+	background: rgba(232, 122, 9, 0.22);
+	color: var(--sk-ink);
+}
+body.sparkit-theme ::-moz-selection {
+	background: rgba(232, 122, 9, 0.22);
+	color: var(--sk-ink);
+}
+
+body.sparkit-theme ::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+body.sparkit-theme ::-webkit-scrollbar-track {
+	background: var(--sk-bg-2);
+}
+body.sparkit-theme ::-webkit-scrollbar-thumb {
+	background: #cfccc4;
+	border: 3px solid var(--sk-bg-2);
+	border-radius: 8px;
+}
+body.sparkit-theme ::-webkit-scrollbar-thumb:hover {
+	background: #b8b4ab;
+}
+
+/* ── Typography ── */
+
+body.sparkit-theme h1,
+body.sparkit-theme h2,
+body.sparkit-theme h3,
+body.sparkit-theme h4,
+body.sparkit-theme h5,
+body.sparkit-theme h6 {
+	color: var(--sk-ink);
+	font-family: var(--sk-display);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+}
+
+body.sparkit-theme h2 {
+	font-size: 2.25em;
+}
+
+body.sparkit-theme h3 {
+	font-size: 1.55em;
+	font-weight: 600;
+}
+
+body.sparkit-theme .wrapper.style1 h3 {
+	color: var(--sk-ink) !important;
+	font-family: var(--sk-display);
+}
+
+/* Research-section subheads — orange keyline on the left */
+body.sparkit-theme #ResearchInterests h3 {
+	color: var(--sk-ink);
+	border-left: 3px solid var(--sk-orange);
+	padding-left: 0.7em;
+	font-family: var(--sk-display);
+}
+
+/* Section heading underline — orange brand beam */
+body.sparkit-theme .major h1::after,
+body.sparkit-theme .major h2::after {
+	background: linear-gradient(90deg, var(--sk-orange), rgba(232, 122, 9, 0.2), transparent) !important;
+	left: 0 !important;
+	transform: none !important;
+	width: 150px !important;
+	height: 3px !important;
+	box-shadow: none;
+}
+
+body.sparkit-theme header.major:after {
+	display: none !important;
+}
+
+/* Terminal-style micro-labels (mono, blue) */
+body.sparkit-theme .hero-tagline,
+body.sparkit-theme .morph-text {
+	font-family: var(--sk-mono);
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: var(--sk-blue);
+}
+
+/* Dividers — orange-fading hairline with a node */
+body.sparkit-theme hr {
+	border: 0 !important;
+	border-bottom: none !important;
+	height: 1px !important;
+	background: linear-gradient(90deg, transparent 2%, var(--sk-line-2) 20%, rgba(232, 122, 9, 0.45) 55%, var(--sk-line-2) 85%, transparent 98%) !important;
+	margin: 3.5rem 0;
+	position: relative;
+}
+
+body.sparkit-theme hr::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 6px;
+	height: 6px;
+	background: var(--sk-orange);
+	border-radius: 50%;
+	box-shadow: 0 0 0 4px var(--sk-bg);
+}
+
+/* ============================================================
+   Hero / banner — light, with an orange ASCII accent
+   ============================================================ */
+
+body.sparkit-theme #banner {
+	background:
+		radial-gradient(ellipse 760px 560px at 80% 22%, rgba(232, 122, 9, 0.12) 0%, transparent 56%),
+		radial-gradient(ellipse 640px 520px at 8% 26%, rgba(0, 103, 183, 0.06) 0%, transparent 55%),
+		linear-gradient(180deg, #ffffff 0%, var(--sk-bg) 100%);
+	border: none;
+	box-shadow: inset 0 -1px 0 var(--sk-line);
+	height: auto;
+	min-height: 0;
+	padding: 7rem 0 5rem;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Orange ASCII texture, concentrated on the right like sparkit's bird */
+body.sparkit-theme #banner::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image: url("images/sparkit-ascii.svg");
+	background-repeat: repeat;
+	background-size: 340px 300px;
+	opacity: 0.85;
+	-webkit-mask-image: radial-gradient(ellipse 60% 75% at 86% 36%, #000 0%, transparent 72%);
+	        mask-image: radial-gradient(ellipse 60% 75% at 86% 36%, #000 0%, transparent 72%);
+}
+
+body.sparkit-theme #banner::after {
+	content: none;
+}
+
+body.sparkit-theme .hero-aurora {
+	display: none;
+}
+
+body.sparkit-theme #banner .hero-inner {
+	background: transparent;
+	position: relative;
+	z-index: 2;
+}
+
+/* Repurpose the orb layer as drifting ASCII glyph clusters (orange).
+   The existing parallax JS translates these spans on mousemove. */
+body.sparkit-theme .biophilic-orbs {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 1;
+	overflow: hidden;
+}
+
+body.sparkit-theme .biophilic-orbs span {
+	position: absolute;
+	width: auto;
+	height: auto;
+	background: none;
+	border-radius: 0;
+	transition: translate 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+	font-family: var(--sk-mono);
+	font-size: 0.8rem;
+	letter-spacing: 0.16em;
+	color: var(--sk-orange);
+	opacity: 0.22;
+	white-space: nowrap;
+}
+
+body.sparkit-theme .biophilic-orbs span::before { content: "01001"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(1)  { top: 14%; left: 60%; opacity: 0.24; }
+body.sparkit-theme .biophilic-orbs span:nth-child(1)::before  { content: "0 1 0 1 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(2)  { top: 24%; left: 78%; opacity: 0.20; }
+body.sparkit-theme .biophilic-orbs span:nth-child(2)::before  { content: "A C G T"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(3)  { top: 66%; left: 70%; opacity: 0.18; }
+body.sparkit-theme .biophilic-orbs span:nth-child(3)::before  { content: "{ } < >"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(4)  { top: 78%; left: 84%; opacity: 0.20; color: var(--sk-blue); }
+body.sparkit-theme .biophilic-orbs span:nth-child(4)::before  { content: "1 0 1 +"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(5)  { top: 40%; left: 90%; opacity: 0.16; }
+body.sparkit-theme .biophilic-orbs span:nth-child(5)::before  { content: ":: 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(6)  { top: 54%; left: 64%; opacity: 0.18; }
+body.sparkit-theme .biophilic-orbs span:nth-child(6)::before  { content: "/ \\ 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(7)  { top: 10%; left: 88%; opacity: 0.16; }
+body.sparkit-theme .biophilic-orbs span:nth-child(7)::before  { content: "T A C G"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(8)  { top: 88%; left: 66%; opacity: 0.16; }
+body.sparkit-theme .biophilic-orbs span:nth-child(8)::before  { content: "= + 1 0"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(9)  { top: 32%; left: 72%; opacity: 0.22; color: var(--sk-blue); }
+body.sparkit-theme .biophilic-orbs span:nth-child(9)::before  { content: "0 1 1 0"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(10) { top: 60%; left: 92%; opacity: 0.16; }
+body.sparkit-theme .biophilic-orbs span:nth-child(10)::before { content: "1 / 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(11) { top: 18%; left: 70%; opacity: 0.18; }
+body.sparkit-theme .biophilic-orbs span:nth-child(11)::before { content: "G C 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(12) { top: 84%; left: 90%; opacity: 0.18; }
+body.sparkit-theme .biophilic-orbs span:nth-child(12)::before { content: "< > _ 1"; }
+
+/* Portrait frame — white panel with hairline + soft shadow */
+body.sparkit-theme .portrait-frame {
+	background: #ffffff;
+	border: 1px solid var(--sk-line);
+	border-radius: 16px;
+	box-shadow:
+		0 1px 2px rgba(24, 24, 24, 0.04),
+		0 18px 40px rgba(24, 24, 24, 0.08);
+	position: relative;
+	transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+body.sparkit-theme .portrait-frame:hover {
+	transform: translateY(-4px);
+	border-color: var(--sk-line-2);
+	box-shadow:
+		0 1px 2px rgba(24, 24, 24, 0.05),
+		0 26px 56px rgba(24, 24, 24, 0.12);
+}
+
+body.sparkit-theme .portrait-frame img {
+	border-radius: 12px;
+	border: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme .portrait-frame h3 {
+	color: var(--sk-ink);
+	font-family: var(--sk-display);
+	font-weight: 700;
+}
+
+body.sparkit-theme .hero-heading {
+	color: var(--sk-ink);
+}
+
+/* "Next" scroll cue */
+body.sparkit-theme .goto-next,
+body.sparkit-theme .goto-next:before {
+	color: var(--sk-orange);
+	border-color: var(--sk-line-2);
+}
+
+/* ── SPARKIT hero card — white, hairline, orange keyline ── */
+body.sparkit-theme .sparkit-card {
+	display: block;
+	position: relative;
+	text-align: left;
+	background:
+		radial-gradient(130% 90% at 100% 0%, rgba(232, 122, 9, 0.08) 0%, transparent 48%),
+		#ffffff;
+	border: 1px solid var(--sk-line);
+	border-radius: 18px;
+	padding: 2.35rem 2.5rem;
+	box-shadow:
+		0 1px 2px rgba(24, 24, 24, 0.04),
+		0 18px 48px rgba(24, 24, 24, 0.09);
+	overflow: hidden;
+	transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+body.sparkit-theme .sparkit-card:hover {
+	transform: translateY(-3px);
+	border-color: rgba(232, 122, 9, 0.32);
+	box-shadow:
+		0 1px 2px rgba(24, 24, 24, 0.05),
+		0 28px 64px rgba(24, 24, 24, 0.13);
+}
+
+/* Warm glow bleeding in from the top-right corner */
+body.sparkit-theme .sparkit-card::before {
+	content: "";
+	position: absolute;
+	top: -70px;
+	right: -70px;
+	width: 220px;
+	height: 220px;
+	background: radial-gradient(circle, rgba(232, 122, 9, 0.16) 0%, rgba(232, 122, 9, 0) 70%);
+	pointer-events: none;
+}
+
+/* Gradient orange accent rail down the left edge */
+body.sparkit-theme .sparkit-card::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 22px;
+	bottom: 22px;
+	width: 3px;
+	background: linear-gradient(180deg, var(--sk-orange) 0%, #f5a623 45%, rgba(232, 122, 9, 0) 100%);
+	border-radius: 0 3px 3px 0;
+}
+
+/* Eyebrow with a pulsing "live" dot */
+body.sparkit-theme .sparkit-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55em;
+	font-family: var(--sk-mono);
+	font-size: 0.7rem;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--sk-blue);
+	margin: 0 0 1.05rem 0;
+}
+
+body.sparkit-theme .sparkit-eyebrow::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--sk-orange);
+	box-shadow: 0 0 0 0 rgba(232, 122, 9, 0.5);
+	animation: sparkit-pulse 2.4s ease-out infinite;
+}
+
+@keyframes sparkit-pulse {
+	0%   { box-shadow: 0 0 0 0 rgba(232, 122, 9, 0.5); }
+	70%  { box-shadow: 0 0 0 7px rgba(232, 122, 9, 0); }
+	100% { box-shadow: 0 0 0 0 rgba(232, 122, 9, 0); }
+}
+
+/* Wordmark with an orange spark, echoing the SPARKIT logo lockup */
+body.sparkit-theme .sparkit-wordmark {
+	display: flex;
+	align-items: center;
+	gap: 0.42em;
+	font-family: var(--sk-display);
+	font-size: 1.85rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	color: var(--sk-ink);
+	margin: 0 0 1.1rem 0;
+	line-height: 1;
+}
+
+body.sparkit-theme .sparkit-wordmark::before {
+	content: "";
+	flex: 0 0 auto;
+	width: 1.3em;
+	height: 1.3em;
+	background-image: url("images/sparkit-star.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body.sparkit-theme .sparkit-card:hover .sparkit-wordmark::before {
+	transform: rotate(90deg);
+}
+
+body.sparkit-theme .sparkit-headline {
+	font-family: var(--sk-display);
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--sk-ink);
+	margin: 0 0 0.85rem 0;
+	line-height: 1.28;
+	letter-spacing: -0.01em;
+	text-align: left !important;
+}
+
+body.sparkit-theme .sparkit-positioning {
+	color: var(--sk-text-2);
+	font-size: 0.98rem;
+	margin: 0 0 1.7rem 0;
+	line-height: 1.62;
+	max-width: 52ch;
+}
+
+body.sparkit-theme .sparkit-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.4rem;
+	margin-top: 0.5rem;
+}
+
+body.sparkit-theme .sparkit-cta {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.82rem 1.55rem;
+	background: var(--sk-btn);
+	color: #ffffff !important;
+	font-family: var(--sk-sans);
+	font-weight: 600;
+	font-size: 0.98rem;
+	text-decoration: none !important;
+	border-radius: 9px;
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.16), 0 8px 18px rgba(24, 24, 24, 0.12);
+	transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+	border-bottom: none !important;
+}
+
+body.sparkit-theme .sparkit-cta::after {
+	content: "\2192";
+	margin-left: 0.55em;
+	transition: transform 200ms ease;
+}
+
+body.sparkit-theme .sparkit-cta:hover {
+	background: var(--sk-btn-h);
+	transform: translateY(-2px);
+	box-shadow: 0 2px 4px rgba(24, 24, 24, 0.18), 0 14px 28px rgba(24, 24, 24, 0.2);
+	color: #ffffff !important;
+}
+
+body.sparkit-theme .sparkit-cta:hover::after {
+	transform: translateX(4px);
+}
+
+body.sparkit-theme .sparkit-cta:focus-visible {
+	outline: 2px solid var(--sk-blue);
+	outline-offset: 3px;
+}
+
+body.sparkit-theme .sparkit-secondary {
+	position: relative;
+	font-family: var(--sk-mono);
+	font-size: 0.85rem;
+	letter-spacing: 0.04em;
+	color: var(--sk-text-2) !important;
+	text-decoration: none;
+	border-bottom: none !important;
+	transition: color 180ms ease;
+}
+
+body.sparkit-theme .sparkit-secondary::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 1px;
+	background: var(--sk-blue);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.25s ease;
+}
+
+body.sparkit-theme .sparkit-secondary:hover {
+	color: var(--sk-blue) !important;
+}
+
+body.sparkit-theme .sparkit-secondary:hover::after {
+	transform: scaleX(1);
+}
+
+body.sparkit-theme .sparkit-secondary:focus-visible {
+	outline: 2px solid var(--sk-blue);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.sparkit-theme .sparkit-eyebrow::before { animation: none !important; }
+	body.sparkit-theme .sparkit-card:hover .sparkit-wordmark::before,
+	body.sparkit-theme .sparkit-cta:hover::after { transform: none !important; }
+}
+
+/* ============================================================
+   Content cards, buttons, figures
+   ============================================================ */
+
+body.sparkit-theme .wrapper {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+}
+
+/* CTA buttons */
+body.sparkit-theme .cta-button {
+	font-family: var(--sk-sans);
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	border-radius: 8px;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+body.sparkit-theme .cta-button.primary {
+	background: var(--sk-btn);
+	color: #ffffff !important;
+	border: 1px solid var(--sk-btn);
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.12);
+}
+
+body.sparkit-theme .cta-button.primary:hover {
+	background: var(--sk-btn-h);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(24, 24, 24, 0.16);
+}
+
+body.sparkit-theme .cta-button.secondary {
+	background: #ffffff;
+	color: var(--sk-blue) !important;
+	border: 1px solid var(--sk-line-2);
+	box-shadow: none;
+}
+
+body.sparkit-theme .cta-button.secondary:hover {
+	border-color: var(--sk-blue);
+	transform: translateY(-2px);
+}
+
+body.sparkit-theme .cta-button.tertiary {
+	background: #ffffff;
+	color: var(--sk-ink) !important;
+	border: 1px solid var(--sk-line-2);
+	box-shadow: none;
+}
+
+body.sparkit-theme .cta-button.tertiary:hover {
+	border-color: var(--sk-orange);
+	transform: translateY(-2px);
+}
+
+body.sparkit-theme .cta-button.quaternary {
+	background: transparent;
+	color: var(--sk-ink) !important;
+	border: 1px solid var(--sk-line-2);
+	box-shadow: none;
+}
+
+body.sparkit-theme .cta-button.quaternary:hover {
+	background: rgba(24, 24, 24, 0.03);
+	border-color: var(--sk-orange);
+	transform: translateY(-2px);
+}
+
+/* Publication-link pills — orange outline, fill on hover */
+body.sparkit-theme #ResearchInterests center a {
+	background: var(--sk-orange-soft);
+	border: 1px solid rgba(232, 122, 9, 0.4);
+	border-bottom: 1px solid rgba(232, 122, 9, 0.4);
+	color: var(--sk-orange-dk) !important;
+	border-radius: 20px;
+	padding: 0.42em 1.05em;
+	font-family: var(--sk-mono);
+	font-size: 0.82em;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	text-decoration: none;
+	transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body.sparkit-theme #ResearchInterests center a:hover {
+	background: var(--sk-orange);
+	color: #ffffff !important;
+	border-color: var(--sk-orange);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(232, 122, 9, 0.25);
+}
+
+/* Figures — white-friendly hairline framing */
+body.sparkit-theme .TextWrapRight,
+body.sparkit-theme .TextWrapLeft {
+	border-radius: 10px;
+	border: 1px solid var(--sk-line);
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 14px 36px rgba(24, 24, 24, 0.08);
+	transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+body.sparkit-theme .TextWrapRight:hover,
+body.sparkit-theme .TextWrapLeft:hover {
+	transform: scale(1.02) translateY(-3px);
+	border-color: var(--sk-line-2);
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.05), 0 20px 48px rgba(24, 24, 24, 0.12);
+}
+
+/* Feature highlights */
+body.sparkit-theme .feature-highlight {
+	background: #ffffff;
+	border: 1px solid var(--sk-line);
+	border-top: 2px solid var(--sk-orange);
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 14px 36px rgba(24, 24, 24, 0.06);
+	border-radius: 12px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+body.sparkit-theme .feature-highlight:hover {
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.05), 0 20px 48px rgba(24, 24, 24, 0.1);
+	transform: translateY(-6px);
+}
+
+body.sparkit-theme .feature-highlight h3 {
+	color: var(--sk-ink);
+}
+
+body.sparkit-theme .feature-highlight .icon.major {
+	color: var(--sk-orange);
+}
+
+/* Form inputs */
+body.sparkit-theme input[type="text"],
+body.sparkit-theme input[type="email"],
+body.sparkit-theme textarea,
+body.sparkit-theme select {
+	background: #ffffff;
+	border: 1px solid var(--sk-line-2);
+	border-radius: 8px;
+	color: var(--sk-ink);
+	padding: 12px 16px;
+	font-family: var(--sk-sans);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.sparkit-theme input[type="text"]:focus,
+body.sparkit-theme input[type="email"]:focus,
+body.sparkit-theme textarea:focus,
+body.sparkit-theme select:focus {
+	border-color: var(--sk-blue);
+	box-shadow: 0 0 0 3px rgba(0, 103, 183, 0.14);
+	outline: none;
+}
+
+body.sparkit-theme input::placeholder,
+body.sparkit-theme textarea::placeholder {
+	color: var(--sk-text-3);
+}
+
+/* Tables */
+body.sparkit-theme table {
+	background: #ffffff;
+	border: 1px solid var(--sk-line);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+body.sparkit-theme table th {
+	background: var(--sk-surface-2);
+	color: var(--sk-ink);
+}
+
+body.sparkit-theme table tr:hover {
+	background: rgba(24, 24, 24, 0.02);
+}
+
+body.sparkit-theme pre,
+body.sparkit-theme pre code {
+	background: #f6f5f2;
+	border: 1px solid var(--sk-line);
+	border-radius: 8px;
+	color: var(--sk-ink);
+	font-family: var(--sk-mono);
+}
+
+/* ============================================================
+   Header, navigation, footer
+   ============================================================ */
+
+body.sparkit-theme #header {
+	background: rgba(251, 251, 249, 0.82);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--sk-line);
+	box-shadow: none;
+}
+
+/* Pin the nav bar flush to the very top on desktop. The base
+   #page-wrapper padding-top exists only to clear the fixed mobile
+   title bar; on desktop the in-flow header doesn't need it. */
+@media screen and (min-width: 737px) {
+	body.sparkit-theme #Top > #page-wrapper {
+		padding-top: 0;
+	}
+}
+
+body.sparkit-theme #header .nav-link {
+	color: var(--sk-text) !important;
+	font-family: var(--sk-mono);
+	font-weight: 500;
+	font-size: 0.8rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	border-bottom: none;
+	text-decoration: none;
+	position: relative;
+	transition: color 0.25s ease;
+}
+
+body.sparkit-theme #header .nav-link::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: var(--sk-orange);
+	border-radius: 1px;
+	transform: translateX(-50%);
+	transition: width 0.3s ease;
+}
+
+body.sparkit-theme #header .nav-link:hover {
+	color: var(--sk-ink) !important;
+}
+
+body.sparkit-theme #header .nav-link:hover::after {
+	width: 80%;
+}
+
+/* Dropdown menus */
+body.sparkit-theme .dropotron {
+	background: #ffffff;
+	border: 1px solid var(--sk-line-2);
+	border-radius: 10px;
+	box-shadow: 0 16px 40px rgba(24, 24, 24, 0.14);
+}
+
+body.sparkit-theme .dropotron li a {
+	color: var(--sk-text) !important;
+	font-family: var(--sk-sans);
+	font-size: 0.9rem;
+	border-bottom: none;
+	padding: 10px 18px;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.sparkit-theme .dropotron li:hover > a,
+body.sparkit-theme .dropotron li a:hover {
+	background: var(--sk-orange-soft);
+	color: var(--sk-orange-dk) !important;
+}
+
+/* Active nav state */
+body.sparkit-theme .nav-active {
+	color: var(--sk-ink) !important;
+}
+
+body.sparkit-theme .nav-active::after {
+	background: var(--sk-orange) !important;
+}
+
+/* Mobile slide-in nav panel */
+body.sparkit-theme #navPanel {
+	background: #ffffff;
+	border-right: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #navPanel .link {
+	color: var(--sk-text) !important;
+	font-family: var(--sk-sans);
+	border-bottom: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #navPanel .link:hover {
+	background: var(--sk-orange-soft);
+	color: var(--sk-orange-dk) !important;
+}
+
+/* Footer */
+body.sparkit-theme #footer {
+	background:
+		radial-gradient(ellipse 600px 300px at 50% 0%, rgba(232, 122, 9, 0.05) 0%, transparent 65%),
+		var(--sk-surface-2);
+	border-top: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #footer .icons a {
+	background: #ffffff;
+	border: 1px solid var(--sk-line-2);
+	border-radius: 50%;
+	color: var(--sk-text-2) !important;
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	margin: 0 4px;
+	transition: all 0.25s ease;
+	border-bottom: none;
+}
+
+body.sparkit-theme #footer .icons a:before {
+	color: var(--sk-text-2) !important;
+	transition: color 0.25s ease;
+}
+
+body.sparkit-theme #footer .icons a:hover {
+	background: var(--sk-ink);
+	border-color: var(--sk-ink);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(24, 24, 24, 0.18);
+}
+
+body.sparkit-theme #footer .icons a:hover:before {
+	color: #ffffff !important;
+}
+
+body.sparkit-theme #footer .copyright {
+	color: var(--sk-text-3);
+}
+
+/* Paint the root element so no gap shows below the footer */
+html:has(body.sparkit-theme) {
+	background-color: #fbfbf9;
+}
+
+/* ============================================================
+   Responsive + motion
+   ============================================================ */
+
+body.sparkit-theme #titleBar {
+	background: #ffffff;
+	border-bottom: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #titleBar .toggle:before {
+	background: var(--sk-ink);
+	color: #ffffff;
+}
+
+@media screen and (max-width: 736px) {
+	body.sparkit-theme #banner {
+		padding: 5rem 0 3rem;
+	}
+
+	body.sparkit-theme .portrait-frame {
+		padding: 1.5rem 1.5rem 1.3rem;
+		max-width: 100%;
+	}
+
+	body.sparkit-theme .portrait-frame h3 {
+		font-size: 1.3em;
+	}
+
+	body.sparkit-theme .hero-tagline,
+	body.sparkit-theme .morph-text {
+		font-size: 0.92rem !important;
+		letter-spacing: 0.02em;
+		white-space: normal;
+		overflow-wrap: anywhere;
+	}
+
+	body.sparkit-theme #content .container {
+		padding: 1.5rem;
+		max-width: 100%;
+	}
+
+	body.sparkit-theme #banner .hero-inner {
+		box-sizing: border-box;
+		padding: 2rem 1.1rem;
+	}
+
+	body.sparkit-theme .sparkit-card {
+		padding: 1.6rem 1.4rem;
+	}
+
+	body.sparkit-theme .sparkit-wordmark {
+		font-size: 1.45rem;
+	}
+
+	body.sparkit-theme .sparkit-headline {
+		font-size: 1.15rem;
+	}
+
+	body.sparkit-theme .sparkit-positioning {
+		font-size: 0.92rem;
+	}
+
+	body.sparkit-theme #banner::before {
+		background-size: 240px 210px;
+	}
+
+	body.sparkit-theme .major h2 {
+		font-size: 1.7em;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	body.sparkit-theme .sparkit-actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.85rem;
+	}
+
+	body.sparkit-theme .sparkit-cta {
+		text-align: center;
+		width: 100%;
+	}
+
+	body.sparkit-theme .sparkit-secondary {
+		text-align: center;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.sparkit-theme .biophilic-orbs span {
+		transition: none !important;
+		translate: none !important;
+	}
+
+	body.sparkit-theme .portrait-frame:hover,
+	body.sparkit-theme .TextWrapLeft:hover,
+	body.sparkit-theme .TextWrapRight:hover,
+	body.sparkit-theme .feature-highlight:hover,
+	body.sparkit-theme .cta-button:hover,
+	body.sparkit-theme .sparkit-cta:hover {
+		transform: none !important;
+	}
+}
