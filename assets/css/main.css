@@ -7739,3 +7739,162 @@ body.biophilic-theme .sparkit-card.revealed {
 	opacity: 1;
 	transform: translateY(0);
 }
+
+/* ============================================================
+   SPARKIT THEME — dark, technical, terminal/ASCII aesthetic
+   ------------------------------------------------------------
+   A parallel theme to biophilic-theme, evoking sparkit.science:
+   near-black canvas, electric-cyan accents, mono terminal labels.
+   Activated by body.sparkit-theme (set in assets/js/main.js).
+   Rollback: restore 'biophilic-theme' on that one line.
+
+   Commit 1 — design tokens, base canvas, texture, text colors
+   ============================================================ */
+
+body.sparkit-theme {
+	/* Surfaces */
+	--sk-bg:        #0a0b0d;  /* page — near black */
+	--sk-bg-2:      #0d0f12;
+	--sk-surface:   #111418;  /* cards / panels */
+	--sk-surface-2: #161a1f;  /* footer / secondary */
+	/* Lines */
+	--sk-line:      rgba(255, 255, 255, 0.08);
+	--sk-line-2:    rgba(255, 255, 255, 0.14);
+	/* Accent */
+	--sk-cyan:      #22d3ee;
+	--sk-cyan-soft: rgba(34, 211, 238, 0.40);
+	--sk-cyan-dim:  rgba(34, 211, 238, 0.14);
+	--sk-blue:      #38bdf8;
+	--sk-glow:      0 0 24px rgba(34, 211, 238, 0.18);
+	/* Text */
+	--sk-text:      #e8eaed;
+	--sk-text-2:    #a8b0b8;
+	--sk-text-3:    #6b7280;
+	/* Type families (faces loaded in Commit 2) */
+	--sk-sans:    'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--sk-display: 'Sora', 'IBM Plex Sans', sans-serif;
+	--sk-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+	background-color: var(--sk-bg);
+	color: var(--sk-text);
+	font-family: var(--sk-sans);
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* Terminal grid — fades out toward the bottom of the viewport */
+body.sparkit-theme::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+	background-size: 48px 48px;
+	-webkit-mask-image: radial-gradient(ellipse 120% 90% at 50% 0%, #000 25%, transparent 85%);
+	        mask-image: radial-gradient(ellipse 120% 90% at 50% 0%, #000 25%, transparent 85%);
+}
+
+/* Faint cyan atmosphere wash */
+body.sparkit-theme::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		radial-gradient(900px 620px at 80% -8%, rgba(34, 211, 238, 0.10) 0%, transparent 60%),
+		radial-gradient(700px 520px at 10% 6%, rgba(56, 189, 248, 0.055) 0%, transparent 55%);
+}
+
+/* Keep content above the fixed texture layers */
+body.sparkit-theme #page-wrapper,
+body.sparkit-theme #header,
+body.sparkit-theme #main,
+body.sparkit-theme #footer,
+body.sparkit-theme #banner,
+body.sparkit-theme .wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+/* Base text */
+body.sparkit-theme p,
+body.sparkit-theme li,
+body.sparkit-theme label,
+body.sparkit-theme span,
+body.sparkit-theme td,
+body.sparkit-theme th {
+	color: var(--sk-text-2);
+	font-size: 1.02em;
+	line-height: 1.75;
+}
+
+body.sparkit-theme strong,
+body.sparkit-theme b {
+	color: var(--sk-text);
+	font-weight: 600;
+}
+
+body.sparkit-theme .wrapper.style1 strong,
+body.sparkit-theme .wrapper.style1 b {
+	background: none;
+	box-shadow: none;
+}
+
+/* Links — cyan with a quiet underline that brightens on hover */
+body.sparkit-theme a {
+	color: var(--sk-cyan) !important;
+	text-decoration: underline;
+	text-decoration-color: rgba(34, 211, 238, 0.3);
+	text-underline-offset: 3px;
+	border-bottom: none !important;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+body.sparkit-theme a:hover,
+body.sparkit-theme a:focus {
+	color: #67e8f9 !important;
+	text-decoration-color: var(--sk-cyan-soft);
+	border-bottom: none !important;
+}
+
+/* Focus rings */
+body.sparkit-theme a:focus,
+body.sparkit-theme .nav-link:focus,
+body.sparkit-theme button:focus,
+body.sparkit-theme input:focus,
+body.sparkit-theme select:focus,
+body.sparkit-theme textarea:focus {
+	outline: 2px solid var(--sk-cyan);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* Selection + scrollbar */
+body.sparkit-theme ::selection {
+	background: rgba(34, 211, 238, 0.28);
+	color: #ffffff;
+}
+body.sparkit-theme ::-moz-selection {
+	background: rgba(34, 211, 238, 0.28);
+	color: #ffffff;
+}
+
+body.sparkit-theme ::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+body.sparkit-theme ::-webkit-scrollbar-track {
+	background: var(--sk-bg);
+}
+body.sparkit-theme ::-webkit-scrollbar-thumb {
+	background: #2a2f37;
+	border: 3px solid var(--sk-bg);
+	border-radius: 8px;
+}
+body.sparkit-theme ::-webkit-scrollbar-thumb:hover {
+	background: #3a4049;
+}
