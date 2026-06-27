@@ -8608,3 +8608,116 @@ body.sparkit-theme #footer .copyright {
 html:has(body.sparkit-theme) {
 	background-color: #0a0b0d;
 }
+
+/* ============================================================
+   SPARKIT THEME — Commit 6: responsive + motion
+   Dark mobile title bar / toggle, fluid hero sizing to stop
+   overflow on small screens, reduced-motion fallbacks.
+   ============================================================ */
+
+/* Mobile slide-in title bar + hamburger toggle */
+body.sparkit-theme #titleBar {
+	background: #0a0b0d;
+	border-bottom: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #titleBar .toggle:before {
+	background: var(--sk-cyan);
+	color: #06202a;
+}
+
+@media screen and (max-width: 736px) {
+	body.sparkit-theme #banner {
+		padding: 5rem 0 3rem;
+	}
+
+	body.sparkit-theme .portrait-frame {
+		padding: 1.5rem 1.5rem 1.3rem;
+		max-width: 100%;
+	}
+
+	body.sparkit-theme .portrait-frame h3 {
+		font-size: 1.3em;
+	}
+
+	body.sparkit-theme .hero-tagline,
+	body.sparkit-theme .morph-text {
+		font-size: 0.92rem !important;
+		letter-spacing: 0.03em;
+		white-space: normal;
+		overflow-wrap: anywhere;
+	}
+
+	/* Trim the generous desktop content padding on small screens */
+	body.sparkit-theme #content .container {
+		padding: 1.5rem;
+		max-width: 100%;
+	}
+
+	/* Keep the hero-inner padding inside the viewport (was content-box,
+	   so width:100% + 2.5rem padding overflowed on small screens) */
+	body.sparkit-theme #banner .hero-inner {
+		box-sizing: border-box;
+		padding: 2rem 1.1rem;
+	}
+
+	body.sparkit-theme .sparkit-card {
+		padding: 1.6rem 1.4rem;
+	}
+
+	body.sparkit-theme .sparkit-wordmark {
+		font-size: 1.45rem;
+	}
+
+	body.sparkit-theme .sparkit-headline {
+		font-size: 1.15rem;
+	}
+
+	body.sparkit-theme .sparkit-positioning {
+		font-size: 0.92rem;
+	}
+
+	/* Denser, smaller ASCII tile on small screens */
+	body.sparkit-theme #banner::before {
+		background-size: 240px 210px;
+	}
+
+	body.sparkit-theme .major h2 {
+		font-size: 1.7em;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	body.sparkit-theme .sparkit-actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.85rem;
+	}
+
+	body.sparkit-theme .sparkit-cta {
+		text-align: center;
+		width: 100%;
+	}
+
+	body.sparkit-theme .sparkit-secondary {
+		text-align: center;
+	}
+}
+
+/* Respect reduced-motion: freeze the cursor-reactive ASCII drift
+   and hover lifts, keep everything legible and static. */
+@media (prefers-reduced-motion: reduce) {
+	body.sparkit-theme .biophilic-orbs span {
+		transition: none !important;
+		translate: none !important;
+	}
+
+	body.sparkit-theme .portrait-frame:hover,
+	body.sparkit-theme .TextWrapLeft:hover,
+	body.sparkit-theme .TextWrapRight:hover,
+	body.sparkit-theme .feature-highlight:hover,
+	body.sparkit-theme .cta-button:hover,
+	body.sparkit-theme .sparkit-cta:hover {
+		transform: none !important;
+	}
+}
