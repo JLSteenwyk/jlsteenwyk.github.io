@@ -8460,3 +8460,151 @@ body.sparkit-theme pre code {
 	color: var(--sk-text);
 	font-family: var(--sk-mono);
 }
+
+/* ============================================================
+   SPARKIT THEME — Commit 5: header, navigation, footer
+   Frosted near-black header with cyan nav underlines, dark
+   dropdowns and mobile nav panel, dark footer with cyan icons.
+   ============================================================ */
+
+body.sparkit-theme #header {
+	background: rgba(10, 11, 13, 0.82);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--sk-line);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+body.sparkit-theme #header .nav-link {
+	color: var(--sk-text-2) !important;
+	font-family: var(--sk-mono);
+	font-weight: 500;
+	font-size: 0.8rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	border-bottom: none;
+	text-decoration: none;
+	position: relative;
+	transition: color 0.25s ease;
+}
+
+body.sparkit-theme #header .nav-link::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: var(--sk-cyan);
+	border-radius: 1px;
+	transform: translateX(-50%);
+	box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+	transition: width 0.3s ease;
+}
+
+body.sparkit-theme #header .nav-link:hover {
+	color: var(--sk-cyan) !important;
+}
+
+body.sparkit-theme #header .nav-link:hover::after {
+	width: 80%;
+}
+
+/* Dropdown menus */
+body.sparkit-theme .dropotron {
+	background: rgba(17, 20, 24, 0.96);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--sk-line-2);
+	border-radius: 10px;
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.sparkit-theme .dropotron li a {
+	color: var(--sk-text-2) !important;
+	font-family: var(--sk-sans);
+	font-size: 0.9rem;
+	border-bottom: none;
+	padding: 10px 18px;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.sparkit-theme .dropotron li:hover > a,
+body.sparkit-theme .dropotron li a:hover {
+	background: var(--sk-cyan-dim);
+	color: var(--sk-cyan) !important;
+}
+
+/* Active nav state */
+body.sparkit-theme .nav-active {
+	color: var(--sk-cyan) !important;
+}
+
+body.sparkit-theme .nav-active::after {
+	background: var(--sk-cyan) !important;
+	box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+/* Mobile slide-in nav panel */
+body.sparkit-theme #navPanel {
+	background: #0d0f12;
+	border-right: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #navPanel .link {
+	color: var(--sk-text-2) !important;
+	font-family: var(--sk-sans);
+	border-bottom: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #navPanel .link:hover {
+	background: var(--sk-cyan-dim);
+	color: var(--sk-cyan) !important;
+}
+
+/* Footer */
+body.sparkit-theme #footer {
+	background:
+		radial-gradient(ellipse 600px 300px at 50% 0%, rgba(34, 211, 238, 0.05) 0%, transparent 65%),
+		var(--sk-surface-2);
+	border-top: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme #footer .icons a {
+	background: var(--sk-surface);
+	border: 1px solid var(--sk-line-2);
+	border-radius: 50%;
+	color: var(--sk-text-2) !important;
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	margin: 0 4px;
+	transition: all 0.25s ease;
+	border-bottom: none;
+}
+
+body.sparkit-theme #footer .icons a:before {
+	color: var(--sk-text-2) !important;
+	transition: color 0.25s ease;
+}
+
+body.sparkit-theme #footer .icons a:hover {
+	background: var(--sk-cyan);
+	border-color: var(--sk-cyan);
+	transform: translateY(-3px);
+	box-shadow: var(--sk-glow);
+}
+
+body.sparkit-theme #footer .icons a:hover:before {
+	color: #06202a !important;
+}
+
+body.sparkit-theme #footer .copyright {
+	color: var(--sk-text-3);
+}
+
+/* Paint the root element so no light gap shows below the footer */
+html:has(body.sparkit-theme) {
+	background-color: #0a0b0d;
+}
