@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320">
   <style>
-    text { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; fill: #22d3ee; }
+    text { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; fill: #e87a09; }
   </style>
   <g opacity="0.5" letter-spacing="6">
     <text x="0"   y="20">0 1 0 0 1 / &lt; &gt; 1 0 = + 1 0 . :</text>
