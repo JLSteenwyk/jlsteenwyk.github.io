@@ -7987,3 +7987,282 @@ body.sparkit-theme hr::after {
 	border-radius: 50%;
 	box-shadow: 0 0 0 4px var(--sk-bg), 0 0 12px 2px rgba(34, 211, 238, 0.5);
 }
+
+/* ============================================================
+   SPARKIT THEME — Commit 3: hero / banner
+   Dark terminal hero: cyan-glow canvas, tiled ASCII texture,
+   drifting ASCII glyph clusters (cursor-reactive via existing
+   parallax JS), dark portrait frame, native dark SPARKIT card.
+   ============================================================ */
+
+body.sparkit-theme #banner {
+	background:
+		radial-gradient(ellipse 820px 560px at 78% 18%, rgba(34, 211, 238, 0.16) 0%, transparent 58%),
+		radial-gradient(ellipse 680px 520px at 8% 30%, rgba(56, 189, 248, 0.10) 0%, transparent 55%),
+		linear-gradient(170deg, #0d1117 0%, #0a0c10 55%, #08090c 100%);
+	border: none;
+	box-shadow: inset 0 -1px 0 var(--sk-line);
+	height: auto;
+	min-height: 0;
+	padding: 7rem 0 5rem;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Tiled ASCII / code-rain texture, brightest behind the hero center */
+body.sparkit-theme #banner::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image: url("images/sparkit-ascii.svg");
+	background-repeat: repeat;
+	background-size: 340px 300px;
+	opacity: 0.85;
+	-webkit-mask-image: radial-gradient(ellipse 82% 82% at 50% 42%, #000 0%, transparent 82%);
+	        mask-image: radial-gradient(ellipse 82% 82% at 50% 42%, #000 0%, transparent 82%);
+}
+
+/* A scanning cyan seam across the top edge */
+body.sparkit-theme #banner::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--sk-cyan-soft) 35%, var(--sk-blue) 50%, var(--sk-cyan-soft) 65%, transparent);
+	opacity: 0.7;
+	z-index: 1;
+}
+
+body.sparkit-theme .hero-aurora {
+	display: none;
+}
+
+body.sparkit-theme #banner .hero-inner {
+	background: transparent;
+	position: relative;
+	z-index: 2;
+}
+
+/* Repurpose the orb layer as drifting ASCII glyph clusters.
+   The existing parallax JS translates these spans on mousemove. */
+body.sparkit-theme .biophilic-orbs {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 1;
+	overflow: hidden;
+}
+
+body.sparkit-theme .biophilic-orbs span {
+	position: absolute;
+	width: auto;
+	height: auto;
+	background: none;
+	border-radius: 0;
+	transition: translate 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+	font-family: var(--sk-mono);
+	font-size: 0.82rem;
+	letter-spacing: 0.18em;
+	color: var(--sk-cyan);
+	opacity: 0.22;
+	white-space: nowrap;
+}
+
+body.sparkit-theme .biophilic-orbs span::before {
+	content: "01001";
+}
+
+body.sparkit-theme .biophilic-orbs span:nth-child(1)  { top: 12%; left: 8%;  opacity: 0.20; }
+body.sparkit-theme .biophilic-orbs span:nth-child(1)::before  { content: "0 1 0 1 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(2)  { top: 22%; left: 64%; opacity: 0.16; }
+body.sparkit-theme .biophilic-orbs span:nth-child(2)::before  { content: "A C G T"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(3)  { top: 70%; left: 14%; opacity: 0.18; }
+body.sparkit-theme .biophilic-orbs span:nth-child(3)::before  { content: "{ } < >"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(4)  { top: 80%; left: 72%; opacity: 0.22; color: var(--sk-blue); }
+body.sparkit-theme .biophilic-orbs span:nth-child(4)::before  { content: "1 0 1 +"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(5)  { top: 38%; left: 4%;  opacity: 0.14; }
+body.sparkit-theme .biophilic-orbs span:nth-child(5)::before  { content: ":: 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(6)  { top: 54%; left: 88%; opacity: 0.18; }
+body.sparkit-theme .biophilic-orbs span:nth-child(6)::before  { content: "/ \\ 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(7)  { top: 8%;  left: 40%; opacity: 0.12; }
+body.sparkit-theme .biophilic-orbs span:nth-child(7)::before  { content: "T A C G"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(8)  { top: 90%; left: 44%; opacity: 0.16; }
+body.sparkit-theme .biophilic-orbs span:nth-child(8)::before  { content: "= + 1 0"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(9)  { top: 30%; left: 92%; opacity: 0.20; color: var(--sk-blue); }
+body.sparkit-theme .biophilic-orbs span:nth-child(9)::before  { content: "0 1 1 0"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(10) { top: 62%; left: 2%;  opacity: 0.14; }
+body.sparkit-theme .biophilic-orbs span:nth-child(10)::before { content: "1 / 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(11) { top: 16%; left: 22%; opacity: 0.16; }
+body.sparkit-theme .biophilic-orbs span:nth-child(11)::before { content: "G C 0 1"; }
+body.sparkit-theme .biophilic-orbs span:nth-child(12) { top: 84%; left: 24%; opacity: 0.18; }
+body.sparkit-theme .biophilic-orbs span:nth-child(12)::before { content: "< > _ 1"; }
+
+/* Portrait frame — dark panel with cyan hairline + glow */
+body.sparkit-theme .portrait-frame {
+	background: linear-gradient(160deg, rgba(22, 27, 34, 0.92), rgba(13, 16, 20, 0.92));
+	border: 1px solid var(--sk-line-2);
+	border-radius: 18px;
+	box-shadow:
+		0 24px 60px rgba(0, 0, 0, 0.45),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+	backdrop-filter: blur(6px);
+	position: relative;
+	transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+body.sparkit-theme .portrait-frame:hover {
+	transform: translateY(-4px);
+	border-color: var(--sk-cyan-soft);
+	box-shadow:
+		0 30px 70px rgba(0, 0, 0, 0.5),
+		var(--sk-glow);
+}
+
+body.sparkit-theme .portrait-frame img {
+	border-radius: 12px;
+	border: 1px solid var(--sk-line);
+}
+
+body.sparkit-theme .portrait-frame h3 {
+	color: var(--sk-text);
+	font-family: var(--sk-display);
+	font-weight: 600;
+}
+
+body.sparkit-theme .hero-heading {
+	color: var(--sk-text);
+}
+
+/* "Next" scroll cue */
+body.sparkit-theme .goto-next,
+body.sparkit-theme .goto-next:before {
+	color: var(--sk-cyan);
+	border-color: var(--sk-cyan-soft);
+}
+
+/* ── SPARKIT hero card — native dark glass ── */
+body.sparkit-theme .sparkit-card {
+	display: block;
+	position: relative;
+	background: linear-gradient(155deg, rgba(17, 22, 28, 0.95) 0%, rgba(11, 14, 18, 0.95) 100%);
+	border: 1px solid var(--sk-line-2);
+	border-left: 2px solid var(--sk-cyan);
+	border-radius: 14px;
+	padding: 2.1rem 2.25rem;
+	box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+	backdrop-filter: blur(8px);
+	overflow: hidden;
+}
+
+body.sparkit-theme .sparkit-card::before {
+	content: "";
+	position: absolute;
+	top: -60px;
+	right: -60px;
+	width: 200px;
+	height: 200px;
+	background: radial-gradient(circle, rgba(34, 211, 238, 0.18) 0%, rgba(34, 211, 238, 0) 70%);
+	pointer-events: none;
+}
+
+body.sparkit-theme .sparkit-eyebrow {
+	font-family: var(--sk-mono);
+	font-size: 0.7rem;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--sk-cyan);
+	margin: 0 0 0.85rem 0;
+}
+
+body.sparkit-theme .sparkit-eyebrow::before {
+	content: "// ";
+	opacity: 0.6;
+}
+
+body.sparkit-theme .sparkit-wordmark {
+	font-family: var(--sk-display);
+	font-size: 1.7rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	color: var(--sk-text);
+	margin: 0 0 1rem 0;
+	line-height: 1;
+}
+
+body.sparkit-theme .sparkit-headline {
+	font-family: var(--sk-display);
+	font-size: 1.35rem;
+	font-weight: 600;
+	color: var(--sk-text);
+	margin: 0 0 0.8rem 0;
+	line-height: 1.3;
+}
+
+body.sparkit-theme .sparkit-positioning {
+	color: var(--sk-text-2);
+	font-size: 0.98rem;
+	margin: 0 0 1.6rem 0;
+	line-height: 1.6;
+	max-width: 56ch;
+}
+
+body.sparkit-theme .sparkit-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.25rem;
+	margin-top: 0.5rem;
+}
+
+body.sparkit-theme .sparkit-cta {
+	display: inline-block;
+	padding: 0.8rem 1.5rem;
+	background: var(--sk-cyan);
+	color: #06202a !important;
+	font-family: var(--sk-sans);
+	font-weight: 600;
+	font-size: 0.98rem;
+	text-decoration: none !important;
+	border-radius: 8px;
+	box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.4), var(--sk-glow);
+	transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+	border-bottom: none !important;
+}
+
+body.sparkit-theme .sparkit-cta:hover {
+	background: #67e8f9;
+	transform: translateY(-1px);
+	box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.6), 0 0 30px rgba(34, 211, 238, 0.3);
+	color: #06202a !important;
+}
+
+body.sparkit-theme .sparkit-cta:focus-visible {
+	outline: 2px solid var(--sk-cyan);
+	outline-offset: 3px;
+}
+
+body.sparkit-theme .sparkit-secondary {
+	font-family: var(--sk-mono);
+	font-size: 0.85rem;
+	letter-spacing: 0.04em;
+	color: var(--sk-text-2) !important;
+	text-decoration: none;
+	border-bottom: 1px solid transparent !important;
+	transition: color 180ms ease, border-color 180ms ease;
+}
+
+body.sparkit-theme .sparkit-secondary:hover {
+	color: var(--sk-cyan) !important;
+	border-bottom-color: var(--sk-cyan-soft) !important;
+}
+
+body.sparkit-theme .sparkit-secondary:focus-visible {
+	outline: 2px solid var(--sk-cyan);
+	outline-offset: 2px;
+	border-radius: 2px;
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320">
+  <style>
+    text { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; fill: #22d3ee; }
+  </style>
+  <g opacity="0.5" letter-spacing="6">
+    <text x="0"   y="20">0 1 0 0 1 / &lt; &gt; 1 0 = + 1 0 . :</text>
+    <text x="0"   y="52">A C G T &middot; &middot; { } 0 1 \ / 1 1 0 1</text>
+    <text x="0"   y="84">&gt; _ 1 0 1 1 0 + = &middot; T A C G 0 1</text>
+    <text x="0"   y="116">1 0 / \ &middot; : 0 1 1 0 &lt; &gt; 0 0 1 0</text>
+    <text x="0"   y="148">{ } 0 1 G C A T 1 / 0 1 &middot; &middot; 1 0</text>
+    <text x="0"   y="180">. : 1 0 1 + = 0 \ / 1 0 1 1 0 &gt; _</text>
+    <text x="0"   y="212">1 1 0 &lt; &gt; T A &middot; &middot; 0 1 G C 0 1 1</text>
+    <text x="0"   y="244">0 = + 1 0 1 / \ 1 0 { } &middot; : 0 1 0</text>
+    <text x="0"   y="276">C G T A 0 1 &middot; &middot; 1 0 &gt; _ 0 1 1 0</text>
+    <text x="0"   y="308">&middot; : 0 1 1 0 = + 0 1 \ / 1 0 A T 1</text>
+  </g>
+</svg>
