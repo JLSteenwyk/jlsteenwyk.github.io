@@ -8451,6 +8451,15 @@ body.sparkit-theme #header {
 	box-shadow: none;
 }
 
+/* Pin the nav bar flush to the very top on desktop. The base
+   #page-wrapper padding-top exists only to clear the fixed mobile
+   title bar; on desktop the in-flow header doesn't need it. */
+@media screen and (min-width: 737px) {
+	body.sparkit-theme #Top > #page-wrapper {
+		padding-top: 0;
+	}
+}
+
 body.sparkit-theme #header .nav-link {
 	color: var(--sk-text) !important;
 	font-family: var(--sk-mono);
