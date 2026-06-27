@@ -8132,96 +8132,170 @@ body.sparkit-theme .goto-next:before {
 body.sparkit-theme .sparkit-card {
 	display: block;
 	position: relative;
-	background: #ffffff;
+	text-align: left;
+	background:
+		radial-gradient(130% 90% at 100% 0%, rgba(232, 122, 9, 0.08) 0%, transparent 48%),
+		#ffffff;
 	border: 1px solid var(--sk-line);
-	border-left: 2px solid var(--sk-orange);
-	border-radius: 14px;
-	padding: 2.1rem 2.25rem;
-	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 16px 40px rgba(24, 24, 24, 0.07);
+	border-radius: 18px;
+	padding: 2.35rem 2.5rem;
+	box-shadow:
+		0 1px 2px rgba(24, 24, 24, 0.04),
+		0 18px 48px rgba(24, 24, 24, 0.09);
 	overflow: hidden;
+	transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
+body.sparkit-theme .sparkit-card:hover {
+	transform: translateY(-3px);
+	border-color: rgba(232, 122, 9, 0.32);
+	box-shadow:
+		0 1px 2px rgba(24, 24, 24, 0.05),
+		0 28px 64px rgba(24, 24, 24, 0.13);
+}
+
+/* Warm glow bleeding in from the top-right corner */
 body.sparkit-theme .sparkit-card::before {
 	content: "";
 	position: absolute;
-	top: -60px;
-	right: -60px;
-	width: 200px;
-	height: 200px;
-	background: radial-gradient(circle, rgba(232, 122, 9, 0.12) 0%, rgba(232, 122, 9, 0) 70%);
+	top: -70px;
+	right: -70px;
+	width: 220px;
+	height: 220px;
+	background: radial-gradient(circle, rgba(232, 122, 9, 0.16) 0%, rgba(232, 122, 9, 0) 70%);
 	pointer-events: none;
 }
 
+/* Gradient orange accent rail down the left edge */
+body.sparkit-theme .sparkit-card::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 22px;
+	bottom: 22px;
+	width: 3px;
+	background: linear-gradient(180deg, var(--sk-orange) 0%, #f5a623 45%, rgba(232, 122, 9, 0) 100%);
+	border-radius: 0 3px 3px 0;
+}
+
+/* Eyebrow with a pulsing "live" dot */
 body.sparkit-theme .sparkit-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55em;
 	font-family: var(--sk-mono);
 	font-size: 0.7rem;
 	font-weight: 500;
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
 	color: var(--sk-blue);
-	margin: 0 0 0.85rem 0;
+	margin: 0 0 1.05rem 0;
 }
 
 body.sparkit-theme .sparkit-eyebrow::before {
-	content: "// ";
-	opacity: 0.6;
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--sk-orange);
+	box-shadow: 0 0 0 0 rgba(232, 122, 9, 0.5);
+	animation: sparkit-pulse 2.4s ease-out infinite;
 }
 
+@keyframes sparkit-pulse {
+	0%   { box-shadow: 0 0 0 0 rgba(232, 122, 9, 0.5); }
+	70%  { box-shadow: 0 0 0 7px rgba(232, 122, 9, 0); }
+	100% { box-shadow: 0 0 0 0 rgba(232, 122, 9, 0); }
+}
+
+/* Wordmark with an orange spark, echoing the SPARKIT logo lockup */
 body.sparkit-theme .sparkit-wordmark {
+	display: flex;
+	align-items: center;
+	gap: 0.42em;
 	font-family: var(--sk-display);
-	font-size: 1.7rem;
-	font-weight: 700;
-	letter-spacing: 0.1em;
+	font-size: 1.85rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
 	color: var(--sk-ink);
-	margin: 0 0 1rem 0;
+	margin: 0 0 1.1rem 0;
 	line-height: 1;
+}
+
+body.sparkit-theme .sparkit-wordmark::before {
+	content: "";
+	flex: 0 0 auto;
+	width: 1.2em;
+	height: 1.2em;
+	background-image: url("images/sparkit-star.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body.sparkit-theme .sparkit-card:hover .sparkit-wordmark::before {
+	transform: rotate(90deg);
 }
 
 body.sparkit-theme .sparkit-headline {
 	font-family: var(--sk-display);
-	font-size: 1.35rem;
+	font-size: 1.4rem;
 	font-weight: 600;
 	color: var(--sk-ink);
-	margin: 0 0 0.8rem 0;
-	line-height: 1.3;
+	margin: 0 0 0.85rem 0;
+	line-height: 1.28;
+	letter-spacing: -0.01em;
+	text-align: left !important;
 }
 
 body.sparkit-theme .sparkit-positioning {
 	color: var(--sk-text-2);
 	font-size: 0.98rem;
-	margin: 0 0 1.6rem 0;
-	line-height: 1.6;
-	max-width: 56ch;
+	margin: 0 0 1.7rem 0;
+	line-height: 1.62;
+	max-width: 52ch;
 }
 
 body.sparkit-theme .sparkit-actions {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 1.25rem;
+	gap: 1.4rem;
 	margin-top: 0.5rem;
 }
 
 body.sparkit-theme .sparkit-cta {
-	display: inline-block;
-	padding: 0.8rem 1.5rem;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.82rem 1.55rem;
 	background: var(--sk-btn);
 	color: #ffffff !important;
 	font-family: var(--sk-sans);
 	font-weight: 600;
 	font-size: 0.98rem;
 	text-decoration: none !important;
-	border-radius: 8px;
-	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.12);
-	transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+	border-radius: 9px;
+	box-shadow: 0 1px 2px rgba(24, 24, 24, 0.16), 0 8px 18px rgba(24, 24, 24, 0.12);
+	transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
 	border-bottom: none !important;
+}
+
+body.sparkit-theme .sparkit-cta::after {
+	content: "\2192";
+	margin-left: 0.55em;
+	transition: transform 200ms ease;
 }
 
 body.sparkit-theme .sparkit-cta:hover {
 	background: var(--sk-btn-h);
-	transform: translateY(-1px);
-	box-shadow: 0 6px 16px rgba(24, 24, 24, 0.18);
+	transform: translateY(-2px);
+	box-shadow: 0 2px 4px rgba(24, 24, 24, 0.18), 0 14px 28px rgba(24, 24, 24, 0.2);
 	color: #ffffff !important;
+}
+
+body.sparkit-theme .sparkit-cta:hover::after {
+	transform: translateX(4px);
 }
 
 body.sparkit-theme .sparkit-cta:focus-visible {
@@ -8230,24 +8304,47 @@ body.sparkit-theme .sparkit-cta:focus-visible {
 }
 
 body.sparkit-theme .sparkit-secondary {
+	position: relative;
 	font-family: var(--sk-mono);
 	font-size: 0.85rem;
 	letter-spacing: 0.04em;
 	color: var(--sk-text-2) !important;
 	text-decoration: none;
-	border-bottom: 1px solid transparent !important;
-	transition: color 180ms ease, border-color 180ms ease;
+	border-bottom: none !important;
+	transition: color 180ms ease;
+}
+
+body.sparkit-theme .sparkit-secondary::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 1px;
+	background: var(--sk-blue);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.25s ease;
 }
 
 body.sparkit-theme .sparkit-secondary:hover {
 	color: var(--sk-blue) !important;
-	border-bottom-color: rgba(0, 103, 183, 0.4) !important;
+}
+
+body.sparkit-theme .sparkit-secondary:hover::after {
+	transform: scaleX(1);
 }
 
 body.sparkit-theme .sparkit-secondary:focus-visible {
 	outline: 2px solid var(--sk-blue);
 	outline-offset: 2px;
 	border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.sparkit-theme .sparkit-eyebrow::before { animation: none !important; }
+	body.sparkit-theme .sparkit-card:hover .sparkit-wordmark::before,
+	body.sparkit-theme .sparkit-cta:hover::after { transform: none !important; }
 }
 
 /* ============================================================
