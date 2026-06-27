@@ -8225,9 +8225,9 @@ body.sparkit-theme .sparkit-wordmark {
 body.sparkit-theme .sparkit-wordmark::before {
 	content: "";
 	flex: 0 0 auto;
-	width: 1.2em;
-	height: 1.2em;
-	background-image: url("images/sparkit-star.svg");
+	width: 1.3em;
+	height: 1.3em;
+	background-image: url("images/sparkit-star.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
