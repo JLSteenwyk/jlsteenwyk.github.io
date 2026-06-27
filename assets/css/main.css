@@ -8266,3 +8266,197 @@ body.sparkit-theme .sparkit-secondary:focus-visible {
 	outline-offset: 2px;
 	border-radius: 2px;
 }
+
+/* ============================================================
+   SPARKIT THEME — Commit 4: content cards, buttons, figures
+   CTA buttons, publication pills, figure framing, feature
+   highlights, form inputs and tables (dark, hairline, cyan).
+   ============================================================ */
+
+/* Content wrapper flows directly on the canvas (no boxed card) */
+body.sparkit-theme .wrapper {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+}
+
+/* CTA buttons */
+body.sparkit-theme .cta-button {
+	font-family: var(--sk-sans);
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	border-radius: 8px;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+body.sparkit-theme .cta-button.primary {
+	background: var(--sk-cyan);
+	color: #06202a !important;
+	border: 1px solid rgba(34, 211, 238, 0.5);
+	box-shadow: var(--sk-glow);
+}
+
+body.sparkit-theme .cta-button.primary:hover {
+	background: #67e8f9;
+	transform: translateY(-2px);
+	box-shadow: 0 0 30px rgba(34, 211, 238, 0.35);
+}
+
+body.sparkit-theme .cta-button.secondary {
+	background: rgba(56, 189, 248, 0.12);
+	color: var(--sk-blue) !important;
+	border: 1px solid rgba(56, 189, 248, 0.4);
+	box-shadow: none;
+}
+
+body.sparkit-theme .cta-button.secondary:hover {
+	background: rgba(56, 189, 248, 0.2);
+	border-color: var(--sk-blue);
+	transform: translateY(-2px);
+}
+
+body.sparkit-theme .cta-button.tertiary {
+	background: var(--sk-surface-2);
+	color: var(--sk-text) !important;
+	border: 1px solid var(--sk-line-2);
+	box-shadow: none;
+}
+
+body.sparkit-theme .cta-button.tertiary:hover {
+	background: #1d232b;
+	border-color: var(--sk-cyan-soft);
+	transform: translateY(-2px);
+}
+
+body.sparkit-theme .cta-button.quaternary {
+	background: transparent;
+	color: var(--sk-text) !important;
+	border: 1px solid var(--sk-line-2);
+	box-shadow: none;
+}
+
+body.sparkit-theme .cta-button.quaternary:hover {
+	background: rgba(255, 255, 255, 0.04);
+	border-color: var(--sk-cyan-soft);
+	transform: translateY(-2px);
+}
+
+/* Publication-link pills under research sections */
+body.sparkit-theme #ResearchInterests center a {
+	background: rgba(34, 211, 238, 0.06);
+	border: 1px solid rgba(34, 211, 238, 0.3);
+	border-bottom: 1px solid rgba(34, 211, 238, 0.3);
+	color: var(--sk-cyan) !important;
+	border-radius: 20px;
+	padding: 0.42em 1.05em;
+	font-family: var(--sk-mono);
+	font-size: 0.82em;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+	transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body.sparkit-theme #ResearchInterests center a:hover {
+	background: var(--sk-cyan);
+	color: #06202a !important;
+	border-color: var(--sk-cyan);
+	transform: translateY(-2px);
+	box-shadow: var(--sk-glow);
+}
+
+/* Figures — hairline framing that sits on the dark canvas */
+body.sparkit-theme .TextWrapRight,
+body.sparkit-theme .TextWrapLeft {
+	border-radius: 10px;
+	border: 1px solid var(--sk-line-2);
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+	transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+body.sparkit-theme .TextWrapRight:hover,
+body.sparkit-theme .TextWrapLeft:hover {
+	transform: scale(1.02) translateY(-3px);
+	border-color: var(--sk-cyan-soft);
+	box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5), var(--sk-glow);
+}
+
+/* Feature highlights */
+body.sparkit-theme .feature-highlight {
+	background: var(--sk-surface);
+	border: 1px solid var(--sk-line);
+	border-top: 2px solid var(--sk-cyan);
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+	border-radius: 12px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+body.sparkit-theme .feature-highlight:hover {
+	box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), var(--sk-glow);
+	transform: translateY(-6px);
+}
+
+body.sparkit-theme .feature-highlight h3 {
+	color: var(--sk-text);
+}
+
+body.sparkit-theme .feature-highlight .icon.major {
+	color: var(--sk-cyan);
+}
+
+/* Form inputs */
+body.sparkit-theme input[type="text"],
+body.sparkit-theme input[type="email"],
+body.sparkit-theme textarea,
+body.sparkit-theme select {
+	background: var(--sk-surface);
+	border: 1px solid var(--sk-line-2);
+	border-radius: 8px;
+	color: var(--sk-text);
+	padding: 12px 16px;
+	font-family: var(--sk-sans);
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.sparkit-theme input[type="text"]:focus,
+body.sparkit-theme input[type="email"]:focus,
+body.sparkit-theme textarea:focus,
+body.sparkit-theme select:focus {
+	border-color: var(--sk-cyan);
+	box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+	outline: none;
+}
+
+body.sparkit-theme input::placeholder,
+body.sparkit-theme textarea::placeholder {
+	color: var(--sk-text-3);
+}
+
+/* Tables */
+body.sparkit-theme table {
+	background: var(--sk-surface);
+	border: 1px solid var(--sk-line);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+body.sparkit-theme table th {
+	background: var(--sk-surface-2);
+	color: var(--sk-text);
+}
+
+body.sparkit-theme table tr:hover {
+	background: rgba(255, 255, 255, 0.03);
+}
+
+body.sparkit-theme pre,
+body.sparkit-theme pre code {
+	background: #0c0e12;
+	border: 1px solid var(--sk-line);
+	border-radius: 8px;
+	color: var(--sk-text);
+	font-family: var(--sk-mono);
+}
