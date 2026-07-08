@@ -1029,6 +1029,34 @@
 				observer.observe(card);
 			});
 		})();
+
+		// Align the "Journal Covers" sidebar heading with "Published" when the
+		// two columns sit side by side. Self-correcting on resize / details toggle.
+		(function() {
+			var sidebar = document.querySelector('#sidebar');
+			var content = document.querySelector('#content');
+			if (!sidebar || !content) return;
+			function findH3(root, text) {
+				return [].slice.call(root.querySelectorAll('h3')).filter(function(h) {
+					return h.textContent.trim().toLowerCase() === text;
+				})[0];
+			}
+			var published = findH3(content, 'published');
+			var journalCovers = findH3(sidebar, 'journal covers');
+			if (!published || !journalCovers) return;
+			function align() {
+				sidebar.style.marginTop = '';
+				// Skip when columns are stacked (mobile): sidebar sits below, not beside.
+				if (sidebar.getBoundingClientRect().left <= content.getBoundingClientRect().left + 10) return;
+				var delta = published.getBoundingClientRect().top - journalCovers.getBoundingClientRect().top;
+				if (delta > 0) sidebar.style.marginTop = delta + 'px';
+			}
+			align();
+			window.addEventListener('load', align);
+			window.addEventListener('resize', align);
+			var details = document.querySelector('details');
+			if (details) details.addEventListener('toggle', align);
+		})();
 		</script>
 
 		<!-- almetric script -->

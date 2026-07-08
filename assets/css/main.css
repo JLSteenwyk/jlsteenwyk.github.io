@@ -8341,6 +8341,11 @@ body.sparkit-theme .sparkit-secondary:focus-visible {
 	border-radius: 2px;
 }
 
+/* ── Publications — one empty line between entries ── */
+body.sparkit-theme .pub-card {
+	margin-bottom: 1.6rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	body.sparkit-theme .sparkit-eyebrow::before { animation: none !important; }
 	body.sparkit-theme .sparkit-card:hover .sparkit-wordmark::before,
