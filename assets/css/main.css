@@ -113,38 +113,9 @@ input, select, textarea {
 	white-space: nowrap;
 }
 
-.site-theme-select {
-	background: rgba(255, 255, 255, 0.12);
-	border: 1px solid rgba(255, 255, 255, 0.35);
-	border-radius: 18px;
-	color: #ffffff;
-	cursor: pointer;
-	font-size: 0.75em;
-	padding: 0.3rem 1.6rem 0.3rem 0.6rem;
-	transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.site-theme-select:hover,
-.site-theme-select:focus {
-	background: rgba(255, 255, 255, 0.22);
-	border-color: rgba(255, 255, 255, 0.55);
-	outline: none;
-}
-
-.site-theme-select option {
-	color: #1a365d;
-}
-
+/* The SPARKIT design is the only site theme; suppress legacy cached controls. */
 .theme-toggle-footer {
-	margin: 1.5em auto 0;
-	width: max-content;
-	opacity: 0.35;
-	transition: opacity var(--transition-fast);
-}
-
-.theme-toggle-footer:hover,
-.theme-toggle-footer:focus-within {
-	opacity: 0.9;
+	display: none !important;
 }
 
 /* Hero Section */
@@ -1224,34 +1195,6 @@ body.biophilic-theme #footer .icons a:hover:before {
 
 body.biophilic-theme #footer .copyright {
 	color: #6b7264;
-}
-
-/* Theme toggle */
-body.biophilic-theme .theme-toggle-footer {
-	opacity: 0.5;
-}
-
-body.biophilic-theme .theme-toggle-footer:hover,
-body.biophilic-theme .theme-toggle-footer:focus-within {
-	opacity: 0.95;
-}
-
-body.biophilic-theme .site-theme-select {
-	background: #ffffff;
-	border: 1px solid rgba(74,103,65,0.2);
-	border-radius: 18px;
-	color: #2c3029;
-	font-family: 'Source Sans 3', 'Inter', sans-serif;
-}
-
-body.biophilic-theme .site-theme-select option {
-	color: #2c3029;
-}
-
-body.biophilic-theme .site-theme-select:hover,
-body.biophilic-theme .site-theme-select:focus {
-	border-color: #4a6741;
-	box-shadow: 0 0 0 2px rgba(74,103,65,0.1);
 }
 
 /* Publication cards & items */
@@ -7748,8 +7691,8 @@ body.biophilic-theme .sparkit-card.revealed {
    headlines, an orange (#e87a09) brand accent with blue
    (#0067b7) monospace eyebrow labels, black buttons, white
    hairline cards, and a sparse orange ASCII accent.
-   Activated by body.sparkit-theme (set in assets/js/main.js).
-   Rollback: restore 'biophilic-theme' on that one line.
+   The body.sparkit-theme class is set directly in every page so this
+   design is the site's sole theme and does not depend on JavaScript.
    ============================================================ */
 
 body.sparkit-theme {
