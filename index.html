@@ -1,399 +1,89 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Jacob L. Steenwyk | Evolutionary Bioinformatics & Comparative Genomics</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Evolutionary biologist and bioinformatician Jacob L. Steenwyk leads comparative genomics, fungal pathogenesis research, and open-source software development." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Jacob L. Steenwyk | Evolutionary Biologist &amp; Bioinformatician</title>
+		<meta name="description" content="Jacob L. Steenwyk studies genome evolution, fungal biology, and phylogenomics while building open-source tools for biological discovery." />
 		<meta name="author" content="Jacob L. Steenwyk" />
+		<meta name="theme-color" content="#e9e7df" />
 		<link rel="canonical" href="https://jlsteenwyk.com/" />
 		<meta property="og:site_name" content="Jacob L. Steenwyk" />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Jacob L. Steenwyk | Evolutionary Bioinformatics & Comparative Genomics" />
-		<meta property="og:description" content="Evolutionary biologist and bioinformatician Jacob L. Steenwyk leads comparative genomics, fungal pathogenesis research, and open-source software development." />
+		<meta property="og:title" content="Jacob L. Steenwyk | Evolutionary Biologist &amp; Bioinformatician" />
+		<meta property="og:description" content="Genome evolution, fungal biology, phylogenomics, and open-source scientific software." />
 		<meta property="og:url" content="https://jlsteenwyk.com/" />
 		<meta property="og:image" content="https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg" />
-		<meta property="og:image:alt" content="Portrait of evolutionary biologist Jacob L. Steenwyk" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Jacob L. Steenwyk | Evolutionary Bioinformatics & Comparative Genomics" />
-		<meta name="twitter:description" content="Comparative genomics, fungal pathogenesis, and open-source bioinformatics software from Jacob L. Steenwyk." />
-		<meta name="twitter:image" content="https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg" />
-		<!-- Sparkit theme fonts: Geist (display + body), Geist Mono (labels) -->
+		<link rel="icon" href="images/website_flavicon_network.png" />
+		<script>
+			try {
+				const savedTheme = localStorage.getItem('jlsteenwyk-minimal-theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+			} catch (error) {}
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/website_flavicon_network.png">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104875636-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-104875636-1');
-		</script>
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/home-minimal.css" />
+		<script defer src="assets/js/home-minimal.js"></script>
 		<script type="application/ld+json">
 		{
-		  "@context": "https://schema.org",
-		  "@type": "Person",
-		  "name": "Jacob L. Steenwyk",
-		  "jobTitle": "Evolutionary Biologist & Bioinformatician",
-		  "description": "Jacob L. Steenwyk researches comparative genomics, fungal pathogenesis, and develops open-source evolutionary biology software.",
-		  "url": "https://jlsteenwyk.com/",
-		  "image": "https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg",
-		  "affiliation": {
-		    "@type": "CollegeOrUniversity",
-		    "name": "University of California, Berkeley"
-		  },
-		  "sameAs": [
-		    "https://scholar.google.com/citations?user=VXV2j6gAAAAJ",
-		    "https://github.com/JLSteenwyk",
-		    "https://bsky.app/profile/jlsteenwyk.bsky.social",
-		    "https://www.linkedin.com/in/jlsteenwyk/"
-		  ]
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Jacob L. Steenwyk",
+			"jobTitle": "Evolutionary Biologist and Bioinformatician",
+			"url": "https://jlsteenwyk.com/",
+			"image": "https://jlsteenwyk.com/images/Jacob_Steenwyk.jpg",
+			"affiliation": { "@type": "CollegeOrUniversity", "name": "University of California, Berkeley" },
+			"sameAs": [
+				"https://scholar.google.com/citations?user=VXV2j6gAAAAJ",
+				"https://github.com/JLSteenwyk",
+				"https://www.linkedin.com/in/jlsteenwyk/"
+			]
 		}
 		</script>
 	</head>
-	<body class="sparkit-theme is-preload page-home">
-		<article id="Top">
-			<div id="page-wrapper">
-			<!-- Header -->
-				<header id="header">
-					<!-- <div id="logo"><a href="index.html">Jacob L. Steenwyk</a></div> -->
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html#content" class="nav-link">About</a></li>
-							<!-- <li><a href="blog/index.html#content" style="color: white">Blog</a></li> -->
-							<li><a href="publications.html" class="nav-link">Publications</a></li>
-							<li><a href="news.html" class="nav-link">News</a></li>
-							<!--
-<!-- Arts navigation temporarily hidden
+	<body>
+		<div class="ambient" aria-hidden="true"></div>
 
-							<li>
-								<a href="arts.html" class="nav-link">Arts</a>
-								<ul>
-									<li><a href="sciart.html" class="nav-link">SciArt Shop</a></li>
-									
-									<li><a href="arts_visual.html" class="nav-link">Visual</a></li>
-									<li><a href="arts_music.html" class="nav-link">Music</a></li>
-									<li><a href="arts_poetry.html" class="nav-link">Poetry</a></li>
-								</ul>
-							</li>
-<!-- End arts navigation -->
-							<li><a href="software.html" class="nav-link">Software</a></li>
-							<li><a href="curriculum_vitae.html" class="nav-link">CV</a></li>
-							<!-- <li><a href="evo_goodreads/index.html" alt="index.html" style="color: white">Evo GoodReads</a>
-								<ul>
-									<li><a href="evo_goodreads/evogoodreads_archive.html" style="color: white">2021 archive</a></li>
-								</ul>
-							</li> -->
-							<!-- <li>
-								<a href="genomely.html" class="nav-link">Genomely
-								<ul>
-									<li><a href="genomely.html" class="nav-link">What is Genomely?</a></li>
-									<li><a href="https://genomelybio.com" target="_blank" class="nav-link">Home</a></li>
-									<li><a href="https://genomely.substack.com" target="_blank" class="nav-link">Blog</a></li>
-									<li><a href="https://clipkit.genomelybio.com/#/" target="_blank" class="nav-link">ClipKIT browser</a></li>
-								</ul>
-							</li> -->
-							<li><a href="resources.html" class="nav-link">Resources</a></li>
-							<li><a href="contact.html" class="nav-link">Contact</a></li>
-						</ul>
+		<button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+			<svg class="moon" aria-hidden="true" viewBox="0 0 24 24">
+				<path d="M20.3 15.1A8.5 8.5 0 0 1 8.9 3.7 8.5 8.5 0 1 0 20.3 15Z" />
+			</svg>
+			<svg class="sun" aria-hidden="true" viewBox="0 0 24 24">
+				<circle cx="12" cy="12" r="4" />
+				<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+			</svg>
+		</button>
+
+		<main class="page-shell">
+			<section class="identity" aria-labelledby="site-title">
+				<div class="title-row">
+					<h1 id="site-title">Jacob L. Steenwyk</h1>
+					<nav class="social-links" aria-label="Social profiles">
+						<a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&amp;hl=en" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+							<svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 9.5 7L12 17 2.5 10 12 3Z"/><path d="M6.5 13.2V18c2.9 2.2 8.1 2.2 11 0v-4.8"/><path d="M21.5 10v6"/></svg>
+						</a>
+						<a href="https://github.com/JLSteenwyk" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+							<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2.8a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1 1.6 1 .9 1.6 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.3-.3-4.7-1.1-4.7-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.7 9.7 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.8-2.4 4.7-4.7 5 .4.3.7 1 .7 1.9v2.8c0 .4.2.6.7.5A9.5 9.5 0 0 0 12 2.8Z"/></svg>
+						</a>
+						<a href="https://www.linkedin.com/in/jlsteenwyk/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+							<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.4 8.2H2.2V21h3.2V8.2ZM3.8 3A1.9 1.9 0 1 0 3.8 6.8 1.9 1.9 0 0 0 3.8 3ZM21.8 13.6c0-3.9-2.1-5.7-4.9-5.7a4.3 4.3 0 0 0-3.8 2.1V8.2H9.9V21h3.2v-6.3c0-1.7.3-3.3 2.4-3.3s2.1 1.9 2.1 3.4V21h3.2l1-7.4Z"/></svg>
+						</a>
+						<a href="contact.html" aria-label="Contact Jacob">
+							<svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+						</a>
 					</nav>
-				</header>
-
-			<!-- Banner -->
-				<section id="banner">
-					<div class="biophilic-orbs" aria-hidden="true">
-						<span></span><span></span><span></span><span></span>
-						<span></span><span></span><span></span><span></span>
-						<span></span><span></span><span></span><span></span>
-					</div>
-					<div class="hero-aurora" aria-hidden="true">
-						<span class="aurora ribbon-one"></span>
-						<span class="aurora ribbon-two"></span>
-						<span class="aurora ribbon-three"></span>
-					</div>
-					<div class="hero-inner hero-inner--unified">
-						<div class="portrait-frame">
-							<img src="images/17225603.jpeg" alt="Portrait of Jacob L. Steenwyk" />
-							<h3>Jacob L. Steenwyk, Ph.D.</h3>
-							<h2 class="hero-tagline typewriter" id="typewriter-text"></h2>
-						</div>
-						<aside id="sparkit-card" class="sparkit-card sparkit-card--hero" aria-labelledby="sparkit-headline">
-							<p class="sparkit-eyebrow">Latest project</p>
-							<p class="sparkit-wordmark" aria-hidden="true">SPARKIT</p>
-							<h3 id="sparkit-headline" class="sparkit-headline">One API call. Hours of research, delivered in two minutes.</h3>
-							<p class="sparkit-positioning">An AI research agent that reads the literature, runs the analyses, and cites every claim — built for scientists in biotech, medicine, and chemistry.</p>
-							<div class="sparkit-actions">
-								<a class="sparkit-cta" href="https://sparkit.science/?utm_source=jlsteenwyk&amp;utm_medium=homepage&amp;utm_campaign=hero_card_primary" aria-label="Try SPARKIT — opens sparkit.science">Try SPARKIT</a>
-								<a class="sparkit-secondary" href="https://sparkit.science/docs?utm_source=jlsteenwyk&amp;utm_medium=homepage&amp;utm_campaign=hero_card_secondary">View docs</a>
-							</div>
-						</aside>
-					</div>
-						<a href="#content" class="goto-next scrolly">Next</a>
-					</section>
-			</article>
-		</div>
-		
-		<!-- Content -->
-		<section id="content">
-			<div id="page-wrapper">
-				<div id="main" class="wrapper style1">
-					<div class="container">
-						<!-- <center>
-							<div class="row gtr-50 gtr-uniform">
-								<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/Jacob_Steenwyk.jpg" alt="" /></span></div>
-								<div class="col-4 col-6-xsmall"><h2><span class="image fit"><img src="images/tempo_of_evolution.png" alt="" /></span></div>
-								<div class="col-4 col-6-xsmall"><h2><br />HHMI Gilliam fellow studying the tempo of rapid genome evolution in fungi</h2></div>
-							</div>
-							
-							<br />
-						</center> -->
-					<header class="major">
-						<h2>About</h2>
-					</header>
-						<p>
-									I'm an evolutionary biologist and bioinformatician investigating how genomes evolve and function, with a particular focus on animals and fungi. My 
-									<a href="#ResearchInterests">research</a> explores the evolutionary mechanisms that drive fungal pathogenicity—work that directly impacts our ability to 
-									identify, prevent, and combat fungal infections. By studying the genetic foundations of traits across diverse fungal species, I aim to decode the 
-									fundamental principles governing genome evolution.
-									<br /><br />
-									Beyond research, I develop computational tools that empower biological discovery. My <a href="https://jlsteenwyk.com/software.html">software</a>
-									includes <a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a> and <a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a>, which streamline phylogenomic
-									analysis and help researchers conduct more precise evolutionary studies. These tools have been adopted by research groups worldwide, enabling faster and
-									more accurate scientific discoveries. My latest project, <a href="https://sparkit.science/?utm_source=jlsteenwyk&amp;utm_medium=homepage&amp;utm_campaign=about_inline">SPARKIT</a>, is an AI research agent that delivers cited literature reviews in minutes — built for scientists in biotech, medicine, and chemistry.
-									<br /><br />
-									Collaboration drives everything I do. The most meaningful scientific breakthroughs happen when diverse minds work together, combining complementary 
-									expertise and perspectives. I'm always excited to explore new partnerships—if you're interested in working together, please 
-									<a href="contact.html">reach out</a>.
-									<br /><br />
-									Science belongs to everyone. I'm passionate about promoting diversity, equity, and inclusion in STEM through community engagement and accessible science 
-									communication. One way I do this is through <a href="https://genomely.substack.com/">Genomely: where genomics and evolution converge</a>—a newsletter 
-									that makes cutting-edge genomics research accessible to everyone. Join thousands of subscribers exploring the fascinating world of genomes and evolution!
-								</p>
-								<!-- <div class="newsletter-signup">
-									<div class="responsive-embed">
-										<iframe src="https://genomely.substack.com/embed" title="Subscribe to the Genomely newsletter" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-									</div>
-								</div> -->
-
-
-								<hr>
-
-								<section id="ResearchInterests">
-									<h2>Research Interests</h2>
-									<h3>Genome Evolution and Function</h3>
-									<p>
-										<img class="TextWrapRight genome-evolution-image" src="about_images/diversity_of_yeasts.jpg" alt="about_images/diversity_of_yeasts.jpg">
-											How do genomes evolve and function? This fundamental question drives my research into the Saccharomycotina subphylum of yeasts—one of 
-											nature's most remarkably diverse groups. Budding yeast diversity rivals that of animals and plants combined (see figure from 
-											<a href="publication_pdfs/2018_Shen_et_al_Cell.pdf">Shen <i>et al.</i> 2018, Cell</a>), making them ideal for studying evolutionary principles.
-											Through the <a href="https://y1000plus.wei.wisc.edu/">Y1000+</a> initiative, we're sequencing and analyzing over 1,000 budding yeast species,
-											revealing insights into genome evolution across 400 million years.
-											<br /><br />
-											Our discoveries challenge conventional wisdom. We've shown that genetic networks inferred from evolutionary data capture conserved cellular 
-											architecture and genome function (<a href="publication_pdfs/2022_Steenwyk_etal_Science_Advances.pdf">Steenwyk <i>et al.</i> 2022, Science Advances</a>). 
-											Even more surprising, <i>Hanseniaspora</i> yeasts have lost numerous cell cycle and DNA repair genes once thought essential to all life 
-											(<a href="publication_pdfs/2019_Steenwyk_et_al_PLoS_Biology.pdf">Steenwyk <i>et al.</i> 2019, PLOS Biology</a>). These findings reveal 
-											that genomes are far more dynamic and adaptable than previously imagined.
-										<center>
-											Representative publications:<br />
-											<a href="publication_pdfs/2022_Steenwyk_etal_Science_Advances.pdf">Steenwyk <i>et al.</i> (2022) Science Advances</a>
-											<a href="publication_pdfs/2019_Steenwyk_et_al_PLoS_Biology.pdf">Steenwyk <i>et al.</i> (2019) PLOS Biology</a>
-											<a href="publication_pdfs/2017_Steenwyk_and_Rokas_G3.pdf">Steenwyk & Rokas (2016) G3</a>
-										</center>
-									</p>
-									
-									<h3>Fungal Pathogenicity</h3>
-									<p>
-										<img class="TextWrapLeft" src="about_images/hybrids_graphical_abstract.jpg" alt="about_images/hybrids_graphical_abstract.jpg">
-											What transforms a harmless microbe into a deadly pathogen? Filamentous fungi like <i>Aspergillus</i> and <i>Candida</i> exemplify this paradox—
-											while some species threaten human and plant health, others produce life-saving pharmaceuticals like penicillin. Understanding their evolutionary 
-											histories reveals the molecular switches between harm and help.
-											<br /><br />
-											Our research has uncovered unexpected mechanisms driving fungal pathogen evolution. We discovered that <i>Aspergillus latus</i> originated through 
-											allodiploid hybridization, maintaining genome content from both parental species (see figure from 
-											<a href="publication_pdfs/2020_Steenwyk_and_Lind_et_al_Current_Biology.pdf">Steenwyk, Lind <i>et al.</i> 2020, Current Biology</a>). 
-											These hybrid pathogens showed unique traits distinct from their parents, suggesting hybridization as a key innovation in pathogen evolution. 
-											Even more intriguingly, we found that supposedly "harmless" <i>Aspergillus</i> species carry virulence genes and display pathogen-like behaviors 
-											(<a href="publication_pdfs/2020_Steenwyk_etal_Genetics.pdf">Steenwyk <i>et al.</i> 2020, Genetics</a>). This discovery challenges our fundamental 
-											understanding: what truly makes a pathogen?
-										<center>
-											Representative publications:<br />
-											<a href="publication_pdfs/2024_Steenwyk_etal_Nature_Communications.pdf">Steenwyk <i>et al.</i> (2024) Nature Communications</a>
-											<a href="publication_pdfs/2023_Steenwyk_etal_PLOS_Pathogens.pdf">Steenwyk <i>et al.</i> (2023) PLOS Pathogens</a>
-											<a href="publication_pdfs/2020_Steenwyk_and_Lind_et_al_Current_Biology.pdf">Steenwyk, Lind <i>et al.</i> (2020) Current Biology</a>
-										</center>
-									</p>
-
-
-									<h3>Phylogenomics</h3>
-									<p>
-										<img class="TextWrapRight" src="about_images/fungal_phylogeny.jpeg" alt="">
-											The tree of life tells the story of evolution—but reading that story requires sophisticated methods and careful interpretation. My phylogenomic 
-											research reconstructs evolutionary relationships among species, genes, and biological entities, providing the essential framework for understanding 
-											how life diversified. We've mapped fungal evolutionary history (see figure from 
-											<a href="publication_pdfs/2021_Li_etal_Current_Biology.pdf">Li <i>et al.</i> 2021, Current Biology</a>) and developed novel analytical methods 
-											(<a href="publication_pdfs/2021_Shen_etal_Systematic_biology.pdf">Shen <i>et al.</i> 2021, Systematic Biology</a>) that advance the field's capabilities.
-											<br /><br />
-											One of our most significant contributions addresses a persistent challenge: phylogenetic incongruence, where different datasets yield conflicting 
-											evolutionary hypotheses. Through comprehensive analysis and synthesis, we've characterized this phenomenon and proposed solutions 
-											(<a href="publication_pdfs/2023_Steenwyk_etal_Nature_Reviews_Genetics.pdf">Steenwyk <i>et al.</i> 2023, Nature Reviews Genetics</a>). 
-											Our work also places evolutionary events in deep time, revealing when major lineages arose across hundreds of millions of years 
-											(<a href="publication_pdfs/2019_Steenwyk_et_al_mBio.pdf">Steenwyk <i>et al.</i> 2019, mBio</a>). These temporal frameworks are crucial 
-											for understanding how evolutionary processes unfold across geological timescales.
-
-										<center>
-											Representative publications:<br />
-											<a href="publication_pdfs/2023_Steenwyk_etal_Nature_Reviews_Genetics.pdf">Steenwyk <i>et al.</i> (2023) Nature Reviews Genetics</a>
-											<a href="publication_pdfs/2021_Shen_etal_Systematic_biology.pdf">Shen <i>et al.</i> (2021) Systematic Biology</a><br />
-											<a href="publication_pdfs/2021_Li_etal_Current_Biology.pdf">Li <i>et al.</i> (2021) Current Biology</a>
-										</center>
-									</p>
-
-									<h3>Development of Computational Tools</h3>
-									<p>
-										<img class="TextWrapLeft" src="about_images/clipkit_performance.jpg" alt="about_images/about_images/clipkit_performance.jpg">
-											Modern biology is computational biology. Recognizing that researchers need powerful, accessible tools to unlock biological insights, I develop 
-											software that transforms how scientists analyze evolutionary data. My flagship tool, <a href="https://jlsteenwyk.com/ClipKIT/">ClipKIT</a>, 
-											revolutionizes alignment trimming by intelligently retaining phylogenetically informative sites while removing noise. In rigorous testing across 
-											~140,000 alignments, ClipKIT consistently outperformed existing methods (see figure from 
-											<a href="publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf">Steenwyk <i>et al.</i> 2020, PLOS Biology</a>; 
-											<a href="https://clipkit.genomelybio.com/">browser application</a>).
-											<br /><br />
-											<a href="https://jlsteenwyk.com/PhyKIT/">PhyKIT</a> serves as the Swiss Army knife of phylogenomics, enabling researchers to assess data quality, 
-											screen gene function, and detect rapid evolutionary events 
-											(<a href="publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf">Steenwyk <i>et al.</i> 2021, Bioinformatics</a>). These tools have been adopted 
-											by hundreds of research groups worldwide, accelerating discoveries across evolutionary biology. My complete software portfolio is available on the 
-											<a href="software.html">software page</a>.
-										<center>
-											Representative publications:<br />
-											<a href="publication_pdfs/2022_Steenwyk_etal_PLoS_Biology.pdf">Steenwyk <i>et al.</i> (2022) PLOS Biology</a>
-											<a href="publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf">Steenwyk <i>et al.</i> (2021) Bioinformatics</a>
-											<a href="publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf">Steenwyk <i>et al.</i> (2020) PLOS Biology</a>
-										</center>
-									</p>
-
-									<!-- <center>
-										<iframe src="https://genomely.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-									</center> -->
-									<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
-								</section>
-							</section>
-						</div>
-					</div>
 				</div>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://twitter.com/jlsteenwyk" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://scholar.google.com/citations?user=VXV2j6gAAAAJ&hl=en" class="icon brands alt fa-google"><span class="label">Google</span></a></li>
-						<li><a href="https://www.researchgate.net/profile/Jacob_Steenwyk" class="icon brands alt fa-researchgate"><span class="label">ResearchGate</span></a></li>
-						<li><a href="https://github.com/JLSteenwyk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://www.linkedin.com/in/jlsteenwyk/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="contact.html" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; <span class="current-year"></span> Jacob L. Steenwyk</li>
-					</ul>
-				</footer>
-			</article>	
-		</div>
+				<div class="rule"></div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-			<!-- Morphing Text & Scroll Animations -->
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					/* -- Morphing Text Effect -- */
-					var phrases = [
-						"Evolutionary Bioinformatics",
-						"Computational Genomics",
-						"AI/ML for Biology",
-						"AI Research Agents",
-						"Scientific AI Evaluations",
-						"Software Engineering"
-					];
-
-					var container = document.getElementById('typewriter-text');
-					var currentIndex = 0;
-
-					var morphSpan = document.createElement('span');
-					morphSpan.className = 'morph-text';
-					morphSpan.textContent = phrases[0];
-					container.appendChild(morphSpan);
-
-					function morphToNext() {
-						morphSpan.classList.add('morph-out');
-						setTimeout(function() {
-							currentIndex = (currentIndex + 1) % phrases.length;
-							morphSpan.textContent = phrases[currentIndex];
-							morphSpan.classList.remove('morph-out');
-							morphSpan.classList.add('morph-in');
-							morphSpan.offsetHeight;
-							morphSpan.classList.remove('morph-in');
-						}, 520);
-					}
-
-					setTimeout(function() {
-						setInterval(morphToNext, 3200);
-					}, 2500);
-
-					/* -- Cursor-Reactive Parallax on Orbs -- */
-					var banner = document.getElementById('banner');
-					if (banner) {
-						var orbs = banner.querySelectorAll('.biophilic-orbs span');
-						if (orbs.length) {
-							banner.addEventListener('mousemove', function(e) {
-								var rect = banner.getBoundingClientRect();
-								var cx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-								var cy = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-								for (var i = 0; i < orbs.length; i++) {
-									var depth = 0.25 + (i % 4) * 0.25;
-									orbs[i].style.translate = (cx * 14 * depth) + 'px ' + (cy * 10 * depth) + 'px';
-								}
-							});
-							banner.addEventListener('mouseleave', function() {
-								for (var i = 0; i < orbs.length; i++) {
-									orbs[i].style.translate = '0px 0px';
-								}
-							});
-						}
-					}
-
-					/* -- Scroll-Reveal for Research Sections & Images -- */
-					var revealEls = document.querySelectorAll(
-						'#ResearchInterests h3, #ResearchInterests > p, #ResearchInterests p, ' +
-						'#ResearchInterests .TextWrapRight, #ResearchInterests .TextWrapLeft, ' +
-						'.sparkit-card'
-					);
-					if (revealEls.length && 'IntersectionObserver' in window) {
-						var revealObserver = new IntersectionObserver(function(entries) {
-							entries.forEach(function(entry) {
-								if (entry.isIntersecting) {
-									entry.target.classList.add('revealed');
-									revealObserver.unobserve(entry.target);
-								}
-							});
-						}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-						revealEls.forEach(function(el) { revealObserver.observe(el); });
-					} else {
-						revealEls.forEach(function(el) { el.classList.add('revealed'); });
-					}
-				});
-			</script>
-
+				<div class="descriptor">
+					<p>AI for Biology <span aria-hidden="true">·</span> Evaluations <span aria-hidden="true">·</span> Agent Engineering</p>
+					<p>Berkeley, CA</p>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
