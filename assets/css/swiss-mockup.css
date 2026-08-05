@@ -77,14 +77,6 @@ h1 {
 	background: var(--ink);
 }
 
-.positioning {
-	margin: 0;
-	font-size: clamp(1rem, 1.4vw, 1.28rem);
-	font-weight: 500;
-	letter-spacing: -0.025em;
-	line-height: 1.24;
-}
-
 .social-links {
 	display: flex;
 	align-items: center;
