@@ -85,28 +85,22 @@
 								<!-- Content -->
 									<section id="content">
 										<br />
-										<section id="Submitted">
-											<details>
-											<summary>
-												Click here for Submitted articles 
-											</summary>
-											<br />
-											<h3>Submitted</h3>
+										<section id="Published">
+											<h3>Publications</h3>
 											<div class="pub-card">
-											1. Cao, X.*, C. Liu*, D. Liu*, <strong>J.L. Steenwyk</strong>, X. Zhong, Y. Wang, H. Liu, Y. Wang, Q. Zhang, X.-X. Shen, Z. Qu^, & Y. Li^ (2025).
+											101. Zhang, Q., H. Liu, <strong>J.L. Steenwyk</strong>, B. Feng, X. Tian, X. Zhou, X.-X. Shen, X. Cao, Z. Qu, &amp; Y. Li.
+											Site Subsampling Based on Posterior Mean Site Frequency Improves Phylogenomic Estimation Accuracy.
+											<strong><i>Submitted.</i></strong>
+											</div>
+
+											<div class="pub-card">
+											100. Cao, X.*, C. Liu*, D. Liu*, <strong>J.L. Steenwyk</strong>, X. Zhong, Y. Wang, H. Liu, Y. Wang, Q. Zhang, X.-X. Shen, Z. Qu^, & Y. Li^.
 											The evolution and function of eukaryote-to-cyanobacteria horizontal gene transfer.
 											<strong><i>Submitted.</i></strong>
 											<!-- <span class="__dimensions_badge_embed__" data-doi="10.1101/2025.03.15.643480" data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 											<div data-badge-type="4" data-doi="doi: 10.1101/2025.03.15.643480" data-hide-no-mentions="true" data-badge-popover='right' class="altmetric-embed" data-hide-less-than="20"></div> -->
 											</div>
 
-											<center><a href="#Top" class="goto-pub scrolly">Top of page</a></center>
-										<hr>
-										</section>
-										</details>
-										<br />
-										<section id="Published">
-											<h3>Published</h3>
 											<div class="pub-card">
 											99. <strong>Steenwyk, J.L.</strong> (2026).
 											<a href="https://www.preprints.org/manuscript/202608.2226">Epistemic State Representations in Large Language Models.</a>
@@ -1046,8 +1040,8 @@
 			});
 		})();
 
-		// Align the "Journal Covers" sidebar heading with "Published" when the
-		// two columns sit side by side. Self-correcting on resize / details toggle.
+		// Align the "Journal Covers" sidebar heading with "Publications" when the
+		// two columns sit side by side. Self-correcting on resize.
 		(function() {
 			var sidebar = document.querySelector('#sidebar');
 			var content = document.querySelector('#content');
@@ -1057,7 +1051,7 @@
 					return h.textContent.trim().toLowerCase() === text;
 				})[0];
 			}
-			var published = findH3(content, 'published');
+			var published = findH3(content, 'publications');
 			var journalCovers = findH3(sidebar, 'journal covers');
 			if (!published || !journalCovers) return;
 			function align() {
@@ -1070,8 +1064,6 @@
 			align();
 			window.addEventListener('load', align);
 			window.addEventListener('resize', align);
-			var details = document.querySelector('details');
-			if (details) details.addEventListener('toggle', align);
 		})();
 		</script>
 
