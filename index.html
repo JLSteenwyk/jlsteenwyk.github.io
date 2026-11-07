@@ -119,9 +119,9 @@
 					</div>
 					<div class="hero-inner hero-inner--unified">
 						<div class="portrait-frame">
-							<img loading="eager" decoding="async" width="460" height="460" src="images/17225603.jpeg" alt="Portrait of Jacob L. Steenwyk" />
+							<img fetchpriority="high" loading="eager" decoding="async" width="460" height="460" src="images/17225603.jpeg" alt="Portrait of Jacob L. Steenwyk" />
 							<h3>Jacob L. Steenwyk, Ph.D.</h3>
-							<h2 class="hero-tagline typewriter" id="typewriter-text"></h2>
+							<h2 class="hero-tagline typewriter" id="typewriter-text"><span class="morph-text">Evolutionary Bioinformatics</span></h2>
 						</div>
 					</div>
 						<a href="#content" class="goto-next scrolly">Next</a>
@@ -294,92 +294,12 @@
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<!-- Morphing Text & Scroll Animations -->
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					/* -- Morphing Text Effect -- */
-					var phrases = [
-						"Evolutionary Bioinformatics",
-						"Computational Genomics",
-						"AI/ML for Biology",
-						"AI Research Agents",
-						"Scientific AI Evaluations",
-						"Software Engineering"
-					];
-
-					var container = document.getElementById('typewriter-text');
-					var currentIndex = 0;
-
-					var morphSpan = document.createElement('span');
-					morphSpan.className = 'morph-text';
-					morphSpan.textContent = phrases[0];
-					container.appendChild(morphSpan);
-
-					function morphToNext() {
-						morphSpan.classList.add('morph-out');
-						setTimeout(function() {
-							currentIndex = (currentIndex + 1) % phrases.length;
-							morphSpan.textContent = phrases[currentIndex];
-							morphSpan.classList.remove('morph-out');
-							morphSpan.classList.add('morph-in');
-							morphSpan.offsetHeight;
-							morphSpan.classList.remove('morph-in');
-						}, 520);
-					}
-
-					setTimeout(function() {
-						setInterval(morphToNext, 3200);
-					}, 2500);
-
-					/* -- Cursor-Reactive Parallax on Orbs -- */
-					var banner = document.getElementById('banner');
-					if (banner) {
-						var orbs = banner.querySelectorAll('.biophilic-orbs span');
-						if (orbs.length) {
-							banner.addEventListener('mousemove', function(e) {
-								var rect = banner.getBoundingClientRect();
-								var cx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-								var cy = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-								for (var i = 0; i < orbs.length; i++) {
-									var depth = 0.25 + (i % 4) * 0.25;
-									orbs[i].style.translate = (cx * 14 * depth) + 'px ' + (cy * 10 * depth) + 'px';
-								}
-							});
-							banner.addEventListener('mouseleave', function() {
-								for (var i = 0; i < orbs.length; i++) {
-									orbs[i].style.translate = '0px 0px';
-								}
-							});
-						}
-					}
-
-					/* -- Scroll-Reveal for Research Sections & Images -- */
-					var revealEls = document.querySelectorAll(
-						'#ResearchInterests h3, #ResearchInterests > p, #ResearchInterests p, ' +
-						'#ResearchInterests .TextWrapRight, #ResearchInterests .TextWrapLeft'
-					);
-					if (revealEls.length && 'IntersectionObserver' in window) {
-						var revealObserver = new IntersectionObserver(function(entries) {
-							entries.forEach(function(entry) {
-								if (entry.isIntersecting) {
-									entry.target.classList.add('revealed');
-									revealObserver.unobserve(entry.target);
-								}
-							});
-						}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-						revealEls.forEach(function(el) { revealObserver.observe(el); });
-					} else {
-						revealEls.forEach(function(el) { el.classList.add('revealed'); });
-					}
-				});
-			</script>
+			<script defer src="assets/js/home-effects.js"></script>
 
 	</body>
 </html>

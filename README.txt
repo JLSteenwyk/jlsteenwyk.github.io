@@ -38,7 +38,8 @@ Website asset maintenance
 Install development tools with `npm ci`. After editing assets/css/main.css,
 run `npm run build:css` and commit both the readable source and main.min.css.
 HTML pages load main.min.css; the HTML5 UP license notice is preserved.
-Run `npm test` for the citation widget loader checks.
+Run `npm test` for citation widgets, mobile navigation, dropdowns, anchor
+scrolling, and reduced-motion/offscreen animation checks. Use Node.js 24 or later.
 
 Responsive image previews live in assets/images/optimized. Full-resolution
 originals are retained. Run `python scripts/optimize-images.py` with Pillow

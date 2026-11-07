@@ -7,7 +7,7 @@
 	$.fn.navList = function() {
 
 		var	$this = $(this);
-			$a = $this.find('a'),
+			$a = $this.find('li > a'),
 			b = [];
 
 		$a.each(function() {

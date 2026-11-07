@@ -37,12 +37,12 @@
 			$body.addClass('is-touch');
 
 	// Scrolly links.
-		$('.scrolly').scrolly({
+		if ($.fn.scrolly) $('.scrolly').scrolly({
 			speed: 2000
 		});
 
 	// Dropdowns.
-		$('#nav > ul').dropotron({
+		if ($.fn.dropotron && $('#nav > ul > li > ul').length) $('#nav > ul').dropotron({
 			alignment: 'right',
 			hideDelay: 350
 		});
@@ -87,7 +87,8 @@
 
 	// Parallax.
 	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
-		if (browser.name == 'ie'
+		var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+		if (motionPreference.matches || browser.name == 'ie'
 		||	browser.mobile) {
 
 			$.fn._parallax = function() {
@@ -104,7 +105,7 @@
 				$(this).each(function() {
 
 					var $this = $(this),
-						on, off;
+						on, off, frame;
 
 					on = function() {
 
@@ -113,11 +114,13 @@
 
 						$window
 							.on('scroll._parallax', function() {
-
-								var pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
-
-								$this.css('background-position', 'center ' + (pos * -0.15) + 'px');
-
+								if (frame) return;
+								frame = window.requestAnimationFrame(function() {
+									frame = null;
+									var rect = $this[0].getBoundingClientRect();
+									if (document.hidden || motionPreference.matches || rect.bottom < 0 || rect.top > window.innerHeight) return;
+									$this.css('background-position', 'center ' + (rect.top * 0.15) + 'px');
+								});
 							});
 
 					};
@@ -151,7 +154,7 @@
 	// Spotlights.
 		var $spotlights = $('.spotlight');
 
-		$spotlights
+		if ($.fn.scrollex) $spotlights
 			._parallax()
 			.each(function() {
 
@@ -221,9 +224,9 @@
 			});
 
 	// Wrappers.
-		var $wrappers = $('.wrapper');
+		var $wrappers = $('.wrapper.fade-down, .wrapper.fade-up, .wrapper.fade');
 
-		$wrappers
+		if ($.fn.scrollex) $wrappers
 			.each(function() {
 
 				var $this = $(this),

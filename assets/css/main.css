@@ -6938,3 +6938,17 @@ body.sparkit-theme #titleBar .toggle:before {
 		transform: none !important;
 	}
 }
+
+/* Decorative effects sleep while the hero is offscreen or the tab is hidden. */
+#banner.effects-paused *,
+#banner.effects-paused *::before,
+#banner.effects-paused *::after {
+	animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#banner *, #banner *::before, #banner *::after {
+		animation: none !important;
+		transition: none !important;
+	}
+}
