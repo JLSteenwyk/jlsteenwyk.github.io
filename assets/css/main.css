@@ -6811,19 +6811,22 @@ body.sparkit-theme #footer .icons a {
 }
 
 body.sparkit-theme #footer .icons a:before {
+	text-shadow: none !important;
 	color: var(--sk-text-2) !important;
 	transition: color 0.25s ease;
 }
 
-body.sparkit-theme #footer .icons a:hover {
-	background: var(--sk-ink);
-	border-color: var(--sk-ink);
+body.sparkit-theme #footer .icons a:hover,
+body.sparkit-theme #footer .icons a:focus-visible {
+	background: #eaf3fb;
+	border-color: var(--sk-blue);
 	transform: translateY(-3px);
 	box-shadow: 0 8px 20px rgba(24, 24, 24, 0.18);
 }
 
-body.sparkit-theme #footer .icons a:hover:before {
-	color: #ffffff !important;
+body.sparkit-theme #footer .icons a:hover:before,
+body.sparkit-theme #footer .icons a:focus-visible:before {
+	color: var(--sk-blue) !important;
 }
 
 body.sparkit-theme #footer .copyright {
@@ -6951,4 +6954,13 @@ body.sparkit-theme #titleBar .toggle:before {
 		animation: none !important;
 		transition: none !important;
 	}
+}
+
+/* Keep artwork section links clear of the fixed navigation. */
+body.page-arts-visual #content section {
+	scroll-margin-top: 5rem;
+}
+
+body.page-arts-visual #content > header.major p {
+	line-height: 1.8;
 }
