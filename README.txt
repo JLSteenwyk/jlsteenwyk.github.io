@@ -63,3 +63,19 @@ npx lighthouse@13.6.0 http://127.0.0.1:8000/index.html --only-categories=perform
 
 Add `--preset=desktop` for the desktop run. Compare several runs when making
 small timing claims; simulated local measurements are not field Core Web Vitals.
+
+Aesthetic refinements
+---------------------
+The six design changes, preservation checks, viewport/state captures, and
+Lighthouse checkpoints are recorded in performance/aesthetics-2026-11-07.json.
+Before/after images are in performance/aesthetics/screenshots.
+
+Keep `open` on lengthy author disclosures in publications.html. The small
+publication-authors.js enhancement collapses them as markup arrives; the full
+lists remain visible when that enhancement is unavailable. Preserve the
+pub-authors, pub-title, and pub-status blocks when adding new citations.
+
+Software cards keep concise introductions in software-card-desc and their
+original context, links, and badges inside native Project details disclosures.
+These disclosures also work without JavaScript. Rebuild minified CSS after
+editing styles, as described above.

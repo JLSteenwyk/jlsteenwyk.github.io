@@ -1,0 +1,477 @@
+{
+  "date": "2026-11-07",
+  "baseline_commit": "3f11820",
+  "implementation_commit": "cb6b66d",
+  "requirements": [
+    {
+      "item": 1,
+      "change": "Repaired the visual arts document/head/navigation/wrapper hierarchy and standardized the navigation. Restored the clustering gallery already referenced by the section navigation, with three responsive previews; all 23 works link to full-resolution originals.",
+      "evidence": [
+        "tests/layout.test.cjs",
+        "performance/aesthetics/screenshots/arts_visual.jpg"
+      ]
+    },
+    {
+      "item": 2,
+      "change": "Removed the overriding white icon color/text shadow. Footer icons use dark gray with blue hover and focus-visible states. Existing text labels are also exposed through aria-label attributes across pages.",
+      "evidence": [
+        "assets/css/main.css",
+        "performance/aesthetics/screenshots/footer.jpg",
+        "tests/layout.test.cjs"
+      ]
+    },
+    {
+      "item": 3,
+      "change": "All eleven software introductions are 32\u201340 words. Documentation is the primary action where available. Native Project details disclosures retain every original description, link, and badge. Expanded cards do not stretch neighbouring controls.",
+      "evidence": [
+        "tests/content-preservation.test.cjs",
+        "performance/aesthetics/screenshots/software.jpg",
+        "performance/aesthetics/screenshots/software-expanded-desktop.jpg",
+        "performance/aesthetics/screenshots/software-expanded-mobile.jpg"
+      ]
+    },
+    {
+      "item": 4,
+      "change": "News headlines appear above smaller muted dates and sources, with consistent entry spacing and separators. Every year group, headline, destination, date, source, and their order is unchanged.",
+      "evidence": [
+        "tests/content-preservation.test.cjs",
+        "performance/aesthetics/screenshots/news.jpg"
+      ]
+    },
+    {
+      "item": 5,
+      "change": "All 108 citations have separate author, title, and status blocks. Twenty-four long author lists use native disclosures enhanced with Show all authors/Hide author list labels. Lists stay open when the enhancement is unavailable. Author order, numbering, bold names (including previews), submitted underlining, titles, status, links, and badge metadata are preserved. Streaming enhancement prevents a full-list paint followed by collapse.",
+      "evidence": [
+        "tests/publication-authors.test.cjs",
+        "performance/aesthetics/screenshots/publications.jpg",
+        "performance/aesthetics/screenshots/publications-fallback.jpg",
+        "performance/aesthetics/screenshots/publications-320.jpg"
+      ]
+    },
+    {
+      "item": 6,
+      "change": "Reduced homepage outer and inner hero padding, retained the portrait/rotating phrases/accents, reserved space for wrapped text, and kept the scroll cue visible at 320 px. Existing reduced-motion and offscreen animation behavior is preserved.",
+      "evidence": [
+        "tests/home-effects.test.cjs",
+        "performance/aesthetics/screenshots/index.jpg",
+        "performance/aesthetics/screenshots/home-320.jpg"
+      ]
+    }
+  ],
+  "method": {
+    "tool": "Lighthouse 13.6.0",
+    "node": "v24.21.0",
+    "devices": "Default Lighthouse mobile and desktop presets, plus 320\u00d7720 mobile checks",
+    "hosting": "Local Python HTTP servers; baseline git archive and current implementation served separately",
+    "sampling": "One selected baseline and post-change run per page/device. Pages were measured after their individual layout changes; shared footer refinements were subsequently checked in the final homepage capture. Extra state/viewport runs verify expanded and fallback layouts. These are incremental checkpoints, not a controlled multi-run field benchmark.",
+    "cautions": [
+      "Local servers do not gzip responses; production GitHub Pages does.",
+      "Single simulated runs and third-party responses vary. Small score/timing differences do not establish a meaningful speed change.",
+      "Native expanded/fallback states were rendered from temporary copies of the same markup and assets, without changing published default states."
+    ]
+  },
+  "results": {
+    "index": {
+      "mobile": {
+        "before": {
+          "performance_score": 78,
+          "accessibility_score": 75,
+          "fcp_ms": 2102,
+          "lcp_ms": 5448,
+          "total_blocking_time_ms": 28,
+          "cls": 9.6e-05,
+          "requests": 25,
+          "transfer_bytes": 979081,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:31:40.806Z"
+        },
+        "after": {
+          "performance_score": 78,
+          "accessibility_score": 96,
+          "fcp_ms": 2101,
+          "lcp_ms": 5459,
+          "total_blocking_time_ms": 24,
+          "cls": 9.6e-05,
+          "requests": 25,
+          "transfer_bytes": 982858,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:53:51.850Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 99,
+          "accessibility_score": 75,
+          "fcp_ms": 484,
+          "lcp_ms": 970,
+          "total_blocking_time_ms": 0,
+          "cls": 8.3e-05,
+          "requests": 26,
+          "transfer_bytes": 975959,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:31:51.804Z"
+        },
+        "after": {
+          "performance_score": 99,
+          "accessibility_score": 96,
+          "fcp_ms": 551,
+          "lcp_ms": 987,
+          "total_blocking_time_ms": 0,
+          "cls": 0.000111,
+          "requests": 26,
+          "transfer_bytes": 979749,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:54:02.389Z"
+        }
+      }
+    },
+    "publications": {
+      "mobile": {
+        "before": {
+          "performance_score": 89,
+          "accessibility_score": 80,
+          "fcp_ms": 3001,
+          "lcp_ms": 3001,
+          "total_blocking_time_ms": 40,
+          "cls": 0.012688,
+          "requests": 29,
+          "transfer_bytes": 1115324,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:32:02.475Z"
+        },
+        "after": {
+          "performance_score": 89,
+          "accessibility_score": 100,
+          "fcp_ms": 3002,
+          "lcp_ms": 3002,
+          "total_blocking_time_ms": 20,
+          "cls": 0.001786,
+          "requests": 31,
+          "transfer_bytes": 1124134,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:47:04.600Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 100,
+          "accessibility_score": 88,
+          "fcp_ms": 653,
+          "lcp_ms": 653,
+          "total_blocking_time_ms": 0,
+          "cls": 0.014997,
+          "requests": 49,
+          "transfer_bytes": 1404869,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:32:14.262Z"
+        },
+        "after": {
+          "performance_score": 99,
+          "accessibility_score": 100,
+          "fcp_ms": 652,
+          "lcp_ms": 943,
+          "total_blocking_time_ms": 0,
+          "cls": 0.007976,
+          "requests": 42,
+          "transfer_bytes": 1406390,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:47:16.388Z"
+        }
+      }
+    },
+    "software": {
+      "mobile": {
+        "before": {
+          "performance_score": 97,
+          "accessibility_score": 63,
+          "fcp_ms": 2104,
+          "lcp_ms": 2104,
+          "total_blocking_time_ms": 18,
+          "cls": 0.000155,
+          "requests": 49,
+          "transfer_bytes": 895943,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:32:25.758Z"
+        },
+        "after": {
+          "performance_score": 97,
+          "accessibility_score": 100,
+          "fcp_ms": 2102,
+          "lcp_ms": 2102,
+          "total_blocking_time_ms": 21,
+          "cls": 0.000155,
+          "requests": 24,
+          "transfer_bytes": 874307,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:40:35.027Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 100,
+          "accessibility_score": 63,
+          "fcp_ms": 484,
+          "lcp_ms": 484,
+          "total_blocking_time_ms": 0,
+          "cls": 0.004668,
+          "requests": 79,
+          "transfer_bytes": 958874,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:32:38.001Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "accessibility_score": 100,
+          "fcp_ms": 483,
+          "lcp_ms": 483,
+          "total_blocking_time_ms": 0,
+          "cls": 0.000213,
+          "requests": 30,
+          "transfer_bytes": 888203,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:40:46.776Z"
+        }
+      }
+    },
+    "news": {
+      "mobile": {
+        "before": {
+          "performance_score": 92,
+          "accessibility_score": 78,
+          "fcp_ms": 2707,
+          "lcp_ms": 2707,
+          "total_blocking_time_ms": 40,
+          "cls": 0.013793,
+          "requests": 19,
+          "transfer_bytes": 826637,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:32:50.672Z"
+        },
+        "after": {
+          "performance_score": 92,
+          "accessibility_score": 100,
+          "fcp_ms": 2703,
+          "lcp_ms": 2703,
+          "total_blocking_time_ms": 38,
+          "cls": 0,
+          "requests": 19,
+          "transfer_bytes": 830261,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:48:34.538Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 100,
+          "accessibility_score": 78,
+          "fcp_ms": 604,
+          "lcp_ms": 604,
+          "total_blocking_time_ms": 0,
+          "cls": 0.004466,
+          "requests": 20,
+          "transfer_bytes": 849849,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:33:01.434Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "accessibility_score": 100,
+          "fcp_ms": 563,
+          "lcp_ms": 563,
+          "total_blocking_time_ms": 0,
+          "cls": 9.8e-05,
+          "requests": 20,
+          "transfer_bytes": 853496,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:48:44.893Z"
+        }
+      }
+    },
+    "arts_visual": {
+      "mobile": {
+        "before": {
+          "performance_score": 97,
+          "accessibility_score": 63,
+          "fcp_ms": 2105,
+          "lcp_ms": 2105,
+          "total_blocking_time_ms": 20,
+          "cls": 0.00102,
+          "requests": 19,
+          "transfer_bytes": 1006954,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:33:12.339Z"
+        },
+        "after": {
+          "performance_score": 97,
+          "accessibility_score": 100,
+          "fcp_ms": 2103,
+          "lcp_ms": 2103,
+          "total_blocking_time_ms": 18,
+          "cls": 0.000397,
+          "requests": 28,
+          "transfer_bytes": 1352202,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:48:55.200Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 82,
+          "accessibility_score": 75,
+          "fcp_ms": 490,
+          "lcp_ms": 1110,
+          "total_blocking_time_ms": 0,
+          "cls": 0.317923,
+          "requests": 28,
+          "transfer_bytes": 1342300,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:33:22.672Z"
+        },
+        "after": {
+          "performance_score": 83,
+          "accessibility_score": 100,
+          "fcp_ms": 603,
+          "lcp_ms": 1203,
+          "total_blocking_time_ms": 0,
+          "cls": 0.28343,
+          "requests": 29,
+          "transfer_bytes": 1419610,
+          "warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T17:49:05.573Z"
+        }
+      }
+    }
+  },
+  "additional_states": {
+    "home-320": {
+      "performance_score": 79,
+      "accessibility_score": 96,
+      "fcp_ms": 2103,
+      "lcp_ms": 5253,
+      "total_blocking_time_ms": 34,
+      "cls": 0.00166,
+      "requests": 24,
+      "transfer_bytes": 866385,
+      "warnings": [],
+      "runtime_error": null,
+      "fetch_time": "2026-11-07T17:54:45.710Z"
+    },
+    "software-expanded-mobile": {
+      "performance_score": 97,
+      "accessibility_score": 100,
+      "fcp_ms": 2104,
+      "lcp_ms": 2104,
+      "total_blocking_time_ms": 22,
+      "cls": 0.000155,
+      "requests": 31,
+      "transfer_bytes": 877426,
+      "warnings": [],
+      "runtime_error": null,
+      "fetch_time": "2026-11-07T17:55:10.935Z"
+    },
+    "software-expanded-desktop": {
+      "performance_score": 100,
+      "accessibility_score": 100,
+      "fcp_ms": 533,
+      "lcp_ms": 533,
+      "total_blocking_time_ms": 0,
+      "cls": 0.003608,
+      "requests": 38,
+      "transfer_bytes": 902243,
+      "warnings": [],
+      "runtime_error": null,
+      "fetch_time": "2026-11-07T17:56:35.766Z"
+    },
+    "publications-fallback": {
+      "performance_score": 87,
+      "accessibility_score": 100,
+      "fcp_ms": 3152,
+      "lcp_ms": 3152,
+      "total_blocking_time_ms": 24,
+      "cls": 0.006918,
+      "requests": 21,
+      "transfer_bytes": 963661,
+      "warnings": [],
+      "runtime_error": null,
+      "fetch_time": "2026-11-07T17:55:35.419Z"
+    },
+    "publications-320": {
+      "performance_score": 87,
+      "accessibility_score": 100,
+      "fcp_ms": 3151,
+      "lcp_ms": 3151,
+      "total_blocking_time_ms": 27,
+      "cls": 0.0016,
+      "requests": 21,
+      "transfer_bytes": 935351,
+      "warnings": [],
+      "runtime_error": null,
+      "fetch_time": "2026-11-07T17:55:46.931Z"
+    }
+  },
+  "screenshots": {
+    "index": "performance/aesthetics/screenshots/index.jpg",
+    "publications": "performance/aesthetics/screenshots/publications.jpg",
+    "software": "performance/aesthetics/screenshots/software.jpg",
+    "news": "performance/aesthetics/screenshots/news.jpg",
+    "arts_visual": "performance/aesthetics/screenshots/arts_visual.jpg",
+    "footer": "performance/aesthetics/screenshots/footer.jpg",
+    "home-320": "performance/aesthetics/screenshots/home-320.jpg",
+    "software-expanded-mobile": "performance/aesthetics/screenshots/software-expanded-mobile.jpg",
+    "software-expanded-desktop": "performance/aesthetics/screenshots/software-expanded-desktop.jpg",
+    "publications-fallback": "performance/aesthetics/screenshots/publications-fallback.jpg",
+    "publications-320": "performance/aesthetics/screenshots/publications-320.jpg"
+  },
+  "validation": {
+    "automated_checks": 35,
+    "command": "npm test",
+    "build": "npm run build:css; committed output is reproducible",
+    "preservation_fixture": "tests/fixtures/content-before-aesthetics.json",
+    "keyboard": "DOM event tests cover mobile navigation open/close, expanded-state announcements, Escape returning focus to the menu control, anchor scrolling, and immediate scrolling with reduced motion. Native details/summary elements provide disclosure keyboard semantics.",
+    "visual": "Inspected desktop/mobile before-and-after captures for all five pages, 320 px homepage/publications views, expanded software details, complete fallback authors, and the footer glyphs.",
+    "interaction_limit": "The connected Browser API failed on navigation and inspection calls; the in-app browser was unavailable. Interaction checks use jsdom and native control semantics rather than manual real-browser keyboard/hover tests."
+  },
+  "remaining_limitations": [
+    "The homepage retains an existing heading-order warning (automated accessibility score 96).",
+    "The visual arts desktop run still shows layout shifting associated with font loading, despite the repaired document structure.",
+    "Citation and project badges remain dependent on third-party availability/indexing.",
+    "Automated accessibility scores and DOM tests are not a complete manual accessibility review."
+  ],
+  "commits": [
+    "5a1d729 Repair visual arts structure and improve footer icon contrast",
+    "3f5afe4 Simplify software cards and improve navigation accessibility",
+    "caca1ce Separate citation fields and progressively disclose long author lists",
+    "ed5ed28 Preserve first-author emphasis in collapsed author previews",
+    "cb6b66d Polish news hierarchy, hero spacing, and keyboard interactions"
+  ],
+  "stylesheet": {
+    "before": {
+      "bytes": 98675,
+      "gzip_bytes": 16875
+    },
+    "after": {
+      "bytes": 102019,
+      "gzip_bytes": 17509
+    }
+  }
+}
