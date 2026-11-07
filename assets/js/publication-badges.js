@@ -25,19 +25,30 @@
 		var provider = providers[element.getAttribute('data-citation-provider')];
 		element.classList.add(provider.className);
 		element.removeAttribute('data-citation-provider');
-		if (!provider.ready) {
-			provider.ready = new Promise(function (resolve, reject) {
-				var script = document.createElement('script');
-				script.src = provider.url;
-				script.async = true;
-				script.onload = resolve;
-				script.onerror = reject;
-				document.head.appendChild(script);
-			});
-		}
-		provider.ready.then(function () { provider.refresh(element); }).catch(function () {
+		if (!provider.script) {
+			var script = document.createElement('script');
+			provider.script = script;
+			script.src = provider.url;
+			script.async = true;
+			script.onload = function () { provider.loaded = true; };
 			// A blocked vendor must never prevent reading the publication itself.
-		});
+			script.onerror = function () { provider.loaded = false; };
+			document.head.appendChild(script);
+			return;
+		}
+		// Each vendor discovers existing markers when its script first runs.
+		if (!provider.loaded) return;
+		if (!provider.pending) provider.pending = [];
+		provider.pending.push(element);
+		if (provider.refreshScheduled) return;
+		provider.refreshScheduled = true;
+		window.setTimeout(function () {
+			var pending = provider.pending;
+			provider.pending = [];
+			provider.refreshScheduled = false;
+			if (provider === providers.dimensions) provider.refresh();
+			else pending.forEach(provider.refresh);
+		}, 0);
 	}
 
 	var badges = document.querySelectorAll('[data-citation-provider]');
