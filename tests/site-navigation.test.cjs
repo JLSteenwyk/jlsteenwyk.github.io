@@ -4,13 +4,13 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
 
-function page(file, width) {
+function page(file, width, reduced = false) {
   const dom = new JSDOM(fs.readFileSync(file, 'utf8'), {
     url: 'https://jlsteenwyk.com/' + file, runScripts: 'outside-only', pretendToBeVisual: true
   });
   const { window } = dom;
   window.matchMedia = query => ({
-    matches: !query.includes('reduced-motion') &&
+    matches: query.includes('reduced-motion') ? reduced :
       (!/max-width:\s*(\d+)px/.test(query) || width <= +query.match(/max-width:\s*(\d+)px/)[1]) &&
       (!/min-width:\s*(\d+)px/.test(query) || width >= +query.match(/min-width:\s*(\d+)px/)[1]),
     addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {}
@@ -56,5 +56,21 @@ test('anchor scrolling remains bound on the homepage', () => {
     const event = new window.MouseEvent('click', { bubbles: true, cancelable: true });
     link.dispatchEvent(event);
     assert.equal(event.defaultPrevented, true);
+  } finally { window.close(); }
+});
+
+
+test('reduced motion makes anchor scrolling immediate', () => {
+  const dom = page('index.html', 1365, true), { window } = dom;
+  try {
+    const durations = [];
+    const animate = window.jQuery.fn.animate;
+    window.jQuery.fn.animate = function (properties, speed) {
+      durations.push(speed);
+      return animate.apply(this, arguments);
+    };
+    window.document.querySelector('a.scrolly[href="#content"]').click();
+    assert.ok(durations.length > 0);
+    assert.ok(durations.every(duration => duration === 0));
   } finally { window.close(); }
 });

@@ -38,7 +38,7 @@
 
 	// Scrolly links.
 		if ($.fn.scrolly) $('.scrolly').scrolly({
-			speed: 2000
+			speed: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 2000
 		});
 
 	// Dropdowns.
