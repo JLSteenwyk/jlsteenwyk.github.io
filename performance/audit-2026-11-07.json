@@ -1,0 +1,643 @@
+{
+  "date": "2026-11-07",
+  "baseline_commit": "cdcc23c",
+  "optimized_commit": "ad16678",
+  "method": {
+    "tool": "Lighthouse 13.6.0",
+    "source": "CLI installed from npm",
+    "node": "v24.21.0",
+    "hosting": "Python http.server on 127.0.0.1; baseline git archive and optimized worktree served separately",
+    "devices": "Lighthouse mobile defaults and desktop preset",
+    "throttling": "simulate",
+    "sampling": "One baseline and one selected final run per page/device; intermediate and rerun measurements also exist locally. Not a median or field measurement.",
+    "cautions": [
+      "Third-party responses and local machine load vary between runs.",
+      "The local server does not gzip assets; deployed GitHub Pages does. Transfer totals are local-test observations, not production page weights.",
+      "Lazy loading defers assets; visitors scrolling the entire page will download additional images and widgets."
+    ]
+  },
+  "results": {
+    "index": {
+      "mobile": {
+        "before": {
+          "performance_score": 67,
+          "fcp_ms": 2702,
+          "lcp_ms": 14101,
+          "total_blocking_time_ms": 121,
+          "cls": 0.004459,
+          "speed_index_ms": 4890,
+          "request_count": 30,
+          "observed_transfer_bytes": 2175460,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:35:02.485Z"
+        },
+        "after": {
+          "performance_score": 84,
+          "fcp_ms": 2102,
+          "lcp_ms": 4277,
+          "total_blocking_time_ms": 18,
+          "cls": 9.5e-05,
+          "speed_index_ms": 2102,
+          "request_count": 25,
+          "observed_transfer_bytes": 979369,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:47:15.119Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 88,
+          "fcp_ms": 602,
+          "lcp_ms": 2281,
+          "total_blocking_time_ms": 0,
+          "cls": 8.3e-05,
+          "speed_index_ms": 602,
+          "request_count": 30,
+          "observed_transfer_bytes": 2175464,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:35:26.618Z"
+        },
+        "after": {
+          "performance_score": 99,
+          "fcp_ms": 481,
+          "lcp_ms": 980,
+          "total_blocking_time_ms": 0,
+          "cls": 8.3e-05,
+          "speed_index_ms": 481,
+          "request_count": 26,
+          "observed_transfer_bytes": 975909,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:47:25.432Z"
+        }
+      }
+    },
+    "publications": {
+      "mobile": {
+        "before": {
+          "performance_score": 87,
+          "fcp_ms": 3155,
+          "lcp_ms": 3155,
+          "total_blocking_time_ms": 36,
+          "cls": 0.012688,
+          "speed_index_ms": 3155,
+          "request_count": 264,
+          "observed_transfer_bytes": 5304045,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:35:36.989Z"
+        },
+        "after": {
+          "performance_score": 89,
+          "fcp_ms": 3002,
+          "lcp_ms": 3002,
+          "total_blocking_time_ms": 26,
+          "cls": 0.012688,
+          "speed_index_ms": 3002,
+          "request_count": 29,
+          "observed_transfer_bytes": 1115286,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:51:22.940Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 99,
+          "fcp_ms": 682,
+          "lcp_ms": 682,
+          "total_blocking_time_ms": 0,
+          "cls": 0.014997,
+          "speed_index_ms": 739,
+          "request_count": 265,
+          "observed_transfer_bytes": 5328048,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:35:54.241Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "fcp_ms": 682,
+          "lcp_ms": 682,
+          "total_blocking_time_ms": 0,
+          "cls": 0.011937,
+          "speed_index_ms": 682,
+          "request_count": 49,
+          "observed_transfer_bytes": 1404812,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:51:33.810Z"
+        }
+      }
+    },
+    "software": {
+      "mobile": {
+        "before": {
+          "performance_score": 92,
+          "fcp_ms": 2704,
+          "lcp_ms": 2704,
+          "total_blocking_time_ms": 18,
+          "cls": 0.000155,
+          "speed_index_ms": 2704,
+          "request_count": 82,
+          "observed_transfer_bytes": 2043036,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:36:08.172Z"
+        },
+        "after": {
+          "performance_score": 97,
+          "fcp_ms": 2103,
+          "lcp_ms": 2103,
+          "total_blocking_time_ms": 19,
+          "cls": 0.000155,
+          "speed_index_ms": 2103,
+          "request_count": 49,
+          "observed_transfer_bytes": 896236,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:48:40.490Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 100,
+          "fcp_ms": 607,
+          "lcp_ms": 607,
+          "total_blocking_time_ms": 0,
+          "cls": 0.001574,
+          "speed_index_ms": 607,
+          "request_count": 84,
+          "observed_transfer_bytes": 2062713,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:36:20.478Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "fcp_ms": 595,
+          "lcp_ms": 595,
+          "total_blocking_time_ms": 0,
+          "cls": 0.002065,
+          "speed_index_ms": 595,
+          "request_count": 79,
+          "observed_transfer_bytes": 958296,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:48:53.285Z"
+        }
+      }
+    },
+    "news": {
+      "mobile": {
+        "before": {
+          "performance_score": 84,
+          "fcp_ms": 3454,
+          "lcp_ms": 3454,
+          "total_blocking_time_ms": 47,
+          "cls": 0.013793,
+          "speed_index_ms": 3454,
+          "request_count": 23,
+          "observed_transfer_bytes": 920931,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:36:32.464Z"
+        },
+        "after": {
+          "performance_score": 92,
+          "fcp_ms": 2702,
+          "lcp_ms": 2702,
+          "total_blocking_time_ms": 40,
+          "cls": 0.013793,
+          "speed_index_ms": 2702,
+          "request_count": 19,
+          "observed_transfer_bytes": 826539,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:49:05.897Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 100,
+          "fcp_ms": 684,
+          "lcp_ms": 684,
+          "total_blocking_time_ms": 0,
+          "cls": 0.004758,
+          "speed_index_ms": 684,
+          "request_count": 24,
+          "observed_transfer_bytes": 944193,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:36:42.752Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "fcp_ms": 603,
+          "lcp_ms": 603,
+          "total_blocking_time_ms": 0,
+          "cls": 0.004466,
+          "speed_index_ms": 603,
+          "request_count": 20,
+          "observed_transfer_bytes": 850137,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:49:16.108Z"
+        }
+      }
+    },
+    "arts_visual": {
+      "mobile": {
+        "before": {
+          "performance_score": 92,
+          "fcp_ms": 2706,
+          "lcp_ms": 2706,
+          "total_blocking_time_ms": 21,
+          "cls": 0.000788,
+          "speed_index_ms": 2706,
+          "request_count": 42,
+          "observed_transfer_bytes": 43139683,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:36:53.005Z"
+        },
+        "after": {
+          "performance_score": 97,
+          "fcp_ms": 2102,
+          "lcp_ms": 2102,
+          "total_blocking_time_ms": 21,
+          "cls": 0.00102,
+          "speed_index_ms": 2102,
+          "request_count": 19,
+          "observed_transfer_bytes": 1006891,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:51:44.526Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 59,
+          "fcp_ms": 605,
+          "lcp_ms": 8543,
+          "total_blocking_time_ms": 0,
+          "cls": 0.317923,
+          "speed_index_ms": 849,
+          "request_count": 42,
+          "observed_transfer_bytes": 43139652,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:37:03.903Z"
+        },
+        "after": {
+          "performance_score": 83,
+          "fcp_ms": 490,
+          "lcp_ms": 970,
+          "total_blocking_time_ms": 0,
+          "cls": 0.317932,
+          "speed_index_ms": 490,
+          "request_count": 33,
+          "observed_transfer_bytes": 1342269,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:51:54.631Z"
+        }
+      }
+    },
+    "contact": {
+      "mobile": {
+        "before": {
+          "performance_score": 84,
+          "fcp_ms": 3459,
+          "lcp_ms": 3459,
+          "total_blocking_time_ms": 41,
+          "cls": 0.005635,
+          "speed_index_ms": 3459,
+          "request_count": 233,
+          "observed_transfer_bytes": 3193583,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:52:04.803Z"
+        },
+        "after": {
+          "performance_score": 92,
+          "fcp_ms": 2702,
+          "lcp_ms": 2702,
+          "total_blocking_time_ms": 20,
+          "cls": 0.005635,
+          "speed_index_ms": 2702,
+          "request_count": 228,
+          "observed_transfer_bytes": 3097414,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:52:16.139Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 99,
+          "fcp_ms": 727,
+          "lcp_ms": 727,
+          "total_blocking_time_ms": 0,
+          "cls": 0.002129,
+          "speed_index_ms": 727,
+          "request_count": 234,
+          "observed_transfer_bytes": 3216605,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:52:27.187Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "fcp_ms": 564,
+          "lcp_ms": 564,
+          "total_blocking_time_ms": 0,
+          "cls": 0.002129,
+          "speed_index_ms": 564,
+          "request_count": 229,
+          "observed_transfer_bytes": 3121303,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:52:38.320Z"
+        }
+      }
+    },
+    "tutorials_seqs_to_tree": {
+      "mobile": {
+        "before": {
+          "performance_score": 93,
+          "fcp_ms": 2609,
+          "lcp_ms": 2609,
+          "total_blocking_time_ms": 22,
+          "cls": 0,
+          "speed_index_ms": 2609,
+          "request_count": 21,
+          "observed_transfer_bytes": 1023532,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:52:49.492Z"
+        },
+        "after": {
+          "performance_score": 99,
+          "fcp_ms": 1656,
+          "lcp_ms": 1656,
+          "total_blocking_time_ms": 23,
+          "cls": 0,
+          "speed_index_ms": 1656,
+          "request_count": 18,
+          "observed_transfer_bytes": 934175,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:52:59.712Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 100,
+          "fcp_ms": 661,
+          "lcp_ms": 661,
+          "total_blocking_time_ms": 0,
+          "cls": 0,
+          "speed_index_ms": 661,
+          "request_count": 21,
+          "observed_transfer_bytes": 1023466,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:53:09.939Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "fcp_ms": 406,
+          "lcp_ms": 406,
+          "total_blocking_time_ms": 0,
+          "cls": 0,
+          "speed_index_ms": 406,
+          "request_count": 18,
+          "observed_transfer_bytes": 934152,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:53:20.390Z"
+        }
+      }
+    },
+    "portal_login": {
+      "mobile": {
+        "before": {
+          "performance_score": 78,
+          "fcp_ms": 3960,
+          "lcp_ms": 3960,
+          "total_blocking_time_ms": 0,
+          "cls": 0.000887,
+          "speed_index_ms": 3960,
+          "request_count": 29,
+          "observed_transfer_bytes": 896879,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:53:30.610Z"
+        },
+        "after": {
+          "performance_score": 93,
+          "fcp_ms": 2556,
+          "lcp_ms": 2556,
+          "total_blocking_time_ms": 0,
+          "cls": 0.000887,
+          "speed_index_ms": 2556,
+          "request_count": 23,
+          "observed_transfer_bytes": 752058,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:53:41.868Z"
+        }
+      },
+      "desktop": {
+        "before": {
+          "performance_score": 98,
+          "fcp_ms": 930,
+          "lcp_ms": 930,
+          "total_blocking_time_ms": 0,
+          "cls": 0.000239,
+          "speed_index_ms": 930,
+          "request_count": 23,
+          "observed_transfer_bytes": 758472,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:53:52.209Z"
+        },
+        "after": {
+          "performance_score": 100,
+          "fcp_ms": 530,
+          "lcp_ms": 530,
+          "total_blocking_time_ms": 0,
+          "cls": 0.00029,
+          "speed_index_ms": 530,
+          "request_count": 17,
+          "observed_transfer_bytes": 613711,
+          "run_warnings": [],
+          "runtime_error": null,
+          "fetch_time": "2026-11-07T16:54:02.376Z"
+        }
+      }
+    }
+  },
+  "asset_inventory": {
+    "index.html": {
+      "before": {
+        "images": 5,
+        "lazy_images": 0,
+        "local_images_with_dimensions": 0,
+        "responsive_local_images": 0,
+        "local_fallback_image_bytes": 1256198,
+        "local_script_count": 8,
+        "dimensions_script_elements": 0
+      },
+      "after": {
+        "images": 5,
+        "lazy_images": 4,
+        "local_images_with_dimensions": 5,
+        "responsive_local_images": 4,
+        "local_fallback_image_bytes": 167433,
+        "local_script_count": 7,
+        "dimensions_script_elements": 0
+      }
+    },
+    "publications.html": {
+      "before": {
+        "images": 26,
+        "lazy_images": 0,
+        "local_images_with_dimensions": 0,
+        "responsive_local_images": 0,
+        "local_fallback_image_bytes": 3930819,
+        "local_script_count": 8,
+        "dimensions_script_elements": 98
+      },
+      "after": {
+        "images": 26,
+        "lazy_images": 25,
+        "local_images_with_dimensions": 5,
+        "responsive_local_images": 5,
+        "local_fallback_image_bytes": 295512,
+        "local_script_count": 7,
+        "dimensions_script_elements": 0
+      }
+    },
+    "software.html": {
+      "before": {
+        "images": 80,
+        "lazy_images": 0,
+        "local_images_with_dimensions": 0,
+        "responsive_local_images": 0,
+        "local_fallback_image_bytes": 1056632,
+        "local_script_count": 8,
+        "dimensions_script_elements": 0
+      },
+      "after": {
+        "images": 80,
+        "lazy_images": 77,
+        "local_images_with_dimensions": 11,
+        "responsive_local_images": 11,
+        "local_fallback_image_bytes": 130790,
+        "local_script_count": 6,
+        "dimensions_script_elements": 0
+      }
+    },
+    "news.html": {
+      "before": {
+        "images": 0,
+        "lazy_images": 0,
+        "local_images_with_dimensions": 0,
+        "responsive_local_images": 0,
+        "local_fallback_image_bytes": 0,
+        "local_script_count": 8,
+        "dimensions_script_elements": 0
+      },
+      "after": {
+        "images": 0,
+        "lazy_images": 0,
+        "local_images_with_dimensions": 0,
+        "responsive_local_images": 0,
+        "local_fallback_image_bytes": 0,
+        "local_script_count": 6,
+        "dimensions_script_elements": 0
+      }
+    },
+    "arts_visual.html": {
+      "before": {
+        "images": 20,
+        "lazy_images": 0,
+        "local_images_with_dimensions": 0,
+        "responsive_local_images": 0,
+        "local_fallback_image_bytes": 42250203,
+        "local_script_count": 8,
+        "dimensions_script_elements": 0
+      },
+      "after": {
+        "images": 20,
+        "lazy_images": 19,
+        "local_images_with_dimensions": 20,
+        "responsive_local_images": 20,
+        "local_fallback_image_bytes": 741904,
+        "local_script_count": 6,
+        "dimensions_script_elements": 0
+      }
+    }
+  },
+  "stylesheets": {
+    "before_main": {
+      "bytes": 183777,
+      "gzip_bytes": 30405
+    },
+    "after_main": {
+      "bytes": 98675,
+      "gzip_bytes": 16875
+    }
+  },
+  "validation": {
+    "automated_checks": 27,
+    "command": "npm test",
+    "coverage": [
+      "Mobile menu opening, link retention, and closing on nine pages",
+      "Dropdown initialization and submenu retention on a tutorial",
+      "Anchor-scroll event binding and immediate scrolling for reduced motion",
+      "Hero timers pause offscreen, in hidden tabs, and for reduced motion",
+      "Citation provider deduplication, batched refresh, load races, blocked scripts, and observer fallback",
+      "Local scripts/styles and responsive image paths resolve; artwork originals remain linked"
+    ],
+    "visual": "Lighthouse desktop/mobile final and full-page screenshots inspected for all five primary pages, plus representative contact, tutorial, and portal pages.",
+    "content": "Normalized body text compared against baseline on nine pages; preserved except the initial homepage tagline now supplied directly in HTML instead of inserted by JavaScript.",
+    "build": "npm run build:css succeeds and reproduces the committed minified stylesheet.",
+    "browser_limit": "The connected Browser API failed on navigation and DOM operations. Visual checks use Lighthouse captures; interaction checks use jsdom rather than real browser clicks."
+  },
+  "remaining_limitations": [
+    "Visual arts has pre-existing malformed navigation/comment markup that places content inside the navigation container; desktop CLS remains approximately 0.318. Structural redesign/repair was excluded to preserve the existing page layout.",
+    "Citation badges still depend on third-party availability and indexing; some supplied DOIs return vendor 404 responses. Citation text and links remain readable.",
+    "Google Analytics and Font Awesome remain substantial shared resources; required analytics and navigation/icon behavior were retained.",
+    "Full-resolution image originals and PDFs remain in the repository. Linked originals and PDFs are not automatically downloaded with every page.",
+    "The portal sign-in layout was checked, but no authentication or external account changes were performed."
+  ],
+  "vendor_references": [
+    "https://integration-badge.dimensions.ai/",
+    "https://docs.altmetric.com/badges/getting-started/"
+  ],
+  "commits": [
+    "9643376 Serve responsive WebP previews and lazy-load offscreen images",
+    "0ec0741 Load citation badge providers once near visible publications",
+    "e7df3f7 Remove unused theme styles and font imports and ship minified CSS",
+    "7869c49 Batch citation badge refreshes and avoid redundant initialization",
+    "4f0ace4 Trim page-specific plugins and pause inactive homepage effects",
+    "22c6710 Match artwork previews to grid widths and verify site assets",
+    "ad16678 Respect reduced motion for anchor scrolling"
+  ],
+  "screenshot_comparisons": {
+    "index": "performance/screenshots/index.jpg",
+    "publications": "performance/screenshots/publications.jpg",
+    "software": "performance/screenshots/software.jpg",
+    "news": "performance/screenshots/news.jpg",
+    "arts_visual": "performance/screenshots/arts_visual.jpg",
+    "contact": "performance/screenshots/contact.jpg",
+    "tutorials_seqs_to_tree": "performance/screenshots/tutorials_seqs_to_tree.jpg",
+    "portal_login": "performance/screenshots/portal_login.jpg"
+  }
+}
