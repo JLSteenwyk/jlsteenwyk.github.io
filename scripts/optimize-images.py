@@ -86,3 +86,14 @@ def optimize_page(name):
 
 for name in PAGES:
     optimize_page(name)
+
+# Match the artwork's grid columns rather than treating every preview as full width.
+art = Path('arts_visual.html')
+text = art.read_text()
+def art_sizes(match):
+    columns = int(match[2])
+    small = int(match[3] or columns)
+    return (match[1] + f'(max-width: 480px) {small * 7.5:g}vw, '
+            f'(max-width: 980px) {columns * 7.5:g}vw, {columns * 80 / 12:g}vw')
+text = re.sub(r'(<div class="col-(\d+)(?: col-(\d+)-xsmall)?">[^\n]*?<img\b[^>]*\bsizes=")[^"]*', art_sizes, text)
+art.write_text(text)
