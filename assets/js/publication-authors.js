@@ -11,6 +11,16 @@
 			var preview = document.createElement('span');
 			preview.className = 'pub-author-preview';
 			preview.textContent = first + ', et al. ';
+			var emphasized = authors.querySelector('strong');
+			var name = emphasized ? emphasized.textContent.trim() : '';
+			var position = name ? first.indexOf(name) : -1;
+			if (position !== -1) {
+				preview.replaceChildren(
+					document.createTextNode(first.slice(0, position)),
+					emphasized.cloneNode(true),
+					document.createTextNode(first.slice(position + name.length) + ', et al. ')
+				);
+			}
 			var toggle = document.createElement('span');
 			toggle.className = 'pub-author-toggle';
 			toggle.textContent = 'Show all authors';

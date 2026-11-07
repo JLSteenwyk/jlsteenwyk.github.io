@@ -21,6 +21,13 @@ test('enhanced summaries expand and collapse without changing the author list', 
     const originals = lists.map(details => details.querySelector('.pub-author-list').innerHTML);
     window.eval(source);
     assert.ok(lists.every(details => !details.open));
+    lists.forEach(item => {
+      const full = item.querySelector('.pub-author-list');
+      const bold = full.querySelector('strong');
+      if (bold && full.textContent.trim().startsWith(bold.textContent.trim())) {
+        assert.equal(item.querySelector('.pub-author-preview strong').textContent, bold.textContent);
+      }
+    });
     const details = lists[0], summary = details.querySelector('summary');
     assert.match(summary.textContent, /Show all authors/);
     const opened = new Promise(resolve => details.addEventListener('toggle', resolve, { once: true }));
