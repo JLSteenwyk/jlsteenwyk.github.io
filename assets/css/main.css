@@ -6144,7 +6144,7 @@ body.sparkit-theme #banner {
 	box-shadow: inset 0 -1px 0 var(--sk-line);
 	height: auto;
 	min-height: 0;
-	padding: 7rem 0 5rem;
+	padding: 4.5rem 0 3rem;
 	position: relative;
 	overflow: hidden;
 }
@@ -6173,6 +6173,7 @@ body.sparkit-theme .hero-aurora {
 }
 
 body.sparkit-theme #banner .hero-inner {
+	padding: 2rem 2.5rem;
 	background: transparent;
 	position: relative;
 	z-index: 2;
@@ -6810,7 +6811,7 @@ body.sparkit-theme #footer .icons a {
 	border-bottom: none;
 }
 
-body.sparkit-theme #footer .icons a:before {
+body.sparkit-theme #footer .icons a.icon.alt:before {
 	text-shadow: none !important;
 	color: var(--sk-text-2) !important;
 	transition: color 0.25s ease;
@@ -6824,8 +6825,8 @@ body.sparkit-theme #footer .icons a:focus-visible {
 	box-shadow: 0 8px 20px rgba(24, 24, 24, 0.18);
 }
 
-body.sparkit-theme #footer .icons a:hover:before,
-body.sparkit-theme #footer .icons a:focus-visible:before {
+body.sparkit-theme #footer .icons a.icon.alt:hover:before,
+body.sparkit-theme #footer .icons a.icon.alt:focus-visible:before {
 	color: var(--sk-blue) !important;
 }
 
@@ -6854,7 +6855,7 @@ body.sparkit-theme #titleBar .toggle:before {
 
 @media screen and (max-width: 736px) {
 	body.sparkit-theme #banner {
-		padding: 5rem 0 3rem;
+		padding: 3.5rem 0 2rem;
 	}
 
 	body.sparkit-theme .portrait-frame {
@@ -6881,7 +6882,7 @@ body.sparkit-theme #titleBar .toggle:before {
 
 	body.sparkit-theme #banner .hero-inner {
 		box-sizing: border-box;
-		padding: 2rem 1.1rem;
+		padding: 1.25rem 1.1rem;
 	}
 
 	body.sparkit-theme .sparkit-card {
@@ -7084,4 +7085,63 @@ body.page-publications .pub-author-details > summary:focus-visible {
 	outline: 2px solid var(--sk-blue);
 	outline-offset: 3px;
 	border-radius: 3px;
+}
+
+/* Keep news headlines prominent and put attribution on its own quiet line. */
+body.page-news .news-timeline {
+	display: grid;
+	gap: 1.1rem;
+}
+
+body.page-news .news-item {
+	padding-bottom: 1.1rem;
+	border-bottom: 1px solid var(--sk-line);
+}
+
+body.page-news .news-item:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+body.page-news .news-link {
+	display: block;
+	max-width: 72ch;
+	font-size: 1.02em;
+	line-height: 1.5;
+}
+
+body.page-news .news-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 0.65rem;
+	margin-top: 0.3rem;
+	font-size: 0.8em;
+	line-height: 1.5;
+	color: var(--sk-text-2);
+}
+
+body.page-news .news-date {
+	font-variant-numeric: tabular-nums;
+}
+
+body.page-news .news-source {
+	padding-left: 0.65rem;
+	border-left: 1px solid var(--sk-line-2);
+}
+
+@media screen and (max-width: 480px) {
+	body.page-home .hero-tagline {
+		min-height: 3em;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	body.page-home #banner .goto-next {
+		height: 4rem;
+	}
+}
+
+/* Opening one project's details must not stretch its neighbours' controls. */
+body.page-software .software-grid:has(.software-project-details[open]) {
+	align-items: start;
 }

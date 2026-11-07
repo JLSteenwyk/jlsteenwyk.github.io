@@ -118,6 +118,8 @@
 					// Hide.
 						config.target.removeClass(config.visibleClass);
 						$body.find('a[href="#' + id + '"]').attr('aria-expanded', 'false');
+						if (event && event.type === 'keydown')
+							$body.find('a[href="#' + id + '"]').first().trigger('focus');
 
 					// Post-hide stuff.
 						window.setTimeout(function() {

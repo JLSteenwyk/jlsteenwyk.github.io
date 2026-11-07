@@ -33,9 +33,11 @@ for (const file of ['index.html', 'publications.html', 'software.html', 'news.ht
       doc.querySelector('#titleBar .toggle').click();
       assert.equal(doc.body.classList.contains('navPanel-visible'), true);
       assert.equal(doc.querySelector('#titleBar .toggle').getAttribute('aria-expanded'), 'true');
+      doc.querySelector('#navPanel a').focus();
       window.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape', keyCode: 27, bubbles: true }));
       assert.equal(doc.body.classList.contains('navPanel-visible'), false);
       assert.equal(doc.querySelector('#titleBar .toggle').getAttribute('aria-expanded'), 'false');
+      assert.equal(doc.activeElement, doc.querySelector('#titleBar .toggle'));
       doc.querySelector('#titleBar .toggle').click();
       doc.body.click();
       assert.equal(doc.body.classList.contains('navPanel-visible'), false);

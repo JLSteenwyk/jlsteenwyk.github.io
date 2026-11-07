@@ -21,3 +21,18 @@ test('visual arts keeps the gallery outside navigation and the footer after cont
     }
   } finally { dom.window.close(); }
 });
+
+test('primary pages expose footer labels, document language, zoom, and a main landmark', () => {
+  for (const file of ['index.html', 'publications.html', 'software.html', 'news.html', 'arts_visual.html']) {
+    const dom = new JSDOM(fs.readFileSync(file, 'utf8'));
+    try {
+      const d = dom.window.document;
+      assert.equal(d.documentElement.lang, 'en');
+      assert.ok(d.querySelector('[role="main"], main'));
+      assert.doesNotMatch(d.querySelector('meta[name="viewport"]').content, /user-scalable=no|maximum-scale=1/);
+      for (const link of d.querySelectorAll('#footer .icons a')) {
+        assert.equal(link.getAttribute('aria-label'), link.querySelector('.label').textContent);
+      }
+    } finally { dom.window.close(); }
+  }
+});
