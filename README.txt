@@ -33,3 +33,16 @@ Credits:
 		jQuery (jquery.com)
 		Scrollex (github.com/ajlkn/jquery.scrollex)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+Website asset maintenance
+-------------------------
+Install development tools with `npm ci`. After editing assets/css/main.css,
+run `npm run build:css` and commit both the readable source and main.min.css.
+HTML pages load main.min.css; the HTML5 UP license notice is preserved.
+Run `npm test` for the citation widget loader checks.
+
+Responsive image previews live in assets/images/optimized. Full-resolution
+originals are retained. Run `python scripts/optimize-images.py` with Pillow
+installed to generate previews for new image references on the audited pages.
+Delete affected preview files before regenerating a changed source image.
+The script leaves existing responsive markup intact; update its srcset if the
+original image dimensions or selected preview sizes change.

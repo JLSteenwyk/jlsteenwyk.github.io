@@ -1,0 +1,12 @@
+{
+  "name": "jlsteenwyk-website",
+  "private": true,
+  "scripts": {
+    "build:css": "node scripts/build-css.cjs",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "cssnano": "7.1.2",
+    "postcss": "8.5.32"
+  }
+}
