@@ -7436,6 +7436,14 @@ body.biophilic-theme.page-news .news-source {
 	font-weight: 500;
 }
 
+body.sparkit-theme.page-news #content > h3 {
+	margin: 2.5rem 0 0.75rem;
+}
+
+body.sparkit-theme.page-news #content > h3:first-of-type {
+	margin-top: 0;
+}
+
 body.biophilic-theme.page-news h3 {
 	margin: 1.5rem 0 0.75rem;
 }
