@@ -1,0 +1,3026 @@
+{
+  "baseline": "3f11820",
+  "software": [
+    {
+      "id": "ClipKIT",
+      "description": "Since the early 1990’s, there has been one predominant guiding light for multiple sequence alignment trimming - the removal of phylogenetically uncertain sites defined as those that are highly divergent; however, the efficacy of this approach has been called into question. ClipKIT implements an alternative strategy wherein sites with phylogenetic certainty are retained and others are removed. Our benchmarking analyses show that ClipKIT is a reliable and top performing software. Run ClipKIT in the browser and leave the computing up to us!",
+      "links": [
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://clipkit.genomelybio.com/",
+        "https://codecov.io/gh/jlsteenwyk/clipkit",
+        "https://github.com/JLSteenwyk/ClipKIT",
+        "https://github.com/JLSteenwyk/ClipKIT/actions",
+        "https://github.com/jlsteenwyk/clipkit/graphs/contributors",
+        "https://jlsteenwyk.com/ClipKIT/",
+        "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001007",
+        "https://lbesson.mit-license.org/",
+        "https://pepy.tech/badge/clipkit",
+        "https://pypi.org/project/clipkit/",
+        "https://www.genomelybio.com/",
+        "publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/actions/workflow/status/JLSteenwyk/ClipKIT/ci.yml?branch=master",
+        "https://codecov.io/gh/jlsteenwyk/clipkit/branch/master/graph/badge.svg?token=0J49I6441V",
+        "https://img.shields.io/github/contributors/jlsteenwyk/clipkit",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://static.pepy.tech/personalized-badge/clipkit?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://img.shields.io/pypi/pyversions/clipkit",
+        "https://zenodo.org/badge/DOI/10.1371/journal.pbio.3001007.svg"
+      ]
+    },
+    {
+      "id": "PhyKIT",
+      "description": "Diverse disciplines in biology process and analyze multiple sequence alignments (MSAs) and phylogenetic trees to evaluate their information content, infer evolutionary events and processes, and predict gene function. However, automated processing of MSAs and trees remains a challenge due to the lack of a unified toolkit. To fill this gap, we introduce PhyKIT, a Swiss-army knife-like toolkit for processing and analyzing multiple sequence alignments and phylogenetic trees.",
+      "links": [
+        "https://academic.oup.com/bioinformatics/article-abstract/37/16/2325/6131675?redirectedFrom=fulltext",
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://codecov.io/gh/jlsteenwyk/phykit",
+        "https://github.com/JLSteenwyk/PhyKIT",
+        "https://github.com/JLSteenwyk/PhyKIT/actions",
+        "https://github.com/jlsteenwyk/phykit/graphs/contributors",
+        "https://jlsteenwyk.com/PhyKIT/",
+        "https://jlsteenwyk.com/publication_pdfs/2024_Steenwyk_etal_CurrentProtocols.pdf",
+        "https://lbesson.mit-license.org/",
+        "https://pepy.tech/badge/phykit",
+        "https://pypi.org/project/phykit/",
+        "publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/actions/workflow/status/JLSteenwyk/PhyKIT/ci.yml?branch=master",
+        "https://codecov.io/gh/jlsteenwyk/phykit/branch/master/graph/badge.svg?token=0J49I6441V",
+        "https://img.shields.io/github/contributors/jlsteenwyk/phykit",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://static.pepy.tech/personalized-badge/phykit?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://img.shields.io/pypi/pyversions/phykit",
+        "https://zenodo.org/badge/DOI/10.1093/bioinformatics/btab096.svg"
+      ]
+    },
+    {
+      "id": "BioKIT",
+      "description": "Bioinformatic workflows often rely on individual software to conduct single analyses, which makes maintaining workflows cumbersome and threatens reproducibility. To address this obstacle, we introduce BioKIT, a versatile toolkit that conducts diverse processing and analysis functions such as genome assembly quality assessment, alignment summary statistics, relative synonymous codon usage, codon optimization estimation, and more.",
+      "links": [
+        "https://academic.oup.com/genetics/advance-article/doi/10.1093/genetics/iyac079/6583183?login=true",
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://codecov.io/gh/JLSteenwyk/BioKIT",
+        "https://github.com/JLSteenwyk/BioKIT",
+        "https://github.com/JLSteenwyk/BioKIT/actions",
+        "https://github.com/jlsteenwyk/biokit/graphs/contributors",
+        "https://jlsteenwyk.com/BioKIT/",
+        "https://lbesson.mit-license.org/",
+        "https://pepy.tech/badge/jlsteenwyk-biokit",
+        "https://pypi.org/project/jlsteenwyk-biokit/",
+        "publication_pdfs/2022_Steenwyk_etal_Genetics.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/actions/workflow/status/JLSteenwyk/BioKIT/ci.yml?branch=main",
+        "https://codecov.io/gh/JLSteenwyk/BioKIT/branch/main/graph/badge.svg?token=5X9C6YAVIG",
+        "https://img.shields.io/github/contributors/jlsteenwyk/biokit",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://static.pepy.tech/personalized-badge/jlsteenwyk-biokit?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://img.shields.io/pypi/pyversions/jlsteenwyk-biokit",
+        "https://zenodo.org/badge/DOI/10.1093/genetics/iyac079.svg"
+      ]
+    },
+    {
+      "id": "orthohmm",
+      "description": "Orthologous gene groups provide a foundation for comparative genomics and phylogenomics, but sequence divergence can complicate their identification across distantly related organisms. OrthoHMM infers these groups using Hidden Markov Models parameterized from substitution matrices. This approach models sequence evolution to identify homologous relationships among protein sequences and organize genes into orthologous groups for downstream evolutionary analyses.",
+      "links": [
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://codecov.io/gh/JLSteenwyk/orthohmm",
+        "https://github.com/JLSteenwyk/orthohmm",
+        "https://github.com/JLSteenwyk/orthohmm/actions",
+        "https://github.com/jlsteenwyk/orthohmm/graphs/contributors",
+        "https://jlsteenwyk.com/orthohmm/",
+        "https://lbesson.mit-license.org/",
+        "https://pepy.tech/badge/orthohmm",
+        "https://pypi.org/project/orthohmm/",
+        "https://www.biorxiv.org/content/10.1101/2024.12.07.627370",
+        "publication_pdfs/2022_Steenwyk_etal_PLoS_Biology.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/actions/workflow/status/JLSteenwyk/orthohmm/ci.yml?branch=main",
+        "https://codecov.io/gh/JLSteenwyk/orthohmm/graph/badge.svg?token=YEXCJN8D4E",
+        "https://img.shields.io/github/contributors/jlsteenwyk/orthohmm",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://static.pepy.tech/personalized-badge/orthohmm?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://img.shields.io/pypi/pyversions/orthohmm",
+        "https://zenodo.org/badge/DOI/10.1371/journal.pbio.3001827.svg"
+      ]
+    },
+    {
+      "id": "orthosnap",
+      "description": "Molecular evolution studies such as phylogenomics and surveys of positive selection often strictly rely on single-copy orthologous genes (SC-OGs). To increase the number of molecular markers for use in molecular evolution studies, OrthoSNAP identifies subgroups of SC-OGs nested within larger gene families using a phylogenetically informed framework. The resulting SC-OGs are termed SNAP-OGs because they have been identified using a splitting and pruning procedure.",
+      "links": [
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://codecov.io/gh/JLSteenwyk/orthosnap",
+        "https://github.com/JLSteenwyk/orthosnap",
+        "https://github.com/JLSteenwyk/orthosnap/actions",
+        "https://github.com/jlsteenwyk/orthosnap/graphs/contributors",
+        "https://jlsteenwyk.com/orthosnap/",
+        "https://lbesson.mit-license.org/",
+        "https://pepy.tech/badge/orthosnap",
+        "https://pypi.org/project/orthosnap/",
+        "publication_pdfs/2022_Steenwyk_etal_PLoS_Biology.pdf",
+        "publication_pdfs/2022_Steenwyk_etal_PLoS_Biology.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/actions/workflow/status/JLSteenwyk/orthosnap/ci.yml?branch=master",
+        "https://codecov.io/gh/JLSteenwyk/orthosnap/branch/master/graph/badge.svg?token=FX66FUET0L",
+        "https://img.shields.io/github/contributors/jlsteenwyk/orthosnap",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://static.pepy.tech/personalized-badge/orthosnap?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://img.shields.io/pypi/pyversions/orthosnap",
+        "https://zenodo.org/badge/DOI/10.1371/journal.pbio.3001827.svg"
+      ]
+    },
+    {
+      "id": "orthofisher",
+      "description": "orthofisher conducts automated HMMsearches among a set of proteomes using a predetermined set of orthologs. Sequence similarity searches classify results as multi-copy, single-copy, or absent in a given genome. For the purposes of phylogenomics/phylogenetics, multi-fasta files are generated for all sequences as well as those that are single-copy; for gene family copy number determination, easily parsed output files contain absolute copy number of hits from the sequence similarity search.",
+      "links": [
+        "https://academic.oup.com/g3journal/article/11/9/jkab250/6321954",
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://codecov.io/gh/jlsteenwyk/orthofisher",
+        "https://github.com/JLSteenwyk/orthofisher",
+        "https://github.com/JLSteenwyk/orthofisher/actions",
+        "https://github.com/jlsteenwyk/orthofisher/graphs/contributors",
+        "https://jlsteenwyk.com/orthofisher/",
+        "https://lbesson.mit-license.org/",
+        "https://pepy.tech/badge/orthofisher",
+        "https://pypi.org/project/orthofisher/",
+        "publication_pdfs/2021_Steenwyk_and_Rokas_G3.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/actions/workflow/status/JLSteenwyk/orthofisher/ci.yml?branch=main",
+        "https://codecov.io/gh/JLSteenwyk/orthofisher/branch/main/graph/badge.svg?token=7LYMLHDL9D",
+        "https://img.shields.io/github/contributors/jlsteenwyk/orthofisher",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://static.pepy.tech/personalized-badge/orthofisher?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://img.shields.io/pypi/pyversions/orthofisher",
+        "https://zenodo.org/badge/DOI/10.1093/g3journal/jkab250.svg"
+      ]
+    },
+    {
+      "id": "treehouse",
+      "description": "Sometimes phylogenies are so large it is challenging to determine the relationships among a subset of taxa. To remedy this issue, treehouse, a user friendly GUI app, allows users to obtain subtrees from larger phylogenies. To obtain subtrees, upload a list of tip names in the desired subtree from an inputted phylogeny or a phylogeny from the treehouse database. Thereafter, users can download a pdf or newick file of the subtree of interest.",
+      "links": [
+        "https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-019-4577-5",
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://github.com/JLSteenwyk/treehouse",
+        "https://github.com/jlsteenwyk/treehouse/graphs/contributors",
+        "https://lbesson.mit-license.org/",
+        "publication_pdfs/2019_Steenwyk_and_Rokas_BMC_Research_Notes.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/contributors/jlsteenwyk/treehouse",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://zenodo.org/badge/DOI/10.1186/s13104-019-4577-5.svg"
+      ]
+    },
+    {
+      "id": "ggpubfigs",
+      "description": "Creating publication ready figures can increases figure accessibility and improve science communication. Here, I present ggpubfigs, an R package with customized themes and colorblind friendly color palettes to help create publication (or presentation) ready figures. Please contact me if you would like to contribute a theme or color palette!",
+      "links": [
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://github.com/JLSteenwyk/ggpubfigs",
+        "https://github.com/jlsteenwyk/ggpubfigs/graphs/contributors",
+        "https://journals.asm.org/doi/10.1128/MRA.00871-21",
+        "https://lbesson.mit-license.org/",
+        "publication_pdfs/2021_Steenwyk_and_Rokas_Microbiology_Resource_Announcements.pdf"
+      ],
+      "badges": [
+        "https://img.shields.io/github/contributors/jlsteenwyk/ggpubfigs",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://zenodo.org/badge/DOI/10.1128/MRA.00871-21.svg"
+      ]
+    },
+    {
+      "id": "orthoflow",
+      "description": "Led by Heroen Verbruggen. The development, maintenance, and execution of phylogenomic workflows is challenging, requiring programming, data management skills, and familiarity with changing best practices. We introduce Orthoflow, a software wherein a single command automatically conducts end-to-end phylogenomic analysis using supermatrix and supertree methods from multiple input data formats. Orthoflow increases the accessibility of researchers to conduct rigorous phylogenomic analysis flexibly.",
+      "links": [
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://github.com/rbturnbull/orthoflow",
+        "https://github.com/rbturnbull/orthoflow/actions/workflows/docs.yml/badge.svg",
+        "https://github.com/rbturnbull/orthoflow/graphs/contributors",
+        "https://hverbruggen.github.io/",
+        "https://pepy.tech/badge/orthoflow",
+        "https://pypi.org/project/orthoflow/",
+        "https://rbturnbull.github.io/orthoflow/",
+        "https://www.apache.org/licenses/LICENSE-2.0",
+        "https://www.researchsquare.com/article/rs-3699210/v1",
+        "https://www.researchsquare.com/article/rs-3699210/v1"
+      ],
+      "badges": [
+        "https://github.com/rbturnbull/orthoflow/actions/workflows/docs.yml/badge.svg",
+        "https://img.shields.io/github/contributors/rbturnbull/orthoflow",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff",
+        "https://static.pepy.tech/personalized-badge/orthoflow?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPi%20Downloads",
+        "https://img.shields.io/badge/License-Apache%202.0-blue.svg",
+        "https://img.shields.io/pypi/pyversions/orthoflow",
+        "https://zenodo.org/badge/DOI/10.21203/rs.3.rs-3699210.svg"
+      ]
+    },
+    {
+      "id": "solu",
+      "description": "Led by Solu Genomics. Solu is a cloud-based platform for real-time genomic surveillance, addressing challenges in infrastructure, expertise, and data security. Designed for continuous integration of new sequencing data, it ensures user-friendly and privacy-focused operations, meeting healthcare providers’ needs. Solu’s also detects encoded antimicrobial resistance genes.",
+      "links": [
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://jlsteenwyk.com/publication_pdfs/2025_Saratto_etal_BMC_Bioinformatics.pdf",
+        "https://lbesson.mit-license.org/",
+        "https://www.biorxiv.org/content/10.1101/2024.05.30.596434v2",
+        "https://www.solugenomics.com/",
+        "https://www.solugenomics.com/"
+      ],
+      "badges": [
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://zenodo.org/badge/DOI/10.1101/2024.05.30.596434.svg",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff"
+      ]
+    },
+    {
+      "id": "lvbrs",
+      "description": "Led by LatchBio. Analysis of Bulk RNA-Seq data, differential expression analysis, and functional enrichment requires processing and handling diverse data types. The LVBRS toolkit (the Latch Verified Bulk RNA-Seq toolkit) conducts end-to-end analysis, differential expression, and functional enrichment analysis from raw reads from Bulk RNA-Sequencing experiments using a cloud-based framework. LVBRS enables researchers to focus on interpretation of biological data, not processing, file handling, data management, and resource allocation.",
+      "links": [
+        "https://bsky.app/profile/jlsteenwyk.bsky.social",
+        "https://latch.bio/",
+        "https://lbesson.mit-license.org/",
+        "https://www.biorxiv.org/content/10.1101/2022.11.10.516016v1",
+        "https://www.biorxiv.org/content/10.1101/2022.11.10.516016v1"
+      ],
+      "badges": [
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://zenodo.org/badge/DOI/10.1101/2022.11.10.516016.svg",
+        "https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "authors": "102. Aime, M.C., U. Kõljalg, T.W. May, K. Bensch, M. Bradshaw, G. Cardinali, P.W. Crous, J.Z. Groenewald, L. Guzmán-Dávalos, D.L. Hawksworth, M. Hernández-Restrepo, D. Hibbett, K.D. Hyde, E. Malosso, R.H. Nilsson, A. Rosling, N. Schoutteten, M. Stadler, A.M. Vasco-Palacios, C.M. Visagie, N. Wijayawardene, A. Yurkov, K. Abarenkov, H.A. Ariyawansa, J.P.M. Araújo, C. Baschien, M. Bakhshi, M. Bendiksby, M. Chuvochina, A. Conti, E. D'hooge, V. Flores-Almaraz, B. Furneaux, G.W. Griffith, D. Hernández-Hernández, J. Houbraken, G. Jones, P. Kirk, Y. Marin-Felix, W. Meyer, I. Pyrri, T. Rämä, V. Robert, <strong>J.L. Steenwyk</strong>, D. Stephens, L. Tedersoo, M. Thines, D. Vu, J. Xu, N. Zhang, &amp; R. Lücking.",
+      "title": "<u>How to name dark fungal taxa outside the Code: The International Standard to Catalogue Dark Fungal Taxa (ISCDFT).</u>",
+      "status": "<strong><i>Submitted.</i></strong>",
+      "links": [],
+      "bold": [
+        "J.L. Steenwyk",
+        "Submitted."
+      ],
+      "badges": []
+    },
+    {
+      "authors": "101. Zhang, Q., H. Liu, <strong>J.L. Steenwyk</strong>, B. Feng, X. Tian, X. Zhou, X.-X. Shen, X. Cao, Z. Qu, &amp; Y. Li.",
+      "title": "<u>Site Subsampling Based on Posterior Mean Site Frequency Improves Phylogenomic Estimation Accuracy.</u>",
+      "status": "<strong><i>Submitted.</i></strong>",
+      "links": [],
+      "bold": [
+        "J.L. Steenwyk",
+        "Submitted."
+      ],
+      "badges": []
+    },
+    {
+      "authors": "100. Cao, X.*, C. Liu*, D. Liu*, <strong>J.L. Steenwyk</strong>, X. Zhong, Y. Wang, H. Liu, Y. Wang, Q. Zhang, X.-X. Shen, Z. Qu^, &amp; Y. Li^.",
+      "title": "<u>The evolution and function of eukaryote-to-cyanobacteria horizontal gene transfer.</u>",
+      "status": "<strong><i>Submitted.</i></strong>",
+      "links": [],
+      "bold": [
+        "J.L. Steenwyk",
+        "Submitted."
+      ],
+      "badges": []
+    },
+    {
+      "authors": "99. <strong>Steenwyk, J.L.</strong> (2026).",
+      "title": "<a href=\"https://www.preprints.org/manuscript/202608.2226\">Epistemic State Representations in Large Language Models.</a>",
+      "status": "<strong><i>Preprints</i></strong>. DOI: 10.20944/preprints202608.2226.v1.",
+      "links": [
+        "https://www.preprints.org/manuscript/202608.2226"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Preprints"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.20944/preprints202608.2226.v1"
+        ],
+        [
+          "altmetric",
+          "doi: 10.20944/preprints202608.2226.v1"
+        ]
+      ]
+    },
+    {
+      "authors": "98. <strong>Steenwyk, J.L.</strong> (2026).",
+      "title": "<a href=\"https://www.biorxiv.org/content/10.64898/2026.07.08.737319v1\">A geometric atlas of how ESM3 organizes modalities across depth.</a>",
+      "status": "<strong><i>bioRxiv</i></strong>. DOI: 10.64898/2026.07.08.737319.",
+      "links": [
+        "https://www.biorxiv.org/content/10.64898/2026.07.08.737319v1"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "bioRxiv"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.64898/2026.07.08.737319"
+        ],
+        [
+          "altmetric",
+          "doi: 10.64898/2026.07.08.737319"
+        ]
+      ]
+    },
+    {
+      "authors": "97. <strong>Steenwyk, J.L.</strong> (2026).",
+      "title": "<a href=\"https://www.biorxiv.org/content/10.64898/2026.05.12.724593v1\">Structure tokens sharpen the feature vocabulary of protein language models.</a>",
+      "status": "<strong><i>bioRxiv</i></strong>. DOI: 10.64898/2026.05.12.724593.",
+      "links": [
+        "https://www.biorxiv.org/content/10.64898/2026.05.12.724593v1"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "bioRxiv"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.64898/2026.05.12.724593"
+        ],
+        [
+          "altmetric",
+          "doi: 10.64898/2026.05.12.724593"
+        ]
+      ]
+    },
+    {
+      "authors": "96. Laurent, J.M., A. Bou, M. Pieler, C. Igoe, A. Andonian, S. Narayanan, J. Braza, A.S. Vassopoulos, <strong>J.L. Steenwyk</strong>, B. Lash, A.D. White, S.G. Rodriques (2026).",
+      "title": "<a href=\"https://arxiv.org/abs/2604.09554\">LABBench2: An Improved Benchmark for AI Systems Performing Biology Research.</a>",
+      "status": "<strong><i>arXiv</i></strong>. DOI: 10.48550/arXiv.2604.09554.",
+      "links": [
+        "https://arxiv.org/abs/2604.09554"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "arXiv"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.48550/arXiv.2604.09554"
+        ],
+        [
+          "altmetric",
+          "doi: 10.48550/arXiv.2604.09554"
+        ]
+      ]
+    },
+    {
+      "authors": "95. van Rhijn, N., E. Gan, P. Hepo-oja, X. Wang, J. Li, S. Duggan, D. Firer, L. Alsharqi, H. Gifford, <strong>J.L. Steenwyk</strong>, A.P. Brackin, A. Abdolrasouli, A.M. Borman, C.A. Cuomo, M.C. Fisher, D. Armstrong-James, R.A. Farrer, J. Usher, &amp; J. Rhodes (2026).",
+      "title": "<a href=\"https://www.biorxiv.org/content/10.64898/2026.03.13.711634v1\">The Antarctic marine microplastics reveals environmental persistence and rapid evolution of <i>Candida auris</i>.</a>",
+      "status": "<strong><i>bioRxiv.</i></strong>. DOI: 10.64898/2026.03.13.711634.",
+      "links": [
+        "https://www.biorxiv.org/content/10.64898/2026.03.13.711634v1"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "bioRxiv."
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.64898/2026.03.13.711634"
+        ],
+        [
+          "altmetric",
+          "doi: 10.64898/2026.03.13.711634"
+        ]
+      ]
+    },
+    {
+      "authors": "94. Li, N., <strong>J.L. Steenwyk</strong>, S. O’Donnell, E. Gluck-Thaler, S.M. Kane, D.M. Geiser, &amp; F.N. Martin (2026).",
+      "title": "<a href=\"publication_pdfs/2026_Li_etal_BMC_Genomics.pdf\">Assembling telomere-to-telomere genomes of <i>Fusarium oxysporum</i> f. sp. <i>lactucae</i> provides a roadmap for studying genome and phenotype evolution.</a>",
+      "status": "<strong><i>BMC Genomics</i></strong>. DOI: 10.21203/rs.3.rs-8100147.<br>",
+      "links": [
+        "publication_pdfs/2026_Li_etal_BMC_Genomics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "BMC Genomics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.21203/rs.3.rs-8100147"
+        ],
+        [
+          "altmetric",
+          "doi: 10.21203/rs.3.rs-8100147"
+        ]
+      ]
+    },
+    {
+      "authors": "93. <strong>Bjornson, S.</strong>, T.T. Bringloe, K. Uthanumallian, R. De Paoli-Iseppi, M. B. Clark, C.M.C. Cremen, R. Hossen, O. McGinley, T. Jalali, J. West, F. Leliaert, R. Wetherbee, O. De Clerck, S. Duchene, <strong>J.L. Steenwyk</strong>, &amp; H. Verbruggen (2026).",
+      "title": "<a href=\"publication_pdfs/2026_Bjornson_etal_Current_biology.pdf\">Stepwise evolutionary transitions in Cladophorales plastid genomes reveals origins of hairpin chromosomes.</a>",
+      "status": "<strong><i>Current Biology</i></strong>. DOI: 10.1016/j.cub.2026.02.038.<br>",
+      "links": [
+        "publication_pdfs/2026_Bjornson_etal_Current_biology.pdf"
+      ],
+      "bold": [
+        "Bjornson, S.",
+        "J.L. Steenwyk",
+        "Current Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.cub.2026.02.038"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.cub.2026.02.038"
+        ]
+      ]
+    },
+    {
+      "authors": "92. Ros-Rocher, N., J. Reyes-Rivera, U. Horo, C. Combredet, Y. Foroughijabbari, B.T. Larson, M.C. Coyle, E.A.T. Houtepen, M.J.A. Vermeij, N. King, <strong>J.L. Steenwyk</strong>, &amp; T. Brunet (2026).",
+      "title": "<a href=\"publication_pdfs/2026_Ros-Rocher_etal_Nature.pdf\">Clonal-aggregative multicellularity entrained by salinity in one of the closest relatives of animals.</a>",
+      "status": "<strong><i>Nature</i></strong>. DOI: 10.1038/s41586-026-10137-y.<br>",
+      "links": [
+        "publication_pdfs/2026_Ros-Rocher_etal_Nature.pdf",
+        "https://www.nature.com/articles/d41586-026-00292-7"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Nature"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1038/s41586-026-10137-y"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1038/s41586-026-10137-y"
+        ]
+      ]
+    },
+    {
+      "authors": "91. O’Donnell, S., N. Li, <strong>J.L. Steenwyk</strong>, D. Geiser, F.N. Martin, &amp; E. Gluck-Thaler (2026).",
+      "title": "<a href=\"publication_pdfs/2026_ODonnell_etal_G3.pdf\">PAQman: reference-free ensemble evaluation of long-read eukaryotic genome assemblies.</a>",
+      "status": "<strong><i>G3 Genes|Genomes|Genetics</i></strong>. DOI: 10.1093/g3journal/jkag034.<br>",
+      "links": [
+        "publication_pdfs/2026_ODonnell_etal_G3.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "G3 Genes|Genomes|Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/g3journal/jkag034"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/g3journal/jkag034"
+        ]
+      ]
+    },
+    {
+      "authors": "90. David, K.T., L. Horianopoulos, C. Goncalves, <strong>J.L. Steenwyk</strong>, A. Pontes, P. Goncalves, C.T. Hittinger, M. Pennell, &amp; A. Rokas (2026).",
+      "title": "<a href=\"publication_pdfs/2026_David_etal_Current_Biology.pdf\">Discovery of additional ancient genome duplications in yeasts.</a>",
+      "status": "<strong><i>Current Biology</i></strong>. DOI: 10.1016/j.cub.2025.12.053.<br>",
+      "links": [
+        "publication_pdfs/2026_David_etal_Current_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Current Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.cub.2025.12.053"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.cub.2025.12.053"
+        ]
+      ]
+    },
+    {
+      "authors": "89. <strong>Steenwyk, J.L.</strong>^ &amp; T.J. Buida III (2025).",
+      "title": "<a href=\"https://www.biorxiv.org/content/10.1101/2024.11.28.625917v2\">RCVT: a diagnostic to quantify compositional biases among taxa for large phylogenomic studies.</a>",
+      "status": "<strong><i>bioRxiv</i></strong>. DOI: 10.1101/2024.11.28.625917.",
+      "links": [
+        "https://www.biorxiv.org/content/10.1101/2024.11.28.625917v2"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "bioRxiv"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1101/2024.11.28.625917"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1101/2024.11.28.625917"
+        ]
+      ]
+    },
+    {
+      "authors": "88. <strong>Steenwyk, J.L.</strong>^ &amp; N. King^ (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Steenwyk_and_King_Science.pdf\">Retracted: Integrative phylogenomics positions sponges at the root of the animal tree.</a>",
+      "status": "<strong><i>Science</i></strong>. DOI: 10.1126/science.adw9456.<br>",
+      "links": [
+        "publication_pdfs/2025_Steenwyk_and_King_Science.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Science"
+      ],
+      "badges": []
+    },
+    {
+      "authors": "87. Gonçalves, C.*, <strong>J.L. Steenwyk</strong>*, D.C. Rinker, D.A. Opulente, A.L. LaBella, M.-C. Harrison, J.F. Wolters, X. Zhou, X.-X. Shen, S. Covo, M. Groenewald, C.T. Hittinger, &amp; A. Rokas (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Goncalves_and_Steenwyk_etal_MBE.pdf\">Stable hypermutators revealed by the genomic landscape of DNA repair genes among yeast species.</a>",
+      "status": "<strong><i>Molecular Biology and Evolution</i></strong>. DOI: 10.1093/molbev/msaf285.<br>",
+      "links": [
+        "publication_pdfs/2025_Goncalves_and_Steenwyk_etal_MBE.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Molecular Biology and Evolution"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/molbev/msaf285"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/molbev/msaf285"
+        ]
+      ]
+    },
+    {
+      "authors": "86. Fan, Y., M. Du, W. Zhang, W. Deng, E. Yang, S. Wang, L. Yan, L. Zhang, S. Kang, <strong>J.L. Steenwyk</strong>, Z. An, X. Liu, &amp; M. Xiang (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Fan_etal_MPE.pdf\">The Genomes of Nematode-Trapping Fungi Provide Insights into the Origin and Diversification of Fungal Carnivorism.</a>",
+      "status": "<strong><i>Molecular Phylogenetics and Evolution</i></strong>. DOI: 10.1016/j.ympev.2025.108423.",
+      "links": [
+        "publication_pdfs/2025_Fan_etal_MPE.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Molecular Phylogenetics and Evolution"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.ympev.2025.108423"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.ympev.2025.108423"
+        ]
+      ]
+    },
+    {
+      "authors": "85. O. Lemke*, B.M. Heineike*, S. Viknander, N. Cohen, <strong>J.L. Steenwyk</strong>, L. Spranger, F. Li, F. Agostini, C.T. Lee, S.K. Aulakh, J. Nielsen, A. Rokas, J. Berman, A. Zelezniak, T.I. Gossmann, &amp; M. Ralser (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Lemke_and_Heinneike_etal_Nature.pdf\">The role of metabolism in shaping enzyme structures over 400 million years.</a>",
+      "status": "<strong><i>Nature</i></strong>. DOI: 10.1038/s41586-025-09205-6.",
+      "links": [
+        "publication_pdfs/2025_Lemke_and_Heinneike_etal_Nature.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Nature"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1038/s41586-025-09205-6"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1038/s41586-025-09205-6"
+        ]
+      ]
+    },
+    {
+      "authors": "84. Feng, B.*, Y. Li*, H. Liu*, <strong>J.L. Steenwyk</strong>, K.T. David, X. Tian, B. Xu, C. Gonçalves, D.A. Opulente, A.L. LaBella, M.-C. Harrison, J.F. Wolters, S. Shao, Z. Chen, K.J. Fisher, M. Groenewald, C.T. Hittinger, X.-X. Shen, A. Rokas^, X. Zhou^, &amp; Y. Li^ (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Feng_etal_Molecular_Systems_Biology.pdf\">Unique trajectory of gene family evolution from genomic analysis of nearly all known species in an ancient yeast lineage.</a>",
+      "status": "<strong><i>Molecular Systems Biology</i></strong>. DOI: 10.1038/s44320-025-00118-0.",
+      "links": [
+        "publication_pdfs/2025_Feng_etal_Molecular_Systems_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Molecular Systems Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1038/s44320-025-00118-0"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1038/s44320-025-00118-0"
+        ]
+      ]
+    },
+    {
+      "authors": "83. <strong>Steenwyk, J.L.</strong>^, J.T. Loucks, &amp; T.J. Buida III (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Steenwyk_etal_Nucleic_Acids_Research.pdf\">ClipKIT in the Browser: Fast Online Trimming of Multiple Sequence Alignments for Phylogenetics.</a>",
+      "status": "<strong><i>Nucleic Acids Research</i></strong>. DOI: 10.1093/nar/gkaf325.<br>",
+      "links": [
+        "publication_pdfs/2025_Steenwyk_etal_Nucleic_Acids_Research.pdf",
+        "https://clipkit.genomelybio.com/",
+        "https://www.genomelybio.com/"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Nucleic Acids Research"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/nar/gkaf325"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/nar/gkaf325"
+        ]
+      ]
+    },
+    {
+      "authors": "82. Delbaje, E., L. Pontes, J. Rhodes, <strong>J.L. Steenwyk</strong>, L. Lu, T.F. dos Reis, A. Rokas, &amp; G.H. Goldman (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Delbaje_etal_npj_antimicrobials_and_resistance.pdf\"><i>Aspergillus fumigatus</i> mitogenomes and their influence on azole-resistant and -susceptible populations.</a>",
+      "status": "<strong><i>npj Antimicrobials and Resistance</i></strong>. DOI: 10.1038/s44259-025-00083-6.",
+      "links": [
+        "publication_pdfs/2025_Delbaje_etal_npj_antimicrobials_and_resistance.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "npj Antimicrobials and Resistance"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1038/s44259-025-00083-6"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1038/s44259-025-00083-6"
+        ]
+      ]
+    },
+    {
+      "authors": "81. Li, N., D.M. Geiser, <strong>J.L. Steenwyk</strong>, C. Tsuchida, S. Koike, S. Slinski, &amp; F.N. Martin (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Li_etal_Phytopathology.pdf\">A systematic approach for identifying unique genomic sequences for <i>Fusarium oxysporum</i> f. sp. <i>lactucae</i> race 1 and development of molecular diagnostic tools.</a>",
+      "status": "<strong><i>Phytopathology</i></strong>. DOI: 10.1094/PHYTO-04-24-0142-R.",
+      "links": [
+        "publication_pdfs/2025_Li_etal_Phytopathology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Phytopathology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1094/PHYTO-04-24-0142-R"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1094/PHYTO-04-24-0142-R"
+        ]
+      ]
+    },
+    {
+      "authors": "80. Sarratto, T., K. Visuri, J. Lehitenen, I. Ortega-Sanz, <strong>J.L. Steenwyk</strong>, &amp; S. Sihvonen (2025).",
+      "title": "<a href=\"publication_pdfs/2025_Saratto_etal_BMC_Bioinformatics.pdf\">Solu: a cloud platform for real-time genomic pathogen surveillance.</a>",
+      "status": "<strong><i>BMC Bioinformatics</i></strong>. DOI: 10.1186/s12859-024-06005-z.",
+      "links": [
+        "publication_pdfs/2025_Saratto_etal_BMC_Bioinformatics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "BMC Bioinformatics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1186/s12859-024-06005-z"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1186/s12859-024-06005-z"
+        ]
+      ]
+    },
+    {
+      "authors": "79. <strong>Steenwyk, J.L.</strong>^, T.J. Buida III, A. Rokas, &amp; N. King (2024).",
+      "title": "<a href=\"https://www.biorxiv.org/content/10.1101/2024.12.07.627370v1\">OrthoHMM: Improved Inference of Ortholog Groups using Hidden Markov Models.</a>",
+      "status": "<strong><i>bioRxiv</i></strong>. DOI: 10.1101/2024.12.07.627370. <br>",
+      "links": [
+        "https://www.biorxiv.org/content/10.1101/2024.12.07.627370v1",
+        "https://github.com/JLSteenwyk/orthohmm",
+        "https://jlsteenwyk.com/orthohmm/"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "bioRxiv"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1101/2024.12.07.627370"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1101/2024.12.07.627370"
+        ]
+      ]
+    },
+    {
+      "authors": "78. <strong>Steenwyk, J.L.</strong>, S. Knowles, R.W. Bastos, <strong>C. Balamurugan</strong>, D. Rinker, M.E. Mead, C.D. Roberts, H.A. Raja, Y. Li, A.C. Colabardini, P.A. de Castro, T.F. dos Reis, D. Canóvas, R.L. Sanchez, K. Lagrou, E. Torrado, F. Rodrigues, N.H. Oberlies, X. Zhou, G.H. Goldman^, &amp; A. Rokas^ (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Steenwyk_etal_Nature_Communications.pdf\">Evolutionary origin and population diversity of a cryptic hybrid pathogen.</a>",
+      "status": "<strong><i>Nature Communications</i></strong>. DOI: 10.1038/s41467-024-52639-1.",
+      "links": [
+        "publication_pdfs/2024_Steenwyk_etal_Nature_Communications.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "C. Balamurugan",
+        "Nature Communications"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1038/s41467-024-52639-1"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1038/s41467-024-52639-1"
+        ]
+      ]
+    },
+    {
+      "authors": "77. Gonçalves, C., M.-C. Harrison, <strong>J.L. Steenwyk</strong>, D.A. Opulente, A.L. LaBella, J.F. Wolters, X. Zhou, X.-X. Shen, M. Groenewald, C.T. Hittinger, &amp; A. Rokas (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Goncalves_etal_PLOS_Biology.pdf\">Diverse signatures of convergent evolution in cacti-associated yeasts.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3002832.",
+      "links": [
+        "publication_pdfs/2024_Goncalves_etal_PLOS_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3002832"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3002832"
+        ]
+      ]
+    },
+    {
+      "authors": "76. <strong>Bjornson, S.</strong>, H. Verbruggen, N.S. Upham^, &amp; <strong>J.L. Steenwyk</strong>^ (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Bjornson_etal_Molecular_Phylogenetics_and_Evolution.pdf\">Reticulate Evolution: Detection and Utility in the Phylogenomics Era.</a>",
+      "status": "<strong><i>Molecular Phylogenetics and Evolution</i></strong>. DOI: 10.1016/j.ympev.2024.108197.",
+      "links": [
+        "publication_pdfs/2024_Bjornson_etal_Molecular_Phylogenetics_and_Evolution.pdf"
+      ],
+      "bold": [
+        "Bjornson, S.",
+        "J.L. Steenwyk",
+        "Molecular Phylogenetics and Evolution"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.ympev.2024.108197"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.ympev.2024.108197"
+        ]
+      ]
+    },
+    {
+      "authors": "75. <strong>Steenwyk, J.L.</strong>, G.I. Martínez-Redondo, T.J. Buida III, E. Gluck-Thaler, X.-X. Shen, T. Gabaldón, A. Rokas, &amp; R. Fernández (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Steenwyk_etal_CurrentProtocols.pdf\">PhyKIT: A Multitool for Phylogenomics.</a>",
+      "status": "<strong><i>Current Protocols</i></strong>. DOI: 10.1002/cpz1.70016.",
+      "links": [
+        "publication_pdfs/2024_Steenwyk_etal_CurrentProtocols.pdf",
+        "https://currentprotocols.onlinelibrary.wiley.com/toc/26911299/2024/4/11"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Current Protocols"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1002/cpz1.70016"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1002/cpz1.70016"
+        ]
+      ]
+    },
+    {
+      "authors": "74. Liu, H., <strong>J.L. Steenwyk</strong>, X. Zhou, D.T. Schultz, K.M. Kocot, X.-X. Shen, A. Rokas^, &amp; Y. Li^ (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Liu_etal_PLOS_Biology.pdf\">A taxon-rich and genome-scale phylogeny of Opisthokonta.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3002794.",
+      "links": [
+        "publication_pdfs/2024_Liu_etal_PLOS_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3002794"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3002794"
+        ]
+      ]
+    },
+    {
+      "authors": "73. Pinzan, C.F., C. Valero, P.A. de Castro, J. Luiz da Silva, K. Earle, H. Liu, M.A.C. Horta, O. Kniemeyer, T. Krüger, A. Pschibul, D.N. Cömert, T. Heinekamp, A.A. Brakhage, <strong>J.L. Steenwyk</strong>, M.E. Mead, N. Hermsdorf, S.G. Filler, N.G. da Rosa-Garzon, E. Delbaje, M.J. Bromley, H. Cabral, C. Diehl, C.B. Angeli, G. Palmisano, A.S. Ibrahim, D.C. Rinker, T.J.C. Sauters, K. Steffen, A. Gumilang, A. Rokas^, S. Gago^, &amp; T.F. dos Reis^, G.H. Goldman^ (2024).",
+      "title": "<a href=\"/publication_pdfs/2024_Pinzan_etal_Nature_Microbiology.pdf\"><i>Aspergillus fumigatus</i> conidial surface-associated proteome reveals factors for fungal evasion and host immunity modulation.</a>",
+      "status": "<strong><i>Nature Microbiology</i></strong>. DOI: 10.1038/s41564-024-01782-y.",
+      "links": [
+        "/publication_pdfs/2024_Pinzan_etal_Nature_Microbiology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Nature Microbiology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1038/s41564-024-01782-y"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1038/s41564-024-01782-y"
+        ]
+      ]
+    },
+    {
+      "authors": "72. Zhang, W., Y. Fan, W. Deng, Y. Chen, S. Wang, S. Kang, <strong>J.L. Steenwyk</strong>, M. Xiang, &amp; X. Liu (2024).",
+      "title": "<a href=\"/publication_pdfs/2024_Zhang_etal_mBio.pdf\">Characterization of Genome-wide Phylogenetic Conflict Uncovers Evolutionary Modes of Carnivorous Fungi.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mbio.02133-24.",
+      "links": [
+        "/publication_pdfs/2024_Zhang_etal_mBio.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mbio.02133-24"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mbio.02133-24"
+        ]
+      ]
+    },
+    {
+      "authors": "71. <strong>Steenwyk, J.L.</strong> (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Steenwyk_Crop_Health.pdf\">The discovery of a new lifespan-extending gene in insects.</a>",
+      "status": "<strong><i>Crop Health</i></strong>. DOI: 10.1007/s44297-024-00032-1.",
+      "links": [
+        "publication_pdfs/2024_Steenwyk_Crop_Health.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Crop Health"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1007/s44297-024-00032-1"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1007/s44297-024-00032-1"
+        ]
+      ]
+    },
+    {
+      "authors": "70. <strong>Steenwyk, J.L.</strong> &amp; N. King (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Steenwyk_and_King_PLOS_Biology.pdf\">The Promise and Pitfalls of Synteny in Phylogenomics.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3002632.",
+      "links": [
+        "publication_pdfs/2024_Steenwyk_and_King_PLOS_Biology.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3002632"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3002632"
+        ]
+      ]
+    },
+    {
+      "authors": "69. Brown, A., <strong>J.L. Steenwyk</strong>, &amp; A. Rokas (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Brown_etal_G3.pdf\">Genome-wide patterns of non-coding sequence variation in the major fungal pathogen <i>Aspergillus fumigatus</i>.</a>",
+      "status": "<strong><i>G3 Genes|Genomes|Genetics</i></strong>. DOI: 10.1093/g3journal/jkae091.",
+      "links": [
+        "publication_pdfs/2024_Brown_etal_G3.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "G3 Genes|Genomes|Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/g3journal/jkae091"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/g3journal/jkae091"
+        ]
+      ]
+    },
+    {
+      "authors": "68. Opulente, D.A.*, A.L. LaBella*, M.-C. Harrison<sup>#</sup>, J.F. Wolters<sup>#</sup>, C. Liu, Y. Li, J. Kominek, <strong>J.L. Steenwyk</strong>, H.R. Stoneman, J. VanDenAvond, C.R. Miller, Q.K. Langdon, M. Silva, C. Gonçalves, E.J. Ubbelohde, Y. Li, K.V. Buh, M. Jarzyna, M.A.B. Haase, C.A. Rosa, N. Cadez, D. Libkind, J.H. DeVirgilio, A.B. Hulfachor, C.P. Kurtzman, J.P. Sampaio, P. Gonçalves, X. Zhou, X.-X. Shen, M. Groenewald, A. Rokas^, &amp; C.T. Hittinger^ (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Opulente_and_LaBella_etal_Science.pdf\">Genomic factors shape carbon and nitrogen metabolic niche breadth across Saccharomycotina yeasts.</a>",
+      "status": "<strong><i>Science</i></strong>. DOI: 10.1126/science.adj4503.",
+      "links": [
+        "publication_pdfs/2024_Opulente_and_LaBella_etal_Science.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Science"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1126/science.adj4503"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1126/science.adj4503"
+        ]
+      ]
+    },
+    {
+      "authors": "67. <strong>Balamurugan, C.</strong>, <strong>J.L. Steenwyk</strong>^, G.H. Goldman, &amp; A. Rokas^ (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Balamurugan_etal_G3.pdf\">The evolution of the gliotoxin biosynthetic gene cluster in <i>Penicillium</i> fungi.</a>",
+      "status": "<strong><i>G3 Genes|Genomes|Genetics</i></strong>. DOI:10.1093/g3journal/jkae063",
+      "links": [
+        "publication_pdfs/2024_Balamurugan_etal_G3.pdf"
+      ],
+      "bold": [
+        "Balamurugan, C.",
+        "J.L. Steenwyk",
+        "G3 Genes|Genomes|Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/g3journal/jkae063"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/g3journal/jkae063"
+        ]
+      ]
+    },
+    {
+      "authors": "66. <strong>Steenwyk, J.L.</strong>, <strong>C. Balamurugan</strong>, H.A. Raja, C. Gonçalves, N. Li, F. Martin, J. Berman, N.H. Oberlies, J.G. Gibbons, G.H. Goldman, D.M. Geiser, D.S. Hibbett, &amp; A. Rokas (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Steenwyk_etal_mSpectrum.pdf\">Phylogenomics reveals extensive misidentification of fungal strains from the genus <i>Aspergillus</i>.</a>",
+      "status": "<strong><i>mSpectrum</i></strong>. DOI: 10.1128/spectrum.03980-23",
+      "links": [
+        "publication_pdfs/2024_Steenwyk_etal_mSpectrum.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "C. Balamurugan",
+        "mSpectrum"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/spectrum.03980-23"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/spectrum.03980-23"
+        ]
+      ]
+    },
+    {
+      "authors": "65. O'Meara, M.^, J. Rapala, C.B. Nichols, C. Alexandre, B. Billmyre, <strong>J.L. Steenwyk</strong>, J.A. Alspaugh, &amp; T. O'Meara^ (2024).",
+      "title": "<a href=\"publication_pdfs/2024_OMeara_etal_PLOS_Genetics.pdf\">CryptoCEN: A Co-Expression Network for <i>Cryptococcus neoformans</i> reveals novel proteins involved in DNA damage repair.</a>",
+      "status": "<strong><i>PLOS Genetics</i></strong>. DOI: 10.1371/journal.pgen.1011158.",
+      "links": [
+        "publication_pdfs/2024_OMeara_etal_PLOS_Genetics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pgen.1011158"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pgen.1011158"
+        ]
+      ]
+    },
+    {
+      "authors": "64. Haase, M.A.B.^, <strong>J.L. Steenwyk</strong>, &amp; J.D. Boeke (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Haase_etal_Genetics.pdf\">Gene loss and cis-regulatory novelty shaped core histone gene evolution in the apiculate yeast <i>Hanseniaspora uvarum</i>.</a>",
+      "status": "<strong><i>Genetics</i></strong>. DOI: 10.1093/genetics/iyae008",
+      "links": [
+        "publication_pdfs/2024_Haase_etal_Genetics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/genetics/iyae008"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/genetics/iyae008"
+        ]
+      ]
+    },
+    {
+      "authors": "63. Wang, J.-T.J., <strong>J.L. Steenwyk</strong>, &amp; R. Brem (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Wang_etal_FEMS_Yeast_Research.pdf\">Natural trait variation across <i>Saccharomycotina</i> species.</a>",
+      "status": "<strong><i>FEMS Yeast Research</i></strong>. DOI: 10.1093/femsyr/foae002.",
+      "links": [
+        "publication_pdfs/2024_Wang_etal_FEMS_Yeast_Research.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "FEMS Yeast Research"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/femsyr/foae002"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/femsyr/foae002"
+        ]
+      ]
+    },
+    {
+      "authors": "62. Yea, R., M. Biango-Daniels, <strong>J.L. Steenwyk</strong>, A. Rokas, N. Louwa, R. Nardellaa, &amp; B.E. Wolfe (2024).",
+      "title": "<a href=\"publication_pdfs/2024_Yea_et_al_FGB.pdf\">Genomic, transcriptomic, and ecological diversity of <i>Penicillium</i> species in the cheese rind microbiome.</a>",
+      "status": "<strong><i>Fungal Genetics and Biology</i></strong>. DOI: 10.1016/j.fgb.2023.103862.",
+      "links": [
+        "publication_pdfs/2024_Yea_et_al_FGB.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Fungal Genetics and Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.fgb.2023.103862"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.fgb.2023.103862"
+        ]
+      ]
+    },
+    {
+      "authors": "61. Turnbull, R.*, <strong>J.L. Steenwyk</strong>*, S. Mutch, P. Scholten, V.W. Salazar, J.L. Birch, &amp; H. Verbruggen (2023).",
+      "title": "<a href=\"https://www.researchsquare.com/article/rs-3699210/v2\">Orthoflow: phylogenomic analysis and diagnostics with one command.</a>",
+      "status": "<strong><i>Research Square</i></strong>. DOI: 10.21203/rs.3.rs-3699210/v2.",
+      "links": [
+        "https://www.researchsquare.com/article/rs-3699210/v2",
+        "https://github.com/rbturnbull/orthoflow",
+        "https://rbturnbull.github.io/orthoflow/"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Research Square"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.21203/rs.3.rs-3699210/v2"
+        ],
+        [
+          "altmetric",
+          "doi: 10.21203/rs.3.rs-3699210/v2"
+        ]
+      ]
+    },
+    {
+      "authors": "60. <strong>Steenwyk, J.L.</strong>^, A. Rokas, &amp; G.H. Goldman (2023).",
+      "title": "<a href=\"publication_pdfs/2023_Steenwyk_etal_PLOS_Pathogens.pdf\">Know the enemy and know yourself: addressing cryptic fungal pathogens and beyond.</a>",
+      "status": "<strong><i>PLOS Pathogens</i></strong>. DOI: 10.1371/journal.ppat.1011704.",
+      "links": [
+        "publication_pdfs/2023_Steenwyk_etal_PLOS_Pathogens.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "PLOS Pathogens"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.ppat.1011704"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.ppat.1011704"
+        ]
+      ]
+    },
+    {
+      "authors": "59. Liu, C., X. Han, <strong>J.L. Steenwyk</strong>, &amp; X.-X. Shen (2023).",
+      "title": "<a href=\"publication_pdfs/2023_Liu_etal_Crop_Health.pdf\">Temporal transcriptomics provides insight into host-pathogen interactions: a case study of <i>Didymella pinodella</i> and disease-resistant and -susceptible pea varieties.</a>",
+      "status": "<strong><i>Crop Health</i></strong>. DOI: 10.1007/s44297-023-00005-w.",
+      "links": [
+        "publication_pdfs/2023_Liu_etal_Crop_Health.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Crop Health"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1007/s44297-023-00005-w"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1007/s44297-023-00005-w"
+        ]
+      ]
+    },
+    {
+      "authors": "58. <strong>Steenwyk, J.L.</strong>, Y. Li, X. Zhou, X.-X. Shen, &amp; A. Rokas (2023).",
+      "title": "<a href=\"publication_pdfs/2023_Steenwyk_etal_Nature_Reviews_Genetics.pdf\">Incongruence in the phylogenomics era.</a>",
+      "status": "<strong><i>Nature Reviews Genetics</i></strong>. DOI: 10.1038/s41576-023-00620-x.",
+      "links": [
+        "publication_pdfs/2023_Steenwyk_etal_Nature_Reviews_Genetics.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Nature Reviews Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1038/s41576-023-00620-x"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1038/s41576-023-00620-x"
+        ]
+      ]
+    },
+    {
+      "authors": "57. Drewell, R.A., T.C. Cormier, <strong>J.L. Steenwyk</strong>, J. St. Denis, J.F. Tabima, J.M. Dresch, &amp; D.A. Larochelle (2023).",
+      "title": "<a href=\"publication_pdfs/2023_Drewell_etal_NAR_Genomics_and_Bioinformatics.pdf\">The <i>Dictyostelium discoideum</i> genome lacks significant DNA methylation and uncovers palindromic sequences as a source of false positives in bisulfite sequencing.</a>",
+      "status": "<strong><i>NAR Genomics and Bioinformatics</i></strong>. DOI: 10.1093/nargab/lqad035.",
+      "links": [
+        "publication_pdfs/2023_Drewell_etal_NAR_Genomics_and_Bioinformatics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "NAR Genomics and Bioinformatics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/nargab/lqad035"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/nargab/lqad035"
+        ]
+      ]
+    },
+    {
+      "authors": "56. Mead, M.E., P.A. de Castro, <strong>J.L. Steenwyk</strong>, J. Gangeux, M. Hoenigl, J. Prattes, R. Rautemaa-Richardson, H. Guegan, C.B. Moore, C. Lass-Flörl, F. Reizine, C. Valero, N. Van Rhijn, M.J. Bromley, A. Rokas, G.H. Goldman, &amp; S. Gago (2023).",
+      "title": "<a href=\"publication_pdfs/2023_Mead_etal_Microbiology_spectrum.pdf\">COVID-19 Associated Pulmonary Aspergillosis isolates are genomically diverse but similar to each other in their responses to infection-relevant stresses.</a>",
+      "status": "<strong><i>mSpectrum</i></strong>. DOI: 10.1128/spectrum.05128-22.",
+      "links": [
+        "publication_pdfs/2023_Mead_etal_Microbiology_spectrum.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mSpectrum"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/spectrum.05128-22"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/spectrum.05128-22"
+        ]
+      ]
+    },
+    {
+      "authors": "55. Sierra-Patev, Sean, B. Min, M. Naranjo-Ortiz, B. Looney, Z. Konkel, J.C. Slot, Y. Sakamoto, <strong>J.L. Steenwyk</strong>, A. Rokas, J. Carro, S. Camarero, P. Ferreira, G. Molpeceres, F.J. Ruiz-Dueñas, A. Serrano, B. Henrissat, E. Drula, K.W. Hughes, J.L. Mata, N.K. Ishikawa, R. Vargas-Isla, S. Ushijima, C.A. Smith, S. Ahrendt, W. Andreopoulos, G. He, K. LaButti, A. Lipzen, V. Ng, R. Riley, L. Sandor, K. Barry, A.T. Martínez, Y. Xiao, J.G. Gibbons, K. Terashima, I.V. Grigoriev, &amp; D. Hibbett (2023).",
+      "title": "<a href=\"publication_pdfs/2023_Sierra-Patev_etal_PNAS.pdf\">A Global Phylogenomic Analysis of the Shiitake Genus <i>Lentinula</i>.</a>",
+      "status": "<strong><i>PNAS</i></strong>. DOI: 10.1073/pnas.2214076120.",
+      "links": [
+        "publication_pdfs/2023_Sierra-Patev_etal_PNAS.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PNAS"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1073/pnas.2214076120"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1073/pnas.2214076120"
+        ]
+      ]
+    },
+    {
+      "authors": "54. <strong>Steenwyk, J.L.</strong>^ &amp; A. Rokas^ (2023).",
+      "title": "<a href=\"publication_pdfs/2023_Steenwyk_and_Rokas_PLOS_Biology.pdf\">The dawn of relaxed phylogenetics.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3001998.",
+      "links": [
+        "publication_pdfs/2023_Steenwyk_and_Rokas_PLOS_Biology.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3001998"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3001998"
+        ]
+      ]
+    },
+    {
+      "authors": "53. Le, H.G.B.H.^<sup>,</sup>*, <strong>J.L. Steenwyk</strong>*, N. Manske, M. Smolin, A. Abdulali, A. Kamat, R. Kanchana, K. Giffin, A. Andere, K. Workman^ (2022).",
+      "title": "<a href=\"https://www.biorxiv.org/content/10.1101/2022.11.10.516016v1\">Latch Verified Bulk-RNA Seq toolkit: a cloud-based suite of workflows for bulk RNA-seq quality control, analysis, and functional enrichment.</a>",
+      "status": "bioRxiv. DOI: 10.1101/2022.11.10.516016.",
+      "links": [
+        "https://www.biorxiv.org/content/10.1101/2022.11.10.516016v1"
+      ],
+      "bold": [
+        "J.L. Steenwyk"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1101/2022.11.10.516016"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1101/2022.11.10.516016"
+        ]
+      ]
+    },
+    {
+      "authors": "52. <strong>Zheng, Q.</strong>, <strong>J.L. Steenwyk</strong>^, &amp; A. Rokas^ (2022).",
+      "title": "<a href=\"https://www.biorxiv.org/content/10.1101/2022.03.29.486229v1\">Lack of universal mutational biases in a fungal phylum.</a>",
+      "status": "<strong><i>bioRxiv</i></strong>. DOI: 10.1101/2022.03.29.486229.",
+      "links": [
+        "https://www.biorxiv.org/content/10.1101/2022.03.29.486229v1"
+      ],
+      "bold": [
+        "Zheng, Q.",
+        "J.L. Steenwyk",
+        "bioRxiv"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1101/2022.03.29.486229"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1101/2022.03.29.486229"
+        ]
+      ]
+    },
+    {
+      "authors": "51. Li, Y.^, H. Liu, <strong>J.L. Steenwyk</strong>, A.L. LaBella, M.C. Harrison, M. Groenewald, X. Zhou, X.-X. Shen, T. Zhao, C.T. Hittinger, A. Rokas^ (2022).",
+      "title": "<a href=\"publication_pdfs/2022_Li_etal_Current_Biology.pdf\">Contrasting modes of macro- and micro-synteny evolution in a eukaryotic subphylum.</a>",
+      "status": "<strong><i>Current Biology</i></strong>. DOI: 10.1016/j.cub.2022.10.025.",
+      "links": [
+        "publication_pdfs/2022_Li_etal_Current_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Current Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.cub.2022.10.025"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.cub.2022.10.025"
+        ]
+      ]
+    },
+    {
+      "authors": "50. <strong>Steenwyk, J.L.</strong>^, D.C. Goltz, T.J. Buida III, Y. Li, X.-X. Shen, &amp; A. Rokas^ (2022).",
+      "title": "<a href=\"publication_pdfs/2022_Steenwyk_etal_PLoS_Biology.pdf\">OrthoSNAP: a tree splitting and pruning algorithm for retrieving single-copy orthologs from gene family trees.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3001827.",
+      "links": [
+        "publication_pdfs/2022_Steenwyk_etal_PLoS_Biology.pdf",
+        "https://github.com/JLSteenwyk/orthosnap",
+        "https://jlsteenwyk.com/orthosnap/"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3001827"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3001827"
+        ]
+      ]
+    },
+    {
+      "authors": "49. Brown, A., M.E. Mead, <strong>J.L. Steenwyk</strong>, G.H. Goldman, &amp; A. Rokas (2022).",
+      "title": "<a href=\"publication_pdfs/2022_Brown_etal_Frontiers_in_Fungal_Biology.pdf\">Extensive sequence divergence of non-coding regions between <i>Aspergillus fumigatus</i>, a major fungal pathogen of humans, and its relatives.</a>",
+      "status": "<strong><i>Frontiers in Fungal Biology</i></strong>. DOI: 10.3389/ffunb.2022.802494.",
+      "links": [
+        "publication_pdfs/2022_Brown_etal_Frontiers_in_Fungal_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Frontiers in Fungal Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.3389/ffunb.2022.802494"
+        ],
+        [
+          "altmetric",
+          "doi: 10.3389/ffunb.2022.802494"
+        ]
+      ]
+    },
+    {
+      "authors": "48. Horta, M.A., <strong>J.L. Steenwyk</strong>, M.E. Mead, L.H.B. dos Santos, S. Zhao, J.G. Gibbons, M. Marcet-Houben, T. Gabaldón, A. Rokas^, &amp; G.H. Goldman^ (2022).",
+      "title": "<a href=\"publication_pdfs/2022_Horta_etal_mBio.pdf\">Examination of genome-wide ortholog variation in clinical and environmental isolates of the fungal pathogen <i>Aspergillus fumigatus</i>.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mbio.01519-22.",
+      "links": [
+        "publication_pdfs/2022_Horta_etal_mBio.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mbio.01519-22"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mbio.01519-22"
+        ]
+      ]
+    },
+    {
+      "authors": "47. <strong>Steenwyk, J.L.</strong>^, T.J. Buida III, C. Gonçalves, D.C. Goltz, G.H. Morales, M.E. Mead, A.L. LaBella, C.M. Chavez, J.E. Schmitz, M. Hadjifrangiskou, Y. Li, &amp; A. Rokas^ (2022).",
+      "title": "<a href=\"publication_pdfs/2022_Steenwyk_etal_Genetics.pdf\">BioKIT: a versatile toolkit for processing and analyzing diverse types of sequence data.</a>",
+      "status": "<strong><i>Genetics</i></strong>. DOI: 10.1093/genetics/iyac079.",
+      "links": [
+        "publication_pdfs/2022_Steenwyk_etal_Genetics.pdf",
+        "https://github.com/JLSteenwyk/BioKIT",
+        "https://jlsteenwyk.com/BioKIT/"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/genetics/iyac079"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/genetics/iyac079"
+        ]
+      ]
+    },
+    {
+      "authors": "46. <strong>Steenwyk, J.L.</strong>, <strong>M.A. Phillips</strong>, F. Yang, S.S. Date, T. Graham, J. Berman,  C.T. Hittinger, &amp; A. Rokas (2022).",
+      "title": "<a href=\"publication_pdfs/2022_Steenwyk_etal_Science_Advances.pdf\">An orthologous gene coevolution network provides insight into eukaryotic cellular and genomic structure and function.</a>",
+      "status": "<strong><i>Science Advances</i></strong>. DOI: 10.1126/sciadv.abn0105.",
+      "links": [
+        "publication_pdfs/2022_Steenwyk_etal_Science_Advances.pdf",
+        "images/2022_Steenwyk_etal_Sci_Adv_featured_image.png",
+        "https://github.com/JLSteenwyk/budding_yeast_coevolution_network"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "M.A. Phillips",
+        "Science Advances"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1126/sciadv.abn0105"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1126/sciadv.abn0105"
+        ]
+      ]
+    },
+    {
+      "authors": "45. Bradley, N.P.*, K.L. Wahl*, <strong>J.L. Steenwyk</strong>, A. Rokas, &amp; B.F. Eichman (2022).",
+      "title": "<a href=\"publication_pdfs/2022_Bradley_etal_MBio.pdf\">Resistance-guided mining of bacterial genotoxins defines a family of DNA glycosylases.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mbio.03297-21.",
+      "links": [
+        "publication_pdfs/2022_Bradley_etal_MBio.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mbio.03297-21"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mbio.03297-21"
+        ]
+      ]
+    },
+    {
+      "authors": "44. P.A. de Castro, A. Moraes, A.C. Colabardini, M.A.C. Horta, S.L. Knowles, H.A. Raja, N.H. Oberlies, Y. Koyama, M. Ogawa, K. Gomi, <strong>J.L. Steenwyk</strong>, A. Rokas, L.N.A. Ries, &amp; G.H. Goldman (2022).",
+      "title": "<a href=\"publication_pdfs/2022_de_Castro_etal_mBio.pdf\">Regulation of gliotoxin biosynthesis and protection in <i>Aspergillus</i> species.</a>",
+      "status": "<strong><i>PLOS Genetics</i></strong>. DOI: 10.1371/journal.pgen.1009965.",
+      "links": [
+        "publication_pdfs/2022_de_Castro_etal_mBio.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pgen.1009965"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pgen.1009965"
+        ]
+      ]
+    },
+    {
+      "authors": "43. <strong>J.L. Steenwyk</strong>^ &amp; A. Rokas^ (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Steenwyk_and_Rokas_Microbiology_Resource_Announcements.pdf\">ggpubfigs: colorblind friendly color palettes and ggplot2 graphic system extensions for publication-quality scientific figures.</a>",
+      "status": "<strong><i>Microbiology Resource Announcements</i></strong>. DOI: 10.1128/MRA.00871-21.",
+      "links": [
+        "publication_pdfs/2021_Steenwyk_and_Rokas_Microbiology_Resource_Announcements.pdf",
+        "https://github.com/JLSteenwyk/ggpubfigs",
+        "https://github.com/JLSteenwyk/ggpubfigs"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Microbiology Resource Announcements"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/MRA.00871-21"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/MRA.00871-21"
+        ]
+      ]
+    },
+    {
+      "authors": "42. <strong>Phillips, M.A.</strong>, <strong>J.L. Steenwyk</strong>^, X.-X. Shen, &amp; A. Rokas^ (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Phillips_etal_Genome_biology_and_evolution.pdf\">Examination of gene loss in the DNA mismatch repair pathway and its mutational consequences in a fungal phylum.</a>",
+      "status": "<strong><i>Genome Biology and Evolution</i></strong>. DOI: 10.1093/gbe/evab219.",
+      "links": [
+        "publication_pdfs/2021_Phillips_etal_Genome_biology_and_evolution.pdf"
+      ],
+      "bold": [
+        "Phillips, M.A.",
+        "J.L. Steenwyk",
+        "Genome Biology and Evolution"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/gbe/evab219"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/gbe/evab219"
+        ]
+      ]
+    },
+    {
+      "authors": "41. Santos, R.A.C., M.E. Mead, <strong>J.L. Steenwyk</strong>, O. Rivero-Menéndez, A. Alastruey-Izquierdo, G.H. Goldman^, &amp; A. Rokas^ (2021).",
+      "title": "<a href=\"publication_pdfs/2021_dos_Santos_et_al_Frontiers_in_Fungal_Biology.pdf\">Examining signatures of natural selection in antifungal resistance genes across <i>Aspergillus</i> fungi.</a>",
+      "status": "<strong><i>Frontiers in Fungal Biology</i></strong>. DOI: 10.3389/ffunb.2021.723051.",
+      "links": [
+        "publication_pdfs/2021_dos_Santos_et_al_Frontiers_in_Fungal_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Frontiers in Fungal Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.3389/ffunb.2021.723051"
+        ],
+        [
+          "altmetric",
+          "doi: 10.3389/ffunb.2021.723051"
+        ]
+      ]
+    },
+    {
+      "authors": "40. <strong>Steenwyk, J.L.</strong>^ &amp; A. Rokas^ (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Steenwyk_and_Rokas_G3.pdf\">orthofisher: a broadly applicable tool for automated gene identification and retrieval.</a>",
+      "status": "<strong><i>G3 Genes|Genomes|Genetics</i></strong>. DOI: 10.1093/g3journal/jkab250.",
+      "links": [
+        "publication_pdfs/2021_Steenwyk_and_Rokas_G3.pdf",
+        "https://github.com/JLSteenwyk/orthofisher",
+        "https://jlsteenwyk.com/orthofisher/"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "G3 Genes|Genomes|Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/g3journal/jkab250"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/g3journal/jkab250"
+        ]
+      ]
+    },
+    {
+      "authors": "39. Ries, L., P. de Castro, L. Silva, C. Valero, T. dos Reis, R. Saborano, I. Duarte, G. Persinoti, <strong>J.L. Steenwyk</strong>, A. Rokas, F. Almeida, J. Costa, T. Fill, S.S.W. Wong, V. Aimanianda, F. Rodrigues, R. Gonçales, C. Duarte-Oliveira, A. Carvalho, &amp; G.H. Goldman (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Ries_etal_mBio.pdf\"><i>Aspergillus fumigatus</i> acetate utilization impacts virulence traits and pathogenicity.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mBio.01682-21.",
+      "links": [
+        "publication_pdfs/2021_Ries_etal_mBio.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mBio.01682-21"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mBio.01682-21"
+        ]
+      ]
+    },
+    {
+      "authors": "38. Mead, M.E.*, <strong>J.L. Steenwyk</strong>*, L.P. Silva, P.A. de Castro, N. Saeed, F. Hillmann, G.H. Goldman, &amp; A. Rokas (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Mead_and_Steenwyk_etal_Genetics.pdf\">An evolutionary genomic approach reveals both conserved and species-specific genetic elements related to human disease in closely related <i>Aspergillus</i> fungi.</a>",
+      "status": "<strong><i>Genetics</i></strong>. DOI: 10.1093/genetics/iyab066.",
+      "links": [
+        "publication_pdfs/2021_Mead_and_Steenwyk_etal_Genetics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/genetics/iyab066"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/genetics/iyab066"
+        ]
+      ]
+    },
+    {
+      "authors": "37. <strong>Steenwyk, J.L.</strong>, M.E. Mead, P.A. Castro, C. Valero, A. Damasio, R.A.C. Santos, A.L. LaBella, Y. Li, S.L. Knowles, H.A. Raja, N.H. Oberlies, X. Zhou, O.A. Cornely, F. Fuchs, P. Koehler^, G.H. Goldman^, &amp; A. Rokas^ (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Steenwyk_etal_Microbiology_Spectrum.pdf\">Genomic and phenotypic analysis of COVID-19-associated pulmonary aspergillosis isolates of <i>Aspergillus fumigatus</i>.</a>",
+      "status": "<strong><i>mSpectrum</i></strong>. DOI: 10.1128/Spectrum.00010-21.",
+      "links": [
+        "publication_pdfs/2021_Steenwyk_etal_Microbiology_Spectrum.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "mSpectrum"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/Spectrum.00010-21"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/Spectrum.00010-21"
+        ]
+      ]
+    },
+    {
+      "authors": "36. LaBella, A.L., D. Opulente, <strong>J.L. Steenwyk</strong>, C.T. Hittinger, &amp; A. Rokas (2021).",
+      "title": "<a href=\"publication_pdfs/2021_LaBella_etal_PLOS_Biology.pdf\">Signatures of optimal codon usage in metabolic genes inform budding yeast ecology.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3001185.",
+      "links": [
+        "publication_pdfs/2021_LaBella_etal_PLOS_Biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3001185"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3001185"
+        ]
+      ]
+    },
+    {
+      "authors": "35. <strong>Steenwyk, J.L.</strong> (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Steenwyk_mBio.pdf\">Evolutionary divergence in the DNA damage response among fungi.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mBio.03348-20.",
+      "links": [
+        "publication_pdfs/2021_Steenwyk_mBio.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mBio.03348-20"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mBio.03348-20"
+        ]
+      ]
+    },
+    {
+      "authors": "34. Shen, Xing-Xing, <strong>J.L. Steenwyk</strong>, &amp; A. Rokas (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Shen_etal_Systematic_biology.pdf\">Dissecting incongruence between concatenation- and quartet-based approaches in phylogenomic data.</a>",
+      "status": "<strong><i>Systematic Biology</i></strong>. DOI: 10.1093/sysbio/syab011.",
+      "links": [
+        "publication_pdfs/2021_Shen_etal_Systematic_biology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Systematic Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/sysbio/syab011"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/sysbio/syab011"
+        ]
+      ]
+    },
+    {
+      "authors": "33. <strong>Steenwyk, J.L.</strong>^, T.J. Buida III, A.L. LaBella, Y. Li, X.-X. Shen, &amp; A. Rokas^ (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf\">PhyKIT: a broadly applicable UNIX shell toolkit for processing and analyzing phylogenomic data.</a>",
+      "status": "<strong><i>Bioinformatics</i></strong>. DOI: 10.1093/bioinformatics/btab096.",
+      "links": [
+        "publication_pdfs/2021_Steenwyk_etal_Bioinformatics.pdf",
+        "https://github.com/JLSteenwyk/PhyKIT",
+        "https://jlsteenwyk.com/PhyKIT/"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Bioinformatics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/bioinformatics/btab096"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/bioinformatics/btab096"
+        ]
+      ]
+    },
+    {
+      "authors": "32. Li, Y., <strong>J.L. Steenwyk</strong>, Y. Chang, Y. Wang, T.Y. James, J.E. Stajich, J.W. Spatafora, M. Groenewald, C. Dunn, C.T. Hittinger, X.-X. Shen^, A. Rokas^ (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Li_etal_Current_Biology.pdf\">A genome-scale phylogeny of the kingdom Fungi.</a>",
+      "status": "<strong><i>Current Biology</i></strong>. DOI: 10.1016/j.cub.2021.01.074.",
+      "links": [
+        "publication_pdfs/2021_Li_etal_Current_Biology.pdf",
+        "https://www.cell.com/current-biology/issue?pii=S0960-9822(20)X0009-1#fullCover"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Current Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.cub.2021.01.074"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.cub.2021.01.074"
+        ]
+      ]
+    },
+    {
+      "authors": "31. <strong>Steenwyk, J.L.</strong> (2021).",
+      "title": "<a href=\"publication_pdfs/2021_Steenwyk_Yeast.pdf\">A portrait of budding yeasts: A symbol of the arts, sciences and a whole greater than the sum of its parts.</a>",
+      "status": "<strong><i>Yeast</i></strong>. DOI: 10.1002/yea.3518.",
+      "links": [
+        "publication_pdfs/2021_Steenwyk_Yeast.pdf",
+        "https://onlinelibrary.wiley.com/toc/10970061/2021/38/1"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Yeast"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1002/yea.3518"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1002/yea.3518"
+        ]
+      ]
+    },
+    {
+      "authors": "30. <strong>Steenwyk, J.L.</strong>^, T.J. Buida III, Y. Li, X.-X. Shen, &amp; A. Rokas^ (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf\">ClipKIT: a multiple sequence alignment-trimming software for accurate phylogenomic inference.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3001007.",
+      "links": [
+        "publication_pdfs/2020_Steenwyk_etal_PLOS_Biology.pdf",
+        "https://clipkit.genomelybio.com/",
+        "https://www.genomelybio.com/",
+        "https://github.com/JLSteenwyk/ClipKIT",
+        "https://jlsteenwyk.com/ClipKIT/"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3001007"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3001007"
+        ]
+      ]
+    },
+    {
+      "authors": "29. Li, Y., K.T. David, X.-X. Shen, <strong>J.L. Steenwyk</strong>, K.M. Halanych, &amp; A. Rokas (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Li_etal_PNAS.pdf\">Feature Frequency Profile-based phylogenies are inaccurate.</a>",
+      "status": "<strong><i>PNAS</i></strong>. DOI: 10.1073/pnas.2013143117.",
+      "links": [
+        "publication_pdfs/2020_Li_etal_PNAS.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PNAS"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1073/pnas.2013143117"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1073/pnas.2013143117"
+        ]
+      ]
+    },
+    {
+      "authors": "28. Shen, X.-X.^, <strong>J.L. Steenwyk</strong>, A.L. LaBella, D.A. Opulente, X. Zhou, J. Kominek, Y. Li, M. Groenewald, C.T. Hittinger, &amp; A. Rokas^ (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Shen_etal_Science_Advances.pdf\">Genome-scale phylogeny and contrasting modes of genome evolution in the fungal phylum Ascomycota.</a>",
+      "status": "<strong><i>Science Advances</i></strong>. DOI: 10.1126/sciadv.abd0079.",
+      "links": [
+        "publication_pdfs/2020_Shen_etal_Science_Advances.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Science Advances"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1126/sciadv.abd0079"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1126/sciadv.abd0079"
+        ]
+      ]
+    },
+    {
+      "authors": "27. Santos, R.A.C., O. Rivero-Menendez, <strong>J.L. Steenwyk</strong>, M.E. Mead, G.H. Goldman^, A. Alastruey-Izquierdo, &amp; A. Rokas^ (2020).",
+      "title": "<a href=\"publication_pdfs/2020_dos_Santos_Microbiology_Resource_Announcements.pdf\">Draft genome sequences of four <i>Aspergillus</i> section <i>Fumigati</i> clinical strains.</a>",
+      "status": "<strong><i>Microbiology Resource Announcements</i></strong>. DOI: 10.1128/MRA.00856-20.",
+      "links": [
+        "publication_pdfs/2020_dos_Santos_Microbiology_Resource_Announcements.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Microbiology Resource Announcements"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1101/2020.06.28.176479"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1101/2020.06.28.176479"
+        ]
+      ]
+    },
+    {
+      "authors": "26. Filho, A.P.C., G.T.P. Brancini, P.A. de Castro, J.A. Ferreira, L.P. Silva, M.C. Rocha, I. Malavazi, J.G.M. Pontes, T. Fill, R. Silva, F. Almeida, <strong>J.L. Steenwyk</strong>, A. Rokas, T.F. dos Reis, L.N.A. Ries, &amp; G.H. Goldman (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Filho_etal_mBio.pdf\"><i>Aspergillus fumigatus</i> G-protein coupled receptors GprM and GprJ are important for the regulation of the cell wall integrity pathway, secondary metabolite production, and virulence.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mBio.02458-20.",
+      "links": [
+        "publication_pdfs/2020_Filho_etal_mBio.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mBio.02458-20"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mBio.02458-20"
+        ]
+      ]
+    },
+    {
+      "authors": "25. <strong>Steenwyk, J.L.</strong>, M.E. Mead*, S.L. Knowles*, H.A. Raja, C.D. Roberts, O. Bader, J. Houbraken, G.H. Goldman, N.H. Oberlies, &amp; A. Rokas (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Steenwyk_etal_Genetics.pdf\">Variation Among Biosynthetic Gene Clusters, Secondary Metabolite Profiles, and Cards of Virulence Across <i>Aspergillus</i> Species.</a>",
+      "status": "<strong><i>Genetics</i></strong>. DOI: 10.1534/genetics.120.303549.",
+      "links": [
+        "publication_pdfs/2020_Steenwyk_etal_Genetics.pdf",
+        "https://academic.oup.com/genetics/issue/217/2",
+        "https://www.genetics.org/content/216/2/481"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1534/genetics.120.303549"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1534/genetics.120.303549"
+        ]
+      ]
+    },
+    {
+      "authors": "24. Ries, L.N.A., L. Pardeshi, Z. Dong, K. Tan, <strong>J.L. Steenwyk</strong>, A.C. Colabardini, J.A.F. Filho, P.A. de Castro, L.P. Silva, N.W. Preite, F. Almeida, L.J. de Assis, R.A.C. dos Santos, P. Bowyer, M. Bromley, R.A. Owens, S. Doyle, M. Demasi, D.C.R. Hernández, L.E.S. Netto, M.T. Pupo, A. Rokas, F.V. Loures, K.H. Wong, &amp; G.H. Goldman (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Ries_et_al_PLoS_Pathogens.pdf\">The <i>Aspergillus fumigatus</i> transcription factor RglT is important for gliotoxin biosynthesis and self-protection, and virulence.</a>",
+      "status": "<strong><i>PLOS Pathogens</i></strong>. DOI: 10.1371/journal.ppat.1008645.",
+      "links": [
+        "publication_pdfs/2020_Ries_et_al_PLoS_Pathogens.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Pathogens"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.ppat.1008645"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.ppat.1008645"
+        ]
+      ]
+    },
+    {
+      "authors": "23. <strong>Steenwyk, J.L.</strong>*, A.L. Lind*, L.N.A. Ries, T.F. dos Reis, L.P. Silva, F. Almeida, R.W. Bastos, T.F. de Campos Fraga da Silva, V.L.D. Bonato, A.M. Pessoni, F. Rodrigues, H.A. Raja, S.L. Knowles, N.H. Oberlies, K. Lagrou, G.H. Goldman^, A. Rokas^ (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Steenwyk_and_Lind_et_al_Current_Biology.pdf\">Pathogenic allodiploid hybrids of <i>Aspergillus</i> fungi.</a>",
+      "status": "<strong><i>Current Biology</i></strong>. DOI: 10.1016/j.cub.2020.04.071.",
+      "links": [
+        "publication_pdfs/2020_Steenwyk_and_Lind_et_al_Current_Biology.pdf",
+        "https://www.cell.com/current-biology/issue?pii=S0960-9822(19)X0014-7#fullCover",
+        "images/Steenwyk_and_Lind_etal_CurrBio_NatMicroReviews_Highlights.pdf",
+        "https://github.com/JLSteenwyk/Pathogenic_allodiploid_hybrids_of_Aspergillus_fungi"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Current Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.cub.2020.04.071"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.cub.2020.04.071"
+        ]
+      ]
+    },
+    {
+      "authors": "22. Mead, M.E.*, A.T. Borowsky*, B. Joehnk, <strong>J.L. Steenwyk</strong>, X.-X. Shen, A. Sil, &amp; A. Rokas (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Mead_Borowsky_et_al_Genome_Biology_and_Evolution.pdf\">Recurrent loss of <i>abaA</i>, a master regulator of asexual development in filamentous fungi, correlates with changes in genomic and morphological traits.</a>",
+      "status": "<strong><i>Genome Biology and Evolution</i></strong>. DOI: 10.1093/gbe/evaa107.",
+      "links": [
+        "publication_pdfs/2020_Mead_Borowsky_et_al_Genome_Biology_and_Evolution.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Genome Biology and Evolution"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/gbe/evaa107"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/gbe/evaa107"
+        ]
+      ]
+    },
+    {
+      "authors": "21. Santos, R.A.C., <strong>J.L. Steenwyk</strong>, O. Rivero-Menendez, M.E. Mead, L.P. Silva, R.W. Bastos, A. Alastruey-Izquierdo, G.H. Goldman^, &amp; A. Rokas^ (2020).",
+      "title": "<a href=\"publication_pdfs/2020_dos_Santos_et_al_Frontiers_in_Genetics.pdf\">Genomic and phenotypic heterogeneity of clinical isolates of the human pathogens <i>Aspergillus fumigatus</i>, <i>Aspergillus lentulus</i> and <i>Aspergillus fumigatiaffinis</i>.</a>",
+      "status": "<strong><i>Frontiers in Genetics</i></strong>. DOI: 10.3389/fgene.2020.00459.",
+      "links": [
+        "publication_pdfs/2020_dos_Santos_et_al_Frontiers_in_Genetics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Frontiers in Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.3389/fgene.2020.00459"
+        ],
+        [
+          "altmetric",
+          "doi: 10.3389/fgene.2020.00459"
+        ]
+      ]
+    },
+    {
+      "authors": "20. Bastos, R.W., C. Valero, L.P. Silva, T. Schoen, M. Drott, V. Brauer, R. Silva-Rocha, A. Lind, <strong>J.L. Steenwyk</strong>, A. Rokas, F. Rodrigues, A. Resendiz-Sharpe, K. Lagrou, M. Marcet-Houben, T. Gabaldon, E. McDonnell, I. Reid, A. Tsang, B.R. Oakley, F. Loures, F. Almeida, A. Huttenlocher, N.P. Keller, L. Ries, &amp; G.H. Goldman (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Bastos_et_al_mSphere.pdf\">Functional characterization of clinical isolates of the opportunistic fungal pathogen <i>Aspergillus nidulans</i>.</a>",
+      "status": "<strong><i>mSphere</i></strong>. DOI: 10.1128/mSphere.00153-20.",
+      "links": [
+        "publication_pdfs/2020_Bastos_et_al_mSphere.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mSphere"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mSphere.00153-20"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mSphere.00153-20"
+        ]
+      ]
+    },
+    {
+      "authors": "19. Rokas, A., M.E. Mead, <strong>J.L. Steenwyk</strong>, N.H. Oberlies, &amp; G.H. Goldman (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Rokas_et_al_PLoS_Pathogens.pdf\">Evolving moldy murderers: <i>Aspergillus</i> section <i>Fumigati</i> as a model for studying the repeated evolution of fungal pathogenicity.</a>",
+      "status": "<strong><i>PLOS Pathogens</i></strong>. DOI: 10.1371/journal.ppat.1008315.",
+      "links": [
+        "publication_pdfs/2020_Rokas_et_al_PLoS_Pathogens.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Pathogens"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.ppat.1008315"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.ppat.1008315"
+        ]
+      ]
+    },
+    {
+      "authors": "18. Knowles, S.L., M.E. Mead, L.P. Silva, H.A. Raja, <strong>J.L. Steenwyk</strong>, G.H. Gustavo^, A. Rokas^, &amp; N.H. Oberlies^ (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Knowles_et_al_mBio.pdf\">Gliotoxin, a known virulence factor in the major human pathogen <i>Aspergillus fumigatus</i>, is also biosynthesized by the non-pathogenic relative <i>A. fischeri</i>.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mBio.03361-19.",
+      "links": [
+        "publication_pdfs/2020_Knowles_et_al_mBio.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mBio.03361-19"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mBio.03361-19"
+        ]
+      ]
+    },
+    {
+      "authors": "17. Libkind, D., D. Peris, F.A. Cubillos, <strong>J.L. Steenwyk</strong>, D.A. Opulente, Q.K. Langdon, N. Bellora, A. Rokas, &amp; C.T. Hittinger (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Libkind_et_al_FEMS_Yeast_Research.pdf\">Into the wild: new yeast genomes from natural environments and new tools for their analysis.</a>",
+      "status": "<strong><i>FEMS Yeast Research</i></strong>. DOI: 10.1093/femsyr/foaa008.",
+      "links": [
+        "publication_pdfs/2020_Libkind_et_al_FEMS_Yeast_Research.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "FEMS Yeast Research"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1093/femsyr/foaa008"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1093/femsyr/foaa008"
+        ]
+      ]
+    },
+    {
+      "authors": "16. Rokas, A., M.E. Mead, <strong>J.L. Steenwyk</strong>, H.A. Raja, &amp; N.H., Oberlies (2020).",
+      "title": "<a href=\"publication_pdfs/2020_Rokas_et_al_Natural_Products_Reports.pdf\">Biosynthetic gene clusters and the evolution of fungal chemodiversity.</a>",
+      "status": "<strong><i>Natural Product Reports</i></strong>. DOI: 10.1039/c9np00045c.",
+      "links": [
+        "publication_pdfs/2020_Rokas_et_al_Natural_Products_Reports.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Natural Product Reports"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1039/C9NP00045C"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1039/C9NP00045C"
+        ]
+      ]
+    },
+    {
+      "authors": "15. Bodinaku, I., J. Shaffer, A.B. Connors, <strong>J.L. Steenwyk</strong>, E. Kastman, A. Rokas, A. Robbat, &amp; B. Wolfe (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Bodinaku_etal_mBio.pdf\">Rapid phenotypic and metabolomic domestication of wild <i>Penicillium</i> molds on cheese.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mBio.02445-19.",
+      "links": [
+        "publication_pdfs/2019_Bodinaku_etal_mBio.pdf",
+        "https://mbio.asm.org/content/10/5/e02445-19"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mBio.02445-19"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mBio.02445-19"
+        ]
+      ]
+    },
+    {
+      "authors": "14. Mead, M.E.*, H.A. Raja*, <strong>J.L. Steenwyk</strong>, S.L. Knowles, N.H. Oberlies^, &amp; A. Rokas^ (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Mead_and_Raja_et_al_Microbiology_Resource_Announcements.pdf\">Draft genome sequence of the griseofulvin-producing fungus <i>Xylaria flabelliformis</i> strain G536.</a>",
+      "status": "<strong><i>Microbiology Resource Announcements</i></strong>. DOI: 10.1128/MRA.00890-19.",
+      "links": [
+        "publication_pdfs/2019_Mead_and_Raja_et_al_Microbiology_Resource_Announcements.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Microbiology Resource Announcements"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/MRA.00890-19"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/MRA.00890-19"
+        ]
+      ]
+    },
+    {
+      "authors": "13. <strong>Steenwyk, J.L.</strong> &amp; A. Rokas (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Steenwyk_and_Rokas_BMC_Research_Notes.pdf\">treehouse: a user-friendly application to obtain subtrees from large phylogenies.</a>",
+      "status": "<strong><i>BMC Research Notes</i></strong>. DOI: 10.1186/s13104-019-4577-5.",
+      "links": [
+        "publication_pdfs/2019_Steenwyk_and_Rokas_BMC_Research_Notes.pdf",
+        "https://github.com/JLSteenwyk/treehouse",
+        "https://github.com/JLSteenwyk/treehouse"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "BMC Research Notes"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1186/s13104-019-4577-5"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1186/s13104-019-4577-5"
+        ]
+      ]
+    },
+    {
+      "authors": "12. Labella, A.L., D.A. Opulente, <strong>J.L. Steenwyk</strong>, C.T. Hittinger, &amp; A. Rokas (2019).",
+      "title": "<a href=\"publication_pdfs/2019_LaBella_et_al_PLoS_Genetics.pdf\">Variation and selection on codon usage bias across an entire subphylum.</a>",
+      "status": "<strong><i>PLOS Genetics</i></strong>. DOI: 10.1371/journal.pgen.1008304.",
+      "links": [
+        "publication_pdfs/2019_LaBella_et_al_PLoS_Genetics.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "PLOS Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pgen.1008304"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pgen.1008304"
+        ]
+      ]
+    },
+    {
+      "authors": "11. <strong>Steenwyk, J.L.</strong>, X.-X. Shen, A.L. Lind, G.H. Goldman, &amp; A. Rokas (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Steenwyk_et_al_mBio.pdf\">A robust phylogenomic timetree for biotechnologically and medically important fungi in the genera <i>Aspergillus</i> and <i>Penicillium</i>.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mBio.00925-19.",
+      "links": [
+        "publication_pdfs/2019_Steenwyk_et_al_mBio.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mBio.00925-19"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mBio.00925-19"
+        ]
+      ]
+    },
+    {
+      "authors": "10. <strong>Steenwyk, J.L.</strong>, D. Opulente, J. Kominek, X.-X. Shen, X. Zhou, A.L. LaBella, N.P. Bradley, B.F. Eichman, N. Čadež, D. Libkind, J. DeVirgilio, A.B. Hulfachor, C.P. Kurtzman, C.T. Hittinger^, &amp; A. Rokas^ (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Steenwyk_et_al_PLoS_Biology.pdf\">Extensive loss of cell cycle and DNA repair genes in an ancient lineage of bipolar budding yeasts.</a>",
+      "status": "<strong><i>PLOS Biology</i></strong>. DOI: 10.1371/journal.pbio.3000255.",
+      "links": [
+        "publication_pdfs/2019_Steenwyk_et_al_PLoS_Biology.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "PLOS Biology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1371/journal.pbio.3000255"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1371/journal.pbio.3000255"
+        ]
+      ]
+    },
+    {
+      "authors": "9. Ries, L.N.A., <strong>J.L. Steenwyk</strong>, P.A. de Castro, P.B.A. de Lima, F. Almeida, L.J. de Assis, A.O. Manfiolli, A. Takahashi-Nakaguchi, Y. Kusuya, D. Hagiwara, H. Takahashi, X. Wang, J. Obar, A. Rokas, &amp; G.H. Goldman (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Ries_et_al_Frontiers_in_Microbiology.pdf\">Nutritional heterogeneity among <i>Aspergillus fumigatus</i> strains has consequences for virulence in a strain- and host-dependent manner.</a>",
+      "status": "<strong><i>Frontiers in Microbiology</i></strong>. DOI: 10.3389/fmicb.2019.00854.",
+      "links": [
+        "publication_pdfs/2019_Ries_et_al_Frontiers_in_Microbiology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Frontiers in Microbiology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.3389/fmicb.2019.00854"
+        ],
+        [
+          "altmetric",
+          "doi: 10.3389/fmicb.2019.00854"
+        ]
+      ]
+    },
+    {
+      "authors": "8. Mead M.E., S.L. Knowles, H.A. Raja, S. R. Beattie, C.H. Kowalski, <strong>J.L. Steenwyk</strong>, L.P. Silva, J. Chiaratto, L.N.A. Ries, G.H. Goldman, R.A. Cramer, N.H. Oberlies, &amp; A. Rokas (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Mead_et_al_mSphere.pdf\">Characterizing the pathogenic, genomic, and chemical traits of <i>Aspergillus fischeri</i>, the closest sequenced relative of the major human fungal pathogen <i>Aspergillus fumigatus</i>.</a>",
+      "status": "<strong><i>mSphere</i></strong>. DOI: 10.1128/mSphere.00018-19.",
+      "links": [
+        "publication_pdfs/2019_Mead_et_al_mSphere.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mSphere"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.3389/fmicb.2019.00285"
+        ],
+        [
+          "altmetric",
+          "doi: 10.3389/fmicb.2019.00285"
+        ]
+      ]
+    },
+    {
+      "authors": "7. Knowles, S.L., H.A. Raja, A.J. Wright, A.M.L. Lee, L.K. Caesar, N.B. Cech, M.E. Mead, <strong>J.L. Steenwyk</strong>, L. Ries, G.H. Goldman, A. Rokas, &amp; N.H. Oberlies (2019).",
+      "title": "<a href=\"publication_pdfs/2019_Knowles_et_al_Frontiers_in_Microbiology.pdf\">Mapping the fungal battlefield: using <i>in situ</i> chemistry and deletion mutants to monitor interspecific chemical interactions between fungi.</a>",
+      "status": "<strong><i>Frontiers in Microbiology</i></strong>. DOI: 10.3389/fmicb.2019.00285.",
+      "links": [
+        "publication_pdfs/2019_Knowles_et_al_Frontiers_in_Microbiology.pdf"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Frontiers in Microbiology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.3389/fmicb.2019.00285"
+        ],
+        [
+          "altmetric",
+          "doi: 10.3389/fmicb.2019.00285"
+        ]
+      ]
+    },
+    {
+      "authors": "6. Eidem, H.R., <strong>J.L. Steenwyk</strong>, J. Wisecaver, J.A. Capra, P. Abbot, &amp; A. Rokas (2018).",
+      "title": "<a href=\"publication_pdfs/2018_Eidem_etal_BMC_Medical_Genomics.pdf\">integRATE: a desirability-based data integration framework for the prioritization of candidate genes across heterogeneous omics and its application to preterm birth.</a>",
+      "status": "<strong><i>BMC Medical Genomics</i></strong>. DOI: 10.1186/s12920-018-0426-y.",
+      "links": [
+        "publication_pdfs/2018_Eidem_etal_BMC_Medical_Genomics.pdf",
+        "https://github.com/JLSteenwyk/integRATE"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "BMC Medical Genomics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1186/s12920-018-0426-y"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1186/s12920-018-0426-y"
+        ]
+      ]
+    },
+    {
+      "authors": "5. Shen, X.-X.*, D.A. Opulente*, J. Kominek*, X. Zhou*, <strong>J.L. Steenwyk</strong>, K.V. Buh, M.A.B. Haase, J.H. Wisecaver, M. Wang, D.T. Doering, J.T. Boudouris, R.M. Schneider, Q.K. Langdon, M. Ohkuma, R. Endoh, M. Takashima, R. Manabe, N. Čadež, D. Libkind, C.A. Rosa, J. DeVirgilio, A.B. Hulfachor, M. Groenewald, C.P. Kurtzman^, C.T. Hittinger^ &amp; A. Rokas^ (2018).",
+      "title": "<a href=\"publication_pdfs/2018_Shen_et_al_Cell.pdf\">Tempo and mode of genome evolution in the budding yeast subphylum.</a>",
+      "status": "<strong><i>Cell</i></strong>. DOI: 10.1016/j.cell.2018.10.023.",
+      "links": [
+        "publication_pdfs/2018_Shen_et_al_Cell.pdf",
+        "https://natureecoevocommunity.nature.com/users/25228-antonis-rokas/posts/40795-mitigating-the-impact-of-rogue-genes-in-phylogenomic-studies"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "Cell"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1016/j.cell.2018.10.023"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1016/j.cell.2018.10.023"
+        ]
+      ]
+    },
+    {
+      "authors": "4. Segal, E.S., V. Gritsenko, A. Levitan, B. Yadav, N. Dror, <strong>J.L. Steenwyk</strong>, Y. Silberberg, K. Mielich, A. Rokas, N.A.R. Gow, R. Kunze, R. Sharan, &amp; J. Berman (2018).",
+      "title": "<a href=\"publication_pdfs/2018_Segal_et_al_mBio.pdf\">Gene Essentiality Analyzed by In Vivo Transposon Mutagenesis and Machine Learning in a Stable Haploid Isolate of <i>Candida albicans</i>.</a>",
+      "status": "<strong><i>mBio</i></strong>. DOI: 10.1128/mBio.02048-18.",
+      "links": [
+        "publication_pdfs/2018_Segal_et_al_mBio.pdf",
+        "https://mbio.asm.org/content/9/5/e02048-18"
+      ],
+      "bold": [
+        "J.L. Steenwyk",
+        "mBio"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1128/mBio.02048-18"
+        ],
+        [
+          "altmetric",
+          "doi: 10.1128/mBio.02048-18"
+        ]
+      ]
+    },
+    {
+      "authors": "3. <strong>Steenwyk, J.L.</strong> &amp; A. Rokas (2018).",
+      "title": "<a href=\"publication_pdfs/2018_Steenwyk_and_Rokas_Frontiers_in_Microbiology.pdf\">Copy number variation in fungi and its implications for wine yeast genetic diversity and adaptation.</a>",
+      "status": "<strong><i>Frontiers in Microbiology</i></strong>. DOI: 10.3389/fmicb.2018.00288.",
+      "links": [
+        "publication_pdfs/2018_Steenwyk_and_Rokas_Frontiers_in_Microbiology.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "Frontiers in Microbiology"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.3389/fmicb.2018.00288"
+        ],
+        [
+          "altmetric",
+          "doi: 10.3389/fmicb.2018.00288"
+        ]
+      ]
+    },
+    {
+      "authors": "2. <strong>Steenwyk, J.</strong> &amp; A. Rokas (2017).",
+      "title": "<a href=\"publication_pdfs/2017_Steenwyk_and_Rokas_G3.pdf\">Extensive copy number variation in fermentation-related genes among <i>Saccharomyces cerevisiae</i> wine strains.</a>",
+      "status": "<strong><i>G3 Genes|Genomes|Genetics</i></strong>. DOI: 10.1534/g3.117.040105.",
+      "links": [
+        "publication_pdfs/2017_Steenwyk_and_Rokas_G3.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.",
+        "G3 Genes|Genomes|Genetics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1534/g3.117.040105"
+        ],
+        [
+          "altmetric",
+          "10.1534/g3.117.040105"
+        ]
+      ]
+    },
+    {
+      "authors": "1. <strong>Steenwyk, J.L.</strong>, J.S. Soghigian, J.R. Perfect, &amp; J.G. Gibbons (2016).",
+      "title": "<a href=\"publication_pdfs/2016_Steenwyk_et_al_BMC_Genomics.pdf\">Copy number variation contributes to cryptic genetic variation in outbreak lineages of <i>Cryptococcus gattii</i> from the North American Pacific Northwest.</a>",
+      "status": "<strong><i>BMC Genomics</i></strong>. DOI: 10.1186/s12864-016-3044-0.",
+      "links": [
+        "publication_pdfs/2016_Steenwyk_et_al_BMC_Genomics.pdf"
+      ],
+      "bold": [
+        "Steenwyk, J.L.",
+        "BMC Genomics"
+      ],
+      "badges": [
+        [
+          "dimensions",
+          "10.1186/s12864-016-3044-0"
+        ],
+        [
+          "altmetric",
+          "10.1186/s12864-016-3044-0"
+        ]
+      ]
+    },
+    {
+      "authors": "6. <strong>Steenwyk, J.L.</strong> &amp; K. Giffin.",
+      "title": "<a href=\"https://genestogenomes.org/the-silver-lining-of-bioinformatics/\">The silver lining of bioinformatics.</a>",
+      "status": "Genes to Genomes. September 12, 2022.",
+      "links": [
+        "https://genestogenomes.org/the-silver-lining-of-bioinformatics/"
+      ],
+      "bold": [
+        "Steenwyk, J.L."
+      ],
+      "badges": []
+    },
+    {
+      "authors": "5. Simopoulos, M.A.C., A.F. Cisneros, A.D. Mendoza, C. Bautista, <strong>J.L. Steenwyk</strong>, &amp; N. Ahmad.",
+      "title": "<a href=\"https://ecrlife.org/hurdles-and-advances-to-making-science-gender-neutral/\">Hurdles and advances to making science gender-neutral.</a>",
+      "status": "ecrLife. November 26, 2020.",
+      "links": [
+        "https://ecrlife.org/hurdles-and-advances-to-making-science-gender-neutral/"
+      ],
+      "bold": [
+        "J.L. Steenwyk"
+      ],
+      "badges": []
+    },
+    {
+      "authors": "4. Mendoza, A.D., C. Bautista, E.A. Marnik, C.M.A. Simopoulos, &amp; <strong>J.L. Steenwyk</strong>.",
+      "title": "<a href=\"https://ecrlife.org/navigating-fake-news-as-a-scientist/\">Navigating fake news as a scientist.</a>",
+      "status": "ecrLife. October 8, 2020.",
+      "links": [
+        "https://ecrlife.org/navigating-fake-news-as-a-scientist/"
+      ],
+      "bold": [
+        "J.L. Steenwyk"
+      ],
+      "badges": []
+    },
+    {
+      "authors": "3. <strong>Steenwyk, J.L.</strong> &amp; M. Jonika.",
+      "title": "<a href=\"https://ecrlife.org/how-to-get-started-in-science-communication-2/\">How to get started in science communication.</a>",
+      "status": "ecrLife. August 21, 2020.",
+      "links": [
+        "https://ecrlife.org/how-to-get-started-in-science-communication-2/"
+      ],
+      "bold": [
+        "Steenwyk, J.L."
+      ],
+      "badges": []
+    },
+    {
+      "authors": "2. <strong>Steenwyk, J.L.</strong> &amp; A. Rokas.",
+      "title": "<a href=\"https://theconversation.com/a-new-hybrid-fungus-is-found-in-hospitals-and-linked-to-lung-disease-138783\">A new hybrid fungus is found in hospitals and linked to lung disease.</a>",
+      "status": "The Conversation. June 4, 2020.",
+      "links": [
+        "https://theconversation.com/a-new-hybrid-fungus-is-found-in-hospitals-and-linked-to-lung-disease-138783"
+      ],
+      "bold": [
+        "Steenwyk, J.L."
+      ],
+      "badges": []
+    },
+    {
+      "authors": "1. <strong>Steenwyk, J.L.</strong> &amp; A. Rokas.",
+      "title": "<a href=\"https://theconversation.com/an-outlaw-yeast-thrives-with-genetic-chaos-and-could-provide-clues-for-understanding-cancer-growth-117359\">An outlaw yeast thrives with genetic chaos – and could provide clues for understanding cancer growth.</a>",
+      "status": "The Conversation. May 21, 2019.",
+      "links": [
+        "https://theconversation.com/an-outlaw-yeast-thrives-with-genetic-chaos-and-could-provide-clues-for-understanding-cancer-growth-117359"
+      ],
+      "bold": [
+        "Steenwyk, J.L."
+      ],
+      "badges": []
+    }
+  ],
+  "news": {
+    "years": [
+      "2026",
+      "2025",
+      "2024",
+      "2023",
+      "2022",
+      "2021",
+      "2020",
+      "2019",
+      "2018"
+    ],
+    "items": [
+      {
+        "title": "Keep calm and be transparent: advice from scientists who retracted their papers.",
+        "url": "https://www.nature.com/articles/d41586-026-00763-x",
+        "date": "Mar 10",
+        "source": "Nature"
+      },
+      {
+        "title": "Биологи превратили одноклеточный организм в многоклеточный сразу двумя способами.",
+        "url": "https://naked-science.ru/article/biology/biologi-prevratili-odnokl",
+        "date": "Feb 27",
+        "source": "Naked Science"
+      },
+      {
+        "title": "Single-celled organism becomes multicellular via three different pathways.",
+        "url": "https://phys.org/news/2026-02-celled-multicellular-pathways.html",
+        "date": "Feb 26",
+        "source": "Nature"
+      },
+      {
+        "title": "Flexible paths to multicellularity.",
+        "url": "https://www.nature.com/articles/d41586-026-00292-7",
+        "date": "Feb 26",
+        "source": "Phys.org"
+      },
+      {
+        "title": "Eponges ou cténophores ? Duel au plus profond du vivant pour le titre de premier animal.",
+        "url": "https://www.lemonde.fr/sciences/article/2026/02/16/eponges-ou-ctenophores-duel-au-plus-profond-du-vivant-pour-le-titre-de-premier-animal_6666990_1650684.html",
+        "date": "Feb 16",
+        "source": "Le Monde"
+      },
+      {
+        "title": "Яка тварина зʼявилася першою на світі: вчені, можливо, вирішили багаторічну суперечку.",
+        "url": "https://www.unian.ua/science/yaka-tvarina-z-yavilasya-pershoyu-vidpovid-doslidnikiv-13201248.html",
+        "date": "Nov 19",
+        "source": "УНIАН"
+      },
+      {
+        "title": "Did the first animal look like a sponge or a comb jelly? The debate continues.",
+        "url": "https://news.berkeley.edu/2025/11/19/did-the-first-animal-look-like-a-sponge-or-a-comb-jelly-the-debate-continues/",
+        "date": "Nov 19",
+        "source": "UC Berkeley News"
+      },
+      {
+        "title": "Which animal really came first? The debate may finally be settled.",
+        "url": "https://www.earth.com/news/which-animal-really-came-first-the-debate-may-finally-be-settled/",
+        "date": "Nov 18",
+        "source": "Earth.com"
+      },
+      {
+        "title": "Fierce Debate About Earth’s First Animal Heats Up.",
+        "url": "https://nautil.us/fierce-debate-about-earths-first-animal-heats-up-1247736/",
+        "date": "Nov 14",
+        "source": "Nautilus"
+      },
+      {
+        "title": "综合系统基因组学将海绵定位于动物树的根部.",
+        "url": "https://news.sciencenet.cn/htmlpaper/2025/11/2025111413629170142574.shtm",
+        "date": "Nov 14",
+        "source": "科学网"
+      },
+      {
+        "title": "Sponging away phylogenomic incongruence.",
+        "url": "https://www.science.org/doi/10.1126/science.aec6305",
+        "date": "Nov 13",
+        "source": "Science"
+      },
+      {
+        "title": "Which Came First: The Sponge or the Comb Jelly? HHMI Scientists Weigh In.",
+        "url": "https://www.hhmi.org/news/earliest-animal-ancestor-sponge-vs-comb-jelly",
+        "date": "Nov 13",
+        "source": "HHMI"
+      },
+      {
+        "title": "Which Originated First: The Sponge or the Comb Jelly? Insights from HHMI Scientists.",
+        "url": "https://bioengineer.org/which-originated-first-the-sponge-or-the-comb-jelly-insights-from-hhmi-scientists/",
+        "date": "Nov 13",
+        "source": "Bioengineer"
+      },
+      {
+        "title": "AlphaFold2 enables large scale analysis of enzyme evolution.",
+        "url": "https://www.news-medical.net/news/20250710/AlphaFold2-enables-large-scale-analysis-of-enzyme-evolution.aspx",
+        "date": "July 10",
+        "source": "News Medical"
+      },
+      {
+        "title": "Charité study analyzes 400 million years of enzyme evolution.",
+        "url": "https://versorgungsforschung.charite.de/en/metas/en_meldung/artikel/detail/charite_study_analyzes_400_million_years_of_enzyme_evolution",
+        "date": "July 9",
+        "source": "Charité Health Services Research"
+      },
+      {
+        "title": "Study Analyzes 400 Million Years of Enzyme Evolution.",
+        "url": "https://www.tu-dortmund.de/en/newsdetail/study-analyzes-400-million-years-of-enzyme-evolution-54937/",
+        "date": "July 8",
+        "source": "TU Dortmund University"
+      },
+      {
+        "title": "Metabolism’s Impact on Enzyme Evolution Over Millennia.",
+        "url": "https://bioengineer.org/metabolisms-impact-on-enzyme-evolution-over-millennia",
+        "date": "July 6",
+        "source": "Bioengineer.org"
+      },
+      {
+        "title": "Fungal Enzyme Evades Immunity, Aids Infection.",
+        "url": "https://www.miragenews.com/fungal-enzyme-evades-immunity-aids-infection-1360821/",
+        "date": "Nov 20",
+        "source": "MirageNews"
+      },
+      {
+        "title": "Enzyme produced by pathogenic fungus helps evade immune system and facilitates infection.",
+        "url": "https://www.eurekalert.org/news-releases/1065448",
+        "date": "Nov 19",
+        "source": "EurekAlert"
+      },
+      {
+        "title": "Surprising Patterns Unearthed – Study Debunks Traditional Views on Yeast Evolution.",
+        "url": "https://todayheadline.co/surprising-patterns-unearthed-study-debunks-traditional-views-on-yeast-evolution/",
+        "date": "May 5",
+        "source": "Today Headline"
+      },
+      {
+        "title": "UNC Charlotte bioinformatics professor discovers surprising evolutionary pattern in landmark yeast study.",
+        "url": "https://bioengineer.org/unc-charlotte-bioinformatics-professor-discovers-surprising-evolutionary-pattern-in-landmark-yeast-study/",
+        "date": "April 26",
+        "source": "Bioengineer"
+      },
+      {
+        "title": "Vanderbilt Researchers Flip the Script on Yeast Ecological Diversity",
+        "url": "https://www.vanderbilt.edu/evolution/vanderbilt-researchers-flip-the-script-on-yeast-ecological-diversity",
+        "date": "April 25",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "These jacks-of-all-trades are masters, too: Yeast study helps answer age-old biology question.",
+        "url": "https://www.sciencedaily.com/releases/2024/04/240425161515.htm",
+        "date": "April 25",
+        "source": "Science Daily"
+      },
+      {
+        "title": "Beckman Scholar Charu Balamurugan Unveils Evolutionary Insights into Penicillium Secondary Metabolites.",
+        "url": "https://www.vanderbilt.edu/evolution/beckman-scholar-charu-balamurugan-unveils-evolutionary-insights-into-penicillium-secondary-metabolites/",
+        "date": "March 26",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "Jacob L. Steenwyk is an awardee of the Paul T. Englund Emerging Scholars program.",
+        "url": "https://biolchem.bs.jhmi.edu/emerging-scholars-archive/",
+        "date": "January 1",
+        "source": "Department of Biological Chemistry at Johns Hopkins School of Medicine"
+      },
+      {
+        "title": "Fighting invisible foes: How cryptic fungal pathogens threaten human health and food security.",
+        "url": "https://www.news-medical.net/news/20231025/Fighting-invisible-foes-How-cryptic-fungal-pathogens-threaten-human-health-and-food-security.aspx",
+        "date": "October 25",
+        "source": "News-Medical"
+      },
+      {
+        "title": "Postdocs Garshott and Steenwyk awarded Life Sciences Research Foundation fellowships.",
+        "url": "https://mcb.berkeley.edu/news-and-events/department-news/postdocs-garshott-and-steenwyk-awarded-life-sciences-research",
+        "date": "August 8",
+        "source": "University of California, Berkeley"
+      },
+      {
+        "title": "Evolutionary studies, the magazine.",
+        "url": "https://www.vanderbilt.edu/evolution/wp-content/uploads/sites/295/2023/04/ESI-Mag-Spring-2023-1c3.pdf",
+        "date": "April 7",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "Scientist-Artists: Embracing Duality.",
+        "url": "https://news.vanderbilt.edu/2022/07/20/attend-scientist-artists-embracing-duality-virtual-event-on-july-27/",
+        "date": "July 27",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "Dissertation, Fungal genome evolution and software for the life sciences, authored by Jacob Steenwyk has been published.",
+        "url": "images/2022_Steenwyk_Dissertation.pdf",
+        "date": "May 19",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "Vanderbilt researchers develop new evolutionary approach for identifying proteins that functionally interact.",
+        "url": "https://news.vanderbilt.edu/2022/05/04/vanderbilt-researchers-develop-new-evolutionary-approach-for-identifying-proteins-that-functionally-interact/",
+        "date": "May 4",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "Jacob Steenwyk, 2022 Graduate School Endowed Awardee.",
+        "url": "https://my.vanderbilt.edu/gradschool-news/2022/04/20/2022-graduate-school-endowed-awards/",
+        "date": "April 20",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "LatchBio launches the first of many evolutionary bioinformatics workflows to come.",
+        "url": "news_announcements/clipkit_and_latch.html",
+        "date": "March 24",
+        "source": "Internal announcement"
+      },
+      {
+        "title": "Graduate student Steenwyk receives prestigious 2022 Harold M. Weintraub Award.",
+        "url": "https://news.vanderbilt.edu/2022/03/22/graduate-student-steenwyk-receives-prestigious-2022-harold-m-weintraub-award/",
+        "date": "March 22",
+        "source": "Vanderbilt University"
+      },
+      {
+        "title": "Fred Hutch announces 2022 Harold M. Weintraub Graduate Student Award recipients.",
+        "url": "https://www.fredhutch.org/en/news/releases/2022/03/2022-harold-m-weintraub-graduate-student-award.html",
+        "date": "March 1",
+        "source": "Fred Hutchinson Cancer Research Center"
+      },
+      {
+        "title": "Dissertation Defense: Fungal genome evolution and software for the life sciences",
+        "url": "images/Steenwyk_Defense_Flyer.jpg",
+        "date": "February 10",
+        "source": "Department of Biological Sciences, Vanderbilt University"
+      },
+      {
+        "title": "Art with amphibians, algorithms and advocacy",
+        "url": "images/AiR_2021_JLSteenwyk.pdf",
+        "date": "January 1",
+        "source": "VI4 Artist-in-Residence (AiR) Annual Report"
+      },
+      {
+        "title": "A Conversation with Jacob Steenwyk",
+        "url": "https://www.artlab-air.com/post/a-conversation-with-jacob-steenwyk",
+        "date": "July 8",
+        "source": "VI4 Artist-in-Residence (AiR) Program Blog"
+      },
+      {
+        "title": "Art with amphibians, algorithms and advocacy",
+        "url": "https://www.artlab-air.com/post/art-with-amphibians-algorithms-and-advocacy",
+        "date": "June 23",
+        "source": "VI4 Artist-in-Residence Program Blog"
+      },
+      {
+        "title": "#FungiColorPalettes is used for making the color scheme of the Vestigo Magazine Winter 2021 cover",
+        "url": "https://issuu.com/vubasicsciences/docs/vestigo-winter_2021_accessibility",
+        "date": "June 14",
+        "source": "Vestigo Magazine"
+      },
+      {
+        "title": "Alumni Spotlight, Biology Department, Spring 2021",
+        "url": "images/Clark_Biology_Dept_Spring_21_Newsletter.pdf",
+        "date": "June 12",
+        "source": "Clark University"
+      },
+      {
+        "title": "Curb ArtLab Fellow Jacob L. Steenwyk Recently Published a Special Issue Article on A portrait of budding yeasts",
+        "url": "images/Curb_center_2021_news_yeast_cover.png",
+        "date": "February 10",
+        "source": "The Curb Center"
+      },
+      {
+        "title": "Announcing the Catalyst Winners",
+        "url": "https://www.msuscicomm.org/post/announcing-the-catalyst-winners",
+        "date": "November 17",
+        "source": "MSU SciComm"
+      },
+      {
+        "title": "COVID-19-associated pulmonary aspergillosis caused by Aspergillus fumigatus",
+        "url": "https://www.news-medical.net/amp/news/20201110/COVID-19-associated-pulmonary-aspergillosis-caused-by-aspergillus-fumigatus.aspx?__twitter_impression=true",
+        "date": "November 10",
+        "source": "News-Medical"
+      },
+      {
+        "title": "STEM Students Recognized for their Research and Presentation Skills at The National Diversity in STEM Conference",
+        "url": "https://www.sacnas.org/2020/10/24/stem-students-recognized-for-their-research-and-presentation-skills-at-2020-sacnas-the-national-diversity-in-stem-conference/",
+        "date": "October 25",
+        "source": "SACNAS"
+      },
+      {
+        "title": "Early Career Scientist Leadership Spotlight — Jacob L. Steenwyk.",
+        "url": "http://genestogenomes.org/early-career-scientist-leadership-spotlight-jacob-l-steenwyk/",
+        "date": "August 24",
+        "source": "Genes to Genomes"
+      },
+      {
+        "title": "Researchers discover hybrid fungus involved in lung infections.",
+        "url": "https://www.eurekalert.org/pub_releases/2020-07/fda-rdh071720.php",
+        "date": "July 17",
+        "source": "EurekAlert!"
+      },
+      {
+        "title": "Pour la première fois, un hybride entre deux espèces de champignons filamenteux a été identifié.",
+        "url": "http://genestogenomes.org/congratulations-to-the-2020-early-career-scientist-leadership-program-cohort/",
+        "date": "July 7",
+        "source": "Futura Santé"
+      },
+      {
+        "title": "Congratulations to the 2020 Early Career Scientist Leadership Program cohort!",
+        "url": "http://genestogenomes.org/congratulations-to-the-2020-early-career-scientist-leadership-program-cohort/",
+        "date": "July 1",
+        "source": "Genes to Genomes, Genetics Society of America"
+      },
+      {
+        "title": "Biological Sciences Ph.D. Student Finds Creative Outlet in Science-Themed Art.",
+        "url": "https://wp0.vanderbilt.edu/as-news/2020/06/30/biological-sciences-phd-student-science-themed-art/",
+        "date": "June 30",
+        "source": "Arts & Science News at Vanderbilt"
+      },
+      {
+        "title": "Pesquisadores descobrem fungo híbrido envolvido em infecções pulmonares.",
+        "url": "http://agencia.fapesp.br/pesquisadores-descobrem-fungo-hibrido-envolvido-em-infeccoes-pulmonares/33426/",
+        "date": "June 18",
+        "source": "Agência FAPESP"
+      },
+      {
+        "title": "When two fungi become one.",
+        "url": "images/Steenwyk_and_Lind_etal_CurrBio_NatMicroReviews_Highlights.pdf",
+        "date": "June 16",
+        "source": "Nature Reviews Microbiology Research Highlights"
+      },
+      {
+        "title": "New discovery shows infection of the lungs can be caused by hybrid fungi.",
+        "url": "https://news.vanderbilt.edu/2020/06/04/new-discovery-shows-infection-of-the-lungs-can-be-caused-by-hybrid-fungi/",
+        "date": "June 4",
+        "source": "Research News at Vanderbilt"
+      },
+      {
+        "title": "A new hybrid fungus is found in hospitals and linked to lung disease.",
+        "url": "https://theconversation.com/a-new-hybrid-fungus-is-found-in-hospitals-and-linked-to-lung-disease-138783",
+        "date": "June 4",
+        "source": "The Conversation"
+      },
+      {
+        "title": "Let it Brie.",
+        "url": "https://omny.fm/shows/the-loh-down-on-science/2005-11-let-it-brie",
+        "date": "May 15",
+        "source": "The Loh Down on Science, National Public Radio."
+      },
+      {
+        "title": "This Fungus Mutates. That’s Good News if You Like Cheese.",
+        "url": "https://www.nytimes.com/2019/10/15/science/cheese-fungus-mold-camembert.html",
+        "date": "October 15",
+        "source": "New York Times"
+      },
+      {
+        "title": "Yeasts and how they came to be.",
+        "url": "images/Calhoun_et_al_Nature_Reviews_Microbiology_Genome_Watch_2019.pdf",
+        "date": "September 26",
+        "source": "Nature Reviews Microbiology"
+      },
+      {
+        "title": "Three student-adviser pairs receive Gilliam Fellowships",
+        "url": "http://news.vumc.org/2019/09/05/three-student-adviser-pairs-receive-gilliam-fellowships/",
+        "date": "September 05",
+        "source": "VUMC Reporter"
+      },
+      {
+        "title": "Three VU doctoral students receive 2019 Gilliam Fellowships to support diversity and inclusion in science.",
+        "url": "https://news.vanderbilt.edu/2019/09/03/three-vu-doctoral-students-receive-2019-gilliam-fellowships-to-support-diversity-and-inclusion-in-science/",
+        "date": "September 03",
+        "source": "myVU"
+      },
+      {
+        "title": "15 SACNAS members awarded HHMI Gilliam Fellowships to Support Diversity and Inclusion in Science.",
+        "url": "https://www.sacnas.org/2019/08/08/members-awarded-hhmi-gilliam-fellowships-to-support-diversity-and-inclusion-in-science/",
+        "date": "August 08",
+        "source": "SACNAS"
+      },
+      {
+        "title": "Paleo Got It Wrong: We've Loved Carbs for Over 100,000 Years.",
+        "url": "https://youtu.be/sYAjGorhNg0?t=199",
+        "date": "May 24",
+        "source": "SciShow News"
+      },
+      {
+        "title": "Some Types Of Yeast Doing Just Fine After Losing Anti-Mutation Genes.",
+        "url": "https://www.techtimes.com/articles/243612/20190522/some-types-of-yeast-doing-just-fine-after-losing-anti-mutation-genes.htm",
+        "date": "May 22",
+        "source": "TechTimes"
+      },
+      {
+        "title": "Yeasts lose DNA-repair genes, and thrive.",
+        "url": "https://cosmosmagazine.com/biology/yeasts-lose-dna-repair-genes-and-thrive",
+        "date": "May 22",
+        "source": "Cosmos Magazine"
+      },
+      {
+        "title": "Without DNA repairing genes, ancient yeasts have accumulated many mutations.",
+        "url": "https://www.earth.com/news/dna-repairing-genes-ancient-yeasts/",
+        "date": "May 22",
+        "source": "Earth.com"
+      },
+      {
+        "title": "Yeast species thrives, despite losing DNA repair genes years ago.",
+        "url": "images/Yeast-species-thrives-despite-losing-DNA-repair-genes-years-ago.pdf",
+        "date": "May 22",
+        "source": "News-Medical"
+      },
+      {
+        "title": "An outlaw yeast thrives with genetic chaos – and could provide clues for understanding cancer growth.",
+        "url": "https://theconversation.com/an-outlaw-yeast-thrives-with-genetic-chaos-and-could-provide-clues-for-understanding-cancer-growth-117359",
+        "date": "May 21",
+        "source": "The Conversation"
+      },
+      {
+        "title": "Life in evolution’s fast lane.",
+        "url": "https://www.eurekalert.org/pub_releases/2019-05/p-lie051419.php",
+        "date": "May 21",
+        "source": "EurekAlert!"
+      },
+      {
+        "title": "ArtLab @ Vanderbilt hosts opening reception.",
+        "url": "https://news.vanderbilt.edu/2019/01/03/artlab-vanderbilt-hosts-opening-reception-jan-18/",
+        "date": "January 18",
+        "source": "myVU"
+      },
+      {
+        "title": "Broad genome analysis shows yeasts evolving by subtraction.",
+        "url": "https://www.eurekalert.org/pub_releases/2018-11/uow-bga110618.php",
+        "date": "November 8",
+        "source": "EurekAlert!"
+      },
+      {
+        "title": "Loss is more: Today's budding yeasts shed traits from their 400-million-year-old ancestor.",
+        "url": "https://phys.org/news/2018-11-loss-today-budding-yeasts-traits.html",
+        "date": "November 8",
+        "source": "EurekAlert!"
+      },
+      {
+        "title": "Today’s budding yeasts shed traits from their 400-million-year-old ancestor.",
+        "url": "https://news.vanderbilt.edu/2018/11/08/todays-budding-yeasts-shed-traits-from-their-400-million-year-old-ancestor/",
+        "date": "November 8",
+        "source": "myVU News"
+      }
+    ]
+  }
+}

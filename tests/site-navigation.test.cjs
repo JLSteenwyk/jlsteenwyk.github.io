@@ -32,6 +32,11 @@ for (const file of ['index.html', 'publications.html', 'software.html', 'news.ht
       assert.deepEqual(panel, original);
       doc.querySelector('#titleBar .toggle').click();
       assert.equal(doc.body.classList.contains('navPanel-visible'), true);
+      assert.equal(doc.querySelector('#titleBar .toggle').getAttribute('aria-expanded'), 'true');
+      window.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape', keyCode: 27, bubbles: true }));
+      assert.equal(doc.body.classList.contains('navPanel-visible'), false);
+      assert.equal(doc.querySelector('#titleBar .toggle').getAttribute('aria-expanded'), 'false');
+      doc.querySelector('#titleBar .toggle').click();
       doc.body.click();
       assert.equal(doc.body.classList.contains('navPanel-visible'), false);
       if ([...doc.querySelectorAll('#nav .nav-link')].some(a => a.getAttribute('href') === file.split('/').pop())) assert.ok(doc.querySelector('#nav .nav-active'));

@@ -6964,3 +6964,60 @@ body.page-arts-visual #content section {
 body.page-arts-visual #content > header.major p {
 	line-height: 1.8;
 }
+
+/* Concise project introductions; original context and badges stay available. */
+body.page-software .software-card-desc {
+	line-height: 1.65;
+}
+
+body.page-software .software-project-details {
+	margin-top: 1rem;
+	padding-top: 0.85rem;
+	border-top: 1px solid var(--sk-line);
+	font-size: 0.85em;
+}
+
+body.page-software .software-project-details > summary {
+	color: var(--sk-blue);
+	cursor: pointer;
+	font-weight: 600;
+	list-style-position: inside;
+}
+
+body.page-software .software-project-details > summary:focus-visible {
+	outline: 2px solid var(--sk-blue);
+	outline-offset: 4px;
+	border-radius: 3px;
+}
+
+body.page-software .software-card-context {
+	margin: 1rem 0;
+	line-height: 1.7;
+	color: var(--sk-text-2);
+}
+
+body.page-software .software-project-details .software-card-badges {
+	margin-top: 1rem;
+}
+
+body.page-software .software-card-buttons {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.5rem;
+}
+
+body.page-software .software-card-buttons .cta-button {
+	padding: 0.65rem 0.5rem;
+	min-width: 0;
+}
+
+body.page-software .software-card-buttons .primary {
+	grid-column: 1 / -1;
+}
+
+@media screen and (max-width: 600px) {
+	body.page-software .software-card-buttons {
+		grid-template-columns: 1fr;
+	}
+}
+

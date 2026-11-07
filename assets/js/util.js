@@ -117,6 +117,7 @@
 
 					// Hide.
 						config.target.removeClass(config.visibleClass);
+						$body.find('a[href="#' + id + '"]').attr('aria-expanded', 'false');
 
 					// Post-hide stuff.
 						window.setTimeout(function() {
@@ -261,6 +262,7 @@
 					event.stopPropagation();
 
 					config.target.removeClass(config.visibleClass);
+					$body.find('a[href="#' + id + '"]').attr('aria-expanded', 'false');
 
 				});
 
@@ -278,6 +280,7 @@
 					event.stopPropagation();
 
 					config.target.toggleClass(config.visibleClass);
+					$body.find('a[href="#' + id + '"]').attr('aria-expanded', config.target.hasClass(config.visibleClass) ? 'true' : 'false');
 
 				});
 
